@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -20,6 +21,7 @@ public class SlideActivity extends AppCompatActivity {
     private TextView[] mDots;
     private Button nextbutton,backbutton;
     private int currentPage;
+    float x1,x2,y1,y2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,7 +90,9 @@ public class SlideActivity extends AppCompatActivity {
                 nextbutton.setEnabled(true);
                 backbutton.setEnabled(false);
                 backbutton.setVisibility(View.INVISIBLE);
-
+                nextbutton.setScaleX(1);
+                nextbutton.setScaleY(1);
+                nextbutton.setBackgroundResource(R.color.transparent);
                 nextbutton.setText("Next");
                 backbutton.setText("");
             }
@@ -96,7 +100,9 @@ public class SlideActivity extends AppCompatActivity {
                 nextbutton.setEnabled(true);
                 backbutton.setEnabled(true);
                 backbutton.setVisibility(View.VISIBLE);
-
+                nextbutton.setScaleX(1.2f);
+                nextbutton.setBackgroundResource(R.drawable.loadingbackground);
+                nextbutton.setScaleY(1.2f);
                 nextbutton.setText("Finish");
                 backbutton.setText("Back");
             }
@@ -105,7 +111,9 @@ public class SlideActivity extends AppCompatActivity {
                 nextbutton.setEnabled(true);
                 backbutton.setEnabled(true);
                 backbutton.setVisibility(View.VISIBLE);
-
+                nextbutton.setScaleX(1);
+                nextbutton.setBackgroundResource(R.color.transparent);
+                nextbutton.setScaleY(1);
                 nextbutton.setText("Next");
                 backbutton.setText("Back");
             }
@@ -116,4 +124,6 @@ public class SlideActivity extends AppCompatActivity {
 
         }
     };
+
+
 }

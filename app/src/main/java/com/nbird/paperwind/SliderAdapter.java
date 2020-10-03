@@ -67,6 +67,7 @@ public class SliderAdapter extends PagerAdapter {
         return view;
     }
 
+
     public void destroyItem(ViewGroup container,int position,Object object){
         container.removeView((ConstraintLayout)object);
     }
