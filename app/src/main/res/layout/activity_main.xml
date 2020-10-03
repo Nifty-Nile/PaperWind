@@ -8,6 +8,18 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/logobackground"
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="10dp"
+
+        android:background="@drawable/logobackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/logopic"
         android:layout_width="200dp"
         android:layout_height="200dp"
@@ -17,6 +29,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
