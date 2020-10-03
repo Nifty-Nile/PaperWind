@@ -21,7 +21,7 @@ public class SlideActivity extends AppCompatActivity {
     private TextView[] mDots;
     private Button nextbutton,backbutton;
     private int currentPage;
-    float x1,x2,y1,y2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,13 +67,13 @@ public class SlideActivity extends AppCompatActivity {
         for(int i=0;i<mDots.length;i++){
             mDots[i]=new TextView(this);
             mDots[i].setText(Html.fromHtml("&#8226"));
-            mDots[i].setTextSize(35);
-            mDots[i].setTextColor(getResources().getColor(R.color.colorAccent));
+            mDots[i].setTextSize(60);
+            mDots[i].setTextColor(getResources().getColor(R.color.white));
             dotLayout.addView(mDots[i]);
 
         }
         if(mDots.length>0){
-            mDots[position].setTextColor(getResources().getColor(R.color.colorPrimary));
+            mDots[position].setTextColor(getResources().getColor(R.color.colorAccent));
         }
     }
     ViewPager.OnPageChangeListener viewListner=new ViewPager.OnPageChangeListener() {
@@ -100,9 +100,9 @@ public class SlideActivity extends AppCompatActivity {
                 nextbutton.setEnabled(true);
                 backbutton.setEnabled(true);
                 backbutton.setVisibility(View.VISIBLE);
-                nextbutton.setScaleX(1.2f);
+
                 nextbutton.setBackgroundResource(R.drawable.loadingbackground);
-                nextbutton.setScaleY(1.2f);
+
                 nextbutton.setText("Finish");
                 backbutton.setText("Back");
             }
