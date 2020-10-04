@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "815489799834",
+    "firebase_url": "https://paper-wind.firebaseio.com",
+    "project_id": "paper-wind",
+    "storage_bucket": "paper-wind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:815489799834:android:4f804bded058c972ee7123",
+        "android_client_info": {
+          "package_name": "com.nbird.paperwind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "815489799834-29tok792s69ig4ii9ta19p73nm8ktook.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.nbird.paperwind",
+            "certificate_hash": "389c73cf5260183aec104a98cf50158cd5e62aa0"
+          }
+        },
+        {
+          "client_id": "815489799834-2e22kp0ec2t0heoshrrmbajuqiu237mk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCV4OAcuNimUSK8uARDTqlzodptA4M7buo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "815489799834-2e22kp0ec2t0heoshrrmbajuqiu237mk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
