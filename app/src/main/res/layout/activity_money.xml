@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:background="@drawable/background1"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".MoneyActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigatio"
@@ -20,16 +20,5 @@
         app:layout_constraintEnd_toEndOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:menu="@menu/menunav" />
-
-    <Button
-        android:id="@+id/buttonfake"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Fake"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
