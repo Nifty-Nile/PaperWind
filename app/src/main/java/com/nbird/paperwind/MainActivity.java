@@ -1,6 +1,7 @@
 package com.nbird.paperwind;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import android.animation.Animator;

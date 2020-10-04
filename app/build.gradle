@@ -2,8 +2,8 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.1"
+    compileSdkVersion 29
+    buildToolsVersion '29.0.3'
 
     defaultConfig {
         applicationId "com.nbird.paperwind"
@@ -26,6 +26,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    compile 'de.hdodenhof:circleimageview:2.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     implementation 'com.google.firebase:firebase-database:19.3.1'
     implementation 'com.google.firebase:firebase-analytics:17.4.4'
