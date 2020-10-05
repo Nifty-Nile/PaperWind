@@ -27,30 +27,7 @@ public class MenuActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
-        bottomNavigationView.setSelectedItemId(R.id.home);
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.home:
-                            return true;
-
-                    case R.id.rankpredictor:
-                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.money:
-                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
 
 
     }

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="122dp"
+    android:id="@+id/cardview_id"
     android:layout_height="225dp"
+    android:clickable="true"
+    android:foreground="?selectableItemBackground"
     android:background="#00000000"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     cardview:cardCornerRadius="10dp"

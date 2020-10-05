@@ -9,16 +9,20 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class RankPredictorActivity extends AppCompatActivity {
+public class BoardYearActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rank_predictor);
+        setContentView(R.layout.activity_board_year);
+
+        Intent intent=getIntent();
+        String Title=intent.getExtras().getString("Title");
+        int Thumbnail=intent.getExtras().getInt("Thumbnail");
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
-        bottomNavigationView.setSelectedItemId(R.id.rankpredictor);
+        bottomNavigationView.setSelectedItemId(R.id.home);
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -26,13 +30,12 @@ public class RankPredictorActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                        overridePendingTransition(0,0);
-
                         return true;
 
                     case R.id.rankpredictor:
-                           return true;
+                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.money:
                         startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
                         overridePendingTransition(0,0);
@@ -41,5 +44,6 @@ public class RankPredictorActivity extends AppCompatActivity {
                 return false;
             }
         });
+
     }
 }
