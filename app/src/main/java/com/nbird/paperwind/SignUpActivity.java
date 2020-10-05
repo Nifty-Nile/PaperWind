@@ -98,8 +98,8 @@ public class SignUpActivity extends AppCompatActivity {
         if(name1.isEmpty()){
             username.setError("Field cannot be empty");
             return false;
-        }else if(name1.length()>15){
-            username.setError("Usernaem should be less than 15 characters");
+        }else if(name1.length()>20){
+            username.setError("Usernaem should be less than 20 characters");
             return false;
         }else if(!name1.matches(noWhihteSpaces)){
             username.setError("Usernames cannot carry such characters or spaces");
@@ -122,7 +122,7 @@ public class SignUpActivity extends AppCompatActivity {
             mail.setError("Email should be less than 45 characters");
             return false;
         }else if(!name2.matches(emailPattern)){
-            mail.setError("Email cannot carry such characters or spaces");
+            mail.setError("Email should not carry such characters or spaces");
             return false;
         }
         else
