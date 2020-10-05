@@ -22,7 +22,7 @@ public class MenuActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getApplicationContext(),PaperCategoryBoardsActivity.class);
+                Intent intent=new Intent(getApplicationContext(),Menu1Activity.class);
                 startActivity(intent);
             }
         });

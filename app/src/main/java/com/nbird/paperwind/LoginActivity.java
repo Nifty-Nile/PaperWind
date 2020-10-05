@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                             User user = dataSnapshot.child(username.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(password.getText().toString())) {
                                 Toast.makeText(LoginActivity.this, "Log In Successfull!", Toast.LENGTH_LONG).show();
-                                Intent intent = new Intent(getBaseContext(),MenuActivity.class);
+                                Intent intent = new Intent(getBaseContext(),Menu1Activity.class);
                                 startActivity(intent);
                                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             } else {
