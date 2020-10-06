@@ -131,8 +131,8 @@ return true;
         lstExam.add(new Exam("KVPY",R.drawable.back1,"Kishore Vaigyanik Protsahan Yojana is a scholarship program aimed at encouraging students to take up research careers in the areas of basic sciences by the Indian government."));
         lstExam.add(new Exam("MHCET",R.drawable.back2,"MHT CET (MH CET) or Maharashtra Common Entrance Test is conducted by the State Common Entrance Test Cell for admissions to BE/BTech and Pharmacy programmes (BPharma/PharmaD)."));
         lstExam.add(new Exam("SRMJEE",R.drawable.back14,"The SRM University conducts SRM Joint Engineering Entrance Examination (SRMJEEE) for granting admissions in undergraduate engineering courses. "));
-        lstExam.add(new Exam("X Boards",R.drawable.back2,"A public examination conducted by various boards of education including CISCE, CBSE and state boards for students of class 10 (Senior class)."));
-        lstExam.add(new Exam("XII Boards",R.drawable.back1,"The AISSCE, also called Boards in common language, is an examination conducted every year by the Central Board of Secondary Education on behalf of the Government of India"));
+        lstExam.add(new Exam("KCET",R.drawable.back2,"Karnataka Common Entrance Test is a state-level entrance exam conducted by Karnataka Examination Authority (KEA) organised to provide admission to different UG courses in Karnataka."));
+        lstExam.add(new Exam("IPU-CET",R.drawable.back1,"Indraprastha University Common Entrance Test offers admission to the various UG and PG courses. The admission is done through Common Entrance Test (CET) or on the merit of the qualifying degrees."));
 
     }
 
