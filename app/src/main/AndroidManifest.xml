@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BoardYearActivity"></activity>
+        <activity android:name=".SubjectActivity"></activity>
+        <activity android:name=".BoardYearActivity" />
         <activity android:name=".Menu1Activity" />
         <activity android:name=".Ten_Twelve_Activity" />
         <activity android:name=".RankPredictorActivity" />

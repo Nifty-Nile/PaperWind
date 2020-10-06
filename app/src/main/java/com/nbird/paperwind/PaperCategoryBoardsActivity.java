@@ -2,24 +2,74 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PaperCategoryBoardsActivity extends AppCompatActivity {
+    Button linkButton,previousyearpaperbutton,sampleyearpaper;
+    int Exam,Std,Paper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paper_category_boards);
 
+        Exam=getIntent().getIntExtra("Exam",0);
+        Std=getIntent().getIntExtra("Std",0);
+
+        linkButton=(Button) findViewById(R.id.linkButton);
+        previousyearpaperbutton=(Button) findViewById(R.id.previousyearpaper);
+        sampleyearpaper=(Button) findViewById(R.id.samplepaperbutton);
+
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
 
 
+        previousyearpaperbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),SubjectActivity.class);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",1);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                startActivity(intent);
+            }
+        });
+        sampleyearpaper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),SubjectActivity.class);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",2);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                startActivity(intent);
+            }
+        });
+        linkButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),SubjectActivity.class);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",3);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                startActivity(intent);
+            }
+        });
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -44,5 +94,28 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id=item.getItemId();
+
+        if(id==R.id.share){
+            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.about){
+            Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.history){
+            Toast.makeText(this, "history", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.propic){
+            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.coins){
+            Toast.makeText(this, "Money", Toast.LENGTH_SHORT).show();
+        }
+        return true;
     }
 }

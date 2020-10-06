@@ -15,83 +15,83 @@
         tools:layout_editor_absoluteY="0dp">
 
 
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="0dp"
-        android:layout_height="270dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="12dp"
-        android:background="@drawable/back14"
-        android:elevation="100dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_gravity="left"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                 />
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="12dp"
+            android:background="@drawable/back14"
+            android:elevation="100dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-          <TextView
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:text="Std 10"
-              android:textColor="#000000"
-              android:layout_marginLeft="10dp"
-              android:layout_marginRight="10dp"
-              android:fontFamily="@font/acme"
-              android:textSize="40sp"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp"
-                android:fontFamily="@font/acme"
-                android:text="Std. 10 Previous as well as uefn ru rtbrnjt rrtrutnurtnrutn rtnru urtn gnrtg gutng fhur rufnr rurfrufn rufnr furfn rurnfr ufnrrfrufn rfnurf ."
-                android:textSize="13sp" />
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Std 10"
+                        android:textColor="#000000"
+                        android:textSize="40sp" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Std. 10 Previous as well as uefn ru rtbrnjt rrtrutnurtnrutn rtnru urtn gnrtg gutng fhur rufnr rurfrufn rufnr furfn rurnfr ufnrrfrufn rfnurf ."
+                        android:textSize="13sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
+            <Button
+                android:id="@+id/tenstdbutton"
+                android:layout_width="130dp"
+                android:layout_height="47dp"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:elevation="30dp"
+                android:background="@drawable/roundbuttons"
+                android:fontFamily="@font/aclonica"
+                android:text="Enter"
+                android:textSize="17sp" />
+
+
         </LinearLayout>
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="45dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="15dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/roundbuttons"
-            android:fontFamily="@font/aclonica"
-            android:text="Enter"
-            android:textSize="17sp" />
-
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="270dp"
+        android:layout_height="260dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="12dp"
@@ -148,10 +148,12 @@
         </LinearLayout>
 
         <Button
-            android:layout_width="150dp"
-            android:layout_height="45dp"
+            android:id="@+id/twelvestdbutton"
+            android:layout_width="130dp"
+            android:layout_height="47dp"
             android:layout_gravity="right"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="5dp"
+            android:elevation="30dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/roundbuttons"
             android:fontFamily="@font/aclonica"
@@ -160,6 +162,19 @@
 
 
     </LinearLayout>
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#22ABE0"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:logo="@drawable/ic_baseline_menu_24"
+            app:title="Menu"
+            app:titleMarginStart="40dp" />
 
 
 

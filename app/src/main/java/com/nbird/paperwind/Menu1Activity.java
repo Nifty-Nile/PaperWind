@@ -40,6 +40,7 @@ public class Menu1Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentnext=new Intent(getBaseContext(),Ten_Twelve_Activity.class);
+                intentnext.putExtra("Exam",1);
                 startActivity(intentnext);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
@@ -49,6 +50,7 @@ public class Menu1Activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intentnext=new Intent(getBaseContext(),Ten_Twelve_Activity.class);
+                intentnext.putExtra("Exam",2);
                 startActivity(intentnext);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
