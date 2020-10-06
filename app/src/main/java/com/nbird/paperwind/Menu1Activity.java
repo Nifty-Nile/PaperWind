@@ -8,6 +8,8 @@ import android.graphics.Movie;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -24,11 +26,33 @@ import java.util.List;
 public class Menu1Activity extends AppCompatActivity {
 
     List<Exam> lstExam;
+    Button button1,button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu1);
+
+        button1=(Button) findViewById(R.id.tipButton1);
+        button2=(Button) findViewById(R.id.tipButton);
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentnext=new Intent(getBaseContext(),Ten_Twelve_Activity.class);
+                startActivity(intentnext);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentnext=new Intent(getBaseContext(),Ten_Twelve_Activity.class);
+                startActivity(intentnext);
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            }
+        });
 
         lstExam=new ArrayList<>();
         parto();
@@ -64,6 +88,8 @@ public class Menu1Activity extends AppCompatActivity {
                 return false;
             }
         });
+
+
 
 
     }

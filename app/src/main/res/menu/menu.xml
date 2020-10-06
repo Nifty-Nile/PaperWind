@@ -17,7 +17,7 @@
     <item
         android:title="Profile Pic"
         android:id="@+id/propic"
-        android:icon="@drawable/defaultpropic"
+        android:icon="@drawable/ic_round_person_24"
         app:showAsAction="always"/>
 
 

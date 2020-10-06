@@ -15,7 +15,6 @@
         <activity android:name=".RankPredictorActivity" />
         <activity android:name=".MoneyActivity" />
         <activity android:name=".PaperCategoryBoardsActivity" />
-        <activity android:name=".MenuActivity" />
         <activity android:name=".SignUpActivity" />
         <activity android:name=".SlideActivity" />
         <activity android:name=".LoginActivity" />

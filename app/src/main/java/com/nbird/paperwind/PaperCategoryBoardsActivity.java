@@ -26,7 +26,7 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),MenuActivity.class));
+                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
                         overridePendingTransition(0,0);
                         return true;
 

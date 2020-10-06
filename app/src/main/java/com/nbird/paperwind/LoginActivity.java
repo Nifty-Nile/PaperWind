@@ -54,10 +54,12 @@ public class LoginActivity extends AppCompatActivity {
                             loadingDialog.dismiss();
                             User user = dataSnapshot.child(username.getText().toString()).getValue(User.class);
                             if (user.getPassword().equals(password.getText().toString())) {
-                                Toast.makeText(LoginActivity.this, "Log In Successfull!", Toast.LENGTH_LONG).show();
+
                                 Intent intent = new Intent(getBaseContext(),Menu1Activity.class);
                                 startActivity(intent);
+
                                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                Toast.makeText(LoginActivity.this, "Log In Successfull!", Toast.LENGTH_LONG).show();
                             } else {
 
                                 Toast.makeText(LoginActivity.this, "Wrong Password", Toast.LENGTH_LONG).show();
