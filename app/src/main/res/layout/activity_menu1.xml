@@ -54,7 +54,7 @@
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/cbseicon" />
+            android:background="@drawable/icseicon" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,7 +68,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/acme"
-                android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                android:text="The Indian Certificate of Secondary Education is an examination conducted by the Council for the Indian School Certificate Examination."
                 android:textColor="#000000"
                 android:textSize="12sp" />
 
@@ -83,7 +83,7 @@
                 android:background="@drawable/roundbuttons"
                 android:fontFamily="@font/aclonica"
                 android:gravity="center"
-                android:text="Get Papers" />
+                android:text="ICSE" />
 
 
         </LinearLayout>
@@ -123,7 +123,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/acme"
-                android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                android:text="The Central Board of Secondary Education is a national level board of education in India controlled by Union Government of India."
                 android:textColor="#000000"
                 android:textSize="12sp" />
 
@@ -138,7 +138,7 @@
                 android:background="@drawable/roundbuttons"
                 android:fontFamily="@font/aclonica"
                 android:gravity="center"
-                android:text="Get Papers" />
+                android:text="CBSE" />
 
 
         </LinearLayout>

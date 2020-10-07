@@ -30,7 +30,7 @@ public class SliderAdapter extends PagerAdapter {
     public String[] slide_Headings={
       "PDF",
       "TEST",
-      "STATISTIC"
+      "STATISTICS"
     };
 
     public String[] slide_descs={
