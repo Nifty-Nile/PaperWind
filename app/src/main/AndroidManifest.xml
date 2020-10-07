@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SubjectActivity"></activity>
+        <activity android:name=".All_sub_cisce12_Activity"></activity>
+        <activity android:name=".All_sub_Cisce10_Activity" />
+        <activity android:name=".Sub_All_Cbse12_Activity" />
+        <activity android:name=".Sub_All_Activity" />
+        <activity android:name=".PreviousYearActivity" />
+        <activity android:name=".SubjectActivity" />
         <activity android:name=".BoardYearActivity" />
         <activity android:name=".Menu1Activity" />
         <activity android:name=".Ten_Twelve_Activity" />

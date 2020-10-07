@@ -40,23 +40,84 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         previousyearpaperbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),SubjectActivity.class);
-                intent.putExtra("Exam",Exam);
-                intent.putExtra("Std",Std);
-                intent.putExtra("Paper",1);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                startActivity(intent);
+
+                if (Exam == 1) {
+                    if (Std == 1) {
+                        Intent intent = new Intent(getBaseContext(), Sub_All_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 1);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getBaseContext(), Sub_All_Cbse12_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 1);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    }
+
+                }
+                if (Exam == 2) {
+                    if (Std == 1) {
+                        Intent intent = new Intent(getBaseContext(), All_sub_Cisce10_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 1);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getBaseContext(), All_sub_cisce12_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 1);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    }
+
+                }
             }
         });
         sampleyearpaper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),SubjectActivity.class);
-                intent.putExtra("Exam",Exam);
-                intent.putExtra("Std",Std);
-                intent.putExtra("Paper",2);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                startActivity(intent);
+                if (Exam == 1) {
+                    if (Std == 1) {
+                        Intent intent = new Intent(getBaseContext(), Sub_All_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 2);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getBaseContext(), Sub_All_Cbse12_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 2);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    }
+
+                }
+                if (Exam == 2) {
+                    if (Std == 1) {
+                        Intent intent = new Intent(getBaseContext(), All_sub_Cisce10_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 2);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getBaseContext(), All_sub_cisce12_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 2);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    }
+
+                }
             }
         });
         linkButton.setOnClickListener(new View.OnClickListener() {
@@ -70,6 +131,8 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
