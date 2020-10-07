@@ -59,16 +59,84 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
                       if(Paper==3){
                           switch (position){
                               case 0:
-                                  Intent browserIntents0=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
-                                  mContext.startActivity(browserIntents0);
+                                  Intent browserIntentxp0=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxp0);
                                   break;
                               case 1:
-                                  Intent browserIntents1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
-                                  mContext.startActivity(browserIntents1);
+                                  Intent browserIntentxp1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxp1);
                                   break;
                               case 2:
-                                  Intent browserIntents2=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
-                                  mContext.startActivity(browserIntents2);
+                                  Intent browserIntentxp2=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxp2);
+                                  break;
+                              case 3:
+                                  Intent browserIntentxp3=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxp3);
+                                  break;
+                              case 4:
+                                  Intent browserIntentxp4=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxp4);
+                                  break;
+                              case 5:
+                                  Intent browserIntentxp5=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxp5);
+                                  break;
+                              case 6:
+                                  Intent browserIntentxp6=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxp6);
+                                  break;
+                              case 7:
+                                  Intent browserIntentxc7=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxc7);
+                                  break;
+                              case 8:
+                                  Intent browserIntentxc8=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxc8);
+                                  break;
+                              case 9:
+                                  Intent browserIntentxc9=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxc9);
+                                  break;
+                              case 10:
+                                  Intent browserIntentxc10=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxc10);
+                                  break;
+                              case 11:
+                                  Intent browserIntentxc11=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxc11);
+                                  break;
+                              case 12:
+                                  Intent browserIntentxc12=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxc12);
+                                  break;
+                              case 13:
+                                  Intent browserIntentxc13=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxc13);
+                                  break;
+                              case 14:
+                                  Intent browserIntentxb14=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxb14);
+                                  break;
+                              case 15:
+                                  Intent browserIntentxb15=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxb15);
+                                  break;
+                              case 16:
+                                  Intent browserIntentxb16=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxb16);
+                                  break;
+                              case 17:
+                                  Intent browserIntentxb17=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxb17);
+                                  break;
+                              case 18:
+                                  Intent browserIntentxb18=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  mContext.startActivity(browserIntentxb18);
+                                  break;
+                              case 19:
+                                  Intent browserIntentxb19=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  mContext.startActivity(browserIntentxb19);
                                   break;
                           }
                       }
