@@ -10,11 +10,17 @@ import android.widget.Button;
 public class All_sub_cisce12_Activity extends AppCompatActivity {
 
     Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13,button14;
+    int Exam,Std,Paper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_sub_cisce12_);
+
+        Exam=getIntent().getIntExtra("Exam",0);
+        Std=getIntent().getIntExtra("Std",0);
+        Paper=getIntent().getIntExtra("Paper",0);
+
 
         button1=(Button) findViewById(R.id.tipButton1);
         button2=(Button) findViewById(R.id.tipButton2);
@@ -39,8 +45,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",1);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -49,8 +58,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",2);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -58,8 +70,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",3);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -68,8 +83,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",4);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -78,8 +96,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",5);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -88,8 +109,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",6);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -98,8 +122,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",7);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -108,8 +135,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",8);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -118,8 +148,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",9);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -128,8 +161,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",10);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -138,8 +174,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",11);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -148,8 +187,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",12);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -158,8 +200,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",13);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -168,8 +213,11 @@ public class All_sub_cisce12_Activity extends AppCompatActivity {
         button14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PreviousYearActivity.class);
+                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
                 intent.putExtra("Chapter",14);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",Std);
+                intent.putExtra("Paper",Paper);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
