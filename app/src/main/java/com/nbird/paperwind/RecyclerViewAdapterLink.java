@@ -59,83 +59,83 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
                       if(Paper==3){
                           switch (position){
                               case 0:
-                                  Intent browserIntentxp0=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxp0=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=i1mfTg-zFsQ&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=9"));
                                   mContext.startActivity(browserIntentxp0);
                                   break;
                               case 1:
-                                  Intent browserIntentxp1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxp1=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=r0OfAIEa878&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=8"));
                                   mContext.startActivity(browserIntentxp1);
                                   break;
                               case 2:
-                                  Intent browserIntentxp2=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxp2=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=n8DL_z2fIcg&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=7"));
                                   mContext.startActivity(browserIntentxp2);
                                   break;
                               case 3:
-                                  Intent browserIntentxp3=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxp3=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=E-zQ51o90tI&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=14"));
                                   mContext.startActivity(browserIntentxp3);
                                   break;
                               case 4:
-                                  Intent browserIntentxp4=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxp4=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=xY6AYgkX2RI&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=13"));
                                   mContext.startActivity(browserIntentxp4);
                                   break;
                               case 5:
-                                  Intent browserIntentxp5=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxp5=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=kkhd4Cg85vI"));
                                   mContext.startActivity(browserIntentxp5);
                                   break;
                               case 6:
-                                  Intent browserIntentxp6=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxp6=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=iOJa4fooldA"));
                                   mContext.startActivity(browserIntentxp6);
                                   break;
                               case 7:
-                                  Intent browserIntentxc7=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxc7=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hEnqBPoL_4E"));
                                   mContext.startActivity(browserIntentxc7);
                                   break;
                               case 8:
-                                  Intent browserIntentxc8=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxc8=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=FCNYhFyhk3U"));
                                   mContext.startActivity(browserIntentxc8);
                                   break;
                               case 9:
-                                  Intent browserIntentxc9=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxc9=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=oRNuhlDW3k0"));
                                   mContext.startActivity(browserIntentxc9);
                                   break;
                               case 10:
-                                  Intent browserIntentxc10=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxc10=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=fgY4CJwYH3I"));
                                   mContext.startActivity(browserIntentxc10);
                                   break;
                               case 11:
-                                  Intent browserIntentxc11=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxc11=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=-hE2Ro8DANA&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=18"));
                                   mContext.startActivity(browserIntentxc11);
                                   break;
                               case 12:
-                                  Intent browserIntentxc12=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxc12=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=qcZzmU2DOh4&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=10"));
                                   mContext.startActivity(browserIntentxc12);
                                   break;
                               case 13:
-                                  Intent browserIntentxc13=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxc13=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=MDRFGyJAuKU"));
                                   mContext.startActivity(browserIntentxc13);
                                   break;
                               case 14:
-                                  Intent browserIntentxb14=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxb14=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=FOLDv1JLzeE"));
                                   mContext.startActivity(browserIntentxb14);
                                   break;
                               case 15:
-                                  Intent browserIntentxb15=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxb15=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=qwE5_P3cqOU&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=16"));
                                   mContext.startActivity(browserIntentxb15);
                                   break;
                               case 16:
-                                  Intent browserIntentxb16=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxb16=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=34ESzqzf_Uo&list=PLwBJMY-LXQs9d7SYR973W0rd1M01eljwo&index=6"));
                                   mContext.startActivity(browserIntentxb16);
                                   break;
                               case 17:
-                                  Intent browserIntentxb17=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxb17=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=tZ3OTdJnBis"));
                                   mContext.startActivity(browserIntentxb17);
                                   break;
                               case 18:
-                                  Intent browserIntentxb18=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
+                                  Intent browserIntentxb18=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=Edcz_MzM5qc&list=PLB7R1sRBe0tmLGMigOQEwtGITmmByy4Ox&index=17"));
                                   mContext.startActivity(browserIntentxb18);
                                   break;
                               case 19:
-                                  Intent browserIntentxb19=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
+                                  Intent browserIntentxb19=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=SANJW_ZIYrc"));
                                   mContext.startActivity(browserIntentxb19);
                                   break;
                           }
