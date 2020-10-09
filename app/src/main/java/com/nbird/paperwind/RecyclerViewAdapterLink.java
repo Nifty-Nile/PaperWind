@@ -3,6 +3,7 @@ package com.nbird.paperwind;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,10 +11,17 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -21,6 +29,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
     private Context mContext;
     private List<Exam> mData;
     int Exam,Std,Paper,Labsub;
+
 
 
     public RecyclerViewAdapterLink(Context mContext,List<Exam> mData,int Exam,int Std,int Paper,int Labsub){
@@ -48,9 +57,26 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference();
+
         holder.tv_exam_title.setText(mData.get(position).getTitle());
-        holder.img_exam_thumbnail.setImageResource(mData.get(position).getThumbnail());
         holder.exam_dis.setText(mData.get(position).getDis());
+
+
+
+
+        switch (Labsub){
+            case 1:
+                holder.cardView.setCardBackgroundColor(Color.parseColor("#ADE1F5"));break;
+            case 2:
+                holder.cardView.setCardBackgroundColor(Color.parseColor("#FAF8C8"));
+                holder.tv_exam_title.setBackgroundResource(R.drawable.lightyellow2);break;
+
+            case 3:
+                holder.cardView.setCardBackgroundColor(Color.parseColor("#CEFAC8"));
+                holder.tv_exam_title.setBackgroundResource(R.drawable.lightgreen2);break;
+        }
 
 
 
@@ -264,7 +290,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
         ImageView img_exam_thumbnail;
         TextView exam_dis;
         CardView cardView;
-        LinearLayout linearLayout;
+
 
 
 

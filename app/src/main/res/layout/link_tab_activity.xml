@@ -13,7 +13,6 @@
         android:id="@+id/linearLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#ADE1F5"
         android:layout_height="match_parent">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/exam_img_id"
@@ -24,7 +23,7 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:scaleType="centerCrop"
-            android:background="#ADE1F5"/>
+            android:background="#00000000"/>
 
         <TextView
             android:id="@+id/exam_dis"
