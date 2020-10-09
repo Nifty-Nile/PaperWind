@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LinkSubjects"></activity>
+        <activity android:name=".FinalRankPredictorActivity"></activity>
+        <activity android:name=".RankPredictorInputActivity" />
+        <activity android:name=".LinkSubjects" />
         <activity android:name=".Pdf_Display_Activity" />
         <activity android:name=".Recycler_Exam_Activity" />
         <activity android:name=".All_sub_cisce12_Activity" />
