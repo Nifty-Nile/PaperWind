@@ -6,6 +6,8 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,11 +38,14 @@ public RecyclerViewAdapter(Context mContext,List<Exam> mData){
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
 
     holder.tv_exam_title.setText(mData.get(position).getTitle());
     holder.img_exam_thumbnail.setImageResource(mData.get(position).getThumbnail());
     holder.exam_dis.setText(mData.get(position).getDis());
+
+
+
 
     holder.cardView.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -74,6 +79,8 @@ public RecyclerViewAdapter(Context mContext,List<Exam> mData){
         cardView=(CardView) itemView.findViewById(R.id.cardview_id);
 
     }
-}
+
+
+    }
 
 }

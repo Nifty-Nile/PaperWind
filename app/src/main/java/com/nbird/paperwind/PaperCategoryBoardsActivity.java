@@ -15,7 +15,7 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PaperCategoryBoardsActivity extends AppCompatActivity {
-    Button linkButton,previousyearpaperbutton,sampleyearpaper;
+    Button linkButton,previousyearpaperbutton,sampleyearpaper,NCERTSolutions;
     int Exam,Std,Paper;
 
     @Override
@@ -29,6 +29,7 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         linkButton=(Button) findViewById(R.id.linkButton);
         previousyearpaperbutton=(Button) findViewById(R.id.previousyearpaper);
         sampleyearpaper=(Button) findViewById(R.id.samplepaperbutton);
+        NCERTSolutions=(Button) findViewById(R.id.ncertSolutions);
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -123,12 +124,35 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         linkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),SubjectActivity.class);
+                Intent intent=new Intent(getBaseContext(),LinkSubjects.class);
                 intent.putExtra("Exam",Exam);
                 intent.putExtra("Std",Std);
                 intent.putExtra("Paper",3);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 startActivity(intent);
+            }
+        });
+        NCERTSolutions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Exam == 1) {
+                    if (Std == 1) {
+                        Intent intent = new Intent(getBaseContext(), Sub_All_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 4);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(getBaseContext(), Sub_All_Cbse12_Activity.class);
+                        intent.putExtra("Exam", Exam);
+                        intent.putExtra("Std", Std);
+                        intent.putExtra("Paper", 4);
+                        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                        startActivity(intent);
+                    }
+
+                }
             }
         });
 

@@ -43,7 +43,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
         loadingDialog = new Dialog(this);
         loadingDialog.setContentView(R.layout.activity_loading);
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        loadingDialog.setCancelable(false);
+        loadingDialog.setCancelable(true);
 
         recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);

@@ -1,9 +1,14 @@
 package com.nbird.paperwind;
 
+import androidx.cardview.widget.CardView;
+
 public class Exam {
+
     private String Title;
     private int Thumbnail;
     private String Dis;
+
+
 
 
 
@@ -15,7 +20,11 @@ public class Exam {
         Title = title;
         Thumbnail = thumbnail;
         Dis=dis;
+
+
     }
+
+
 
     public String getTitle() {
         return Title;
