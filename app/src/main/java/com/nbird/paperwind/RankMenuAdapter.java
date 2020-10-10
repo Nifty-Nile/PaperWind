@@ -46,7 +46,7 @@ public class RankMenuAdapter extends RecyclerView.Adapter<RankMenuAdapter.viewho
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(holder.itemView.getContext(),RankPredictorInputActivity.class);
-                intent.putExtra("RankEE",position);
+                intent.putExtra("RankEE",position+1);
                 holder.itemView.getContext().startActivity(intent);
             }
         });

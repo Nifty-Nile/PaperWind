@@ -66,7 +66,7 @@ public class Pdf_Display_Activity extends AppCompatActivity {
 
 
                 text1.setText(value);
-                Toast.makeText(Pdf_Display_Activity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Pdf_Display_Activity.this, "Loading.....Please Wait", Toast.LENGTH_SHORT).show();
                 String url=text1.getText().toString();
                 new RetrivePdfStream().execute(url);
                 loadingDialog.dismiss();

@@ -5,14 +5,26 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class RankPredictorInputActivity extends AppCompatActivity {
+public class RankPredictorInputActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button rankbutton,collegebutton;
-    int SelectedEntranceExam;
+    int SelectedEntranceExam,score,rank,cast;
     TextInputEditText ranktext,scoretext;
+    private Spinner spinner;
+    private static final String[] paths = {"General","OBC","ST","SC"};
+    private RadioGroup radioGroup;
+    private RadioButton radioButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +34,16 @@ public class RankPredictorInputActivity extends AppCompatActivity {
         collegebutton=(Button) findViewById(R.id.getCollege);
         ranktext=(TextInputEditText) findViewById(R.id.username1);
         scoretext=(TextInputEditText) findViewById(R.id.username);
+        radioGroup = (RadioGroup) findViewById(R.id.radio);
+
+        spinner = (Spinner)findViewById(R.id.spinner1);
+        ArrayAdapter<String>adapter = new ArrayAdapter<String>(RankPredictorInputActivity.this, android.R.layout.simple_spinner_item,paths);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
+
 
 
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
@@ -34,15 +56,31 @@ public class RankPredictorInputActivity extends AppCompatActivity {
                     return;
                 }
 
-                int score = Integer.valueOf(scoretext.getText().toString());
+                score = Integer.valueOf(scoretext.getText().toString());
+
+
+                int i=0;
+                // get selected radio button from radioGroup
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+
+                if(selectedId==2131296536){
+                    i=1;
+                }else{
+                    i=2;
+                }
+
 
                 Intent intent=new Intent(getBaseContext(),FinalRankPredictorActivity.class);
                 intent.putExtra("RankEE",SelectedEntranceExam);
                 intent.putExtra("InputPredictor",1);
                 intent.putExtra("Score1",score);
-                scoretext.setText("");
+                intent.putExtra("Gender",i);
+                intent.putExtra("cast",cast);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
+                scoretext.setText("");
             }
         });
 
@@ -54,16 +92,57 @@ public class RankPredictorInputActivity extends AppCompatActivity {
                     return;
                 }
 
-                int rank = Integer.valueOf(ranktext.getText().toString());
+                rank = Integer.valueOf(ranktext.getText().toString());
+
+                int i=0;
+                // get selected radio button from radioGroup
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                // find the radiobutton by returned id
+
+                if(selectedId==2131296534){
+                    i=1;
+                }else{
+                    i=2;
+                }
 
                 Intent intent=new Intent(getBaseContext(),FinalRankPredictorActivity.class);
                 intent.putExtra("RankEE",SelectedEntranceExam);
                 intent.putExtra("InputPredictor",2);
                 intent.putExtra("Rank1",rank);
+                intent.putExtra("Gender",i);
+                intent.putExtra("cast",cast);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                scoretext.setText("");
             }
         });
+    }
+
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+
+
+
+        switch (position) {
+            case 0:
+                cast=position+1;
+                break;
+            case 1:
+                cast=position+1;
+                break;
+            case 2:
+                cast=position+1;
+                break;
+            case 3:
+                cast=position+1;
+                break;
+
+        }
+    }
+
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // TODO Auto-generated method stub
     }
 
 
@@ -121,5 +200,10 @@ public class RankPredictorInputActivity extends AppCompatActivity {
         else
             ranktext.setError(null);
         return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
