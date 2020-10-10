@@ -106,7 +106,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                     i=2;
                 }
 
-                Intent intent=new Intent(getBaseContext(),FinalRankPredictorActivity.class);
+                Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
                 intent.putExtra("RankEE",SelectedEntranceExam);
                 intent.putExtra("InputPredictor",2);
                 intent.putExtra("Rank1",rank);
