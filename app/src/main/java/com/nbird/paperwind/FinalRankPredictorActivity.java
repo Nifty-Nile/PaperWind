@@ -6,8 +6,11 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,8 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class FinalRankPredictorActivity extends AppCompatActivity {
-    int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber;
+public class FinalRankPredictorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber,Branch;
     TextView exam123,category123,gender123,rank,rankhead,Scoreint;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -27,11 +30,16 @@ public class FinalRankPredictorActivity extends AppCompatActivity {
     TextInputEditText scoretext;
     Button getCollege,donebutton;
     String value;
+    private Spinner spinner2;
+    private static final String[] paths123 = {"CSE","IT","ECE","EEE","ME","TE","Civil"};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_rank_predictor);
+        spinner2 = (Spinner)findViewById(R.id.spinner2);
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(FinalRankPredictorActivity.this, android.R.layout.simple_spinner_item,paths123);
 
 
         exam123=(TextView) findViewById(R.id.textView8);
@@ -49,6 +57,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity {
         score=getIntent().getIntExtra("Score1",0);
         Gender0=getIntent().getIntExtra("Gender",0);
         Cast0=getIntent().getIntExtra("cast",0);
+        Branch=getIntent().getIntExtra("Branch",0);
 
 
         Goldennumber();
@@ -61,6 +70,11 @@ public class FinalRankPredictorActivity extends AppCompatActivity {
         loadingDialog.show();
 
         Scoreint.setText(String.valueOf(score));
+
+        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter1);
+        spinner2.setOnItemSelectedListener(this);
+
 
         myRef.child("RankPredictor").child(String.valueOf(SelectedEntranceExam)).child(String.valueOf(inputdata)).child(String.valueOf(Gender0)).child(String.valueOf(Cast0)).child(String.valueOf(Goldennumber)).addValueEventListener(new ValueEventListener() {
             @Override
@@ -86,6 +100,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity {
                 intent.putExtra("Rank1",value);
                 intent.putExtra("Gender",Gender0);
                 intent.putExtra("cast",Cast0);
+                intent.putExtra("Branch",Branch);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -98,9 +113,47 @@ public class FinalRankPredictorActivity extends AppCompatActivity {
                 intent.putExtra("RankEE",SelectedEntranceExam);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                finish();
             }
         });
 
+    }
+
+    public void onItemSelected(AdapterView<?> parent, View v, int position, long id) {
+
+
+
+            switch (position) {
+                case 0:
+                    Branch=position+1;
+                    break;
+                case 1:
+                    Branch=position+1;
+                    break;
+                case 2:
+                    Branch=position+1;
+                    break;
+                case 3:
+                    Branch=position+1;
+                    break;
+                case 4:
+                    Branch=position+1;
+                    break;
+                case 5:
+                    Branch=position+1;
+                    break;
+                case 6:
+                    Branch=position+1;
+                    break;
+
+
+        }
+
+    }
+
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // TODO Auto-generated method stub
     }
 
 
@@ -291,4 +344,8 @@ public class FinalRankPredictorActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
+    }
 }
