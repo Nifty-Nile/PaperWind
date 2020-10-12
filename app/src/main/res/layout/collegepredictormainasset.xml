@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
     android:orientation="horizontal"
-    android:padding="3dp"
-    android:elevation="5dp"
-    android:layout_marginTop="10dp"
-    android:background="@drawable/stroke100">
-    <ImageView
+    android:padding="5dp"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardElevation="2dp"
+    card_view:cardUseCompatPadding="true"
+    cardview:cardCornerRadius="15dp"
+    android:layout_marginTop="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="@drawable/stroke100"
+   >
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/categoryImage"
-        android:layout_width="130dp"
+        android:layout_width="80dp"
         android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         android:elevation="20dp"
         android:background="@drawable/imagebackground"
         />
@@ -26,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
-        android:fontFamily="@font/bangers"
+        android:fontFamily="@font/acme"
         android:text="IIT Delhi"
         android:textColor="#ffffff"
         android:textSize="33sp" />

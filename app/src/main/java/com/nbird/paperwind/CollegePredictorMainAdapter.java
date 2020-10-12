@@ -14,6 +14,8 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class CollegePredictorMainAdapter extends RecyclerView.Adapter<CollegePredictorMainAdapter.viewholder> {
 
     private List<CollegePredictorMainHolder> listItem;
@@ -41,7 +43,7 @@ public class CollegePredictorMainAdapter extends RecyclerView.Adapter<CollegePre
 
     public class viewholder extends RecyclerView.ViewHolder {
         private TextView title;
-        private ImageView categoryImage;
+        private CircleImageView categoryImage;
         public viewholder(@NonNull View itemView) {
             super(itemView);
             title=itemView.findViewById(R.id.categoryTitle);
