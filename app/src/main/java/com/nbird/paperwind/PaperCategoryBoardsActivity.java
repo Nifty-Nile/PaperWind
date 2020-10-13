@@ -158,23 +158,27 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
 
 
 
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()){
                     case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                        overridePendingTransition(0,0);
                         return true;
 
                     case R.id.rankpredictor:
                         startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.money:
                         startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
                         overridePendingTransition(0,0);
-
                         return true;
                 }
                 return false;

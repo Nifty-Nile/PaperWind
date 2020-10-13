@@ -7,22 +7,51 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class BoardYearActivity extends AppCompatActivity {
 
+    int position;
+    Button previousyearbutton,onlinetestbutton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_board_year);
 
+        previousyearbutton=(Button) findViewById(R.id.previousyearpaper);
+        onlinetestbutton=(Button) findViewById(R.id.onlinetestbutton);
+
+        final Intent intent=getIntent();
+
+        position=intent.getExtras().getInt("position",0);
 
 
-        Intent intent=getIntent();
-        String Title=intent.getExtras().getString("Title");
-        int Thumbnail=intent.getExtras().getInt("Thumbnail");
+        previousyearbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),EntranceExamPreviousRecyclerActivity.class);
+                intent.putExtra("mode",1);
+                intent.putExtra("position",position);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
+
+        onlinetestbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),EntranceRecyclerView.class);
+                intent.putExtra("mode",2);
+                intent.putExtra("position",position);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
@@ -38,6 +67,10 @@ public class BoardYearActivity extends AppCompatActivity {
 
                     case R.id.rankpredictor:
                         startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.money:

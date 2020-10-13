@@ -28,6 +28,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
     private Dialog loadingDialog;
     private List<CollegePredictorMainHolder> list;
     int SelectedEntranceExam,InputText,Rank,Gender,Cast,Branch,PlatinumNumber;
+    String rank123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         Branch=getIntent().getIntExtra("Branch",0);
         InputText=1;
         PlatinumNumber=1;
+        rank123=String.valueOf(Rank);
 
         entranceexamtitle=(TextView) findViewById(R.id.textView8);
         ranktext=(TextView) findViewById(R.id.textView9);
@@ -147,13 +149,13 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         }
         switch (Cast){
             case 1:
-                casttext.setText("Category: "+"General");ranktext.setText("Gen. Rank: "+String.valueOf(Rank));break;
+                casttext.setText("Category: "+"General");ranktext.setText("Gen. Rank: "+rank123);break;
             case 2:
-                casttext.setText("Category: "+"Obc");ranktext.setText("OBC Rank: "+String.valueOf(Rank));break;
+                casttext.setText("Category: "+"Obc");ranktext.setText("OBC Rank: "+rank123);break;
             case 3:
-                casttext.setText("Category: "+"ST");ranktext.setText("ST Rank: "+String.valueOf(Rank));break;
+                casttext.setText("Category: "+"ST");ranktext.setText("ST Rank: "+rank123);break;
             case 4:
-                casttext.setText("Category: "+"SC");ranktext.setText("SC Rank: "+String.valueOf(Rank));break;
+                casttext.setText("Category: "+"SC");ranktext.setText("SC Rank: "+rank123);break;
         }
         switch (Branch){
             case 1:

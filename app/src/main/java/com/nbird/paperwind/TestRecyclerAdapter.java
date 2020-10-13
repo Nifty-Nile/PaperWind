@@ -14,32 +14,28 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Adapter.viewholder> {
+public class TestRecyclerAdapter extends RecyclerView.Adapter<TestRecyclerAdapter.viewholder> {
 
-    private List<Recycler_Exam_Holder> listItem;
-    int Exam,Std,Paper,Chapter;
+    private List<TestRecyclerHolder> listItem;
+    int position,mode;
 
-    public Recycler_Exam_Adapter(List<Recycler_Exam_Holder> listItem,int Exam,int Std,int Paper,int Chapter){
+    public TestRecyclerAdapter(List<TestRecyclerHolder> listItem,int position,int mode){
         this.listItem=listItem;
-        this.Exam=Exam;
-        this.Std=Std;
-        this.Paper=Paper;
-        this.Chapter=Chapter;
+        this.position=position;
+        this.mode=mode;
 
     }
-
-
 
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.customexampdfdisplay,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_item_exams,parent,false);
         return new viewholder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-         holder.setData(listItem.get(position).getImageurl(),listItem.get(position).getName(),listItem.get(position).getSet());
+        holder.setData(listItem.get(position).getImage(),listItem.get(position).getTitle(),listItem.get(position).getDis(),listItem.get(position).getSet());
     }
 
     @Override
@@ -50,29 +46,31 @@ public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Ad
     public class viewholder extends RecyclerView.ViewHolder{
         private TextView title;
         private ImageView categoryImage;
+        private TextView dis;
 
         public viewholder(@NonNull View itemView) {
             super(itemView);
-            title=itemView.findViewById(R.id.categoryTitle);
-            categoryImage=itemView.findViewById(R.id.categoryImage);
+            title=itemView.findViewById(R.id.exam_title);
+            dis=itemView.findViewById(R.id.exam_dis);
+            categoryImage=itemView.findViewById(R.id.exam_img_id);
         }
 
-        public void setData(String imageurl, String name, final int set) {
+        public void setData(String imageurl, String title, String dis,final int set) {
             Glide.with(itemView.getContext()).load(imageurl).into(categoryImage);
-            this.title.setText(name);
+            this.title.setText(title);
+            this.dis.setText(dis);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent=new Intent(itemView.getContext(),Pdf_Display_Activity.class);
-                    intent.putExtra("Exam",Exam);
-                    intent.putExtra("Std",Std);
-                    intent.putExtra("Paper",Paper);
-                    intent.putExtra("Chapter",Chapter);
-                    intent.putExtra("set",set+1);
+                    Intent intent=new Intent(itemView.getContext(),EntranceFormActivity.class);
+                    intent.putExtra("position",position);
+                    intent.putExtra("mode",mode);
+                    intent.putExtra("set",set);
                     itemView.getContext().startActivity(intent);
                 }
             });
         }
     }
 }
+

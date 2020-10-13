@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,18 +7,27 @@
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".Ten_Twelve_Activity">
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomnavigatio"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:background="#22ABE0"
+            app:itemIconTint="@drawable/selector"
+            app:itemTextColor="@drawable/selector"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:menu="@menu/menunav" />
 
 
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="0dp"
-            android:layout_height="260dp"
+            android:layout_height="200dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="30dp"
             android:layout_marginEnd="12dp"
@@ -29,9 +38,10 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:elevation="-20dp"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -62,35 +72,36 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="2dp"
                         android:layout_marginRight="10dp"
                         android:fontFamily="@font/acme"
                         android:text="Std. 10 Previous as well as uefn ru rtbrnjt rrtrutnurtnrutn rtnru urtn gnrtg gutng fhur rufnr rurfrufn rufnr furfn rurnfr ufnrrfrufn rfnurf ."
-                        android:textSize="13sp" />
+                        android:textSize="10sp" />
 
+                    <Button
+                        android:id="@+id/tenstdbutton"
+                        android:layout_width="130dp"
+                        android:layout_height="47dp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:elevation="50dp"
+                        android:background="@drawable/roundbuttons"
+                        android:fontFamily="@font/aclonica"
+                        android:text="Enter"
+                        android:textSize="17sp" />
                 </LinearLayout>
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/tenstdbutton"
-                android:layout_width="130dp"
-                android:layout_height="47dp"
-                android:layout_gravity="right"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:elevation="50dp"
-                android:background="@drawable/roundbuttons"
-                android:fontFamily="@font/aclonica"
-                android:text="Enter"
-                android:textSize="17sp" />
+
 
 
         </LinearLayout>
 
     <LinearLayout
         android:layout_width="0dp"
-        android:layout_height="260dp"
+        android:layout_height="200dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="12dp"
@@ -102,9 +113,9 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -135,28 +146,29 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/acme"
                 android:text="Std. 10 Previous as well as uefn ru rtbrnjt rrtrutnurtnrutn rtnru urtn gnrtg gutng fhur rufnr rurfrufn rufnr furfn rurnfr ufnrrfrufn rfnurf ."
-                android:textSize="13sp" />
+                android:textSize="10sp" />
 
+                <Button
+                    android:id="@+id/twelvestdbutton"
+                    android:layout_width="130dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="10dp"
+                    android:elevation="50dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/roundbuttons"
+                    android:fontFamily="@font/aclonica"
+                    android:text="Enter"
+                    android:textSize="17sp" />
             </LinearLayout>
 
         </LinearLayout>
 
-        <Button
-            android:id="@+id/twelvestdbutton"
-            android:layout_width="130dp"
-            android:layout_height="47dp"
-            android:layout_gravity="right"
-            android:layout_marginTop="5dp"
-            android:elevation="50dp"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/roundbuttons"
-            android:fontFamily="@font/aclonica"
-            android:text="Enter"
-            android:textSize="17sp" />
+
 
 
     </LinearLayout>
@@ -178,6 +190,6 @@
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

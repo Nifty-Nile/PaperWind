@@ -1,11 +1,15 @@
 package com.nbird.paperwind;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Sub_All_Cbse12_Activity extends AppCompatActivity {
     Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11;
@@ -35,6 +39,8 @@ public class Sub_All_Cbse12_Activity extends AppCompatActivity {
 
 
         cigar();
+
+
     }
 
     public void cigar(){

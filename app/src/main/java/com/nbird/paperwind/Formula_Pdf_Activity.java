@@ -23,18 +23,19 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class Pdf_Display_Activity extends AppCompatActivity {
+public class Formula_Pdf_Activity extends AppCompatActivity {
+
     private PDFView pdfView;
     private TextView text1;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
-    int Exam,Std,Paper,Chapter,set;
+    int subject,std,set;
     private Dialog loadingDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pdf__display_);
+        setContentView(R.layout.activity_formula__pdf_);
 
         pdfView=(PDFView) findViewById(R.id.pdfview);
         text1=(TextView) findViewById(R.id.text1);
@@ -45,14 +46,13 @@ public class Pdf_Display_Activity extends AppCompatActivity {
         loadingDialog.setCancelable(false);
 
 
-        Exam=getIntent().getIntExtra("Exam",0);
-        Std=getIntent().getIntExtra("Std",0);
-        Paper=getIntent().getIntExtra("Paper",0);
-        Chapter=getIntent().getIntExtra("Chapter",0);
+        subject=getIntent().getIntExtra("Subject100",0);
+        std=getIntent().getIntExtra("Std100",0);
         set=getIntent().getIntExtra("set",0);
+
         loadingDialog.show();
 
-        myRef.child("PDF").child("SchoolExam").child(String.valueOf(Exam)).child(String.valueOf(Std)).child(String.valueOf(Paper)).child(String.valueOf(Chapter)).orderByChild("setno").equalTo(set).addValueEventListener(new ValueEventListener() {
+        myRef.child("FormulaPDF").child(String.valueOf(std)).child(String.valueOf(subject)).orderByChild("setno").equalTo(set).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String value = "";
@@ -66,7 +66,7 @@ public class Pdf_Display_Activity extends AppCompatActivity {
 
 
                 text1.setText(value);
-                Toast.makeText(Pdf_Display_Activity.this, "Loading.....Please Wait", Toast.LENGTH_LONG).show();
+                Toast.makeText(Formula_Pdf_Activity.this, "Loading.....Please Wait", Toast.LENGTH_LONG).show();
                 String url=text1.getText().toString();
                 new RetrivePdfStream().execute(url);
                 loadingDialog.dismiss();
@@ -75,31 +75,31 @@ public class Pdf_Display_Activity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(Pdf_Display_Activity.this, "Failed To Load", Toast.LENGTH_LONG).show();
+                Toast.makeText(Formula_Pdf_Activity.this, "Failed To Load", Toast.LENGTH_LONG).show();
                 loadingDialog.dismiss();
                 finish();
             }
         });}
 
-        class RetrivePdfStream extends AsyncTask<String,Void, InputStream>{
+    class RetrivePdfStream extends AsyncTask<String,Void, InputStream> {
 
-            @Override
-            protected InputStream doInBackground(String... strings) {
-                InputStream inputStream=null;
-                try {
-                    URL url=new URL(strings[0]);
-                    HttpURLConnection urlConnection=(HttpURLConnection)url.openConnection();
-                    if(urlConnection.getResponseCode()==200){
-                        inputStream=new BufferedInputStream(urlConnection.getInputStream());
-                    }
-                }catch (IOException e){
-                    return null;
+        @Override
+        protected InputStream doInBackground(String... strings) {
+            InputStream inputStream=null;
+            try {
+                URL url=new URL(strings[0]);
+                HttpURLConnection urlConnection=(HttpURLConnection)url.openConnection();
+                if(urlConnection.getResponseCode()==200){
+                    inputStream=new BufferedInputStream(urlConnection.getInputStream());
                 }
-                return inputStream;
+            }catch (IOException e){
+                return null;
             }
-            protected void onPostExecute(InputStream inputStream){
-                pdfView.fromStream(inputStream).load();
-            }
+            return inputStream;
         }
-
+        protected void onPostExecute(InputStream inputStream){
+            pdfView.fromStream(inputStream).load();
+        }
     }
+
+}

@@ -10,8 +10,16 @@
     android:id="@+id/rankpredictor"
     android:title="Rank Predictor"
     android:icon="@drawable/staticon"/>
+
+    <item
+        android:id="@+id/Formulas"
+        android:title="Formulas"
+        android:icon="@drawable/formulaicon"/>
      <item
         android:id="@+id/money"
         android:title="Money"
         android:icon="@drawable/moneyicon"/>
+
+
+
 </menu>

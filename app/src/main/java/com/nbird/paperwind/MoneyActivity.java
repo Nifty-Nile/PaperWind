@@ -34,6 +34,10 @@ public class MoneyActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     case R.id.money:
                           return true;
                 }

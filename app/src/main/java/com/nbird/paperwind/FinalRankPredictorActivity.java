@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class FinalRankPredictorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber,Branch;
+    int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber,Branch,inputrank;
     TextView exam123,category123,gender123,rank,rankhead,Scoreint;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -94,10 +94,11 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         getCollege.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                inputrank=Integer.valueOf(scoretext.getText().toString());
                 Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
                 intent.putExtra("RankEE",SelectedEntranceExam);
                 intent.putExtra("InputPredictor",2);
-                intent.putExtra("Rank1",value);
+                intent.putExtra("Rank1",inputrank);
                 intent.putExtra("Gender",Gender0);
                 intent.putExtra("cast",Cast0);
                 intent.putExtra("Branch",Branch);

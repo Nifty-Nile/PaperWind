@@ -20,10 +20,12 @@ import java.util.List;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 private Context mContext;
 private List<Exam> mData;
+int setter,a,b;
 
-public RecyclerViewAdapter(Context mContext,List<Exam> mData){
+public RecyclerViewAdapter(Context mContext,List<Exam> mData,int setter){
     this.mContext=mContext;
     this.mData=mData;
+    this.setter=setter;
 }
 
     @NonNull
@@ -47,16 +49,19 @@ public RecyclerViewAdapter(Context mContext,List<Exam> mData){
 
 
 
-    holder.cardView.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            Intent intent=new Intent(mContext,BoardYearActivity.class);
-            intent.putExtra("Title",mData.get(position).getTitle());
-            intent.putExtra("Thumbnail",mData.get(position).getThumbnail());
-            mContext.startActivity(intent);
-        }
-    });
-    }
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                a=position;
+                Intent intent = new Intent(mContext, BoardYearActivity.class);
+                intent.putExtra("position", a + 1);
+                mContext.startActivity(intent);
+            }
+        });
+
+
+}
+
 
     @Override
     public int getItemCount() {

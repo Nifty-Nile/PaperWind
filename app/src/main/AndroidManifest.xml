@@ -9,7 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DemoActivity"></activity>
+        <activity android:name=".EntranceFormActivity"></activity>
+        <activity android:name=".EntranceExamPreviousRecyclerActivity" />
+        <activity android:name=".EntranceRecyclerView" />
+        <activity android:name=".Formula_Pdf_Activity" />
+        <activity android:name=".FormulaChRecyclerActivity" />
+        <activity android:name=".FormulaSubjectActivity" />
+        <activity android:name=".FormulaSTDActivity" />
+        <activity android:name=".DemoActivity" />
         <activity android:name=".CollegePredictorMainActivity" />
         <activity android:name=".FinalRankPredictorActivity" />
         <activity android:name=".RankPredictorInputActivity" />

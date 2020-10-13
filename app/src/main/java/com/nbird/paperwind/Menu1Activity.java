@@ -27,6 +27,7 @@ public class Menu1Activity extends AppCompatActivity {
 
     List<Exam> lstExam;
     Button button1,button2;
+    int setter=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class Menu1Activity extends AppCompatActivity {
         lstExam=new ArrayList<>();
         parto();
         RecyclerView myrv=(RecyclerView) findViewById(R.id.recyclerview);
-        RecyclerViewAdapter myAdapter=new RecyclerViewAdapter(this,lstExam);
+        RecyclerViewAdapter myAdapter=new RecyclerViewAdapter(this,lstExam,setter);
         myrv.setLayoutManager(new GridLayoutManager(this,3));
         myrv.setAdapter(myAdapter);
 
@@ -80,6 +81,10 @@ public class Menu1Activity extends AppCompatActivity {
 
                     case R.id.rankpredictor:
                         startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.money:
