@@ -134,7 +134,6 @@ public class SubjectActivity extends AppCompatActivity {
     }
 
     public void cbsephy10() {
-        //physics
         lstExam.add(new Exam("Experiment 1", R.drawable.back2, "To study the dependence of potential difference (V) across a resistor on the current (I) passing through it and determine its resistance. Also plot a graph between V and I."));
         lstExam.add(new Exam("Experiment 2", R.drawable.back1, "To determine the equivalent resistance of two resistors when connected in series."));
         lstExam.add(new Exam("Experiment 3", R.drawable.back2, "To determine the equivalent resistance of two resistors when connected in parallel."));
@@ -169,20 +168,49 @@ public class SubjectActivity extends AppCompatActivity {
 
 
     public void cbsephy12(){
-        lstExam.add(new Exam("Optics",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
+        lstExam.add(new Exam("Experiment 1 (A)",R.drawable.back2,"To determine resistance per cm of a given wire by plotting a graph for potential difference versus current."));
+        lstExam.add(new Exam("Experiment 2 (A)",R.drawable.back2,"To find resistance of a given wire using metre bridge and hence determine the resistivity (specific resistance) of its material."));
+        lstExam.add(new Exam("Experiment 3 (A)",R.drawable.back2,"To verify the laws of combination (series) of resistances using a metre bridge."));
+        lstExam.add(new Exam("Experiment 4 (A)",R.drawable.back2,"To verify the Laws of combination (parallel) of resistances using a metre bridge."));
+        lstExam.add(new Exam("Experiment 5 (A)",R.drawable.back2,"To compare the EMF of two given primary cells using potentiometer."));
+        lstExam.add(new Exam("Experiment 6 (A)",R.drawable.back2,"To determine the internal resistance of given primary cell using potentiometer."));
+        lstExam.add(new Exam("Experiment 7 (A)",R.drawable.back2,"To determine resistance of a galvanometer by half-deflection method and to find its figure of merit."));
+        lstExam.add(new Exam("Experiment 8 (A)",R.drawable.back2,"To convert the given galvanometer (of known resistance and figure of merit) into a voltmeter of desired range and to verify the same."));
+        lstExam.add(new Exam("Experiment 9 (A)",R.drawable.back2,"To convert the given galvanometer (of known resistance and figure of merit) into an ammeter of desired range and to verify the same."));
+        lstExam.add(new Exam("Experiment 10 (A)",R.drawable.back2,"To find the frequency of AC mains with a sonometer."));
+        lstExam.add(new Exam("Experiment 1 (B)",R.drawable.back2,"To find the focal Length of a convex lens by plotting graphs between u and v or between 1/u and 1/v."));
+        lstExam.add(new Exam("Experiment 2 (B)",R.drawable.back2,"To find the focal Length of a concave lens, using a convex lens."));
+        lstExam.add(new Exam("Experiment 3 (B)",R.drawable.back2,"To determine angle of minimum deviation for a given prism by plotting a graph between angle of incidence and angle of deviation."));
+        lstExam.add(new Exam("Experiment 4 (B)",R.drawable.back2,"To determine refractive index of a glass slab using a travelling microscope."));
+        lstExam.add(new Exam("Experiment 5 (B)",R.drawable.back2,"To find refractive index of a liquid by using convex Lens and plane mirror."));
+        lstExam.add(new Exam("Experiment 6 (B)",R.drawable.back2,"To draw the I-V characteristic curve for a p-n junction in forward bias and reverse bias."));
     }
 
     public void cbsechem12(){
-        lstExam.add(new Exam("Optics",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
+        lstExam.add(new Exam("A. Chromatography",R.drawable.back2,"Separation of pigments from extracts of leaves and flowers by paper chromatography and determination of Rf values."));
+        lstExam.add(new Exam("B. Preparation of Inorganic Compounds",R.drawable.back2,"Preparation of double salt of Ferrous Ammonium Sulphate or Potash Alum."));
+        lstExam.add(new Exam("C. Tests for the functional groups",R.drawable.back2,"Unsaturation, alcoholic, phenolic, aldehydic, ketonic, carboxylic and amino (Primary) groups."));
+        lstExam.add(new Exam("D. Characteristic tests and their detection",R.drawable.back2,"Tests of carbohydrates, fats and proteins in pure samples and their detection in given food stuffs."));
+        lstExam.add(new Exam("E. Volumetric Analysis - Titration",R.drawable.back2,"Determination of concentration/Molarity of KMnO4 solution by titrating it against a std solution of Oxalic acid."));
+        lstExam.add(new Exam("F(i). Surface chemistry ",R.drawable.back2,"To Prepare Lyophobic solution."));
+        lstExam.add(new Exam("F(ii). Surface chemistry",R.drawable.back2,"To Prepare Lyophilic solution."));
+        lstExam.add(new Exam("G. Qualitative analysis",R.drawable.back2,"Determination of one cation and one anion in a given salt."));
+
     }
     public void cbsebio12(){
-        lstExam.add(new Exam("Optics",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
+        lstExam.add(new Exam("Experiment 1 (A)",R.drawable.back2,"Prepare a temporary mount of the onion root tip to study mitosis."));
+        lstExam.add(new Exam("Experiment 2 (A)",R.drawable.back2,"Collect and study soil for texture, moisture content, pH & water holding capacity. Correlate with the kinds of plants found in them."));
+        lstExam.add(new Exam("Experiment 3 (A)",R.drawable.back2,"Collect water and study them for pH, clarity and presence of any living organism."));
+        lstExam.add(new Exam("Experiment 4 (A)",R.drawable.back2,"Study the effect of different temperatures & 3 different pH on the activity of salivary amylase on starch."));
+        lstExam.add(new Exam("Experiment 5 (A)",R.drawable.back2,"Isolate DNA from available plant material such as spinach, green pea seeds, papaya, etc."));
+        lstExam.add(new Exam("Experiment 1 (B)",R.drawable.back2,"Flowers adapted to pollination by different agencies (wind, insects, birds)."));
+        lstExam.add(new Exam("Experiment 2 (B)",R.drawable.back2,"Identification of stages of gamete development, i.e., T.S. of testis and T.S. of ovary through permanent slides (from grasshopper mice)."));
+        lstExam.add(new Exam("Experiment 3 (B)",R.drawable.back2,"Meiosis in onion bud cell or grasshopper testis through permanent slides."));
+        lstExam.add(new Exam("Experiment 4 (B)",R.drawable.back2,"T.S. of blastula through permanent slides (Mammalian)."));
+        lstExam.add(new Exam("Experiment 5 (B)",R.drawable.back2,"Prepared pedigree charts of any one of the genetic traits such as rolling of tongue, blood groups, ear lobes, widow’s peak and colour blindness."));
+        lstExam.add(new Exam("Experiment 6 (B)",R.drawable.back2,"Common disease-causing organisms Like Ascaris, Entamoeba, Plasmodium, Ringworm. Comment on symptoms of diseases that they cause."));
+        lstExam.add(new Exam("Experiment 7 (B)",R.drawable.back2,"Two plants and two animals (models/virtual images) found in xeric conditions. Comment upon their morphological adaptations."));
+        lstExam.add(new Exam("Experiment 8 (B)",R.drawable.back2,"Two plants and two animals (models/virtual images) found in aquatic conditions. Comment upon their morphological adaptations"));
     }
 
 
