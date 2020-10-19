@@ -104,6 +104,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                 intent.putExtra("Branch",Branch);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                finish();
             }
         });
 
@@ -261,85 +262,140 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
     }
 
       public void JeeAdvancegold_general() {
-          if (score >= 330) {
+          if (score >= 320) {
               Goldennumber = 1;
           } else if (score >= 300) {
               Goldennumber = 2;
-          } else if (score >= 250) {
+          } else if (score >= 280) {
               Goldennumber = 3;
-          } else if (score >= 200) {
+          } else if (score >= 250) {
               Goldennumber = 4;
-          } else if (score >= 150) {
+          } else if (score >= 230) {
               Goldennumber = 5;
-          } else if (score >= 100) {
+          } else if (score >= 200) {
               Goldennumber = 6;
-          } else if (score >= 50) {
+          } else if (score >= 180) {
               Goldennumber = 7;
-          } else {
+          }else if (score >= 160) {
               Goldennumber = 8;
+          } else if (score >= 150) {
+              Goldennumber = 9;
+          } else if (score >= 140) {
+              Goldennumber = 10;
+          } else if (score >= 135) {
+              Goldennumber = 11;
+          } else if (score >= 130) {
+              Goldennumber = 12;
+          } else if (score >= 120) {
+              Goldennumber = 12;
+          } else if (score >= 110) {
+              Goldennumber = 14;
+          }else if (score >= 100) {
+              Goldennumber = 15;
+          } else if (score >= 90) {
+              Goldennumber = 16;
+          } else if (score >= 80) {
+              Goldennumber = 17;
+          } else if (score >= 70) {
+              Goldennumber = 18;
+          } else if (score >= 60) {
+              Goldennumber = 19;
+          } else if (score >= 50) {
+              Goldennumber = 20;
+          } else if (score >= 30) {
+              Goldennumber = 21;
+          }else if (score >= 10) {
+              Goldennumber = 22;
+          } else  {
+              Goldennumber = 23;
           }
+
 
       }
 
     public void JeeAdvancegold_obc() {
-        if (score >= 330) {
+        if (score >= 310) {
             Goldennumber = 1;
         } else if (score >= 300) {
             Goldennumber = 2;
-        } else if (score >= 250) {
+        } else if (score >= 280) {
             Goldennumber = 3;
-        } else if (score >= 200) {
+        } else if (score >= 260) {
             Goldennumber = 4;
-        } else if (score >= 150) {
+        } else if (score >= 245) {
             Goldennumber = 5;
-        } else if (score >= 100) {
+        } else if (score >= 200) {
             Goldennumber = 6;
-        } else if (score >= 50) {
+        } else if (score >= 180) {
             Goldennumber = 7;
+         } else if (score >= 150) {
+        Goldennumber = 8;
+       } else if (score >= 120) {
+        Goldennumber = 9;
+       } else if (score >= 100) {
+        Goldennumber = 10;
+       } else if (score >= 70) {
+        Goldennumber = 11;
+       }else if (score >= 40) {
+            Goldennumber = 12;
+        } else if (score >= 20) {
+            Goldennumber = 13;
         } else {
-            Goldennumber = 8;
+            Goldennumber = 14;
         }
 
     }
 
     public void JeeAdvancegold_st() {
-        if (score >= 330) {
+        if (score >= 290) {
             Goldennumber = 1;
-        } else if (score >= 300) {
-            Goldennumber = 2;
         } else if (score >= 250) {
-            Goldennumber = 3;
-        } else if (score >= 200) {
-            Goldennumber = 4;
+            Goldennumber = 2;
         } else if (score >= 150) {
+            Goldennumber = 3;
+        } else if (score >= 130) {
+            Goldennumber = 4;
+        } else if (score >= 90) {
             Goldennumber = 5;
-        } else if (score >= 100) {
+        } else if (score >= 70) {
             Goldennumber = 6;
-        } else if (score >= 50) {
+        } else if (score >= 60) {
             Goldennumber = 7;
-        } else {
+        } else if (score >= 40) {
             Goldennumber = 8;
+        } else if (score >= 20) {
+            Goldennumber = 9;
+        } else {
+            Goldennumber = 10;
         }
 
     }
 
     public void JeeAdvancegold_sc() {
-        if (score >= 330) {
+        if (score >= 300) {
             Goldennumber = 1;
-        } else if (score >= 300) {
-            Goldennumber = 2;
         } else if (score >= 250) {
-            Goldennumber = 3;
+            Goldennumber = 2;
         } else if (score >= 200) {
+            Goldennumber = 3;
+        } else if (score >= 170) {
             Goldennumber = 4;
         } else if (score >= 150) {
             Goldennumber = 5;
-        } else if (score >= 100) {
+        } else if (score >= 125) {
             Goldennumber = 6;
-        } else if (score >= 50) {
+        } else if (score >= 100) {
             Goldennumber = 7;
-        } else {
+        } else if (score >= 80) {
             Goldennumber = 8;
+        } else if (score >= 60) {
+            Goldennumber = 9;
+        } else if (score >= 40) {
+            Goldennumber = 10;
+        } else if (score >= 20) {
+            Goldennumber = 11;
+        }else {
+            Goldennumber = 12;
         }
 
     }

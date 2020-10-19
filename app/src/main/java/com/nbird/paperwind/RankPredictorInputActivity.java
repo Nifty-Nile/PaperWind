@@ -24,6 +24,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     private static final String[] paths123 = {"CSE","IT","ECE","EEE","ME","TE","Civil"};
     private RadioGroup radioGroup;
     private RadioButton radioButton;
+    int bomb,totalmarks;
 
 
 
@@ -51,9 +52,9 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
 
 
+        totalmarks=getIntent().getIntExtra("totalmarks",0);
 
-
-
+        scoretext.setText(String.valueOf(totalmarks));
 
 
 
@@ -76,7 +77,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                 // radiobutton by returned id
 
-                if(selectedId==2131296541){
+                if(selectedId==2131296557){
                     i=1;
                 }else{
                     i=2;
@@ -93,6 +94,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
                 scoretext.setText("");
+                finish();
             }
         });
 
@@ -112,7 +114,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                 // find the radiobutton by returned id
 
-                if(selectedId==2131296541){
+                if(selectedId==2131296557){
                     i=1;
                 }else{
                     i=2;
@@ -125,10 +127,10 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 intent.putExtra("Gender",i);
                 intent.putExtra("cast",cast);
                 intent.putExtra("Branch",branch);
-
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 scoretext.setText("");
+                finish();
             }
         });
 
@@ -197,6 +199,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         String name2=scoretext.getText().toString();
         int i,r=0;
         int len=name2.length();
+        int pecaso=Integer.parseInt(name2);
+        bomb=pecaso%1;
 
         if(name2.isEmpty()){
             scoretext.setError("Fields cannot be empty");
@@ -215,10 +219,11 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                     r=r+1;
                 }
             }
-            if(r!=len){
+            if(bomb!=0){
                 scoretext.setError("Score should be an integer");
                 return false;
             }
+
         }
         int inum = Integer.parseInt(name2);
         if(inum>exammarkslimit()){

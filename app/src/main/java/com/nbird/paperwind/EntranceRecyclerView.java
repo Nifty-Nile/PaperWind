@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -46,6 +47,92 @@ public class EntranceRecyclerView extends AppCompatActivity {
         recyclerView.setLayoutManager(new GridLayoutManager(this,3));
         final TestRecyclerAdapter categoryAdapter = new TestRecyclerAdapter(list,position,mode);
         recyclerView.setAdapter(categoryAdapter);
+
+        final SharedPreferences settings = getBaseContext().getSharedPreferences("Physics", 0);
+        final SharedPreferences.Editor editor = settings.edit();
+
+        final SharedPreferences settings1 = getBaseContext().getSharedPreferences("Maths", 0);
+        final SharedPreferences.Editor editor1 = settings1.edit();
+
+        final SharedPreferences settings2 = getBaseContext().getSharedPreferences("Chemistry", 0);
+        final SharedPreferences.Editor editor2 = settings2.edit();
+
+        final SharedPreferences colorblue = getBaseContext().getSharedPreferences("PhysicsColour", 0);
+        final SharedPreferences.Editor editorblue = colorblue.edit();
+
+        final SharedPreferences colorred = getBaseContext().getSharedPreferences("MathsColour", 0);
+        final SharedPreferences.Editor editorred = colorred.edit();
+
+        final SharedPreferences coloryellow = getBaseContext().getSharedPreferences("ChemistryColour", 0);
+        final SharedPreferences.Editor editoryellow = coloryellow.edit();
+
+        final SharedPreferences reviewphy = getBaseContext().getSharedPreferences("ReviewPurplePhy", 0);
+        final SharedPreferences.Editor editorreviewphy = reviewphy.edit();
+
+        final SharedPreferences reviewchem = getBaseContext().getSharedPreferences("ReviewPurpleChem", 0);
+        final SharedPreferences.Editor editorreviewchem = reviewchem.edit();
+
+        final SharedPreferences reviewmaths = getBaseContext().getSharedPreferences("ReviewPurpleMaths", 0);
+        final SharedPreferences.Editor editorreviewmaths = reviewmaths.edit();
+
+        final SharedPreferences condition = getBaseContext().getSharedPreferences("Condition", 0);
+        final SharedPreferences.Editor editorconditioin = condition.edit();
+
+        final SharedPreferences notanswered1 = getBaseContext().getSharedPreferences("notanswered1", 0);
+        final SharedPreferences.Editor editornotanswered1 = notanswered1.edit();
+
+        final SharedPreferences notanswered2 = getBaseContext().getSharedPreferences("notanswered2", 0);
+        final SharedPreferences.Editor editornotanswered2 = notanswered2.edit();
+
+        final SharedPreferences notanswered3 = getBaseContext().getSharedPreferences("notanswered3", 0);
+        final SharedPreferences.Editor editornotanswered3 = notanswered3.edit();
+
+        final SharedPreferences set1 = getBaseContext().getSharedPreferences("set", 0);
+        final SharedPreferences.Editor editorset = set1.edit();
+
+        final SharedPreferences timesaver = getBaseContext().getSharedPreferences("timesaver123", 0);
+        final SharedPreferences.Editor editortimesaver = timesaver.edit();
+
+        final SharedPreferences pausephy = getBaseContext().getSharedPreferences("pausephy123", 0);
+        final SharedPreferences.Editor editorpausephy = pausephy.edit();
+
+        final SharedPreferences pausechem = getBaseContext().getSharedPreferences("pausechem123", 0);
+        final SharedPreferences.Editor editorpausechem = pausechem.edit();
+
+        final SharedPreferences pausemaths = getBaseContext().getSharedPreferences("pausemaths123", 0);
+        final SharedPreferences.Editor editorpausemaths = pausemaths.edit();
+
+        final SharedPreferences counterstopper = getBaseContext().getSharedPreferences("counterstopper123", 0);
+        final SharedPreferences.Editor editorcounterstopper = counterstopper.edit();
+
+        final SharedPreferences minutes100 = getBaseContext().getSharedPreferences("minutes100", 0);
+        final SharedPreferences.Editor editorminutes100 = minutes100.edit();
+
+        final SharedPreferences seconds100 = getBaseContext().getSharedPreferences("seconds100", 0);
+        final SharedPreferences.Editor editorseconds100 = seconds100.edit();
+
+
+        editorminutes100.clear().apply();
+        editorseconds100.clear().apply();
+        editor.clear().apply();
+        editor1.clear().apply();
+        editor2.clear().apply();
+        editorblue.clear().apply();
+        editorred.clear().apply();
+        editoryellow.clear().apply();
+        editorreviewphy.clear().apply();
+        editorreviewchem.clear().apply();
+        editorreviewmaths.clear().apply();
+        editorconditioin.clear().apply();
+        editornotanswered1.clear().apply();
+        editornotanswered2.clear().apply();
+        editornotanswered3.clear().apply();
+        editorset.clear().apply();
+        editortimesaver.clear().apply();
+        editorpausephy.clear().apply();
+        editorpausechem.clear().apply();
+        editorpausemaths.clear().apply();
+        editorcounterstopper.clear().apply();
 
         myRef.child("EntranceExamTestRecyclerView").child(String.valueOf(position)).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

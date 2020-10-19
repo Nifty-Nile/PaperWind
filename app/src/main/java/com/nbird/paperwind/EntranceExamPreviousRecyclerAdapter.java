@@ -14,20 +14,16 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Adapter.viewholder> {
+public class EntranceExamPreviousRecyclerAdapter extends RecyclerView.Adapter<EntranceExamPreviousRecyclerAdapter.viewholder> {
 
-    private List<Recycler_Exam_Holder> listItem;
-    int Exam,Std,Paper,Chapter;
+    private List<EntranceExamPreviousRecylclerHolder> listItem;
+    int position1;
 
-    public Recycler_Exam_Adapter(List<Recycler_Exam_Holder> listItem,int Exam,int Std,int Paper,int Chapter){
+    public EntranceExamPreviousRecyclerAdapter(List<EntranceExamPreviousRecylclerHolder> listItem,int position1){
         this.listItem=listItem;
-        this.Exam=Exam;
-        this.Std=Std;
-        this.Paper=Paper;
-        this.Chapter=Chapter;
+       this.position1=position1;
 
     }
-
 
 
 
@@ -40,7 +36,7 @@ public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Ad
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-         holder.setData(listItem.get(position).getImageurl(),listItem.get(position).getName(),listItem.get(position).getSet());
+        holder.setData(listItem.get(position).getImageurl(),listItem.get(position).getName(),listItem.get(position).getSet());
     }
 
     @Override
@@ -65,15 +61,13 @@ public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Ad
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent=new Intent(itemView.getContext(),Pdf_Display_Activity.class);
-                    intent.putExtra("Exam",Exam);
-                    intent.putExtra("Std",Std);
-                    intent.putExtra("Paper",Paper);
-                    intent.putExtra("Chapter",Chapter);
-                    intent.putExtra("set",set+1);
+                    Intent intent=new Intent(itemView.getContext(),EntranceExamPreviousPDFDisplayActivity.class);
+                    intent.putExtra("position",position1);
+                    intent.putExtra("set",set);
                     itemView.getContext().startActivity(intent);
                 }
             });
         }
     }
 }
+

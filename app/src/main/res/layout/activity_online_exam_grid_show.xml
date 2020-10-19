@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    tools:context=".OnlineExamGridShow">
+
+
+
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grid Activity"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:layout_marginLeft="5dp"
+        android:textStyle="bold"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/timerheading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:layout_gravity="right"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="10dp"
+            android:text="Timer:"
+            android:textColor="#000000"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:layout_gravity="right"
+            android:layout_marginRight="2dp"
+            android:text="175"
+            android:textColor="#000000"
+            android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/don"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:layout_gravity="right"
+            android:layout_marginRight="2dp"
+            android:text=":"
+            android:textColor="#000000"
+            android:textSize="28sp"/>
+        <TextView
+            android:id="@+id/sec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:layout_gravity="right"
+            android:layout_marginRight="10dp"
+            android:text="60"
+            android:textColor="#000000"
+            android:textSize="30sp"/>
+    </LinearLayout>
+
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Physics"
+                android:layout_marginLeft="10dp"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:fontFamily="@font/alegreya_bold"/>
+
+            <GridView
+                android:id="@+id/grid1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:columnWidth="30dp"
+                android:horizontalSpacing="25dp"
+                android:numColumns="6"
+                android:padding="15dp"
+                android:verticalSpacing="20dp"
+                />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Chemistry"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/alegreya_bold"/>
+
+    <GridView
+        android:id="@+id/grid2"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_weight="1"
+        android:columnWidth="30dp"
+        android:horizontalSpacing="25dp"
+        android:numColumns="6"
+        android:padding="15dp"
+        android:verticalSpacing="20dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mathematics"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/alegreya_bold"/>
+
+            <GridView
+                android:id="@+id/grid3"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:columnWidth="30dp"
+                android:horizontalSpacing="25dp"
+                android:numColumns="6"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:verticalSpacing="20dp"
+               />
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/submitbutton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/roundbuttons"
+            android:text="Submit"/>
+
+        <Button
+            android:id="@+id/PauseTestButton"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:textColor="#000000"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="5dp"
+            android:alpha="0"
+            android:background="@drawable/roundbuttonsgreen"
+            android:text="Pause"/>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -35,7 +35,7 @@ public class TestRecyclerAdapter extends RecyclerView.Adapter<TestRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull viewholder holder, int position) {
-        holder.setData(listItem.get(position).getImage(),listItem.get(position).getTitle(),listItem.get(position).getDis(),listItem.get(position).getSet());
+        holder.setData(listItem.get(position).getImage(),listItem.get(position).getTitle(),listItem.get(position).getDis(),listItem.get(position).getSet(),listItem.get(position).getPhy(),listItem.get(position).getChem(),listItem.get(position).getMaths(),listItem.get(position).getBio());
     }
 
     @Override
@@ -55,7 +55,7 @@ public class TestRecyclerAdapter extends RecyclerView.Adapter<TestRecyclerAdapte
             categoryImage=itemView.findViewById(R.id.exam_img_id);
         }
 
-        public void setData(String imageurl, String title, String dis,final int set) {
+        public void setData(String imageurl, String title, String dis,final int set,final int phy,final int chem,final int maths,final int bio) {
             Glide.with(itemView.getContext()).load(imageurl).into(categoryImage);
             this.title.setText(title);
             this.dis.setText(dis);
@@ -63,10 +63,14 @@ public class TestRecyclerAdapter extends RecyclerView.Adapter<TestRecyclerAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent=new Intent(itemView.getContext(),EntranceFormActivity.class);
+                    Intent intent=new Intent(itemView.getContext(),OnlineExamGridShow.class);
                     intent.putExtra("position",position);
                     intent.putExtra("mode",mode);
                     intent.putExtra("set",set);
+                    intent.putExtra("phy",phy);
+                    intent.putExtra("chem",chem);
+                    intent.putExtra("maths",maths);
+                    intent.putExtra("bio",bio);
                     itemView.getContext().startActivity(intent);
                 }
             });

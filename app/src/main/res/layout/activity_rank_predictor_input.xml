@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/rankback"
+    android:background="@drawable/background1"
     tools:context=".RankPredictorInputActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,11 +63,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:checked="true"
+                android:textColor="#000000"
                 android:text="MALE" />
 
             <RadioButton
                 android:id="@+id/radioFemale"
                 android:layout_width="wrap_content"
+                android:textColor="#000000"
                 android:layout_height="wrap_content"
                 android:text="FEMALE" />
 
@@ -96,7 +98,7 @@
             android:layout_marginEnd="10dp"
             android:fontFamily="@font/aclonica"
             android:text="AAkash yaha per heading aur neeche dis."
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -112,7 +114,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/acme"
             android:text="Select your Category"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/spinner1"
             app:layout_constraintTop_toBottomOf="@+id/Text1" />
@@ -123,7 +125,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/acme"
             android:text="Select your Branch"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="15dp"
             app:layout_constraintStart_toEndOf="@+id/spinner2"
             app:layout_constraintTop_toBottomOf="@+id/login" />
@@ -135,8 +137,8 @@
             android:layout_marginStart="15dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/aclonica"
-            android:text="Enter Your Score"
-            android:textColor="#ffffff"
+            android:text="Rank Predictor"
+            android:textColor="#000000"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radio" />
@@ -149,7 +151,7 @@
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/acme"
         android:text="djbfe fye fuef benfuefben fuefneufn efneuf fneunf eufn eu fneufn euf eufn eufn eufe fneufn euf neufn "
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/Text2"
@@ -171,16 +173,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Rank Predictor"
-            android:textColorHint="#ffffff"
-            app:boxStrokeColor="#ffffff"
+            android:hint="Enter Your Score"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="#000000"
             tools:ignore="MissingClass">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff" />
+                android:textColor="#000000" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -199,7 +201,7 @@
         android:elevation="30dp"
         android:fontFamily="@font/aclonica"
         android:text="Get Rank"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout13" />
@@ -211,8 +213,8 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:fontFamily="@font/aclonica"
-        android:text="Enter Your Rank"
-        android:textColor="#ffffff"
+        android:text="College Predictor"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login" />
@@ -233,16 +235,16 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="College Predictor"
-            android:textColorHint="#ffffff"
-            app:boxStrokeColor="#ffffff"
+            android:hint="Enter Your Rank"
+            android:textColorHint="#000000"
+            app:boxStrokeColor="#000000"
             tools:ignore="MissingClass">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#ffffff" />
+                android:textColor="#000000" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -256,7 +258,7 @@
         android:layout_marginEnd="20dp"
         android:fontFamily="@font/acme"
         android:text="djbfe fye fuef benfuefben fuefneufn efneuf fneunf eufn eu fneufn euf eufn eufn eufe fneufn euf neufn "
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/Text3"
@@ -274,7 +276,7 @@
         android:elevation="30dp"
         android:fontFamily="@font/aclonica"
         android:text="Get Colleges"
-        android:textColor="#000000"
+        android:textColor="#ffffff"
         android:textSize="13sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />

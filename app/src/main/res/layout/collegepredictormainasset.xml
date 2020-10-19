@@ -37,8 +37,9 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="5dp"
         android:fontFamily="@font/acme"
+        android:layout_marginTop="5dp"
         android:text="IIT Delhi"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="33sp" />
 
 </LinearLayout>

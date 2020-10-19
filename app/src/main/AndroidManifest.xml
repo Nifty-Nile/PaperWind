@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EntranceFormActivity"></activity>
+        <activity android:name=".EntranceExamPreviousPDFDisplayActivity"></activity>
+        <activity android:name=".Menu100Activity" />
+        <activity android:name=".ScoreActivity" />
+        <activity android:name=".TestMainDisplayActivityASAP" />
+        <activity android:name=".OnlineExamGridShow" />
+        <activity android:name=".EntranceFormActivity" />
         <activity android:name=".EntranceExamPreviousRecyclerActivity" />
         <activity android:name=".EntranceRecyclerView" />
         <activity android:name=".Formula_Pdf_Activity" />

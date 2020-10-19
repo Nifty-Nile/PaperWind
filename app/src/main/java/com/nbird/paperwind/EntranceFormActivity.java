@@ -10,5 +10,7 @@ public class EntranceFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrance_form);
+
+
     }
 }
