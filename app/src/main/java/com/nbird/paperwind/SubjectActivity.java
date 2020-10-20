@@ -216,34 +216,66 @@ public class SubjectActivity extends AppCompatActivity {
 
 
     public void ciscephy10(){
-        lstExam.add(new Exam("Lion",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-    }
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Determine the mass of a metre rule using a spring balance or by balancing it on a knife-edge some point away."));
+        lstExam.add(new Exam("Experiment 2",R.drawable.back2,"Determine the VR and MA of a given pulley system."));
+        lstExam.add(new Exam("Experiment 3",R.drawable.back2,"Trace the course of different rays of light refracting through a rectangular glass slab."));
+        lstExam.add(new Exam("Experiment 4",R.drawable.back2,"Determine the focal length of a convex lens by (a) the distant object method and (b) using a needle and a plane mirror."));
+        lstExam.add(new Exam("Experiment 5",R.drawable.back2,"Determine the focal length of a convex lens by using two pins and formula f = uv/(u+v)."));
+        lstExam.add(new Exam("Experiment 6",R.drawable.back2,"For a triangular prism, trace the course of rays passing through it, measure angles i1, i2, A and δ."));
+        lstExam.add(new Exam("Experiment 7",R.drawable.back2,"For a ray of light incident normally (i1=0) on one face of a prism, trace course of the ray. Measure the angle δ."));
+        lstExam.add(new Exam("Experiment 8",R.drawable.back2,"Calculate the sp. heat of the material of the given calorimeter."));
+        }
     public void ciscechem10(){
-        lstExam.add(new Exam("Lion",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-    }
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Action of heat on the following substances: (a)Copper carbonate, zinc carbonate (b)zinc nitrate, copper nitrate, lead nitrate."));
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Make a solution of the unknown substance."));
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Supply a solution of dilute acid and alkali. Determine which is acidic and which is basic, giving two tests for each."));
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Add concentrated hydrochloric acid to each of the given substances, warm them, make observations, identify any product and make deductions."));
+        }
     public void ciscebio10(){
-        lstExam.add(new Exam("Lion",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-    }
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Observation of permanent slides of stages of mitosis."));
+        lstExam.add(new Exam("Experiment 2",R.drawable.back2,"Experiments demonstrating diffusion, osmosis and absorption."));
+        lstExam.add(new Exam("Experiment 3",R.drawable.back2,"Experiments on Transpiration."));
+        lstExam.add(new Exam("Experiment 4",R.drawable.back2,"Experiments on Photosynthesis."));
+        lstExam.add(new Exam("Experiment 5",R.drawable.back2,"Identification of the structures of the urinary system, heart and kidney (internal structure) and brain (external view)."));
+        lstExam.add(new Exam("Experiment 6",R.drawable.back2,"The identification of different types of blood cells under a microscope."));
+        lstExam.add(new Exam("Experiment 7",R.drawable.back2,"Identification of the internal structure of the Ear and Eye."));
+        lstExam.add(new Exam("Experiment 8",R.drawable.back2,"Identification and location of selected endocrine glands: Adrenal, Pancreas, Thyroid and Pituitary glands."));
+         }
 
     public void ciscephy12(){
-        lstExam.add(new Exam("London",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-    }
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"To find focal length of a convex lens by using u-v method."));
+        lstExam.add(new Exam("Experiment 2",R.drawable.back2,"To find f of a convex lens by displacement method."));
+        lstExam.add(new Exam("Experiment 3",R.drawable.back2,"To determine the focal length of a given convex lens with the help of an auxiliary convex lens."));
+        lstExam.add(new Exam("Experiment 4",R.drawable.back2,"To determine the focal length of a concave lens, using an auxiliary convex lens, not in contact."));
+        lstExam.add(new Exam("Experiment 5",R.drawable.back2,"To determine focal length of concave mirror by using two pins (by u-v method)."));
+        lstExam.add(new Exam("Experiment 6",R.drawable.back2,"To determine the refractive index of a liquid by using a convex lens and a plane mirror."));
+        lstExam.add(new Exam("Experiment 7",R.drawable.back2,"To determine the focal length of a convex mirror using convex lens."));
+        lstExam.add(new Exam("Experiment 8",R.drawable.back2,"Using a metre bridge, determine the resistance of about 100 cm wire. Calculate the specific resistance."));
+        lstExam.add(new Exam("Experiment 9",R.drawable.back2,"Verify Ohm’s law for the given unknown resistance."));
+        lstExam.add(new Exam("Experiment 10",R.drawable.back2,"To compare emfs of two cells using a potentiometer."));
+        lstExam.add(new Exam("Experiment 11",R.drawable.back2,"To determine the internal resistance of a cell by a potentiometer."));
+        lstExam.add(new Exam("Experiment 12",R.drawable.back2,"From a potentiometer set up, measure the fall in potential for increasing lengths of a constantan wire."));
+        lstExam.add(new Exam("Experiment 13",R.drawable.back2,"To verify the laws of combination of resistances (series and parallel) using metre bridge."));
+          }
     public void ciscechem12(){
-        lstExam.add(new Exam("London",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-    }
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Titrations Oxidation-reduction titrations."));
+        lstExam.add(new Exam("Experiment 2",R.drawable.back2,"Study of the rate of reaction"));
+        lstExam.add(new Exam("Experiment 3",R.drawable.back2,"Identification of the following compounds and functional groups based on observations."));
+        lstExam.add(new Exam("Experiment 4",R.drawable.back2,"Characteristic tests of carbohydrates and proteins."));
+        lstExam.add(new Exam("Experiment 5",R.drawable.back2,"Experiments related to pH change using pH paper or universal indicator."));
+        lstExam.add(new Exam("Experiment 6",R.drawable.back2,"Electrochemistry. Setting up a simple voltaic cell."));
+        lstExam.add(new Exam("Experiment 7",R.drawable.back2,"Qualitative analysis: identification of single salt containing one anion and one cation."));
+           }
     public void ciscebio12(){
-        lstExam.add(new Exam("London",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-        lstExam.add(new Exam("JEE Advanced",R.drawable.back2,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
-    }
+        lstExam.add(new Exam("Experiment 1",R.drawable.back2,"Taxonomy: Study floral characteristics through dissection of flowers."));
+        lstExam.add(new Exam("Experiment 2 (i)",R.drawable.back2,"Study of arrangement/distribution of stomata in dicot and monocot leaves."));
+        lstExam.add(new Exam("Experiment 2 (ii)",R.drawable.back2,"Study of soils from two different sites."));
+        lstExam.add(new Exam("Experiment 2 (iii)",R.drawable.back2,"To study the effect of enzyme (amylase) action at three different temperatures and pH on starch solution."));
+        lstExam.add(new Exam("Experiment 2 (iv)",R.drawable.back2,"To isolate DNA from available plant material."));
+        lstExam.add(new Exam("Experiment 3 (i)",R.drawable.back2,"Germination of pollen grain in a nutrient medium."));
+        lstExam.add(new Exam("Experiment 3 (ii)",R.drawable.back2,"T.S. of ovary of any locally available flower."));
+        lstExam.add(new Exam("Experiment 3 (iii)",R.drawable.back2,"T.S. of a hydrophyte stem."));
+        lstExam.add(new Exam("Experiment 3 (iv)",R.drawable.back2,"T.S. of a xerophytic leaf (Nerium)."));
+        lstExam.add(new Exam("Experiment 3 (v)",R.drawable.back2," L.S. of monocot and dicot seed (soaked seeds of maize/wheat, pea/ bean)."));
+         }
 }

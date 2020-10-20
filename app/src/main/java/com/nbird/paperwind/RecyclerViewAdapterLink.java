@@ -238,7 +238,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
                                       break;
                                   case 11:
                                       Intent browserIntentxiip11 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=6nO9bQMI7UE"));
-                                      mContext.startActivity(browserIntentxiip11;
+                                      mContext.startActivity(browserIntentxiip11);
                                       break;
                                   case 12:
                                       Intent browserIntentxiip12 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=AMjCrwoA77A"));
@@ -341,7 +341,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
                                       break;
                                   case 11:
                                       Intent browserIntentxiib11 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://study.com/academy/lesson/plant-adaptations-hydrophytes-mesophytes-xerophytes.html"));
-                                      mContext.startActivity(browserIntentxiib11;
+                                      mContext.startActivity(browserIntentxiib11);
                                       break;
                                   case 12:
                                       Intent browserIntentxiib12 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://study.com/academy/lesson/adaptation-of-plants-in-an-aquatic-habitat.html"));
@@ -358,23 +358,91 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
                               switch (position) {
 
                                   case 0:
-                                      Intent browserIntentq0 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
-                                      mContext.startActivity(browserIntentq0);
+                                      Intent browserIntenticxp0 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=qruu-O4bNkQ"));
+                                      mContext.startActivity(browserIntenticxp0);
+                                      break;
+                                  case 1:
+                                      Intent browserIntenticxp1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=qvwczLJRLj0"));
+                                      mContext.startActivity(browserIntenticxp1);
+                                      break;
+                                  case 2:
+                                      Intent browserIntenticxp2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=FWMja9K8-vc"));
+                                      mContext.startActivity(browserIntenticxp2);
+                                      break;
+                                  case 3:
+                                      Intent browserIntenticxp3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=AElLVGW9kxQ"));
+                                      mContext.startActivity(browserIntenticxp3);
+                                      break;
+                                  case 4:
+                                      Intent browserIntenticxp4 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=6C3UXLwvf-M"));
+                                      mContext.startActivity(browserIntenticxp4);
+                                      break;
+                                  case 5:
+                                      Intent browserIntenticxp5 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=-nuM-Ujd2lE"));
+                                      mContext.startActivity(browserIntenticxp5);
+                                      break;
+                                  case 6:
+                                      Intent browserIntenticxp6 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=-nuM-Ujd2lE"));
+                                      mContext.startActivity(browserIntenticxp6);
+                                      break;
+                                  case 7:
+                                      Intent browserIntenticxp7 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=0sQsPFfGIHM"));
+                                      mContext.startActivity(browserIntenticxp7);
                                       break;
                               }
                           }
                           else if(Labsub==2){
                               switch (position){
                                   case 0:
-                                      Intent browserIntentq1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
-                                      mContext.startActivity(browserIntentq1);
+                                      Intent browserIntenticxc0=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=O_Mpmgd4egU&list=PLwHRG35htDQVZseVeT-0mGOo-T7UG8112"));
+                                      mContext.startActivity(browserIntenticxc0);
+                                      break;
+                                  case 1:
+                                      Intent browserIntenticxc1=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=pzZK1sX1_1U"));
+                                      mContext.startActivity(browserIntenticxc1);
+                                      break;
+                                  case 2:
+                                      Intent browserIntenticxc2=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=8Nsm-ndeBCc"));
+                                      mContext.startActivity(browserIntenticxc2);
+                                      break;
+                                  case 3:
+                                      Intent browserIntenticxc3=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=VRJcn50b21A"));
+                                      mContext.startActivity(browserIntenticxc3);
                                       break;
                               }
                           }else if(Labsub==3) {
                               switch (position) {
                                   case 0:
-                                      Intent browserIntentq2 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
-                                      mContext.startActivity(browserIntentq2);
+                                      Intent browserIntenticxb0 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=W5EmSBq3uuU"));
+                                      mContext.startActivity(browserIntenticxb0);
+                                      break;
+                                  case 1:
+                                      Intent browserIntenticxb1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=_mMnbO31g3U&list=PLdByiA-Hwam--z3TK_lEoWFs3TgCtRFUu&index=17"));
+                                      mContext.startActivity(browserIntenticxb1);
+                                      break;
+                                  case 2:
+                                      Intent browserIntenticxb2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=gXocZZDDPaw"));
+                                      mContext.startActivity(browserIntenticxb2);
+                                      break;
+                                  case 3:
+                                      Intent browserIntenticxb3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=58ZoyWXH0OA"));
+                                      mContext.startActivity(browserIntenticxb3);
+                                      break;
+                                  case 4:
+                                      Intent browserIntenticxb4 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=805VoHIIQCs"));
+                                      mContext.startActivity(browserIntenticxb4);
+                                      break;
+                                  case 5:
+                                      Intent browserIntenticxb5 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=NMVFvY3znBA"));
+                                      mContext.startActivity(browserIntenticxb5);
+                                      break;
+                                  case 6:
+                                      Intent browserIntenticxb6 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=E4h4o8L1ARg"));
+                                      mContext.startActivity(browserIntenticxb6);
+                                      break;
+                                  case 7:
+                                      Intent browserIntenticxb7 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=hs4nh7dx8yw"));
+                                      mContext.startActivity(browserIntenticxb7);
                                       break;
                               }
                           }
@@ -385,23 +453,131 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
                               switch (position) {
 
                                   case 0:
-                                      Intent browserIntentq0 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricoop.nic.in/"));
-                                      mContext.startActivity(browserIntentq0);
+                                      Intent browserIntenticxiip0 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=6nO9bQMI7UE"));
+                                      mContext.startActivity(browserIntenticxiip0);
+                                      break;
+                                  case 1:
+                                      Intent browserIntenticxiip1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=UcaIC28BOHw"));
+                                      mContext.startActivity(browserIntenticxiip1);
+                                      break;
+                                  case 2:
+                                      Intent browserIntenticxiip2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=wU-8SokqyCw"));
+                                      mContext.startActivity(browserIntenticxiip2);
+                                      break;
+                                  case 3:
+                                      Intent browserIntenticxiip3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=6nO9bQMI7UE"));
+                                      mContext.startActivity(browserIntenticxiip3);
+                                      break;
+                                  case 4:
+                                      Intent browserIntenticxiip4 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=j8N1Z6338UQ"));
+                                      mContext.startActivity(browserIntenticxiip4);
+                                      break;
+                                  case 5:
+                                      Intent browserIntenticxiip5 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=Rw2WE81iAFc"));
+                                      mContext.startActivity(browserIntenticxiip5);
+                                      break;
+                                  case 6:
+                                      Intent browserIntenticxiip6 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=POamqkQX630"));
+                                      mContext.startActivity(browserIntenticxiip6);
+                                      break;
+                                  case 7:
+                                      Intent browserIntenticxiip7 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=B-W0eVv6fLI"));
+                                      mContext.startActivity(browserIntenticxiip7);
+                                      break;
+                                  case 8:
+                                      Intent browserIntenticxiip8 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=OU-VWe8kErM"));
+                                      mContext.startActivity(browserIntenticxiip8);
+                                      break;
+                                  case 9:
+                                      Intent browserIntenticxiip9 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=sGcJTeVzqug"));
+                                      mContext.startActivity(browserIntenticxiip9);
+                                      break;
+                                  case 10:
+                                      Intent browserIntenticxiip10 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=PCGPGmtd3Ow"));
+                                      mContext.startActivity(browserIntenticxiip10);
+                                      break;
+                                  case 11:
+                                      Intent browserIntenticxiip11 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=mWE1R5eHtz8"));
+                                      mContext.startActivity(browserIntenticxiip11);
+                                      break;
+                                  case 12:
+                                      Intent browserIntenticxiip12 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=ZUBihmkuEic"));
+                                      mContext.startActivity(browserIntenticxiip12);
                                       break;
                               }
                           }
                           else if(Labsub==2){
                               switch (position){
                                   case 0:
-                                      Intent browserIntentq1=new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
-                                      mContext.startActivity(browserIntentq1);
+                                      Intent browserIntenticxiic0=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=HDUd4KqBKa8"));
+                                      mContext.startActivity(browserIntenticxiic0);
+                                      break;
+                                  case 1:
+                                      Intent browserIntenticxiic1=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=q6qISqX8Ljk"));
+                                      mContext.startActivity(browserIntenticxiic1);
+                                      break;
+                                  case 2:
+                                      Intent browserIntenticxiic2=new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.olabs.edu.in/?sub=73&brch=8&sim=141&cnt=715"));
+                                      mContext.startActivity(browserIntenticxiic2);
+                                      break;
+                                  case 3:
+                                      Intent browserIntenticxiic3=new Intent(Intent.ACTION_VIEW, Uri.parse("https://youtu.be/d-I2JSlEKtA"));
+                                      mContext.startActivity(browserIntenticxiic3);
+                                      break;
+                                  case 4:
+                                      Intent browserIntenticxiic4=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=8Nsm-ndeBCc"));
+                                      mContext.startActivity(browserIntenticxiic4);
+                                      break;
+                                  case 5:
+                                      Intent browserIntenticxiic5=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=KXko8KS1tqk"));
+                                      mContext.startActivity(browserIntenticxiic5);
+                                      break;
+                                  case 6:
+                                      Intent browserIntenticxiic6=new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=gyxgVsXMYq0&list=PL7jfMV2bTYmqnYac3pdt9uaDNCXvffayK"));
+                                      mContext.startActivity(browserIntenticxiic6);
                                       break;
                               }
                           }else if(Labsub==3) {
                               switch (position) {
                                   case 0:
-                                      Intent browserIntentq2 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://agricollegenews.com/"));
-                                      mContext.startActivity(browserIntentq2);
+                                      Intent browserIntenticxiib0 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=GR9oNlNY-aI&list=PLoiqVdX-Y1IvUsBSMW4ie6rrsagrFcEoV"));
+                                      mContext.startActivity(browserIntenticxiib0);
+                                      break;
+                                  case 1:
+                                      Intent browserIntenticxiib1 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=IJLOmIb6q80"));
+                                      mContext.startActivity(browserIntenticxiib1);
+                                      break;
+                                  case 2:
+                                      Intent browserIntenticxiib2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=POivZf4vc-c"));
+                                      mContext.startActivity(browserIntenticxiib2);
+                                      break;
+                                  case 3:
+                                      Intent browserIntenticxiib3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=lXF6yjdyIgY&list=PLoiqVdX-Y1IvUsBSMW4ie6rrsagrFcEoV&index=12"));
+                                      mContext.startActivity(browserIntenticxiib3);
+                                      break;
+                                  case 4:
+                                      Intent browserIntenticxiib4 = new Intent(Intent.ACTION_VIEW, Uri.parse("youtube.com/watch?v=JDCRilb1rD0&list=PLoiqVdX-Y1IvUsBSMW4ie6rrsagrFcEoV&index=17"));
+                                      mContext.startActivity(browserIntenticxiib4);
+                                      break;
+                                  case 5:
+                                      Intent browserIntenticxiib5 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=kBlg4sI_VyM&list=PLoiqVdX-Y1IvUsBSMW4ie6rrsagrFcEoV&index=3"));
+                                      mContext.startActivity(browserIntenticxiib5);
+                                      break;
+                                  case 6:
+                                      Intent browserIntenticxiib6 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=uqC0e7oK26U"));
+                                      mContext.startActivity(browserIntenticxiib6);
+                                      break;
+                                  case 7:
+                                      Intent browserIntenticxiib7 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=022uXou9j_Q"));
+                                      mContext.startActivity(browserIntenticxiib7);
+                                      break;
+                                  case 8:
+                                      Intent browserIntenticxiib8 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=e2zT2W-pyWo"));
+                                      mContext.startActivity(browserIntenticxiib8);
+                                      break;
+                                  case 9:
+                                      Intent browserIntenticxiib9 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=6_uRLqm8uTA"));
+                                      mContext.startActivity(browserIntenticxiib9);
                                       break;
                               }
                           }
