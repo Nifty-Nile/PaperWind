@@ -1,33 +1,29 @@
 package Model;
 
 public class User {
-    private String Mail;
-    private String Password;
+    private int money;
+
 
 
     public User() {
     }
 
+
+
     public User(String mail, String password) {
-        Mail = mail;
-        Password = password;
+        this.money = money;
+
     }
 
-    public String getMail() {
-        return Mail;
+    public int getMoney() {
+        return money;
     }
 
-    public void setMail(String mail) {
-        Mail = mail;
+    public void setMoney(int money) {
+        this.money = money;
     }
 
-    public String getPassword() {
-        return Password;
-    }
 
-    public void setPassword(String password) {
-        Password = password;
-    }
 }
 
 

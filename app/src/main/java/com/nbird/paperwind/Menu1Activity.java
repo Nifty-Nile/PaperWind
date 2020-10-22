@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +27,7 @@ import java.util.List;
 public class Menu1Activity extends AppCompatActivity {
 
     List<Exam> lstExam;
-    Button button1,button2;
+    Button button1,button2,logout;
     int setter=0;
 
     @Override
@@ -36,6 +37,16 @@ public class Menu1Activity extends AppCompatActivity {
 
         button1=(Button) findViewById(R.id.tipButton1);
         button2=(Button) findViewById(R.id.tipButton);
+        logout=(Button) findViewById(R.id.logout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                finish();
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

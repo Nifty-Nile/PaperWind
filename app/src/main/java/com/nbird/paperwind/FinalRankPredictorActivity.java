@@ -212,14 +212,33 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         }
         switch (Cast0){
             case 1:
-                category123.setText("Category: "+"General");
-                rankhead.setText("Gen. Rank:");break;
+                if(SelectedEntranceExam==2){
+                category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
+            }else {
+                category123.setText("Category: " + "General");rankhead.setText("Gen. Rank:");
+                break;
+            }
             case 2:
-                category123.setText("Category: "+"Obc");rankhead.setText("OBC Rank:");break;
+                if(SelectedEntranceExam==2){
+                    category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
+                }else {
+                    category123.setText("Category: " + "Obc");rankhead.setText("OBC Rank:");
+                    break;
+                }
             case 3:
-                category123.setText("Category: "+"ST");rankhead.setText("ST Rank:");break;
+                if(SelectedEntranceExam==2){
+                    category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
+                }else {
+                    category123.setText("Category: " + "ST");rankhead.setText("ST Rank:");
+                    break;
+                }
             case 4:
-                category123.setText("Category: "+"SC");rankhead.setText("SC Rank:");break;
+                if(SelectedEntranceExam==2){
+                    category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
+                }else {
+                    category123.setText("Category: " + "SC");rankhead.setText("SC Rank:");
+                    break;
+                }
         }
 
 
@@ -254,7 +273,21 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
     }
 
     public void JeeMainsgold(){
+        switch (Cast0) {
+            case 1:
+                JeeMainsgold_general();
+                break;
+            case 2:
+                JeeMainsgold_general();
+                break;
+            case 3:
+                JeeMainsgold_general();
+                break;
+            case 4:
+                JeeMainsgold_general();
+                break;
 
+        }
     }
 
     public void Neetgold(){
@@ -398,6 +431,80 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             Goldennumber = 12;
         }
 
+    }
+
+    public void JeeMainsgold_general(){
+        if (score >= 280) {
+            Goldennumber = 1;
+        } else if (score >= 271) {
+            Goldennumber = 2;
+        } else if (score >= 263) {
+            Goldennumber = 3;
+        } else if (score >= 250) {
+            Goldennumber = 4;
+        } else if (score >= 241) {
+            Goldennumber = 5;
+        } else if (score >= 231) {
+            Goldennumber = 6;
+        } else if (score >= 221) {
+            Goldennumber = 7;
+        } else if (score >= 211) {
+            Goldennumber = 8;
+        }else if (score >= 201) {
+            Goldennumber = 9;
+        } else if (score >= 191) {
+            Goldennumber = 10;
+        } else if (score >= 181) {
+            Goldennumber = 11;
+        } else if (score >= 171) {
+            Goldennumber = 12;
+        } else if (score >= 161) {
+            Goldennumber = 13;
+        } else if (score >= 151) {
+            Goldennumber = 14;
+        }else if (score >= 141) {
+            Goldennumber = 15;
+        } else if (score >= 131) {
+            Goldennumber = 16;
+        } else if (score >= 121) {
+            Goldennumber = 17;
+        } else if (score >= 111) {
+            Goldennumber = 18;
+        } else if (score >= 101) {
+            Goldennumber = 19;
+        } else if (score >= 91) {
+            Goldennumber = 20;
+        }else if (score >= 81) {
+            Goldennumber = 21;
+        } else if (score >= 71) {
+            Goldennumber = 22;
+        } else if (score >= 61) {
+            Goldennumber = 23;
+        } else if (score >= 51) {
+            Goldennumber = 24;
+        } else if (score >= 45) {
+            Goldennumber = 25;
+        } else if (score >= 40) {
+            Goldennumber = 26;
+        }else if (score >= 35) {
+            Goldennumber = 27;
+        } else if (score >= 30) {
+            Goldennumber = 28;
+        } else if (score >= 25) {
+            Goldennumber = 29;
+        } else if (score >= 20) {
+            Goldennumber = 30;
+        } else if (score >= 15) {
+            Goldennumber = 31;
+        }else if (score >= 10) {
+            Goldennumber = 32;
+        } else if (score >= 5) {
+            Goldennumber = 33;
+        } else if (score >= 1) {
+            Goldennumber = 34;
+        } else {
+            Goldennumber = 35;
+        }
     }
 
 

@@ -47,7 +47,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username"
+            android:hint="E-Mail"
             android:textColorHint="#000000"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             tools:ignore="MissingClass">
@@ -93,14 +93,14 @@
         <Button
             android:id="@+id/login"
             android:layout_width="180dp"
-            android:layout_height="50dp"
+            android:layout_height="48dp"
             android:elevation="40dp"
             android:layout_weight="1"
             android:text="Login"
             android:textColor="#000000"
             android:fontFamily="@font/aclonica"
             android:textSize="17sp"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:background="@drawable/roundbuttons"/>
     </LinearLayout>
     <LinearLayout
@@ -132,6 +132,17 @@
             android:textColor="#FF8383"/>
 
     </LinearLayout>
+
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/googlesignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="3dp"
+        android:layout_gravity="center"
+        android:shadowRadius="5"
+        />
+
+
 
 
 

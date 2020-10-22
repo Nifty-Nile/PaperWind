@@ -34,6 +34,8 @@ public class SlideActivity extends AppCompatActivity {
         backbutton=(Button) findViewById(R.id.button4);
 
 
+
+
         sliderAdapter=new SliderAdapter(this);
         slideViewPager.setAdapter(sliderAdapter);
 
@@ -44,9 +46,10 @@ public class SlideActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(currentPage==2){
-                    Intent intent=new Intent(getBaseContext(),LoginActivity.class);
+                    Intent intent=new Intent(getBaseContext(),LoginFireBaseActivity.class);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
                 }
                 slideViewPager.setCurrentItem(currentPage+1);
 

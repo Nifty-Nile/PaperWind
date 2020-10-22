@@ -149,13 +149,26 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         }
         switch (Cast){
             case 1:
-                casttext.setText("Category: "+"General");ranktext.setText("Gen. Rank: "+rank123);break;
+
+                    casttext.setText("Category: "+"General");ranktext.setText("Gen. Rank: "+rank123);
+                    break;
+
+
             case 2:
-                casttext.setText("Category: "+"Obc");ranktext.setText("OBC Rank: "+rank123);break;
+
+                    casttext.setText("Category: " + "Obc");ranktext.setText("OBC Rank: " + rank123);
+                    break;
+
             case 3:
-                casttext.setText("Category: "+"ST");ranktext.setText("ST Rank: "+rank123);break;
+
+                    casttext.setText("Category: " + "ST");ranktext.setText("ST Rank: " + rank123);
+                    break;
+
             case 4:
-                casttext.setText("Category: "+"SC");ranktext.setText("SC Rank: "+rank123);break;
+
+                    casttext.setText("Category: " + "SC");ranktext.setText("SC Rank: " + rank123);
+                    break;
+
         }
         switch (Branch){
             case 1:
@@ -209,7 +222,9 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
 
     public void JeeMainsgold(){
 
-    }
+
+        }
+
 
     public void Neetgold(){
 
@@ -298,4 +313,5 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         }
 
     }
+
 }
