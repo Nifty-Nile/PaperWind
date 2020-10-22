@@ -78,7 +78,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/abril_fatface"
-                android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                android:text="Know the question pattern, exam format and assess the difficulty level of each paper for a strong preparation. "
                 android:textSize="12sp" />
 
             <Button
@@ -139,7 +139,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/abril_fatface"
-                android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                android:text="Evaluate youself with real-time exam atmosphere. Get to know your average score and probable college options."
                 android:textSize="12sp" />
 
             <Button

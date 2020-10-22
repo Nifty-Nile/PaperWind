@@ -28,15 +28,15 @@ public class SliderAdapter extends PagerAdapter {
     };
 
     public String[] slide_Headings={
-      "PDF",
-      "TEST",
-      "STATISTICS"
+      "STUDY MATERIAL",
+      "ONLINE TESTS",
+      "COLLEGE PREDICTOR"
     };
 
     public String[] slide_descs={
-      "A statistic is a characteristic of a sample. Generally, a statistic is used to estimate the value of a population parameter. For instance, suppose we selected a random sample of 100 students from a school with 1000 students.",
-      "A statistic is a characteristic of a sample. Generally, a statistic is used to estimate the value of a population parameter. For instance, suppose we selected a random sample of 100 students from a school with 1000 students.",
-      "A statistic is a characteristic of a sample. Generally, a statistic is used to estimate the value of a population parameter. For instance, suppose we selected a random sample of 100 students from a school with 1000 students.",
+      "Access wide range of study material for Boards and Competitive exams ranging from Sample papers, Official previous year papers, Textbook solutions, formulae, labs and many more! ",
+      "What's better than sharpening your skills in real-time exam environment? Practice a wide set of online exams and get to know your true potential!",
+      "Worried about which college you'll get? Relax! we got your post exam stress covered. Presenting the ultimate Rank and College predictor which helps you to find you the college you really deserve.",
     };
     @Override
     public int getCount() {
