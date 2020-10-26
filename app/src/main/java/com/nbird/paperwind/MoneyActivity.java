@@ -111,6 +111,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         Adbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 if (rewardedVideoAd.isLoaded()) {
                     rewardedVideoAd.show();
                 }

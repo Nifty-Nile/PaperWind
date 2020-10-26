@@ -203,18 +203,18 @@ return true;
         switch (menuItem.getItemId()){
 
             case R.id.nav_tos:
-                    Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/106jPg1pKg7BAtKD98HjAg9_StvsjkbD0/view?usp=sharing"));
-                    mContext.startActivity(browserIntenttos);
+                    Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
+                    startActivity(browserIntenttos);
                     break;
 
             case R.id.nav_ref:
-                    Intent browserIntentref = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/1zd1KKf2Teom0bV-vzpTsTj1xYZjanm2p/view?usp=sharing"));
-                    mContext.startActivity(browserIntentref);
+                    Intent browserIntentref = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FREFUNDPOLICY-converted.pdf?alt=media&token=e96d23ac-b165-4261-83a2-2cd0ccc291b0"));
+                    startActivity(browserIntentref);
                     break;
 
             case R.id.nav_ps:
-                    Intent browserIntentps = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/1dsixivT3iSgPPrxtaB4L1DHC1LzkMTRP/view?usp=sharing"));
-                    mContext.startActivity(browserIntentps);
+                    Intent browserIntentps = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FPRIVACYSTATEMENT-converted.pdf?alt=media&token=174353a9-8814-4834-ba16-4db5c38fdfaf"));
+                    startActivity(browserIntentps);
                     break;
 
             default :
