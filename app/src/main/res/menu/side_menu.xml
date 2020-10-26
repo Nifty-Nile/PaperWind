@@ -49,14 +49,28 @@
 
 
 
-    <item android:title="About">
+    <item android:title="Policy(s)">
 
         <menu>
 
+            <group android:checkableBehavior="single">
+
             <item
-                android:id="@+id/nav_contact"
-                android:title="Policy(s)"
+                android:id="@+id/nav_tos"
+                android:title="Terms of Service"
                 android:icon="@drawable/home_icon"/>
+
+                <item
+                    android:id="@+id/nav_ref"
+                    android:title="Refund Policy"
+                    android:icon="@drawable/home_icon"/>
+
+                <item
+                    android:id="@+id/nav_ps"
+                    android:title="Privacy statement"
+                    android:icon="@drawable/home_icon"/>
+
+            </group>
 
         </menu>
 

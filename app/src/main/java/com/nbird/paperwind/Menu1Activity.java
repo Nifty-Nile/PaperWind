@@ -4,8 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Movie;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.view.Gravity;
@@ -35,6 +37,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     List<Exam> lstExam;
     Button button1,button2,logout;
     int setter=0;
+
+    private Context mContext;
 
     //variables
     DrawerLayout drawerLayout;
@@ -195,6 +199,27 @@ return true;
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        switch (menuItem.getItemId()){
+
+            case R.id.nav_tos:
+                    Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/106jPg1pKg7BAtKD98HjAg9_StvsjkbD0/view?usp=sharing"));
+                    mContext.startActivity(browserIntenttos);
+                    break;
+
+            case R.id.nav_ref:
+                    Intent browserIntentref = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/1zd1KKf2Teom0bV-vzpTsTj1xYZjanm2p/view?usp=sharing"));
+                    mContext.startActivity(browserIntentref);
+                    break;
+
+            case R.id.nav_ps:
+                    Intent browserIntentps = new Intent(Intent.ACTION_VIEW, Uri.parse("https://drive.google.com/file/d/1dsixivT3iSgPPrxtaB4L1DHC1LzkMTRP/view?usp=sharing"));
+                    mContext.startActivity(browserIntentps);
+                    break;
+
+            default :
+                        return true;
+        }
         return true;
     }
 
