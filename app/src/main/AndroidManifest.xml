@@ -3,6 +3,7 @@
     package="com.nbird.paperwind">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpFireBaseActivity"></activity>
+        <activity android:name=".ActivityMoneyShift"></activity>
+        <activity android:name=".SignUpFireBaseActivity" />
         <activity android:name=".LoginFireBaseActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".EntranceExamPreviousPDFDisplayActivity" />
@@ -56,9 +58,11 @@
             </intent-filter>
         </activity>
         <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_N5r1riK9QHUU7e"/>
+        <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713" />
-
     </application>
 
 </manifest>

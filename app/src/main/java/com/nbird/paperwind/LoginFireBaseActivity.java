@@ -50,6 +50,8 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=1;
     String personEmail;
+    int money=50;
+
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference table_user = database.getReference("User");
@@ -116,9 +118,10 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(getBaseContext(), "LoggedIn Successfully!", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                            loadingDialog.dismiss();
                             finish();
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                            loadingDialog.dismiss();
+
                         }else{
                             Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             loadingDialog.dismiss();
@@ -234,11 +237,23 @@ public void createRequest(){
                             GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(getApplicationContext());
                             if(account!=null) {
                                 personEmail = account.getEmail();
-                                final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                                final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
 
-                                int moneyuser = moneybalance.getInt(personEmail, 100);
-                                Toast.makeText(getBaseContext(), personEmail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                                User s1=new User(money);
+                                table_user.child(mAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(LoginFireBaseActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                                        }else{
+                                            Toast.makeText(LoginFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                         //       final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                         //       final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                          //      int moneyuser = moneybalance.getInt(personEmail, 100);
+                          //      Toast.makeText(getBaseContext(), personEmail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
                             }
 
                             startActivity(new Intent(getApplicationContext(),Menu1Activity.class));

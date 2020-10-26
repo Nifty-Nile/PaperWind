@@ -4,13 +4,10 @@ public class User {
     private int money;
 
 
-
     public User() {
     }
 
-
-
-    public User(String mail, String password) {
+    public User(int money) {
         this.money = money;
 
     }

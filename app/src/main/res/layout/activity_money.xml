@@ -3,9 +3,515 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/background1"
     android:layout_height="match_parent"
     tools:context=".MoneyActivity">
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="furfn4u 4u f4uf 44"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="un4u 44 ur4ru 4"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="150sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/stroke100"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cbseicon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/papernotestotal"
+                android:layout_width="230dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
+                android:text="Paper Notes: 200"
+                android:textColor="#000000"
+                android:textSize="22sp" />
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/acme"
+                android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/tipButton0"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/roundbuttons"
+                android:elevation="30dp"
+                android:fontFamily="@font/aclonica"
+                android:gravity="center"
+                android:text="Notes Info" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="150dp"
+        android:background="@drawable/blueroundmoney"
+        android:layout_height="190dp"
+        android:elevation="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="30dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/exam_img_id"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/exam_dis"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:text="Earn 1 Paper Note For Free"/>
+
+        <Button
+            android:id="@+id/tipButton1"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:background="@drawable/lightgreen2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Free"/>
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="150dp"
+        android:background="@drawable/blueroundmoney"
+        android:elevation="8dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="10dp">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/exam_img_id2"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+           />
+
+        <TextView
+            android:id="@+id/exam_dis2"
+            android:textSize="20sp"
+            android:textColor="#000000"
+            android:fontFamily="@font/acme"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="67dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:text="Earn 10 Paper Notes"/>
+
+        <Button
+            android:id="@+id/tipButton2"
+            android:textSize="17sp"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:fontFamily="@font/acme"
+            android:background="@drawable/lightgreen2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Rs 10"/>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="150dp"
+                    android:background="@drawable/blueroundmoney"
+                    android:layout_height="190dp"
+                    android:elevation="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="30dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id3"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/exam_dis3"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="Earn 25 Paper Notes"/>
+
+                    <Button
+                        android:id="@+id/tipButton3"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:fontFamily="@font/acme"
+                        android:background="@drawable/lightgreen2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rs 20"/>
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="150dp"
+                    android:background="@drawable/blueroundmoney"
+                    android:layout_height="190dp"
+                    android:elevation="8dp"
+                    android:layout_marginTop="10dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id4"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/exam_dis4"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="Earn 40 Paper Notes"/>
+
+                    <Button
+                        android:id="@+id/tipButton4"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:fontFamily="@font/acme"
+                        android:background="@drawable/lightgreen2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rs 30"/>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="150dp"
+                    android:background="@drawable/blueroundmoney"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="10dp"
+                    android:elevation="8dp"
+                    android:layout_marginRight="30dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id5"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/exam_dis5"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="Earn 75 Paper Notes"/>
+
+                    <Button
+                        android:id="@+id/tipButton5"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:fontFamily="@font/acme"
+                        android:background="@drawable/lightgreen2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rs 50"/>
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="150dp"
+                    android:background="@drawable/blueroundmoney"
+                    android:layout_height="190dp"
+                    android:elevation="8dp"
+                    android:layout_marginTop="10dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id6"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/exam_dis6"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="Earn 160 Paper Notes"/>
+
+                    <Button
+                        android:id="@+id/tipButton6"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:fontFamily="@font/acme"
+                        android:background="@drawable/lightgreen2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rs 100"/>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="150dp"
+                    android:background="@drawable/blueroundmoney"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="10dp"
+                    android:elevation="8dp"
+                    android:layout_marginRight="30dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id7"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/exam_dis7"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="Earn 400 Paper Notes"/>
+
+                    <Button
+                        android:id="@+id/tipButton7"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:fontFamily="@font/acme"
+                        android:background="@drawable/lightgreen2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rs 200"/>
+
+
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="150dp"
+                    android:background="@drawable/blueroundmoney"
+                    android:layout_height="190dp"
+                    android:elevation="8dp"
+                    android:layout_marginTop="10dp">
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id8"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:scaleType="centerCrop"
+                        />
+
+                    <TextView
+                        android:id="@+id/exam_dis8"
+                        android:textSize="20sp"
+                        android:textColor="#000000"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:text="Earn 1200 Paper Notes"/>
+
+                    <Button
+                        android:id="@+id/tipButton8"
+                        android:textSize="17sp"
+                        android:textColor="#000000"
+                        android:gravity="center"
+                        android:fontFamily="@font/acme"
+                        android:background="@drawable/lightgreen2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="Rs 500"/>
+
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigatio"
@@ -21,4 +527,6 @@
         app:layout_constraintStart_toStartOf="@+id/linearLayout"
         app:menu="@menu/menunav" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

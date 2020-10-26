@@ -21,12 +21,20 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import Model.User;
 
 public class SignUpFireBaseActivity extends AppCompatActivity {
     Button movelogin,signup;
     private Dialog loadingDialog;
     TextInputEditText username,mail,password;
     FirebaseAuth fAuth;
+    int money=50;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference reference = database.getReference("User");
+
     String personEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +71,23 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                         if(task.isSuccessful()){
                                 String usermail=mail.getText().toString();
 
-                                final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                                final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+                                User s1=new User(money);
+                                reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(SignUpFireBaseActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                                        }else{
+                                            Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
 
-                                int moneyuser = moneybalance.getInt(usermail, 100);
-                                Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                             //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                             //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                            //    int moneyuser = moneybalance.getInt(usermail, 100);
+                            //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
 
                             startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
                             finish();

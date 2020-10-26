@@ -61,14 +61,7 @@ public class SignUpActivity extends AppCompatActivity {
                             username.setError("Mobile no. Already Exists");
                         }
                         else{
-                            loadingDialog.dismiss();
-                            User user= new User(mail.getText().toString(),password.getText().toString());
-                            table_user.child(username.getText().toString()).setValue(user);
-                            Toast.makeText(SignUpActivity.this,"SignUp Successfull!",Toast.LENGTH_LONG).show();
-                            Intent intent=new Intent(getBaseContext(),MainActivity.class);
-                            startActivity(intent);
-                            overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-                            finish();
+
                         }
 
 
