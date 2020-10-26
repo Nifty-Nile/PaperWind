@@ -2,4 +2,7 @@
     <string name="app_name">Paper Wind</string>
     <string name="APP_ID">ca-app-pub-3940256099942544~3347511713</string>
     <string name="ADMOB_UNIT_ID">ca-app-pub-3940256099942544/5224354917</string>
+
+    <string name="navigation_drawer_open"> Open navigation drawer </string>
+    <string name="navigation_drawer_close"> Close navigation drawer </string>
 </resources>
