@@ -1,19 +1,37 @@
 package com.nbird.paperwind;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class RankPredictorInputActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button rankbutton,collegebutton;
@@ -25,8 +43,11 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     int bomb,totalmarks;
-
-
+    FirebaseAuth fAuth;
+    int value;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference reference1 = database.getReference("User");
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +58,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         ranktext=(TextInputEditText) findViewById(R.id.username1);
         scoretext=(TextInputEditText) findViewById(R.id.username);
         radioGroup = (RadioGroup) findViewById(R.id.radio);
+
+        toolbar = findViewById(R.id.toolbar);
 
         spinner = (Spinner)findViewById(R.id.spinner1);
         spinner2 = (Spinner)findViewById(R.id.spinner2);
@@ -50,6 +73,9 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         spinner2.setAdapter(adapter1);
         spinner2.setOnItemSelectedListener(this);
 
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
 
         totalmarks=getIntent().getIntExtra("totalmarks",0);
@@ -59,42 +85,118 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
 
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
+        fAuth = FirebaseAuth.getInstance();
+        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                value = dataSnapshot.getValue(Integer.class);
+               // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         rankbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
+
+
                 if(!rank()){
                     return;
                 }
 
-                score = Integer.valueOf(scoretext.getText().toString());
+                if(value<=0){
+                    AlertDialog.Builder builder=new AlertDialog.Builder(RankPredictorInputActivity.this,R.style.AlertDialogTheme);
+                    View view1= LayoutInflater.from(RankPredictorInputActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                    builder.setView(view1);
+                    ((TextView) view1.findViewById(R.id.textTitle)).setText("You Have 0 Paper Notes.");
+                    ((TextView) view1.findViewById(R.id.textMessage)).setText("Please get some Paper Notes to use this facility!");
+                    ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
+                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Some Paper Notes!");
+                    ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                    final AlertDialog alertDialog=builder.create();
+
+                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent=new Intent(getBaseContext(),MoneyActivity.class);
+                            startActivity(intent);
+                            alertDialog.dismiss();
+                            finish();
+                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                        }
+                    });
+                    view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            alertDialog.dismiss();
+
+                        }
+                    });
+
+                    if(alertDialog.getWindow()!=null){
+                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                    }
+                    alertDialog.show();
 
 
-                int i=0;
-                // get selected radio button from radioGroup
-                int selectedId = radioGroup.getCheckedRadioButtonId();
+                }else {
 
-                // radiobutton by returned id
 
-                if(selectedId==2131296568){
-                    i=1;
-                }else{
-                    i=2;
+
+                    value = value - 1;
+
+                    reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(RankPredictorInputActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                            } else {
+                                Toast.makeText(RankPredictorInputActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                            }
+                        }
+                    });
+
+
+                    score = Integer.valueOf(scoretext.getText().toString());
+
+
+                    int i = 0;
+                    // get selected radio button from radioGroup
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                    // radiobutton by returned id
+
+                    if (selectedId == 2131296568) {
+                        i = 1;
+                    } else {
+                        i = 2;
+                    }
+
+
+                    Intent intent = new Intent(getBaseContext(), FinalRankPredictorActivity.class);
+                    intent.putExtra("RankEE", SelectedEntranceExam);
+                    intent.putExtra("InputPredictor", 1);
+                    intent.putExtra("Score1", score);
+                    intent.putExtra("Gender", i);
+                    intent.putExtra("cast", cast);
+
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    scoretext.setText("");
+                    finish();
                 }
-
-
-                Intent intent=new Intent(getBaseContext(),FinalRankPredictorActivity.class);
-                intent.putExtra("RankEE",SelectedEntranceExam);
-                intent.putExtra("InputPredictor",1);
-                intent.putExtra("Score1",score);
-                intent.putExtra("Gender",i);
-                intent.putExtra("cast",cast);
-
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_right,R.anim.slide_out_left);
-                scoretext.setText("");
-                finish();
             }
         });
 
@@ -106,33 +208,121 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                     return;
                 }
 
-                rank = Integer.valueOf(ranktext.getText().toString());
+                if(value<=40){
+                    AlertDialog.Builder builder=new AlertDialog.Builder(RankPredictorInputActivity.this,R.style.AlertDialogTheme);
+                    View view1= LayoutInflater.from(RankPredictorInputActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                    builder.setView(view1);
+                    ((TextView) view1.findViewById(R.id.textTitle)).setText("You need 40 Paper Notes!");
+                    ((TextView) view1.findViewById(R.id.textMessage)).setText("To use Rank Predictor you must have 40 Paper Notes!");
+                    ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
+                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Some Paper Notes!");
+                    ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
 
-                int i=0;
-                // get selected radio button from radioGroup
-                int selectedId = radioGroup.getCheckedRadioButtonId();
+                    final AlertDialog alertDialog=builder.create();
 
-                // find the radiobutton by returned id
+                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent=new Intent(getBaseContext(),MoneyActivity.class);
+                            startActivity(intent);
+                            alertDialog.dismiss();
+                            finish();
+                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 
-                if(selectedId==2131296568){
-                    i=1;
+                        }
+                    });
+                    view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            alertDialog.dismiss();
+
+                        }
+                    });
+
+                    if(alertDialog.getWindow()!=null){
+                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                    }
+                    alertDialog.show();
                 }else{
-                    i=2;
-                }
 
-                Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
-                intent.putExtra("RankEE",SelectedEntranceExam);
-                intent.putExtra("InputPredictor",2);
-                intent.putExtra("Rank1",rank);
-                intent.putExtra("Gender",i);
-                intent.putExtra("cast",cast);
-                intent.putExtra("Branch",branch);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                scoretext.setText("");
-                finish();
+                    AlertDialog.Builder builder=new AlertDialog.Builder(RankPredictorInputActivity.this,R.style.AlertDialogTheme);
+                    View view1= LayoutInflater.from(RankPredictorInputActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                    builder.setView(view1);
+                    ((TextView) view1.findViewById(R.id.textTitle)).setText("Use 40 Paper Notes");
+                    ((TextView) view1.findViewById(R.id.textMessage)).setText("Discribe whats inside rank predictor..Aakash HEREREERE");
+                    ((Button) view1.findViewById(R.id.buttonNo)).setText("Cancel");
+                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Pay 40 Paper Notes!");
+                    ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                    final AlertDialog alertDialog=builder.create();
+
+                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            value = value - 40;
+
+                            reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(RankPredictorInputActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                                    } else {
+                                        Toast.makeText(RankPredictorInputActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+                            });
+
+
+
+                            rank = Integer.valueOf(ranktext.getText().toString());
+
+                            int i=0;
+                            // get selected radio button from radioGroup
+                            int selectedId = radioGroup.getCheckedRadioButtonId();
+
+                            // find the radiobutton by returned id
+
+                            if(selectedId==2131296568){
+                                i=1;
+                            }else{
+                                i=2;
+                            }
+                            alertDialog.dismiss();
+                            Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
+                            intent.putExtra("RankEE",SelectedEntranceExam);
+                            intent.putExtra("InputPredictor",2);
+                            intent.putExtra("Rank1",rank);
+                            intent.putExtra("Gender",i);
+                            intent.putExtra("cast",cast);
+                            intent.putExtra("Branch",branch);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                            scoretext.setText("");
+                            finish();
+
+
+
+                        }
+                    });
+                    view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            alertDialog.dismiss();
+
+                        }
+                    });
+
+                    if(alertDialog.getWindow()!=null){
+                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                    }
+                    alertDialog.show();
+
+
+                }
             }
-        });
+                });
+
+
 
     }
 
@@ -278,5 +468,62 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 return 720;
         }
         return 360 ;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id=item.getItemId();
+
+        if(id==R.id.share){
+            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.about){
+            Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.history){
+            Toast.makeText(this, "history", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.propic){
+            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+        }else if(id==R.id.coins){
+            AlertDialog.Builder builder=new AlertDialog.Builder(RankPredictorInputActivity.this,R.style.AlertDialogTheme);
+            View view1= LayoutInflater.from(RankPredictorInputActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+            builder.setView(view1);
+            ((TextView) view1.findViewById(R.id.textTitle)).setText("You have "+value+" Paper Notes");
+            ((TextView) view1.findViewById(R.id.textMessage)).setText("fnef e fuefn eufn euf eeufn ");
+            ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
+            ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Paper Notes!");
+            ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+            final AlertDialog alertDialog=builder.create();
+
+            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(getBaseContext(),MoneyActivity.class);
+                    startActivity(intent);
+                    alertDialog.dismiss();
+                    finish();
+                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                }
+            });
+            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.dismiss();
+
+                }
+            });
+
+            if(alertDialog.getWindow()!=null){
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+            }
+            alertDialog.show();
+        }
+        return true;
     }
 }

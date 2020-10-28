@@ -15,6 +15,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/invisibletimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
         android:id="@+id/textView14"
@@ -183,7 +191,7 @@
             android:layout_height="67dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
-            android:text="Earn 10 Paper Notes"/>
+            android:text="Earn 20 Paper Notes"/>
 
         <Button
             android:id="@+id/tipButton2"
@@ -238,7 +246,7 @@
                         android:layout_height="67dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:text="Earn 25 Paper Notes"/>
+                        android:text="Earn 50 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton3"
@@ -284,7 +292,7 @@
                         android:layout_height="67dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:text="Earn 40 Paper Notes"/>
+                        android:text="Earn 80 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton4"
@@ -340,7 +348,7 @@
                         android:layout_height="67dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:text="Earn 75 Paper Notes"/>
+                        android:text="Earn 150 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton5"
@@ -386,7 +394,7 @@
                         android:layout_height="67dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:text="Earn 160 Paper Notes"/>
+                        android:text="Earn 320 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton6"
@@ -440,7 +448,7 @@
                         android:layout_height="67dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:text="Earn 400 Paper Notes"/>
+                        android:text="Earn 800 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton7"
@@ -486,7 +494,7 @@
                         android:layout_height="67dp"
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
-                        android:text="Earn 1200 Paper Notes"/>
+                        android:text="Earn 2400 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton8"

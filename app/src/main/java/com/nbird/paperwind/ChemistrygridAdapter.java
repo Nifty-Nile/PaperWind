@@ -76,6 +76,8 @@ public class ChemistrygridAdapter extends BaseAdapter {
             boolean answerA3 = notanswered2.getBoolean(String.valueOf(i), false);
             if(answerA2){
                 view1.setBackgroundResource(R.drawable.purplebuttons);
+            }else if(answerA3){
+                view1.setBackgroundResource(R.drawable.roundbuttonsorange);
             }
             else if(answerA1){
                 view1.setBackgroundResource(R.drawable.roundbuttonsgreen);

@@ -3,21 +3,27 @@ package com.nbird.paperwind;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,17 +55,22 @@ import Model.User;
 public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdListener, PaymentResultListener {
     RewardedVideoAd rewardedVideoAd;
     AlertDialog dialog;
-    TextView moneytext, papernotestotal;
+    TextView moneytext, papernotestotal,invisibletimer;
     Button Adbutton, buttonrs10, buttonrs20, buttonrs30, buttonrs50, buttonrs100,buttonrs200,buttonrs500;
-    int value;
+    int value,triggerinteger,timer9int;
+    int numberoftimesvideoplayedin15min;
     FirebaseAuth fAuth;
     String amount;
+    long timermanupulationmin,timermanupulationsec;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference = database.getReference("User");
     final DatabaseReference reference1 = database.getReference("User");
     final DatabaseReference reference2 = database.getReference("User");
     final int UPI_PAYMENT = 0;
     int indicator=0;
+    CountDownTimer countdowntimer;
+    Button nobutton,yesbutton;
+
 
 
     protected void onCreate(final Bundle savedInstanceState) {
@@ -69,6 +80,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         moneytext = (TextView) findViewById(R.id.dis1);
 
         papernotestotal = (TextView) findViewById(R.id.papernotestotal);
+        invisibletimer = (TextView) findViewById(R.id.invisibletimer);
         Adbutton = (Button) findViewById(R.id.tipButton1);
         buttonrs10 = (Button) findViewById(R.id.tipButton2);
         buttonrs20 = (Button) findViewById(R.id.tipButton3);
@@ -77,13 +89,17 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         buttonrs100 = (Button) findViewById(R.id.tipButton6);
         buttonrs200 = (Button) findViewById(R.id.tipButton7);
         buttonrs500 = (Button) findViewById(R.id.tipButton8);
+        yesbutton = (Button) findViewById(R.id.buttonYes);
+        nobutton = (Button) findViewById(R.id.buttonNo);
 
         Checkout.preload(getApplicationContext());
 
-      /*  dialog = new AlertDialog.Builder(this)
-                .setTitle("Title")
-                .setMessage("Example Message")
-                .setPositiveButton("Ok", null)
+
+
+      /* dialog = new AlertDialog.Builder(this)
+                .setTitle("15 min")
+                .setMessage("Come After 15 min please.")
+                .setPositiveButton("Pay Rs 10", null)
                 .setNegativeButton("Cancel", null)
                 .setCancelable(false)
                 .show();
@@ -93,9 +109,8 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
             @Override
             public void onClick(View v) {
-                if (rewardedVideoAd.isLoaded()) {
-                    rewardedVideoAd.show();
-                }
+                indicator = 1;
+                startPayment();
             }
         });
 
@@ -108,13 +123,86 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
             }
         });*/
 
+
         Adbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+               if(numberoftimesvideoplayedin15min<2){
 
-                if (rewardedVideoAd.isLoaded()) {
-                    rewardedVideoAd.show();
+                    if (rewardedVideoAd.isLoaded()) {
+                        numberoftimesvideoplayedin15min++;
+                        rewardedVideoAd.show();
+                    }
                 }
+                else{ //      triggerinteger = triggermanual.getInt(String.valueOf(1), 0);
+                    if(triggerinteger==0){
+                        timer();
+                    }
+                    triggerinteger=1;
+
+                    String lion = invisibletimer.getText().toString();
+
+                    AlertDialog.Builder builder=new AlertDialog.Builder(MoneyActivity.this,R.style.AlertDialogTheme);
+                    View view1= LayoutInflater.from(MoneyActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                    builder.setView(view1);
+                   ((TextView) view1.findViewById(R.id.textTitle)).setText("Come After "+lion+" min");
+                   ((TextView) view1.findViewById(R.id.textMessage)).setText("Come After "+lion+" min to use this facility.Please!");
+                   ((Button) view1.findViewById(R.id.buttonNo)).setText("Cancel");
+                   ((Button) view1.findViewById(R.id.buttonYes)).setText("Urgent? Pay Rs 10");
+                   ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                   final AlertDialog alertDialog=builder.create();
+
+                   view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View view) {
+                           indicator = 1;
+                           startPayment();
+                           alertDialog.dismiss();
+                       }
+                   });
+                   view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                       @Override
+                       public void onClick(View view) {
+                           alertDialog.dismiss();
+                       }
+                   });
+
+                   if(alertDialog.getWindow()!=null){
+                       alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                   }
+                   alertDialog.show();
+
+                /*   dialog = new AlertDialog.Builder(MoneyActivity.this)
+                            .setTitle("Time Left: "+lion+" min")
+                            .setMessage("Come After "+lion+" min to use this facility.Please!")
+                            .setPositiveButton("Urgent? Pay Rs 10", null)
+                            .setNegativeButton("Cancel", null)
+                            .setCancelable(false)
+                            .show();
+
+                   final View customLayout = getLayoutInflater().inflate(R.layout.custom_layout, null);
+
+                   Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
+                    positiveButton.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                            indicator = 1;
+                            startPayment();
+                        }
+                    });
+
+                    Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
+                    negativeButton.setOnClickListener(new View.OnClickListener() {
+
+                        @Override
+                        public void onClick(View v) {
+                           dialog.cancel();
+                        }
+                    });*/
+                }
+
             }
         });
 
@@ -370,10 +458,11 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
     }
 
     public void onPaymentSuccess(String s) {
+
         switch (indicator){
             case 1:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 10;
+                value = value + 20;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -387,7 +476,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 }); break;
             case 2:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 25;
+                value = value + 50;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -401,7 +490,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 });break;
             case 3:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 40;
+                value = value + 80;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -415,7 +504,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 });break;
             case 4:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 75;
+                value = value + 150;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -429,7 +518,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 });break;
             case 5:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 160;
+                value = value + 320;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -443,7 +532,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 });break;
             case 6:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 400;
+                value = value + 800;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -457,7 +546,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 });break;
             case 7:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
-                value = value + 1200;
+                value = value + 2400;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
                 reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -476,6 +565,39 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
     public void onPaymentError(int i, String s) {
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+    }
+
+    public void timer(){
+        countdowntimer=new CountDownTimer(1000*120, 1000) {
+            public void onTick(long millisUntilFinished) {
+                timermanupulationsec= millisUntilFinished/1000;
+                timermanupulationmin=(timermanupulationsec/60)+(1);
+                String goat=String.valueOf(timermanupulationmin);
+                invisibletimer.setText(goat);
+
+
+            }
+
+            public void onFinish() {
+
+
+
+                numberoftimesvideoplayedin15min=0;
+                   triggerinteger=0;
+
+            }
+
+        }.start();
+
+    }
+    public void rs10function(){
+        buttonrs10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                indicator = 1;
+                startPayment();
+            }
+        });
     }
 
 }

@@ -108,7 +108,6 @@
             android:layout_width="0dp"
             android:layout_height="42dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
             android:fontFamily="@font/amaranth_bold"
             android:text="200"
             android:textColor="#000000"
@@ -119,8 +118,8 @@
 
         <TextView
             android:id="@+id/rankhead"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/amaranth_bold"
             android:text="Rank :"
             android:textColor="#000000"
@@ -134,12 +133,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="8dp"
             android:fontFamily="@font/amaranth_bold"
             android:text="2000000-1000000"
             android:textColor="#000000"
             android:textSize="25sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/rankhead"
             app:layout_constraintTop_toTopOf="@+id/rankhead" />
@@ -162,13 +159,12 @@
             android:id="@+id/Text200"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:fontFamily="@font/amarante"
             android:text="Select preffered branch"
             android:textColor="#000000"
             android:textSize="15dp"
-            app:layout_constraintStart_toEndOf="@+id/spinner2"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout14"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
 
         <Spinner
@@ -176,8 +172,7 @@
             style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
             android:background="@android:drawable/btn_dropdown"
             android:backgroundTint="#50C2FF"
             android:elevation="100dp"
@@ -187,7 +182,7 @@
             android:spinnerMode="dropdown"
             app:layout_constraintCircleRadius="45dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
+            app:layout_constraintTop_toBottomOf="@+id/Text200" />
 
         <LinearLayout
             android:id="@+id/linearLayout14"

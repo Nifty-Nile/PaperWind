@@ -35,8 +35,7 @@
             style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="2dp"
             android:background="@android:drawable/btn_dropdown"
             android:backgroundTint="#50C2FF"
             android:focusable="true"
@@ -44,8 +43,8 @@
             android:popupBackground="@color/blue"
             android:spinnerMode="dropdown"
             app:layout_constraintCircleRadius="45dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout13" />
+            app:layout_constraintStart_toStartOf="@+id/Text200"
+            app:layout_constraintTop_toBottomOf="@+id/Text200" />
 
         <RadioGroup
             android:id="@+id/radio"
@@ -128,8 +127,8 @@
             android:text="Select Preffered Branch"
             android:textColor="#000000"
             android:textSize="15sp"
-            app:layout_constraintStart_toEndOf="@+id/spinner2"
-            app:layout_constraintTop_toBottomOf="@+id/login" />
+            app:layout_constraintStart_toStartOf="@+id/linearLayout13"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout13" />
 
         <TextView
             android:id="@+id/Text2"
@@ -192,7 +191,7 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="130dp"
+        android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
@@ -201,9 +200,9 @@
         android:background="@drawable/roundbuttons"
         android:elevation="30dp"
         android:fontFamily="@font/aclonica"
-        android:text="Get Rank"
+        android:text="Get Rank! Pay 1 Paper Note"
         android:textColor="#ffffff"
-        android:textSize="15sp"
+        android:textSize="11sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout13" />
 

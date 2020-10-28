@@ -2,23 +2,29 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Movie;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableString;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -28,6 +34,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +48,11 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     List<Exam> lstExam;
     Button button1,button2,logout;
     int setter=0;
-
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference reference1 = database.getReference("User");
     private Context mContext;
-
+    FirebaseAuth fAuth;
+    int value;
     //variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
@@ -61,6 +74,22 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         setSupportActionBar(toolbar);
 
         //************ Navigation Drawer Menu **************
+
+        fAuth = FirebaseAuth.getInstance();
+        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                value = dataSnapshot.getValue(Integer.class);
+                // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
@@ -162,11 +191,49 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         }else if(id==R.id.about){
             Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.history){
-            Toast.makeText(this, "history", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "History Mode", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(getBaseContext(),ExamRecordActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+
         }else if(id==R.id.propic){
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.coins){
-            Toast.makeText(this, "Money", Toast.LENGTH_SHORT).show();
+            AlertDialog.Builder builder=new AlertDialog.Builder(Menu1Activity.this,R.style.AlertDialogTheme);
+            View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+            builder.setView(view1);
+            ((TextView) view1.findViewById(R.id.textTitle)).setText("You have "+value+" Paper Notes");
+            ((TextView) view1.findViewById(R.id.textMessage)).setText("fnef e fuefn eufn euf eeufn ");
+            ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
+            ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Paper Notes!");
+            ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+            final AlertDialog alertDialog=builder.create();
+
+            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(getBaseContext(),MoneyActivity.class);
+                    startActivity(intent);
+                    alertDialog.dismiss();
+                    finish();
+                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                }
+            });
+            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    alertDialog.dismiss();
+
+                }
+            });
+
+            if(alertDialog.getWindow()!=null){
+                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+            }
+            alertDialog.show();
         }
 return true;
     }

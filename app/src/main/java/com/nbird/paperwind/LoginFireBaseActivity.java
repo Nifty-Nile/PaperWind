@@ -116,7 +116,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(getBaseContext(), "LoggedIn Successfully!", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
                             loadingDialog.dismiss();
                             finish();
