@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context=".SartingGuideActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomnavigatio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomnavigatio"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/hometext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+           />
+
+        <TextView
+            android:id="@+id/predictortext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:id="@+id/formulatext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/moneytext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="40"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar">
+
+        <TextView
+            android:id="@+id/menutext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6" />
+
+        <TextView
+            android:id="@+id/spacetext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="19" />
+
+        <TextView
+            android:id="@+id/updatetext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6" />
+
+        <TextView
+            android:id="@+id/moneyinfotext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="5" />
+
+        <TextView
+            android:id="@+id/threemenutext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="4" />
+
+
+    </LinearLayout>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#22ABE0"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:logo="@drawable/ic_baseline_menu_24"
+        app:title="Menu"
+        app:titleMarginStart="40dp" />
+
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigatio"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="#22ABE0"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:menu="@menu/menunav" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/stroke100"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/icseicon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
+                android:text="Go through a wide range of PREVIOUS YEAR PAPERS, SAMPLE PAPERS, LAB VIDEOS and TEXTBOOK SOLUTIONS for ICSE (X) and ISC (XII) Classes! "
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/tipButton"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/roundbuttons"
+                android:elevation="30dp"
+                android:fontFamily="@font/aclonica"
+                android:gravity="center"
+                android:text="CISCE" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout9"
+        android:layout_width="match_parent"
+        android:layout_height="120sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/stroke100"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/cbseicon" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="217dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/acme"
+                android:text="Complete package of PREVIOUS YEAR PAPERS, SAMPLE PAPERS, LAB VIDEOS and NCERT SOLUTIONS for Classes X and XII is just one click away!"
+                android:textColor="#000000"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/tipButton1"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/roundbuttons"
+                android:elevation="30dp"
+                android:fontFamily="@font/aclonica"
+                android:gravity="center"
+                android:text="CBSE" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/acme"
+        android:text="Entrance Exams"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView1"
+                android:layout_width="110dp"
+                android:layout_height="185dp"
+
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                cardview:cardCornerRadius="20dp"
+                android:layout_margin="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ADE1F5"
+
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id1"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="6dp"
+                        android:background="#ADE1F5"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/exam_dis1"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:textColor="#000000"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:id="@+id/exam_title1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_corners2"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="110dp"
+                android:layout_height="185dp"
+                android:layout_marginLeft="10dp"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                cardview:cardCornerRadius="20dp"
+                android:layout_margin="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ADE1F5"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id2"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="6dp"
+                        android:background="#ADE1F5"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/exam_dis2"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:textColor="#000000"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:id="@+id/exam_title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_corners2"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="110dp"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                cardview:cardCornerRadius="20dp"
+                android:layout_margin="5dp"
+                android:layout_height="185dp"
+                android:layout_marginLeft="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ADE1F5"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="6dp"
+                        android:background="#ADE1F5"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/exam_dis"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:textColor="#000000"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:id="@+id/exam_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_corners2"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView6"
+                android:layout_width="110dp"
+                android:layout_height="185dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ADE1F5"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id6"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="6dp"
+                        android:background="#ADE1F5"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/exam_dis6"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:textColor="#000000"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:id="@+id/exam_title6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_corners2"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView5"
+                android:layout_width="110dp"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                cardview:cardCornerRadius="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="185dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ADE1F5"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id5"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="6dp"
+                        android:background="#ADE1F5"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/exam_dis5"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:textColor="#000000"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:id="@+id/exam_title5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_corners2"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView4"
+                android:layout_width="110dp"
+                xmlns:cardview="http://schemas.android.com/apk/res-auto"
+                cardview:cardCornerRadius="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_height="185dp"
+                android:layout_marginLeft="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#ADE1F5"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/exam_img_id4"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="6dp"
+                        android:background="#ADE1F5"
+                        android:scaleType="centerCrop" />
+
+                    <TextView
+                        android:id="@+id/exam_dis4"
+                        android:layout_width="match_parent"
+                        android:layout_height="67dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:textColor="#000000"
+                        android:textSize="7sp" />
+
+                    <TextView
+                        android:id="@+id/exam_title4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/rounded_corners2"
+                        android:fontFamily="@font/acme"
+                        android:gravity="center"
+                        android:text="Exam"
+                        android:textColor="#000000"
+                        android:textSize="17sp" />
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

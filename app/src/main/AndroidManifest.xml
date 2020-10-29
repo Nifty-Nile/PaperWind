@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ExamRecordActivity"></activity>
+        <activity android:name=".LatestExamUpdates"></activity>
+        <activity android:name=".SartingGuideActivity" />
+        <activity android:name=".ExamRecordActivity" />
         <activity android:name=".ActivityMoneyShift" />
         <activity android:name=".SignUpFireBaseActivity" />
         <activity android:name=".LoginFireBaseActivity" />

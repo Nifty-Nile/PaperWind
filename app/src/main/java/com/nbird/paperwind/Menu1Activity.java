@@ -126,7 +126,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentnext=new Intent(getBaseContext(),Ten_Twelve_Activity.class);
+                Intent intentnext=new Intent(getBaseContext(),SartingGuideActivity.class);
                 intentnext.putExtra("Exam",2);
                 startActivity(intentnext);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
@@ -176,6 +176,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu,menu);
@@ -198,7 +200,9 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
         }else if(id==R.id.propic){
-            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(this,LatestExamUpdates.class);
+            startActivity(intent);
+
         }else if(id==R.id.coins){
             AlertDialog.Builder builder=new AlertDialog.Builder(Menu1Activity.this,R.style.AlertDialogTheme);
             View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));

@@ -564,6 +564,10 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                             intent.putExtra("chem", chem);
                             intent.putExtra("maths", maths);
                             intent.putExtra("score",score);
+                            intent.putExtra("mode",mode);
+
+
+
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             finish();
@@ -727,6 +731,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                             intent.putExtra("score",score);
                             intent.putExtra("minutes",minutes);
                             intent.putExtra("sec",sec);
+                            intent.putExtra("mode",mode);
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             serialnumber.setText("Question No.: "+String.valueOf(subnum)+"/"+list.size());
@@ -915,6 +920,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                         intent.putExtra("chem", chem);
                         intent.putExtra("maths", maths);
                         intent.putExtra("score",score);
+                        intent.putExtra("mode",mode);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                         finish();
@@ -954,6 +960,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
         intent.putExtra("chem", chem);
         intent.putExtra("maths", maths);
         intent.putExtra("score",score);
+        intent.putExtra("mode",mode);
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 

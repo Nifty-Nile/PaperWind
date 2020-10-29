@@ -89,7 +89,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                             //    int moneyuser = moneybalance.getInt(usermail, 100);
                             //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
 
-                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                            startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
                             finish();
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             loadingDialog.dismiss();

@@ -6,7 +6,8 @@
     <color name="transparent">#00000000</color>
     <color name="white">#ffffff</color>
     <color name="blue">#50C2FF</color>
-    <color name="lightblue">#ADE1F5</color>
+    <color name="lightblue">#70538EA5</color>
+    <color name="transparentlightblue">#7E50FFE5</color>
     <color name="lightgreen">#8CF083</color>
     <color name="lightyellow">#EFEB88</color>
     <color name="lightred">#FAC8C8</color>

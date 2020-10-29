@@ -15,9 +15,9 @@
         android:id="@+id/history"/>
 
     <item
-        android:title="Profile Pic"
+        android:title="News Updates"
         android:id="@+id/propic"
-        android:icon="@drawable/ic_round_person_24"
+        android:icon="@drawable/dailyupdates"
         app:showAsAction="always"/>
 
 

@@ -117,7 +117,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                            startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
                             loadingDialog.dismiss();
                             finish();
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
@@ -256,7 +256,7 @@ public void createRequest(){
                           //      Toast.makeText(getBaseContext(), personEmail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
                             }
 
-                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                            startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
 
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             loadingDialog.dismiss();
