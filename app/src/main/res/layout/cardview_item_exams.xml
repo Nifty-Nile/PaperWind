@@ -15,14 +15,13 @@
         android:layout_width="match_parent"
         android:background="#ADE1F5"
         android:layout_height="match_parent">
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
            android:id="@+id/exam_img_id"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="6dp"
             android:layout_marginTop="5dp"
            android:layout_width="match_parent"
            android:layout_height="80dp"
-           android:scaleType="centerCrop"
            android:background="#ADE1F5"/>
 
         <TextView

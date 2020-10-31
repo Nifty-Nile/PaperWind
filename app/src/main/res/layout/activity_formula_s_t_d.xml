@@ -60,7 +60,7 @@
 
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
+                android:background="@drawable/tenstd" />
 
 
             <TextView
@@ -117,7 +117,7 @@
 
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
+                android:background="@drawable/tstd" />
 
 
             <TextView

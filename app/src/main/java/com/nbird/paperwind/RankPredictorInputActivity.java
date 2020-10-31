@@ -178,7 +178,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // radiobutton by returned id
 
-                    if (selectedId == 2131296568) {
+                    if (selectedId == 2131296641) {
                         i = 1;
                     } else {
                         i = 2;
@@ -282,7 +282,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                             // find the radiobutton by returned id
 
-                            if(selectedId==2131296568){
+                            if(selectedId==2131296641){
                                 i=1;
                             }else{
                                 i=2;

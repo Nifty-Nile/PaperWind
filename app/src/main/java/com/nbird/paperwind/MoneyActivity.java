@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
+import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -42,17 +43,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.razorpay.Checkout;
+import com.razorpay.PaymentData;
 import com.razorpay.PaymentResultListener;
+import com.razorpay.PaymentResultWithDataListener;
 
 import org.json.JSONObject;
 
 import java.security.PublicKey;
+import java.sql.Time;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import Model.User;
 
-public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdListener, PaymentResultListener {
+import java.util.Calendar;
+
+
+
+public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdListener, PaymentResultWithDataListener {
     RewardedVideoAd rewardedVideoAd;
     AlertDialog dialog;
     TextView moneytext, papernotestotal,invisibletimer;
@@ -66,17 +75,26 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
     final DatabaseReference reference = database.getReference("User");
     final DatabaseReference reference1 = database.getReference("User");
     final DatabaseReference reference2 = database.getReference("User");
+
     final int UPI_PAYMENT = 0;
     int indicator=0;
     CountDownTimer countdowntimer;
     Button nobutton,yesbutton;
 
+    String paymentId;
+    String mail;
+    String number;
+    String moneyamount;
 
+    Date currentTime;
+    String intcurrentTime;
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_money);
         fAuth = FirebaseAuth.getInstance();
+
+
         moneytext = (TextView) findViewById(R.id.dis1);
 
         papernotestotal = (TextView) findViewById(R.id.papernotestotal);
@@ -95,33 +113,6 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         Checkout.preload(getApplicationContext());
 
 
-
-      /* dialog = new AlertDialog.Builder(this)
-                .setTitle("15 min")
-                .setMessage("Come After 15 min please.")
-                .setPositiveButton("Pay Rs 10", null)
-                .setNegativeButton("Cancel", null)
-                .setCancelable(false)
-                .show();
-
-        Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-        positiveButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                indicator = 1;
-                startPayment();
-            }
-        });
-
-        Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-        negativeButton.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                MoneyActivity.super.onBackPressed();
-            }
-        });*/
 
 
         Adbutton.setOnClickListener(new View.OnClickListener() {
@@ -173,34 +164,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                    }
                    alertDialog.show();
 
-                /*   dialog = new AlertDialog.Builder(MoneyActivity.this)
-                            .setTitle("Time Left: "+lion+" min")
-                            .setMessage("Come After "+lion+" min to use this facility.Please!")
-                            .setPositiveButton("Urgent? Pay Rs 10", null)
-                            .setNegativeButton("Cancel", null)
-                            .setCancelable(false)
-                            .show();
 
-                   final View customLayout = getLayoutInflater().inflate(R.layout.custom_layout, null);
-
-                   Button positiveButton = dialog.getButton(AlertDialog.BUTTON_POSITIVE);
-                    positiveButton.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View v) {
-                            indicator = 1;
-                            startPayment();
-                        }
-                    });
-
-                    Button negativeButton = dialog.getButton(AlertDialog.BUTTON_NEGATIVE);
-                    negativeButton.setOnClickListener(new View.OnClickListener() {
-
-                        @Override
-                        public void onClick(View v) {
-                           dialog.cancel();
-                        }
-                    });*/
                 }
 
             }
@@ -433,6 +397,10 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
             options.put("image", "https://drive.google.com/file/d/1WH96VlHZORi5C9CQjvnmdkAyp6CQelOt/view?usp=sharing");
             options.put("theme.color", "#3399cc");
             options.put("currency", "INR");
+
+
+
+
             switch (indicator){
                 case 1:
                     options.put("amount", "1000");break;
@@ -457,7 +425,59 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         }
     }
 
-    public void onPaymentSuccess(String s) {
+    public void onPaymentSuccess(String s,PaymentData paymentData) {
+
+        paymentId = paymentData.getPaymentId();
+        mail=paymentData.getUserEmail();
+        number=paymentData.getUserContact();
+
+        Log.i("Paymentid",paymentId);
+        Log.i("mail",mail);
+        Log.i("number",number);
+
+        currentTime = Calendar.getInstance().getTime();
+        intcurrentTime=String.valueOf(currentTime);
+
+
+
+        switch (indicator){
+            case 1:
+                moneyamount="10";break;
+            case 2:
+                moneyamount="20";break;
+            case 3:
+                moneyamount="30";break;
+            case 4:
+                moneyamount="50";break;
+            case 5:
+                moneyamount="100";break;
+            case 6:
+                moneyamount="200";break;
+            case 7:
+                moneyamount="500";break;
+        }
+        fAuth = FirebaseAuth.getInstance();
+        final DatabaseReference myref = database.getReference().child("User").child(fAuth.getCurrentUser().getUid()).child("PaymentReceipt").push();
+
+
+        myref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                PaymentReceiptHolder user= new PaymentReceiptHolder(paymentId,moneyamount,mail,number,intcurrentTime);
+                myref.setValue(user);
+
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         switch (indicator){
             case 1:
@@ -563,7 +583,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
     }
 
 
-    public void onPaymentError(int i, String s) {
+    public void onPaymentError(int i, String s,PaymentData paymentData) {
         Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 
@@ -599,6 +619,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
             }
         });
     }
+
 
 }
 

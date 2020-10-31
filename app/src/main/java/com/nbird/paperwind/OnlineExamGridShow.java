@@ -380,7 +380,7 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
 
 
-                for(int i=1;i<=3;i++) {
+                for(int i=1;i<=2;i++) {
                     String answerA0 = settings.getString(String.valueOf(i), "poty");
                     switch (position){
                         case 1:
@@ -394,7 +394,7 @@ public class OnlineExamGridShow extends AppCompatActivity {
                             }break;
                     }
                 }
-                for(int i=1;i<=3;i++) {
+                for(int i=1;i<=1;i++) {
                     String answerA1 = settings2.getString(String.valueOf(i), "poty");
                     switch (position) {
                         case 1:
@@ -408,7 +408,7 @@ public class OnlineExamGridShow extends AppCompatActivity {
                         break;
                     }
                 }
-                for(int i=1;i<=2;i++) {
+                for(int i=1;i<=1;i++) {
                     String answerA2 = settings1.getString(String.valueOf(i), "poty");
                     switch (position) {
                         case 1:

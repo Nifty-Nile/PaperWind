@@ -67,13 +67,13 @@
             android:id="@+id/spacetext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="19" />
+            android:layout_weight="18" />
 
         <TextView
             android:id="@+id/updatetext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="6" />
+            android:layout_weight="7" />
 
         <TextView
             android:id="@+id/moneyinfotext"
