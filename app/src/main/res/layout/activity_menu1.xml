@@ -20,8 +20,8 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
             app:layout_constraintTop_toTopOf="parent"
             app:menu="@menu/side_menu"
             android:background="@drawable/background1"
-            app:itemTextColor="#200000"
-            app:itemIconTint="#000000" />
+            app:itemIconTint="#000000"
+            android:theme="@style/Theme.Design.Light"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -41,13 +41,6 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
         app:title="Menu"
         app:titleMarginStart="40dp" />
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Logout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigatio"
@@ -129,8 +122,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logout">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:layout_width="95dp"

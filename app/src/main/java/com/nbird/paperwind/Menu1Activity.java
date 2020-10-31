@@ -53,10 +53,12 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     private Context mContext;
     FirebaseAuth fAuth;
     int value;
+
     //variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
+    ActionBarDrawerToggle mToggle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,16 +66,14 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         setContentView(R.layout.activity_menu1);
 
         //*************** Hooks **************
-
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
+        mToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
 
         // ************** Tool bar ***************
-
         setSupportActionBar(toolbar);
 
-        //************ Navigation Drawer Menu **************
 
         fAuth = FirebaseAuth.getInstance();
         reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
@@ -91,27 +91,21 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             }
         });
 
-        navigationView.bringToFront();
-        ActionBarDrawerToggle toggle =new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
-        drawerLayout.addDrawerListener(toggle);
-        toggle.syncState();
 
+        //************ Navigation Drawer Menu **************
+
+        navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
 
+        drawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        button1=(Button) findViewById(R.id.tipButton1);
-        button2=(Button) findViewById(R.id.tipButton);
-        logout=(Button) findViewById(R.id.logout);
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
-                finish();
-            }
-        });
+
+        // ******************************
+
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +127,9 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             }
         });
 
+
+        // ************ Exam list Recycler View **************
+
         lstExam=new ArrayList<>();
         parto();
         RecyclerView myrv=(RecyclerView) findViewById(R.id.recyclerview);
@@ -147,6 +144,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
         bottomNavigationView.setSelectedItemId(R.id.home);
 
+
+        // **************** Bottom navigation View **********************
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -176,7 +175,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
 
-
+    // **************** 3 Dots menu (Top right)*******************
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -189,12 +188,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         int id=item.getItemId();
 
         if(id==R.id.share){
-
-            Intent intent=new Intent(getBaseContext(),PaymentHistoryActivity.class);
-            startActivity(intent);
-            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-
-            Toast.makeText(this, "Payment Receipt Activity", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Share me!", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.about){
             Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.history){
@@ -208,12 +202,14 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             Intent intent=new Intent(this,LatestExamUpdates.class);
             startActivity(intent);
 
-        }else if(id==R.id.coins){
+        }
+        else if(id==R.id.coins)
+        {
             AlertDialog.Builder builder=new AlertDialog.Builder(Menu1Activity.this,R.style.AlertDialogTheme);
             View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
             builder.setView(view1);
             ((TextView) view1.findViewById(R.id.textTitle)).setText("You have "+value+" Paper Notes");
-            ((TextView) view1.findViewById(R.id.textMessage)).setText("fnef e fuefn eufn euf eeufn ");
+            ((TextView) view1.findViewById(R.id.textMessage)).setText("Success is never owned, its rented and the rent is due everyday!");
             ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
             ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Paper Notes!");
             ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
@@ -244,8 +240,15 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             }
             alertDialog.show();
         }
-return true;
+        else if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+
+        return true;
     }
+
+
+    // ************************** Exam List **************************
 
     public void parto(){
         lstExam.add(new Exam("JEE Advanced",R.drawable.jeeadvanced,"Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."));
@@ -273,10 +276,22 @@ return true;
     }
 
 
+    // ************** Navigation Drawer switch ********************
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         switch (menuItem.getItemId()){
+
+            case R.id.nav_logout:
+                logout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                        finish();
+                    }
+                });
 
             case R.id.nav_tos:
                     Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
@@ -293,13 +308,24 @@ return true;
                     startActivity(browserIntentps);
                     break;
 
+            case R.id.nav_order:
+                Intent intent=new Intent(getBaseContext(),PaymentHistoryActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                Toast.makeText(this, "Payment Receipt Activity", Toast.LENGTH_SHORT).show();
+
             default :
                         return true;
         }
         return true;
     }
 
-    @Override
+
+
+    // ************************ Nav Drawer Slide conditions ***********************
+
+    @Override  //Back button closes drawer
     public void onBackPressed() {
         if(drawerLayout.isDrawerOpen((GravityCompat.START)))
         {
@@ -309,5 +335,6 @@ return true;
             super.onBackPressed();
         }
     }
+
 
 }
