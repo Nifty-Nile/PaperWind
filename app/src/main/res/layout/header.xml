@@ -7,13 +7,6 @@
     android:gravity="bottom"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginBottom="18dp"
-        android:src="@drawable/logo"
-        android:alpha="0.8"/>
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profile_image"
