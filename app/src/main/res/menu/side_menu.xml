@@ -25,16 +25,25 @@
         </item>
 
     <item
-        android:title="Contact Us" >
+        android:title="Communication" >
 
         <menu>
 
             <group android:checkableBehavior="single">
 
                 <item
+                    android:id="@+id/nav_contact"
+                    android:title="Contact Us"
+                    android:icon="@drawable/contact"/>
+
+                <item
                     android:id="@+id/nav_about"
-                    android:title="About"
+                    android:title="About Us"
                     android:icon="@drawable/about"/>
+                <item
+                    android:id="@+id/nav_rate"
+                    android:title="Rate Us"
+                    android:icon="@drawable/rate"/>
             </group>
 
         </menu>
