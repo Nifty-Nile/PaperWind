@@ -233,6 +233,13 @@ public class OnlineExamGridShow extends AppCompatActivity {
                     if(!answerA100){
                         Intent intent=new Intent(getBaseContext(),ScoreActivity.class);
                         intent.putExtra("marks",totalmarks);
+                        intent.putExtra("totalmarks",totalmarks);
+                        intent.putExtra("RankEE",position);
+                        intent.putExtra("phymarks",physore);
+                        intent.putExtra("chemmarks",chemscore);
+                        intent.putExtra("mathsmarks",mathsscore);
+                        intent.putExtra("modeint",mode);
+                        intent.putExtra("set",set);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                         finish();

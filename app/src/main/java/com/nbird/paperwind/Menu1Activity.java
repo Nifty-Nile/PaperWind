@@ -71,6 +71,10 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         toolbar = findViewById(R.id.toolbar);
         mToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
 
+        button1=(Button) findViewById(R.id.tipButton1);
+        button2=(Button) findViewById(R.id.tipButton);
+
+
         // ************** Tool bar ***************
         setSupportActionBar(toolbar);
 

@@ -63,7 +63,7 @@ public class TestRecyclerAdapter extends RecyclerView.Adapter<TestRecyclerAdapte
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent=new Intent(itemView.getContext(),OnlineExamGridShow.class);
+                    Intent intent=new Intent(itemView.getContext(),TestAgrementActivity.class);
                     intent.putExtra("position",position);
                     intent.putExtra("mode",mode);
                     intent.putExtra("set",set);

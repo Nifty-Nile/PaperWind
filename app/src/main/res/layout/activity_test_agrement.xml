@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    tools:context=".TestAgrementActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="General Instructions :"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="19sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="1.  Total duration of examination is 180 minutes."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2. The clock will be set at the App.The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself.You will not be required to end or submit your examination."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="3. The Question Palette display on the Grid Activity will show the status of each question using one of the following symbols."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/greybu"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="You have not visited the question yet."/>
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/redbu"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="You have not answered the question."/>
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/greenbu"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="You have answered the question"/>
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/purplebu"
+                    android:layout_marginLeft="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="You have markerd the question for review"/>
+
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The Marked for Review status for a question simply indicates that you would like to look at that question again."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Navigating to a Question :"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp"
+                android:textSize="19sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="4. To answer a question, do the following:"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="a. Click on the question number in the Question Palette to go that numbered question directly."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="b. Click on Save and Next to save your answer for the current question and then go to the next question."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Caution : Note that your answer for the current question will not be saved if you navigate to another question directly by clicking on its question number."
+                android:fontFamily="@font/acme"
+                android:textColor="#FB2828"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Marking Scheme:"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp"
+                android:textSize="19sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="5. Total of 75 questions will be provided to you, with 25 questions per section."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="6. Correct Answer will carry 4 marks while -1 on wrong Answer."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submiting :"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:layout_marginTop="5dp"
+                android:textSize="19sp"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="7. Once done with the exam, Click on the Submit Button present in the Grid Activity to Submit your answers."
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="I agree with all the rules and regulations."
+                    android:fontFamily="@font/acme"
+                    android:textColor="#F33C7A"
+                    android:textSize="12sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="10dp"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitbutton"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/roundbuttons"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginRight="20dp"
+                android:fontFamily="@font/aclonica"
+                android:text="START"/>
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
+
+
+
+
+</LinearLayout>
