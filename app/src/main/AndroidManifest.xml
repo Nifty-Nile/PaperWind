@@ -12,7 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TestAgrementActivity"></activity>
+        <activity android:name=".AboutUsActivity"></activity>
+        <activity android:name=".HelpMoney1Activity" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".TestAgrementActivity" />
         <activity android:name=".PaymentHistoryActivity" />
         <activity android:name=".LatestExamUpdates" />
         <activity android:name=".SartingGuideActivity" />

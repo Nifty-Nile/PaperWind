@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:id="@+id/mainfield"
     android:orientation="vertical"
     android:background="@drawable/background1"
     tools:context=".FormulaSTDActivity">
@@ -64,6 +65,7 @@
 
 
             <TextView
+                android:id="@+id/text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -74,6 +76,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/text2"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -121,6 +124,7 @@
 
 
             <TextView
+                android:id="@+id/text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -131,6 +135,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/text4"
                 android:layout_width="140dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"

@@ -7,7 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Movie;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -22,6 +24,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,9 +68,11 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     androidx.appcompat.widget.Toolbar toolbar;
     ActionBarDrawerToggle mToggle;
 
-    private CircleImageView ProfileImage;
+    CircleImageView profileImage;
     private static final int PICK_IMAGE =1;
     Uri imageUri;
+
+    TextView text1,text2,text3;
 
 
     @Override
@@ -83,7 +88,32 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
         button1=(Button) findViewById(R.id.tipButton1);
         button2=(Button) findViewById(R.id.tipButton);
+        text1=(TextView) findViewById(R.id.textView5);
+        text2=(TextView) findViewById(R.id.cbsedis);
+        text3=(TextView) findViewById(R.id.icsedis);
 
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text1.setTextColor(Color.parseColor("#ffffff"));
+            text2.setTextColor(Color.parseColor("#ffffff"));
+            text3.setTextColor(Color.parseColor("#ffffff"));
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            text1.setTextColor(Color.parseColor("#000000"));
+            text2.setTextColor(Color.parseColor("#000000"));
+            text3.setTextColor(Color.parseColor("#000000"));
+
+        }
 
         // ************** Tool bar ***************
         setSupportActionBar(toolbar);
@@ -91,8 +121,10 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
         // **************** Select Profile Image *********************
 
-        ProfileImage = (CircleImageView) findViewById(R.id.profile_image);
-        ProfileImage.setOnClickListener(new View.OnClickListener(){
+
+
+   //    profileImage = (CircleImageView) findViewById(R.id.profile_image);
+   /*     profileImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
 
@@ -103,7 +135,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 startActivityForResult(Intent.createChooser(gallery,"Select Picture"), PICK_IMAGE);
             }
         });
-
+*/
 
         fAuth = FirebaseAuth.getInstance();
         reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
@@ -214,7 +246,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 imageUri = data.getData();
                 try {
                     Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                    ProfileImage.setImageBitmap(bitmap);
+                    profileImage.setImageBitmap(bitmap);
                 }catch (IOException e){
                     e.printStackTrace();
                 }
@@ -237,7 +269,40 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         if(id==R.id.share){
             Toast.makeText(this, "Share me!", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.about){
-            Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
+           
+            //Light and dark mode
+             SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+             SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+            Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+            
+            if(!answerA0){
+                editorlightanddark.putBoolean(String.valueOf(1), true);
+                editorlightanddark.commit();
+                Toast.makeText(this, "Dark Mode", Toast.LENGTH_SHORT).show();
+                ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+                layout.setBackgroundResource(R.drawable.backdarkmode);
+                text1.setTextColor(Color.parseColor("#ffffff"));
+                text2.setTextColor(Color.parseColor("#ffffff"));
+                text3.setTextColor(Color.parseColor("#ffffff"));
+
+            }else{
+                editorlightanddark.putBoolean(String.valueOf(1), false);
+                editorlightanddark.commit();
+                Toast.makeText(this, "Ligth Mode", Toast.LENGTH_SHORT).show();
+                ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+                layout.setBackgroundResource(R.drawable.background1);
+
+
+                text1.setTextColor(Color.parseColor("#000000"));
+                text2.setTextColor(Color.parseColor("#000000"));
+                text3.setTextColor(Color.parseColor("#000000"));
+
+            }
+
+            
+
+
         }else if(id==R.id.history){
             Toast.makeText(this, "History Mode", Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(getBaseContext(),ExamRecordActivity.class);

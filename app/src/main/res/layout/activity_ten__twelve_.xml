@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:id="@+id/mainfield"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".Ten_Twelve_Activity">
@@ -58,6 +59,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/text1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
@@ -69,6 +71,7 @@
 
 
                     <TextView
+                        android:id="@+id/text2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
@@ -135,6 +138,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Std 12"
@@ -145,6 +149,7 @@
                     android:textSize="40sp"/>
 
             <TextView
+                android:id="@+id/text4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

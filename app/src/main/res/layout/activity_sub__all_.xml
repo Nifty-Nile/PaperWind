@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/mainfield"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".Sub_All_Activity">
@@ -27,7 +28,7 @@
 
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/text0"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="dfneufe ufb eufefune frg b uenf urbg"
@@ -35,68 +36,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout9"
-        android:layout_width="match_parent"
-        android:layout_height="150sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/stroke100"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-        <ImageView
-            android:layout_width="95dp"
-            android:layout_height="95dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/cbseicon" />
-
         <LinearLayout
+            android:id="@+id/linearLayout9"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="150sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/stroke100"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text0">
 
-            <TextView
-                android:layout_width="230dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/acme"
-                android:text="Chemistry"
-                android:textColor="#000000"
-                android:textSize="22sp" />
+            <ImageView
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/cbseicon" />
 
-            <TextView
-                android:layout_width="230dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="10dp"
-                android:fontFamily="@font/acme"
-                android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                android:textColor="#000000"
-                android:textSize="10sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/tipButton1"
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:elevation="30dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="7dp"
-                android:background="@drawable/roundbuttons"
-                android:fontFamily="@font/aclonica"
-                android:gravity="center"
-                android:text="Get Papers" />
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="230dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/acme"
+                    android:text="Chemistry"
+                    android:textColor="#000000"
+                    android:textSize="22sp" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="230dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/acme"
+                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                    android:textColor="#000000"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/tipButton1"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/roundbuttons"
+                    android:elevation="30dp"
+                    android:fontFamily="@font/aclonica"
+                    android:gravity="center"
+                    android:text="Get Papers" />
 
 
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout8"
@@ -125,6 +128,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text3"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -135,6 +139,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text4"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -188,6 +193,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text5"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -198,6 +204,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text6"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -251,6 +258,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text7"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -261,6 +269,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text8"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -314,6 +323,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text9"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -324,6 +334,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text10"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -377,6 +388,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text11"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -387,6 +399,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text12"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"

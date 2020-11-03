@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background1">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView11"
+            app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="M Kartik Kumar"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView16"
+            app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="App Developer"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView13"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView11"
+            app:layout_constraintEnd_toEndOf="@+id/imageView11"
+            app:layout_constraintStart_toEndOf="@+id/imageView16"
+            app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+
+        <ImageView
+            android:id="@+id/imageView100"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView12"
+            app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
+
+        <ImageView
+            android:id="@+id/imageView51"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView110"
+            app:layout_constraintTop_toTopOf="@+id/imageView110" />
+
+        <ImageView
+            android:id="@+id/imageView52"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView1198"
+            app:layout_constraintTop_toTopOf="@+id/imageView1198" />
+
+
+        <ImageView
+            android:id="@+id/imageView53"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView1112"
+            app:layout_constraintTop_toTopOf="@+id/imageView1112" />
+
+        <ImageView
+            android:id="@+id/imageView54"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView120"
+            app:layout_constraintTop_toTopOf="@+id/imageView120" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Rahul Ghosh"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView100"
+            app:layout_constraintTop_toTopOf="@+id/imageView12" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Data Analyst And Debugger"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+            app:layout_constraintEnd_toEndOf="@+id/imageView12"
+            app:layout_constraintStart_toEndOf="@+id/imageView100"
+            app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView110"
+            app:layout_constraintEnd_toEndOf="@+id/imageView110"
+            app:layout_constraintStart_toEndOf="@+id/imageView51"
+            app:layout_constraintTop_toBottomOf="@+id/textView61" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView1112"
+            app:layout_constraintEnd_toEndOf="@+id/imageView1112"
+            app:layout_constraintStart_toEndOf="@+id/imageView53"
+            app:layout_constraintTop_toBottomOf="@+id/textView62" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView1198"
+            app:layout_constraintEnd_toEndOf="@+id/imageView1198"
+            app:layout_constraintStart_toEndOf="@+id/imageView52"
+            app:layout_constraintTop_toBottomOf="@+id/textView63" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView120"
+            app:layout_constraintEnd_toEndOf="@+id/imageView120"
+            app:layout_constraintStart_toEndOf="@+id/imageView54"
+            app:layout_constraintTop_toBottomOf="@+id/textView64" />
+
+
+        <ImageView
+            android:id="@+id/imageView200"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView13"
+            app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+        <TextView
+            android:id="@+id/textView29"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Alok Jha"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView500"
+            app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+        <TextView
+            android:id="@+id/textView39"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Data Analyst"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView29"
+            app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="An undergrad Data analyst. Presenting you all our very first project. Hope you guys like it. Working with the team and building this app was a wonderful Experience in a whole new field. You can mail me your thoughts or any suggestions 😇.Email:alokjha1910@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView17"
+            app:layout_constraintEnd_toEndOf="@+id/imageView17"
+            app:layout_constraintStart_toEndOf="@+id/imageView500"
+            app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/aladin"
+            android:text="Developers"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView500"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:elevation="1dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView17"
+            app:layout_constraintTop_toTopOf="@+id/imageView17" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Aakash Tyagi"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView200"
+            app:layout_constraintTop_toTopOf="@+id/imageView13" />
+
+        <TextView
+        android:id="@+id/textView59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:elevation="1dp"
+        android:fontFamily="@font/aladin"
+        android:text="UI/UX Designer"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/textView49"
+        app:layout_constraintTop_toBottomOf="@+id/textView49" />
+
+        <TextView
+            android:id="@+id/textView61"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="UI/UX Designer"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView100"
+            app:layout_constraintTop_toBottomOf="@+id/textView100" />
+
+        <TextView
+            android:id="@+id/textView62"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="UI/UX Designer"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView103"
+            app:layout_constraintTop_toBottomOf="@+id/textView103" />
+
+        <TextView
+            android:id="@+id/textView63"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="UI/UX Designer"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView102"
+            app:layout_constraintTop_toBottomOf="@+id/textView102" />
+
+        <TextView
+            android:id="@+id/textView64"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="UI/UX Designer"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/textView101"
+            app:layout_constraintTop_toBottomOf="@+id/textView101" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="At present pursuing my undergraduate degree .So i just helped myself pick up UI/UX designing along with illustrator which was very helpful in making valuable vector diagrams for Eco Clever.Feel free to give more suggestions regarding the app layout on my email.Email:rahulghosh070@gmail.com"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+            app:layout_constraintEnd_toEndOf="@+id/imageView13"
+            app:layout_constraintStart_toEndOf="@+id/imageView200"
+            app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/aladin"
+            android:text="Welcome to the Team Page.This app is for farmers or for those people who are some how related to agriculture industry.'Eco Clever' provides information about the latest agriculture advice and various farming tips. It also provides live weather forecast information."
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="11dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintBottom_toTopOf="@+id/imageView12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+        <ImageView
+            android:id="@+id/imageView110"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView1112" />
+
+        <ImageView
+            android:id="@+id/imageView120"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+
+
+        <TextView
+            android:id="@+id/textView100"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Kunal Goyal"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView51"
+            app:layout_constraintTop_toTopOf="@+id/imageView110" />
+
+        <TextView
+            android:id="@+id/textView101"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="K Homi"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView54"
+            app:layout_constraintTop_toTopOf="@+id/imageView120" />
+
+        <TextView
+            android:id="@+id/textView102"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="Dhomya Vyas"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView52"
+            app:layout_constraintTop_toTopOf="@+id/imageView1198" />
+
+        <TextView
+            android:id="@+id/textView103"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:elevation="1dp"
+            android:fontFamily="@font/aladin"
+            android:text="M Varsha"
+            android:textSize="19sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView53"
+            app:layout_constraintTop_toTopOf="@+id/imageView1112" />
+
+        <ImageView
+            android:id="@+id/imageView1112"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView1198" />
+
+        <ImageView
+            android:id="@+id/imageView1198"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView120" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="0dp"
+            android:layout_height="170dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:alpha="0.7"
+            android:background="@drawable/loadingbackground"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

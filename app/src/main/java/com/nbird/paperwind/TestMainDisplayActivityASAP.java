@@ -2,6 +2,7 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.animation.Animator;
 import android.app.Activity;
@@ -20,6 +21,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,7 +37,7 @@ import java.util.List;
 
 public class TestMainDisplayActivityASAP extends AppCompatActivity {
 
-    TextView serialnumber,timer,question,option1,option2,option3,option4,timersec;
+    TextView serialnumber,timer,question,option1,option2,option3,option4,timersec,dot;
     Button backbutton,menubutton,saveandnextbutton,reviewbutton,submitbutton,unmarkbutton;
     RadioButton option1radio,option2radio,option3radio,option4radio;
     RadioGroup radioGroup;
@@ -67,6 +69,10 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
         timer=(TextView) findViewById(R.id.timer);
         question=(TextView) findViewById(R.id.question);
         timersec=(TextView) findViewById(R.id.sec);
+        dot=(TextView) findViewById(R.id.don);
+
+
+
         backbutton=(Button) findViewById(R.id.backbutton);
         menubutton=(Button) findViewById(R.id.menubutton);
         questionimage=(ImageView) findViewById(R.id.questionimage);
@@ -87,7 +93,42 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
 
 
 
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            timer.setTextColor(Color.parseColor("#ffffff"));
+            timersec.setTextColor(Color.parseColor("#ffffff"));
+            serialnumber.setTextColor(Color.parseColor("#ffffff"));
+            question.setTextColor(Color.parseColor("#ffffff"));
+            option1radio.setTextColor(Color.parseColor("#ffffff"));
+            option2radio.setTextColor(Color.parseColor("#ffffff"));
+            option3radio.setTextColor(Color.parseColor("#ffffff"));
+            option4radio.setTextColor(Color.parseColor("#ffffff"));
+            dot.setTextColor(Color.parseColor("#ffffff"));
+
+
+
+        }else{
+            ScrollView layout =(ScrollView)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            timer.setTextColor(Color.parseColor("#000000"));
+            timersec.setTextColor(Color.parseColor("#000000"));
+            serialnumber.setTextColor(Color.parseColor("#000000"));
+            question.setTextColor(Color.parseColor("#000000"));
+            option1radio.setTextColor(Color.parseColor("#000000"));
+            option2radio.setTextColor(Color.parseColor("#000000"));
+            option3radio.setTextColor(Color.parseColor("#000000"));
+            option4radio.setTextColor(Color.parseColor("#000000"));
+            dot.setTextColor(Color.parseColor("#ffffff"));
+
+
+        }
 
 
 

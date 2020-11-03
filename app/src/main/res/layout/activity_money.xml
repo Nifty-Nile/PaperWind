@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:id="@+id/mainfield"
     android:background="@drawable/background1"
     android:layout_height="match_parent"
     tools:context=".MoneyActivity">
@@ -69,6 +70,7 @@
                 android:textSize="22sp" />
 
             <TextView
+                android:id="@+id/text1"
                 android:layout_width="230dp"
                 android:layout_height="40dp"
                 android:layout_marginRight="20dp"

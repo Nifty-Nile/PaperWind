@@ -2,12 +2,16 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +31,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     int Exam,Std,Paper,Chapter;
+    TextView text0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,29 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
         Paper=getIntent().getIntExtra("Paper",0);
         Chapter=getIntent().getIntExtra("Chapter",0);
 
+        text0=(TextView) findViewById(R.id.text0);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text0.setTextColor(Color.parseColor("#ffffff"));
+
+
+        }else{
+            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            text0.setTextColor(Color.parseColor("#000000"));
+
+
+
+        }
 
 
         loadingDialog = new Dialog(this);

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/mainfield"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".LinkSubjects">
@@ -19,6 +20,19 @@
         app:logo="@drawable/ic_baseline_menu_24"
         app:title="Menu"
         app:titleMarginStart="40dp" />
+
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="hb jh bhv bhjb jh b"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigatio"
@@ -46,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/textView18">
 
         <ImageView
             android:layout_width="95dp"
@@ -62,6 +76,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text1"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
@@ -116,6 +131,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text2"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
@@ -170,6 +186,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text3"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"

@@ -4,16 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
+    android:id="@+id/mainfield"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".PaymentHistoryActivity">
 
     <TextView
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="enfe ifne fienfe ifne ifenf enfiefn efinefenfi efe fin"/>
 
     <TextView
+        android:id="@+id/text2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="enfe ifne fienfe ifne ifenf enfiefn efinefenfi efe fin"/>

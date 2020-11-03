@@ -2,18 +2,23 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class LinkSubjects extends AppCompatActivity {
     Button phybutton,chembutton,biobutton;
     int Exam,Std,Paper;
+    TextView text1,t1,t2,t3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,36 @@ public class LinkSubjects extends AppCompatActivity {
         phybutton=(Button) findViewById(R.id.tipButton1);
         chembutton=(Button) findViewById(R.id.tipButton2);
         biobutton=(Button) findViewById(R.id.tipButton3);
+        text1=(TextView) findViewById(R.id.textView18);
+        t1=(TextView) findViewById(R.id.text1);
+        t2=(TextView) findViewById(R.id.text2);
+        t3=(TextView) findViewById(R.id.text3);
+
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text1.setTextColor(Color.parseColor("#ffffff"));
+            t1.setTextColor(Color.parseColor("#ffffff"));
+            t2.setTextColor(Color.parseColor("#ffffff"));
+            t3.setTextColor(Color.parseColor("#ffffff"));
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            text1.setTextColor(Color.parseColor("#000000"));
+            t1.setTextColor(Color.parseColor("#000000"));
+            t2.setTextColor(Color.parseColor("#000000"));
+            t3.setTextColor(Color.parseColor("#000000"));
+
+        }
 
         phybutton.setOnClickListener(new View.OnClickListener() {
             @Override

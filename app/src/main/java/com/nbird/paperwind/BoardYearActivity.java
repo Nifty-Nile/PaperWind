@@ -2,13 +2,16 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -17,6 +20,7 @@ public class BoardYearActivity extends AppCompatActivity {
     int position;
     Button previousyearbutton,onlinetestbutton;
     String answerA1000;
+    TextView text100,text200,text300,text400,Text4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,41 @@ public class BoardYearActivity extends AppCompatActivity {
 
         previousyearbutton=(Button) findViewById(R.id.previousyearpaper);
         onlinetestbutton=(Button) findViewById(R.id.onlinetestbutton);
+
+        text100=(TextView) findViewById(R.id.text100);
+        text200=(TextView) findViewById(R.id.text200);
+        text300=(TextView) findViewById(R.id.text300);
+        text400=(TextView) findViewById(R.id.text400);
+        Text4=(TextView) findViewById(R.id.Text4);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text100.setTextColor(Color.parseColor("#ffffff"));
+            text200.setTextColor(Color.parseColor("#ffffff"));
+            text300.setTextColor(Color.parseColor("#ffffff"));
+            text400.setTextColor(Color.parseColor("#ffffff"));
+            Text4.setTextColor(Color.parseColor("#ffffff"));
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            text100.setTextColor(Color.parseColor("#000000"));
+            text200.setTextColor(Color.parseColor("#000000"));
+            text300.setTextColor(Color.parseColor("#000000"));
+            text400.setTextColor(Color.parseColor("#000000"));
+            Text4.setTextColor(Color.parseColor("#000000"));
+
+        }
+
+
+
         final SharedPreferences set1 = getBaseContext().getSharedPreferences("set", 0);
         final SharedPreferences.Editor editorset = set1.edit();
 

@@ -2,14 +2,17 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -28,6 +31,7 @@ public class EntranceRecyclerView extends AppCompatActivity {
     private Dialog loadingDialog;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    TextView textView3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +39,27 @@ public class EntranceRecyclerView extends AppCompatActivity {
 
         position=getIntent().getIntExtra("position",0);
         mode=getIntent().getIntExtra("mode",0);
+
+        textView3=(TextView) findViewById(R.id.textView3);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            textView3.setTextColor(Color.parseColor("#ffffff"));
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            textView3.setTextColor(Color.parseColor("#000000"));
+
+
+        }
 
         loadingDialog=new Dialog(EntranceRecyclerView.this);
         loadingDialog.setContentView(R.layout.activity_loading);

@@ -3,13 +3,17 @@ package com.nbird.paperwind;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,6 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class PaperCategoryBoardsActivity extends AppCompatActivity {
     Button linkButton,previousyearpaperbutton,sampleyearpaper,NCERTSolutions;
     int Exam,Std,Paper;
+    TextView text1,text2,text3,text4,text5,text6,text7,text8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,15 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
 
         Exam=getIntent().getIntExtra("Exam",0);
         Std=getIntent().getIntExtra("Std",0);
+        text1=(TextView) findViewById(R.id.text1);
+        text2=(TextView) findViewById(R.id.text2);
+        text3=(TextView) findViewById(R.id.text3);
+        text4=(TextView) findViewById(R.id.text4);
+        text5=(TextView) findViewById(R.id.text5);
+        text6=(TextView) findViewById(R.id.text6);
+        text7=(TextView) findViewById(R.id.text7);
+        text8=(TextView) findViewById(R.id.text8);
+
 
         linkButton=(Button) findViewById(R.id.linkButton);
         previousyearpaperbutton=(Button) findViewById(R.id.previousyearpaper);
@@ -35,6 +49,40 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text1.setTextColor(Color.parseColor("#ffffff"));
+            text2.setTextColor(Color.parseColor("#ffffff"));
+            text3.setTextColor(Color.parseColor("#ffffff"));
+            text4.setTextColor(Color.parseColor("#ffffff"));
+            text5.setTextColor(Color.parseColor("#ffffff"));
+            text6.setTextColor(Color.parseColor("#ffffff"));
+            text7.setTextColor(Color.parseColor("#ffffff"));
+            text8.setTextColor(Color.parseColor("#ffffff"));
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            text1.setTextColor(Color.parseColor("#000000"));
+            text2.setTextColor(Color.parseColor("#000000"));
+            text3.setTextColor(Color.parseColor("#000000"));
+            text4.setTextColor(Color.parseColor("#000000"));
+            text5.setTextColor(Color.parseColor("#000000"));
+            text6.setTextColor(Color.parseColor("#000000"));
+            text7.setTextColor(Color.parseColor("#000000"));
+            text8.setTextColor(Color.parseColor("#000000"));
+
+
+        }
 
 
 

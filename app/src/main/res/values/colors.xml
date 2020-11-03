@@ -12,4 +12,5 @@
     <color name="lightyellow">#EFEB88</color>
     <color name="lightred">#FAC8C8</color>
     <color name="lightgrey">#868681</color>
+    <color name="black">#000000</color>
 </resources>

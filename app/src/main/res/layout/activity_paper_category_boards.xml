@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/mainfield"
     android:background="@drawable/background1"
     tools:context=".PaperCategoryBoardsActivity">
 
@@ -64,6 +65,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text1"
                             android:layout_width="230dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="6dp"
@@ -76,6 +78,7 @@
 
 
                         <TextView
+                            android:id="@+id/text2"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginLeft="6dp"
@@ -124,6 +127,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text3"
                             android:layout_width="230dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="6dp"
@@ -136,6 +140,7 @@
 
 
                         <TextView
+                            android:id="@+id/text4"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginLeft="6dp"
@@ -184,6 +189,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text5"
                             android:layout_width="230dp"
                             android:layout_height="30dp"
                             android:textColor="#000000"
@@ -196,6 +202,7 @@
 
 
                         <TextView
+                            android:id="@+id/text6"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginLeft="6dp"
@@ -244,6 +251,7 @@
                         android:orientation="vertical">
 
                         <TextView
+                            android:id="@+id/text7"
                             android:layout_width="230dp"
                             android:layout_height="30dp"
                             android:layout_marginLeft="6dp"
@@ -256,6 +264,7 @@
 
 
                         <TextView
+                            android:id="@+id/text8"
                             android:layout_width="match_parent"
                             android:layout_height="50dp"
                             android:layout_marginLeft="6dp"

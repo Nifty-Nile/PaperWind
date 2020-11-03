@@ -2,6 +2,7 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,7 +40,7 @@ public class ScoreActivity extends AppCompatActivity {
     int totalmarks,physcore1,chemscore1,mathsscore1,mode123,set123;
     Button getrank,donebut;
     int SelectedEntranceExam;
-    TextView title,marks,phytext,chemtext,mathstext;
+    TextView title,marks,phytext,chemtext,mathstext,textView7,textView8,textView9,textView16,textView25,text100,text200;
     FirebaseAuth fAuth;
     String strexamname;
     String strtotal;
@@ -62,8 +64,6 @@ public class ScoreActivity extends AppCompatActivity {
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference ref=database.getReference().child("User").child(fAuth.getCurrentUser().getUid()).child("ExamRecord").push();
 
-
-
         getrank=(Button) findViewById(R.id.tipButton1);
         donebut=(Button) findViewById(R.id.done);
         barChart=(BarChart) findViewById(R.id.barChart);
@@ -75,6 +75,11 @@ public class ScoreActivity extends AppCompatActivity {
         chemtext=(TextView) findViewById(R.id.chemtext);
         mathstext=(TextView) findViewById(R.id.mathstext);
 
+        textView7=(TextView) findViewById(R.id.textView7);
+        textView16=(TextView) findViewById(R.id.textView16);
+        textView25=(TextView) findViewById(R.id.textView25);
+        text100=(TextView) findViewById(R.id.text100);
+        text200=(TextView) findViewById(R.id.text200);
 
         loadingDialog = new Dialog(this);
         loadingDialog.setContentView(R.layout.activity_loading);
@@ -89,6 +94,44 @@ public class ScoreActivity extends AppCompatActivity {
         mathsscore1=getIntent().getIntExtra("mathsmarks",0);
         mode123=getIntent().getIntExtra("modeint",0);
         set123=getIntent().getIntExtra("set",0);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            title.setTextColor(Color.parseColor("#ffffff"));
+            marks.setTextColor(Color.parseColor("#ffffff"));
+            phytext.setTextColor(Color.parseColor("#ffffff"));
+            chemtext.setTextColor(Color.parseColor("#ffffff"));
+            mathstext.setTextColor(Color.parseColor("#ffffff"));
+            textView7.setTextColor(Color.parseColor("#ffffff"));
+            textView16.setTextColor(Color.parseColor("#ffffff"));
+            textView25.setTextColor(Color.parseColor("#ffffff"));
+            text100.setTextColor(Color.parseColor("#ffffff"));
+            text200.setTextColor(Color.parseColor("#ffffff"));
+
+
+
+        }else{
+            ScrollView layout =(ScrollView)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            title.setTextColor(Color.parseColor("#000000"));
+            marks.setTextColor(Color.parseColor("#000000"));
+            phytext.setTextColor(Color.parseColor("#000000"));
+            chemtext.setTextColor(Color.parseColor("#000000"));
+            mathstext.setTextColor(Color.parseColor("#000000"));
+            textView7.setTextColor(Color.parseColor("#000000"));
+            textView16.setTextColor(Color.parseColor("#000000"));
+            textView25.setTextColor(Color.parseColor("#000000"));
+            text100.setTextColor(Color.parseColor("#000000"));
+            text200.setTextColor(Color.parseColor("#000000"));
+
+        }
 
          manupulator();
 

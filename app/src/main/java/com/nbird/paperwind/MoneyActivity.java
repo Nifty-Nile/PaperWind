@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -64,7 +65,7 @@ import java.util.Calendar;
 public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdListener, PaymentResultWithDataListener {
     RewardedVideoAd rewardedVideoAd;
     AlertDialog dialog;
-    TextView moneytext, papernotestotal,invisibletimer;
+    TextView moneytext, papernotestotal,invisibletimer,textView13,textView14,text1;
     Button Adbutton, buttonrs10, buttonrs20, buttonrs30, buttonrs50, buttonrs100,buttonrs200,buttonrs500;
     int value,triggerinteger,timer9int;
     int numberoftimesvideoplayedin15min;
@@ -99,6 +100,9 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
         papernotestotal = (TextView) findViewById(R.id.papernotestotal);
         invisibletimer = (TextView) findViewById(R.id.invisibletimer);
+        textView13 = (TextView) findViewById(R.id.textView13);
+        textView14 = (TextView) findViewById(R.id.textView14);
+        text1 = (TextView) findViewById(R.id.text1);
         Adbutton = (Button) findViewById(R.id.tipButton1);
         buttonrs10 = (Button) findViewById(R.id.tipButton2);
         buttonrs20 = (Button) findViewById(R.id.tipButton3);
@@ -112,7 +116,31 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
         Checkout.preload(getApplicationContext());
 
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            papernotestotal.setTextColor(Color.parseColor("#ffffff"));
+            text1.setTextColor(Color.parseColor("#ffffff"));
+            textView14.setTextColor(Color.parseColor("#ffffff"));
+            textView13.setTextColor(Color.parseColor("#ffffff"));
+
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            papernotestotal.setTextColor(Color.parseColor("#000000"));
+            text1.setTextColor(Color.parseColor("#000000"));
+            textView14.setTextColor(Color.parseColor("#000000"));
+            textView13.setTextColor(Color.parseColor("#000000"));
+
+        }
 
 
         Adbutton.setOnClickListener(new View.OnClickListener() {

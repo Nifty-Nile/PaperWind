@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:id="@+id/mainfield"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".Sub_All_Activity">
@@ -60,6 +61,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text1"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -70,6 +72,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text2"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="5dp"
@@ -123,6 +126,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text3"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -133,6 +137,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text4"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -186,6 +191,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text5"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -196,6 +202,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text6"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -249,6 +256,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text7"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -259,6 +267,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text8"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -312,6 +321,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text9"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -322,6 +332,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text10"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -375,6 +386,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text11"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -385,6 +397,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text12"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -438,6 +451,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text13"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -448,6 +462,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text14"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -501,6 +516,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text15"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -511,6 +527,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text16"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -564,6 +581,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text17"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -574,6 +592,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text18"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -627,6 +646,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text19"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -637,6 +657,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text20"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
@@ -688,6 +709,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/text21"
                     android:layout_width="230dp"
                     android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
@@ -698,6 +720,7 @@
                     android:textSize="22sp" />
 
                 <TextView
+                    android:id="@+id/text22"
                     android:layout_width="230dp"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"

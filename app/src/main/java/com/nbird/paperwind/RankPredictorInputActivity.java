@@ -7,6 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +21,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,13 +44,14 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     private static final String[] paths = {"General","OBC","ST","SC"};
     private static final String[] paths123 = {"CSE","IT","ECE","EEE","ME","TE","Civil"};
     private RadioGroup radioGroup;
-    private RadioButton radioButton;
+    private RadioButton radioButton,radioMale,radioFemale;
     int bomb,totalmarks;
     FirebaseAuth fAuth;
     int value;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference1 = database.getReference("User");
     androidx.appcompat.widget.Toolbar toolbar;
+    TextView Text1,Text100,Text2,dis1,Text200,Text3,dis2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,18 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         ranktext=(TextInputEditText) findViewById(R.id.username1);
         scoretext=(TextInputEditText) findViewById(R.id.username);
         radioGroup = (RadioGroup) findViewById(R.id.radio);
+
+        Text1=(TextView) findViewById(R.id.Text1);
+        Text100=(TextView) findViewById(R.id.Text100);
+
+        Text2=(TextView) findViewById(R.id.Text2);
+        dis1=(TextView) findViewById(R.id.dis1);
+        Text200=(TextView) findViewById(R.id.Text200);
+        Text3=(TextView) findViewById(R.id.Text3);
+        dis2=(TextView) findViewById(R.id.dis2);
+
+        radioMale=(RadioButton) findViewById(R.id.radioMale);
+        radioFemale=(RadioButton) findViewById(R.id.radioFemale);
 
         toolbar = findViewById(R.id.toolbar);
 
@@ -76,7 +92,39 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+
+            Text1.setTextColor(Color.parseColor("#ffffff"));
+            Text100.setTextColor(Color.parseColor("#ffffff"));
+            radioMale.setTextColor(Color.parseColor("#ffffff"));
+            radioFemale.setTextColor(Color.parseColor("#ffffff"));
+            Text2.setTextColor(Color.parseColor("#ffffff"));
+            dis1.setTextColor(Color.parseColor("#ffffff"));
+            Text200.setTextColor(Color.parseColor("#ffffff"));
+            Text3.setTextColor(Color.parseColor("#ffffff"));
+            dis2.setTextColor(Color.parseColor("#ffffff"));
+        }else{
+            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            Text1.setTextColor(Color.parseColor("#000000"));
+            Text100.setTextColor(Color.parseColor("#000000"));
+            radioMale.setTextColor(Color.parseColor("#000000"));
+            radioFemale.setTextColor(Color.parseColor("#000000"));
+            Text2.setTextColor(Color.parseColor("#000000"));
+            dis1.setTextColor(Color.parseColor("#000000"));
+            Text200.setTextColor(Color.parseColor("#000000"));
+            Text3.setTextColor(Color.parseColor("#000000"));
+            dis2.setTextColor(Color.parseColor("#000000"));
+        }
 
         totalmarks=getIntent().getIntExtra("totalmarks",0);
 

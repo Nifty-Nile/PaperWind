@@ -3,17 +3,20 @@ package com.nbird.paperwind;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,6 +36,7 @@ public class SubjectActivity extends AppCompatActivity {
     private Dialog loadingDialog;
     CardView cardView;
     int Exam,Std,Paper,Labsub;
+    TextView textView3;
    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +44,31 @@ public class SubjectActivity extends AppCompatActivity {
         setContentView(R.layout.activity_subject);
         cardView=(CardView) findViewById(R.id.cardview_id);
 
+        textView3=(TextView) findViewById(R.id.textView3);
+
 
         lstExam=new ArrayList<>();
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            textView3.setTextColor(Color.parseColor("#ffffff"));
+
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            textView3.setTextColor(Color.parseColor("#000000"));
+
+        }
+
 
         Exam=getIntent().getIntExtra("Exam",0);
         Std=getIntent().getIntExtra("Std",0);

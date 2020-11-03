@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainfield"
     android:orientation="vertical"
     android:background="@drawable/background1"
     tools:context=".TestAgrementActivity">
@@ -27,6 +28,7 @@
 
 
             <TextView
+                android:id="@+id/text0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="General Instructions :"
@@ -38,6 +40,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="1.  Total duration of examination is 180 minutes."
@@ -50,6 +53,7 @@
                 />
 
             <TextView
+                android:id="@+id/text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2. The clock will be set at the App.The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself.You will not be required to end or submit your examination."
@@ -62,6 +66,7 @@
                 />
 
             <TextView
+                android:id="@+id/text3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="3. The Question Palette display on the Grid Activity will show the status of each question using one of the following symbols."
@@ -86,6 +91,7 @@
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
+                    android:id="@+id/text4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/acme"
@@ -113,6 +119,7 @@
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
+                    android:id="@+id/text5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/acme"
@@ -140,6 +147,7 @@
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
+                    android:id="@+id/text6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/acme"
@@ -167,6 +175,7 @@
                     android:layout_marginLeft="10dp"/>
 
                 <TextView
+                    android:id="@+id/text7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/acme"
@@ -182,6 +191,7 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/text8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="The Marked for Review status for a question simply indicates that you would like to look at that question again."
@@ -194,6 +204,7 @@
                 />
 
             <TextView
+                android:id="@+id/text9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Navigating to a Question :"
@@ -205,6 +216,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/text10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="4. To answer a question, do the following:"
@@ -217,6 +229,7 @@
                 />
 
             <TextView
+                android:id="@+id/text11"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="a. Click on the question number in the Question Palette to go that numbered question directly."
@@ -229,6 +242,7 @@
                 />
 
             <TextView
+                android:id="@+id/text12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="b. Click on Save and Next to save your answer for the current question and then go to the next question."
@@ -253,6 +267,7 @@
                 />
 
             <TextView
+                android:id="@+id/text13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Marking Scheme:"
@@ -264,6 +279,7 @@
                 android:textStyle="bold"/>
 
             <TextView
+                android:id="@+id/text14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="5. Total of 75 questions will be provided to you, with 25 questions per section."
@@ -276,6 +292,7 @@
                 />
 
             <TextView
+                android:id="@+id/text15"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="6. Correct Answer will carry 4 marks while -1 on wrong Answer."
@@ -288,6 +305,7 @@
                 />
 
             <TextView
+                android:id="@+id/text16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Submiting :"
@@ -300,6 +318,7 @@
 
 
             <TextView
+                android:id="@+id/text17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="7. Once done with the exam, Click on the Submit Button present in the Grid Activity to Submit your answers."

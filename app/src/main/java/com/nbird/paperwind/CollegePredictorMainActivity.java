@@ -2,12 +2,16 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CollegePredictorMainActivity extends AppCompatActivity {
-    TextView entranceexamtitle,ranktext,gendertext,casttext,branchtext;
+    TextView entranceexamtitle,ranktext,gendertext,casttext,branchtext,textView7,textView10;
     RecyclerView recyclerView;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -50,8 +54,40 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         gendertext=(TextView) findViewById(R.id.gender);
         casttext=(TextView) findViewById(R.id.textcategory);
         branchtext=(TextView) findViewById(R.id.Branch00);
+        textView7=(TextView) findViewById(R.id.textView7);
+        textView10=(TextView) findViewById(R.id.textView10);
 
 
+
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            entranceexamtitle.setTextColor(Color.parseColor("#ffffff"));
+            ranktext.setTextColor(Color.parseColor("#ffffff"));
+            gendertext.setTextColor(Color.parseColor("#ffffff"));
+            casttext.setTextColor(Color.parseColor("#ffffff"));
+            branchtext.setTextColor(Color.parseColor("#ffffff"));
+            textView7.setTextColor(Color.parseColor("#ffffff"));
+            textView10.setTextColor(Color.parseColor("#ffffff"));
+        }else{
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            entranceexamtitle.setTextColor(Color.parseColor("#000000"));
+            ranktext.setTextColor(Color.parseColor("#000000"));
+            gendertext.setTextColor(Color.parseColor("#000000"));
+            casttext.setTextColor(Color.parseColor("#000000"));
+            branchtext.setTextColor(Color.parseColor("#000000"));
+            textView7.setTextColor(Color.parseColor("#000000"));
+            textView10.setTextColor(Color.parseColor("#000000"));
+
+        }
 
 
         loadingDialog = new Dialog(this);

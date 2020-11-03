@@ -2,12 +2,17 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,6 +32,7 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     int position1;
+    TextView text1;
 
 
     @Override
@@ -35,6 +41,23 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entrance_exam_previous_recycler);
 
        position1=getIntent().getIntExtra("position",0);
+
+       text1=(TextView) findViewById(R.id.text1);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text1.setTextColor(Color.parseColor("#ffffff"));
+        }else{
+            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+            text1.setTextColor(Color.parseColor("#000000"));
+        }
 
 
 

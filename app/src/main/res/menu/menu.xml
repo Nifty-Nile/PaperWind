@@ -4,10 +4,11 @@
 
     <item
         android:title="Share"
-        android:id="@+id/share"/>
+        android:id="@+id/share"
+        />
 
     <item
-        android:title="About Us"
+        android:title="Light And Dark Mode"
         android:id="@+id/about"/>
 
     <item

@@ -4,12 +4,16 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class FinalRankPredictorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber,Branch,inputrank;
-    TextView exam123,category123,gender123,rank,rankhead,Scoreint;
+    TextView exam123,category123,gender123,rank,rankhead,Scoreint,textView7,Text3,dis2,Text200,rankheading;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     private Dialog loadingDialog;
@@ -52,12 +56,55 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         getCollege=(Button) findViewById(R.id.getCollege);
         donebutton=(Button) findViewById(R.id.done);
 
+        textView7=(TextView) findViewById(R.id.textView7);
+        Text3=(TextView) findViewById(R.id.Text3);
+        dis2=(TextView) findViewById(R.id.dis2);
+        Text200=(TextView) findViewById(R.id.Text200);
+        rankheading=(TextView) findViewById(R.id.rankheading);
+
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
         inputdata=getIntent().getIntExtra("InputPredictor",0);
         score=getIntent().getIntExtra("Score1",0);
         Gender0=getIntent().getIntExtra("Gender",0);
         Cast0=getIntent().getIntExtra("cast",0);
         Branch=getIntent().getIntExtra("Branch",0);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            exam123.setTextColor(Color.parseColor("#ffffff"));
+            category123.setTextColor(Color.parseColor("#ffffff"));
+            gender123.setTextColor(Color.parseColor("#ffffff"));
+            rank.setTextColor(Color.parseColor("#ffffff"));
+            Scoreint.setTextColor(Color.parseColor("#ffffff"));
+            rankhead.setTextColor(Color.parseColor("#ffffff"));
+            textView7.setTextColor(Color.parseColor("#ffffff"));
+            Text200.setTextColor(Color.parseColor("#ffffff"));
+            Text3.setTextColor(Color.parseColor("#ffffff"));
+            dis2.setTextColor(Color.parseColor("#ffffff"));
+            rankheading.setTextColor(Color.parseColor("#ffffff"));
+        }else{
+            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            exam123.setTextColor(Color.parseColor("#000000"));
+            category123.setTextColor(Color.parseColor("#000000"));
+            gender123.setTextColor(Color.parseColor("#000000"));
+            rank.setTextColor(Color.parseColor("#000000"));
+            Scoreint.setTextColor(Color.parseColor("#000000"));
+            rankhead.setTextColor(Color.parseColor("#000000"));
+            textView7.setTextColor(Color.parseColor("#000000"));
+            Text200.setTextColor(Color.parseColor("#000000"));
+            Text3.setTextColor(Color.parseColor("#000000"));
+            dis2.setTextColor(Color.parseColor("#000000"));
+            rankheading.setTextColor(Color.parseColor("#000000"));
+        }
+
 
 
         Goldennumber();

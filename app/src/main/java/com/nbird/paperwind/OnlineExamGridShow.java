@@ -3,10 +3,12 @@ package com.nbird.paperwind;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -34,7 +36,7 @@ public class OnlineExamGridShow extends AppCompatActivity {
     DatabaseReference myRef2=database.getReference();
     DatabaseReference myRef3=database.getReference();
     private List<ASSAPHolder> list1,list2,list3;
-    TextView timer,timersec;
+    TextView timer,timersec,textView11,timerheading,text1,text2,text3,dot;
     CountDownTimer countDownTimer;
     long time,times;
     String value;
@@ -68,6 +70,48 @@ public class OnlineExamGridShow extends AppCompatActivity {
         pausebutton=(Button) findViewById(R.id.PauseTestButton);
         timer=(TextView) findViewById(R.id.timer);
         timersec=(TextView) findViewById(R.id.sec);
+
+        textView11=(TextView) findViewById(R.id.textView11);
+        timerheading=(TextView) findViewById(R.id.timerheading);
+        text1=(TextView) findViewById(R.id.text1);
+        text2=(TextView) findViewById(R.id.text2);
+        text3=(TextView) findViewById(R.id.text3);
+        dot=(TextView) findViewById(R.id.don);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            LinearLayout layout =(LinearLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            timer.setTextColor(Color.parseColor("#ffffff"));
+            timersec.setTextColor(Color.parseColor("#ffffff"));
+            textView11.setTextColor(Color.parseColor("#ffffff"));
+            timerheading.setTextColor(Color.parseColor("#ffffff"));
+            text1.setTextColor(Color.parseColor("#ffffff"));
+            text2.setTextColor(Color.parseColor("#ffffff"));
+            text3.setTextColor(Color.parseColor("#ffffff"));
+            dot.setTextColor(Color.parseColor("#ffffff"));
+
+
+
+        }else{
+            LinearLayout layout =(LinearLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            timer.setTextColor(Color.parseColor("#000000"));
+            timersec.setTextColor(Color.parseColor("#000000"));
+            textView11.setTextColor(Color.parseColor("#000000"));
+            timerheading.setTextColor(Color.parseColor("#000000"));
+            text1.setTextColor(Color.parseColor("#000000"));
+            text2.setTextColor(Color.parseColor("#000000"));
+            text3.setTextColor(Color.parseColor("#000000"));
+            dot.setTextColor(Color.parseColor("#000000"));
+
+        }
+
         list1=new ArrayList<>();
         list2=new ArrayList<>();
         list3=new ArrayList<>();

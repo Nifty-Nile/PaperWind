@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainfield"
     tools:context=".FormulaSubjectActivity"
     android:background="@drawable/background1">
+
+    <TextView
+        android:id="@+id/text0"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="50dp"
+        android:fontFamily="@font/acme"
+        android:text="The Central Board of Secondary Education is a national level board of education in India controlled by Union Government of India."
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -25,14 +39,13 @@
         android:layout_width="match_parent"
         android:layout_height="120sp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:background="@drawable/stroke100"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@+id/text0">
 
         <ImageView
             android:layout_width="95dp"
@@ -48,6 +61,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text1"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
@@ -102,6 +116,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text2"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
@@ -156,6 +171,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text3"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"

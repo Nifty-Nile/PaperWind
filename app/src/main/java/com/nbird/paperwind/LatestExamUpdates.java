@@ -2,14 +2,18 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -30,6 +34,7 @@ public class LatestExamUpdates extends AppCompatActivity {
     private Dialog loadingDialog;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    TextView headtext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +46,31 @@ public class LatestExamUpdates extends AppCompatActivity {
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         loadingDialog.setCancelable(true);
 
+        headtext=(TextView) findViewById(R.id.headingtext);
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Latest News");
+
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            headtext.setTextColor(Color.parseColor("#ffffff"));
+
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            headtext.setTextColor(Color.parseColor("#000000"));
+
+        }
 
         setSupportActionBar(toolbar);
 

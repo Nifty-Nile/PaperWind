@@ -2,10 +2,13 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -30,7 +33,7 @@ public class ExamRecordActivity extends AppCompatActivity {
     private Dialog loadingDialog;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
-    TextView fulloremptyview;
+    TextView fulloremptyview,textView15;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,8 @@ public class ExamRecordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_exam_record);
 
         fulloremptyview=(TextView) findViewById(R.id.EmptyorFulltext);
+        textView15=(TextView) findViewById(R.id.textView15);
+
 
         fAuth = FirebaseAuth.getInstance();
         loadingDialog = new Dialog(this);
@@ -49,6 +54,28 @@ public class ExamRecordActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(recyclerView.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            fulloremptyview.setTextColor(Color.parseColor("#ffffff"));
+            textView15.setTextColor(Color.parseColor("#ffffff"));
+
+
+        }else{
+            ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+
+            fulloremptyview.setTextColor(Color.parseColor("#000000"));
+            textView15.setTextColor(Color.parseColor("#000000"));
+
+        }
 
         list = new ArrayList<>();
         loadingDialog.show();

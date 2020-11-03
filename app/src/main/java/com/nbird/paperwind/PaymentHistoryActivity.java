@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,11 +32,36 @@ public class PaymentHistoryActivity extends AppCompatActivity {
     private Dialog loadingDialog;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
+    TextView text1,text2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment_history);
+
+        text1=(TextView) findViewById(R.id.text1);
+        text2=(TextView) findViewById(R.id.text2);
+
+        SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
+        SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        if(answerA0){
+            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.backdarkmode);
+            text1.setTextColor(Color.parseColor("#ffffff"));
+            text2.setTextColor(Color.parseColor("#ffffff"));
+
+        }else{
+            LinearLayout layout =(LinearLayout)findViewById(R.id.mainfield);
+            layout.setBackgroundResource(R.drawable.background1);
+
+            text1.setTextColor(Color.parseColor("#000000"));
+            text2.setTextColor(Color.parseColor("#000000"));
+
+        }
+
 
         fAuth = FirebaseAuth.getInstance();
         loadingDialog = new Dialog(this);
