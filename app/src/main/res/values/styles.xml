@@ -3,9 +3,9 @@
     <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">#118BCC</item>
+        <item name="colorPrimaryDark">#50C2FF</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:statusBarColor">#50C2FF</item>
     </style>
 
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
