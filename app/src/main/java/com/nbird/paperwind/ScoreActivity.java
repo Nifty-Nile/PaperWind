@@ -98,7 +98,7 @@ public class ScoreActivity extends AppCompatActivity {
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
-        Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+        final Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         if(answerA0){
             ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
@@ -212,7 +212,13 @@ public class ScoreActivity extends AppCompatActivity {
                 }
                 BarDataSet barDataSet=new BarDataSet(visitors,"Bar Data");
                 barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-                barDataSet.setValueTextColor(Color.BLACK);
+
+                if(answerA0){
+                    barDataSet.setValueTextColor(Color.BLUE);
+                }else{
+                    barDataSet.setValueTextColor(Color.BLACK);
+                }
+
                 barDataSet.setValueTextSize(16f);
 
                 BarData barData=new BarData(barDataSet);
@@ -253,9 +259,14 @@ public class ScoreActivity extends AppCompatActivity {
 
         ArrayList<PieEntry> visitors1=new ArrayList<>();
 
-        visitors1.add(new PieEntry(physcore1,"Physics"));
-        visitors1.add(new PieEntry(chemscore1,"Chemistry"));
-        visitors1.add(new PieEntry(mathsscore1,"Mathematics"));
+        if(physcore1>0){
+            visitors1.add(new PieEntry(physcore1,"Physics"));
+        }
+        if(chemscore1>0){
+            visitors1.add(new PieEntry(chemscore1,"Chemistry"));
+        }if(mathsscore1>0){
+            visitors1.add(new PieEntry(mathsscore1,"Mathematics"));
+        }
 
 
 

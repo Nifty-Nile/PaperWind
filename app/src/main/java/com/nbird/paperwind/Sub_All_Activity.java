@@ -19,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Sub_All_Activity extends AppCompatActivity {
     Button button1,button2,button3,button4,button5,button6;
     int Exam,Std,Paper;
+    androidx.appcompat.widget.Toolbar toolbar;
     TextView text0,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12;
 
 
@@ -52,13 +53,22 @@ public class Sub_All_Activity extends AppCompatActivity {
         text11=(TextView) findViewById(R.id.text11);
         text12=(TextView) findViewById(R.id.text12);
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         if(answerA0){
-            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             text1.setTextColor(Color.parseColor("#ffffff"));
             text2.setTextColor(Color.parseColor("#ffffff"));
@@ -74,7 +84,7 @@ public class Sub_All_Activity extends AppCompatActivity {
             text12.setTextColor(Color.parseColor("#ffffff"));
 
         }else{
-            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.background1);
 
 
@@ -96,6 +106,36 @@ public class Sub_All_Activity extends AppCompatActivity {
 
 
 
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+
+        // **************** Bottom navigation View **********************
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        return true;
+
+                    case R.id.rankpredictor:
+                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         cigar();
 
@@ -181,6 +221,17 @@ public class Sub_All_Activity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

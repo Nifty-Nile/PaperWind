@@ -7,14 +7,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -33,6 +36,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
     private List<CollegePredictorMainHolder> list;
     int SelectedEntranceExam,InputText,Rank,Gender,Cast,Branch,PlatinumNumber;
     String rank123;
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +60,14 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         branchtext=(TextView) findViewById(R.id.Branch00);
         textView7=(TextView) findViewById(R.id.textView7);
         textView10=(TextView) findViewById(R.id.textView10);
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
@@ -108,7 +120,35 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
 
         loadingDialog.show();
 
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
+        bottomNavigationView.setSelectedItemId(R.id.rankpredictor);
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+                    case R.id.rankpredictor:
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         myRef.child("CollegePredictor").child(String.valueOf(SelectedEntranceExam)).child(String.valueOf(Cast)).child(String.valueOf(Gender)).child(String.valueOf(PlatinumNumber)).orderByChild("branch").equalTo(Branch).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -349,5 +389,14 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         }
 
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

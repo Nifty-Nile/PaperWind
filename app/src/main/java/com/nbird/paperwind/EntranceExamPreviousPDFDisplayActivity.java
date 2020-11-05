@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +31,7 @@ public class EntranceExamPreviousPDFDisplayActivity extends AppCompatActivity {
     DatabaseReference myRef = database.getReference();
     int position,set;
     private Dialog loadingDialog;
+    androidx.appcompat.widget.Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +46,13 @@ public class EntranceExamPreviousPDFDisplayActivity extends AppCompatActivity {
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         loadingDialog.setCancelable(false);
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         set=getIntent().getIntExtra("set",0);
@@ -98,6 +107,16 @@ public class EntranceExamPreviousPDFDisplayActivity extends AppCompatActivity {
         protected void onPostExecute(InputStream inputStream){
             pdfView.fromStream(inputStream).load();
         }
+
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }

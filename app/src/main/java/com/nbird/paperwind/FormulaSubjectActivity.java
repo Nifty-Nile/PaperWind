@@ -1,5 +1,6 @@
 package com.nbird.paperwind;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -7,15 +8,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 public class FormulaSubjectActivity extends AppCompatActivity {
     Button phybutton,chembutton,biobutton;
     int std;
     TextView text1,text2,text3,text0;
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +37,47 @@ public class FormulaSubjectActivity extends AppCompatActivity {
 
 
         std=getIntent().getIntExtra("Std100",0);
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        bottomNavigationView.setSelectedItemId(R.id.Formulas);
+
+
+        // **************** Bottom navigation View **********************
+
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.rankpredictor:
+                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.Formulas:
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
@@ -90,5 +136,16 @@ public class FormulaSubjectActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

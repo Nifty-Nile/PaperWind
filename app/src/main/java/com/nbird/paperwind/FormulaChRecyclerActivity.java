@@ -8,13 +8,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +38,7 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
     CardView cardView;
     RecyclerView recyclerView;
     TextView textView3;
+    androidx.appcompat.widget.Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +53,15 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         if(answerA0){
             ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
@@ -77,8 +90,39 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
         final FormulaAdapter myAdapter=new FormulaAdapter(lstExam,std,subject);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(myAdapter);
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        bottomNavigationView.setSelectedItemId(R.id.Formulas);
 
 
+        // **************** Bottom navigation View **********************
+
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.rankpredictor:
+                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+                    case R.id.Formulas:
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
 
 
@@ -101,5 +145,15 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

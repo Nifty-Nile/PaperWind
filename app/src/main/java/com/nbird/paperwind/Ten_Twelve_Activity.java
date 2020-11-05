@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import org.w3c.dom.Text;
 
 public class Ten_Twelve_Activity extends AppCompatActivity {
-
+    androidx.appcompat.widget.Toolbar toolbar;
     Button tenstdButton,twelvestdButton;
     TextView text1,text2,text3,text4;
     int Exam;
@@ -34,8 +34,16 @@ public class Ten_Twelve_Activity extends AppCompatActivity {
         Exam=getIntent().getIntExtra("Exam",0);
 
 
-        Toolbar toolbar=findViewById(R.id.toolbar);
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Class Selection");
+
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+
 
         tenstdButton=(Button) findViewById(R.id.tenstdbutton);
         twelvestdButton=(Button) findViewById(R.id.twelvestdbutton);
@@ -70,34 +78,13 @@ public class Ten_Twelve_Activity extends AppCompatActivity {
 
         }
 
-        tenstdButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),PaperCategoryBoardsActivity.class);
-                intent.putExtra("Exam",Exam);
-                intent.putExtra("Std",1);
-
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-            }
-        });
-
-        twelvestdButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent1=new Intent(getBaseContext(),PaperCategoryBoardsActivity.class);
-                intent1.putExtra("Exam",Exam);
-                intent1.putExtra("Std",2);
-                startActivity(intent1);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-            }
-        });
-
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
         bottomNavigationView.setSelectedItemId(R.id.home);
 
+
+        // **************** Bottom navigation View **********************
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -123,32 +110,48 @@ public class Ten_Twelve_Activity extends AppCompatActivity {
             }
         });
 
+        tenstdButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),PaperCategoryBoardsActivity.class);
+                intent.putExtra("Exam",Exam);
+                intent.putExtra("Std",1);
+
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
+
+        twelvestdButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1=new Intent(getBaseContext(),PaperCategoryBoardsActivity.class);
+                intent1.putExtra("Exam",Exam);
+                intent1.putExtra("Std",2);
+                startActivity(intent1);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
+
+
+
+
 
 
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id=item.getItemId();
 
-        if(id==R.id.share){
-            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.about){
-            Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.history){
-            Toast.makeText(this, "history", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.propic){
-            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.coins){
-            Toast.makeText(this, "Money", Toast.LENGTH_SHORT).show();
+        if(item.getItemId()==android.R.id.home){
+            finish();
         }
-        return true;
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

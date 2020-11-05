@@ -70,6 +70,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
     int value,triggerinteger,timer9int;
     int numberoftimesvideoplayedin15min;
     FirebaseAuth fAuth;
+    androidx.appcompat.widget.Toolbar toolbar;
     String amount;
     long timermanupulationmin,timermanupulationsec;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -89,6 +90,9 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
     Date currentTime;
     String intcurrentTime;
+
+    BottomNavigationView bottomNavigationView;
+
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -114,7 +118,19 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         yesbutton = (Button) findViewById(R.id.buttonYes);
         nobutton = (Button) findViewById(R.id.buttonNo);
 
+
+
+
+
         Checkout.preload(getApplicationContext());
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
@@ -289,8 +305,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
             }
         });*/
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomnavigatio);
-
+        bottomNavigationView = findViewById(R.id.bottomnavigatio);
         bottomNavigationView.setSelectedItemId(R.id.money);
 
 
@@ -390,9 +405,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         super.onDestroy();
     }
 
-    public void onBackPressed() {
-        super.onBackPressed();
-    }
+
 
 
 
@@ -646,6 +659,27 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 startPayment();
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+
+                finish();
+            bottomNavigationView.setSelectedItemId(R.id.home);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+    public void onBackPressed() {
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        MoneyActivity.super.onBackPressed();
+        finish();
+
     }
 
 

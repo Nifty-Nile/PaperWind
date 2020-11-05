@@ -19,7 +19,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class FormulaSTDActivity extends AppCompatActivity {
     Button tipButton1,tipButton2;
     TextView textView12,text1,text2,text3,text4;
-
+    androidx.appcompat.widget.Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +33,14 @@ public class FormulaSTDActivity extends AppCompatActivity {
         text3=(TextView) findViewById(R.id.text3);
         text4=(TextView) findViewById(R.id.text4);
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
-        bottomNavigationView.setSelectedItemId(R.id.Formulas);
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
@@ -43,7 +49,7 @@ public class FormulaSTDActivity extends AppCompatActivity {
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         if(answerA0){
-            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             textView12.setTextColor(Color.parseColor("#ffffff"));
             text1.setTextColor(Color.parseColor("#ffffff"));
@@ -53,7 +59,7 @@ public class FormulaSTDActivity extends AppCompatActivity {
 
 
         }else{
-            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.background1);
 
             textView12.setTextColor(Color.parseColor("#000000"));
@@ -63,6 +69,13 @@ public class FormulaSTDActivity extends AppCompatActivity {
             text4.setTextColor(Color.parseColor("#000000"));
 
         }
+        bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        bottomNavigationView.setSelectedItemId(R.id.Formulas);
+
+
+        // **************** Bottom navigation View **********************
+
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -110,5 +123,23 @@ public class FormulaSTDActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+            bottomNavigationView.setSelectedItemId(R.id.home);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+    public void onBackPressed() {
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        FormulaSTDActivity.super.onBackPressed();
+        finish();
+
     }
 }

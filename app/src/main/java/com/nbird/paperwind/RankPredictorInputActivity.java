@@ -28,6 +28,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -75,7 +76,14 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         radioMale=(RadioButton) findViewById(R.id.radioMale);
         radioFemale=(RadioButton) findViewById(R.id.radioFemale);
 
-        toolbar = findViewById(R.id.toolbar);
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         spinner = (Spinner)findViewById(R.id.spinner1);
         spinner2 = (Spinner)findViewById(R.id.spinner2);
@@ -98,7 +106,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         if(answerA0){
-            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
 
             Text1.setTextColor(Color.parseColor("#ffffff"));
@@ -111,7 +119,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             Text3.setTextColor(Color.parseColor("#ffffff"));
             dis2.setTextColor(Color.parseColor("#ffffff"));
         }else{
-            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.background1);
 
 
@@ -130,7 +138,35 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
         scoretext.setText(String.valueOf(totalmarks));
 
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
+        bottomNavigationView.setSelectedItemId(R.id.rankpredictor);
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+                    case R.id.rankpredictor:
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
         fAuth = FirebaseAuth.getInstance();
@@ -533,7 +569,11 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         }else if(id==R.id.about){
             Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.history){
-            Toast.makeText(this, "history", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "History Mode", Toast.LENGTH_SHORT).show();
+            Intent intent=new Intent(getBaseContext(),ExamRecordActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
         }else if(id==R.id.propic){
             Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
         }else if(id==R.id.coins){
@@ -572,6 +612,10 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             }
             alertDialog.show();
         }
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
         return true;
     }
+
 }

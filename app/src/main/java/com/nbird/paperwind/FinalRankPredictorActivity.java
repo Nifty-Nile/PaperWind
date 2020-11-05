@@ -1,12 +1,15 @@
 package com.nbird.paperwind;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
@@ -18,6 +21,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -34,6 +38,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
     TextInputEditText scoretext;
     Button getCollege,donebutton;
     String value;
+    androidx.appcompat.widget.Toolbar toolbar;
     private Spinner spinner2;
     private static final String[] paths123 = {"CSE","IT","ECE","EEE","ME","TE","Civil"};
 
@@ -69,13 +74,21 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         Cast0=getIntent().getIntExtra("cast",0);
         Branch=getIntent().getIntExtra("Branch",0);
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         if(answerA0){
-            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             exam123.setTextColor(Color.parseColor("#ffffff"));
             category123.setTextColor(Color.parseColor("#ffffff"));
@@ -89,7 +102,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             dis2.setTextColor(Color.parseColor("#ffffff"));
             rankheading.setTextColor(Color.parseColor("#ffffff"));
         }else{
-            ScrollView layout =(ScrollView) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.background1);
 
             exam123.setTextColor(Color.parseColor("#000000"));
@@ -106,6 +119,35 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         }
 
 
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        bottomNavigationView.setSelectedItemId(R.id.rankpredictor);
+
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+
+
+                    case R.id.rankpredictor:
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
 
         Goldennumber();
         TextViewDisplay();
@@ -558,5 +600,16 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,265 +8,287 @@
     android:orientation="vertical"
     android:background="@drawable/background1"
     tools:context=".FinalRankPredictorActivity">
-    
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#22ABE0"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:logo="@drawable/ic_baseline_menu_24"
-            app:title="Menu"
-            app:titleMarginStart="40dp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/aclonica"
-            android:text="RANK PREDICTOR"
-            android:textSize="25sp"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+            android:layout_height="wrap_content">
 
 
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="15dp"
-            android:fontFamily="@font/amarante"
-            android:text="Entrance Exam : VITEEE"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-        <TextView
-            android:id="@+id/textcategory"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amarante"
-            android:text="Category : General"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            app:layout_constraintStart_toStartOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/aclonica"
+                android:text="RANK PREDICTOR"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
 
-        <TextView
-            android:id="@+id/gender"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amarante"
-            android:text="Gender : Male"
-            android:textSize="20sp"
-            android:textColor="#000000"
-            app:layout_constraintStart_toStartOf="@+id/textView8"
-            app:layout_constraintTop_toBottomOf="@+id/textcategory" />
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/amarante"
+                android:text="Entrance Exam : VITEEE"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/gender" />
-
-        <TextView
-            android:id="@+id/rankheading"
-            android:layout_width="0dp"
-            android:layout_height="56dp"
-            android:fontFamily="@font/amaranth_bold"
-            android:text="Your Score :"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-        <TextView
-            android:id="@+id/scoreint"
-            android:layout_width="0dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/amaranth_bold"
-            android:text="200"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            app:layout_constraintStart_toEndOf="@+id/rankheading"
-            app:layout_constraintTop_toTopOf="@+id/rankheading" />
+            <TextView
+                android:id="@+id/textcategory"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amarante"
+                android:text="Category : General"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
 
-        <TextView
-            android:id="@+id/rankhead"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/amaranth_bold"
-            android:text="Rank :"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            app:layout_constraintStart_toStartOf="@+id/rankheading"
-            app:layout_constraintTop_toBottomOf="@+id/rankheading" />
+            <TextView
+                android:id="@+id/gender"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amarante"
+                android:text="Gender : Male"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="@+id/textView8"
+                app:layout_constraintTop_toBottomOf="@+id/textcategory" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gender" />
+
+            <TextView
+                android:id="@+id/rankheading"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:fontFamily="@font/amaranth_bold"
+                android:text="Your Score :"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/scoreint"
+                android:layout_width="0dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/amaranth_bold"
+                android:text="200"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintStart_toEndOf="@+id/rankheading"
+                app:layout_constraintTop_toTopOf="@+id/rankheading" />
 
 
-        <TextView
-            android:id="@+id/rankint"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/amaranth_bold"
-            android:text="2000000-1000000"
-            android:textColor="#000000"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="@+id/imageView2"
-            app:layout_constraintStart_toEndOf="@+id/rankhead"
-            app:layout_constraintTop_toTopOf="@+id/rankhead" />
+            <TextView
+                android:id="@+id/rankhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/amaranth_bold"
+                android:text="Rank :"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintStart_toStartOf="@+id/rankheading"
+                app:layout_constraintTop_toBottomOf="@+id/rankheading" />
 
 
-        <TextView
-            android:id="@+id/Text3"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/aclonica"
-            android:text="COLLEGE PREDICTOR"
-            android:textColor="#000000"
-            android:textSize="18sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+            <TextView
+                android:id="@+id/rankint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/amaranth_bold"
+                android:text="2000000-1000000"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintStart_toEndOf="@+id/rankhead"
+                app:layout_constraintTop_toTopOf="@+id/rankhead" />
 
-        <TextView
-            android:id="@+id/Text200"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/amarante"
-            android:text="Select preffered branch"
-            android:textColor="#000000"
-            android:textSize="15dp"
-            app:layout_constraintStart_toStartOf="@+id/linearLayout14"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
 
-        <Spinner
-            android:id="@+id/spinner2"
-            style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:background="@android:drawable/btn_dropdown"
-            android:backgroundTint="#50C2FF"
-            android:elevation="100dp"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:popupBackground="@color/blue"
-            android:spinnerMode="dropdown"
-            app:layout_constraintCircleRadius="45dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Text200" />
+            <TextView
+                android:id="@+id/Text3"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/aclonica"
+                android:text="COLLEGE PREDICTOR"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dis2">
+            <TextView
+                android:id="@+id/Text200"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/amarante"
+                android:text="Select preffered branch"
+                android:textColor="#000000"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout14"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <Spinner
+                android:id="@+id/spinner2"
+                style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="@android:drawable/btn_dropdown"
+                android:backgroundTint="#50C2FF"
+                android:elevation="100dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:popupBackground="@color/blue"
+                android:spinnerMode="dropdown"
+                app:layout_constraintCircleRadius="45dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Text200" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout14"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter Your Rank"
-                android:textColorHint="#000000"
-                app:boxStrokeColor="#000000"
-                tools:ignore="MissingClass">
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dis2">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username1"
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000" />
+                    android:hint="Enter Your Rank"
+                    android:textColorHint="#000000"
+                    app:boxStrokeColor="#000000"
+                    tools:ignore="MissingClass">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000" />
 
-        </LinearLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/dis2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="20dp"
-            android:fontFamily="@font/amarante"
-            android:text="Want to know if you unlocked your dream college? Get to know your options right here..."
-            android:textColor="#000000"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/Text3"
-            app:layout_constraintTop_toBottomOf="@+id/Text3" />
+            </LinearLayout>
 
-        <Button
-            android:id="@+id/getCollege"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:layout_weight="1"
-            android:background="@drawable/roundbuttons"
-            android:elevation="300dp"
-            android:fontFamily="@font/aclonica"
-            android:text="Get Colleges"
-            android:textColor="#ffffff"
-            android:textSize="13sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
+            <TextView
+                android:id="@+id/dis2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/amarante"
+                android:text="Want to know if you unlocked your dream college? Get to know your options right here..."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/Text3"
+                app:layout_constraintTop_toBottomOf="@+id/Text3" />
 
-        <Button
-            android:id="@+id/done"
-            android:layout_width="130dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/roundbuttons"
-            android:elevation="10dp"
-            android:fontFamily="@font/aclonica"
-            android:text="Done"
-            android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:translationZ="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/imageView2"
-            app:layout_constraintEnd_toEndOf="@+id/imageView2" />
+            <Button
+                android:id="@+id/getCollege"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbuttons"
+                android:elevation="300dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Get Colleges"
+                android:textColor="#ffffff"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout14" />
+
+            <Button
+                android:id="@+id/done"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/roundbuttons"
+                android:elevation="10dp"
+                android:fontFamily="@font/aclonica"
+                android:text="Done"
+                android:textColor="#ffffff"
+                android:textSize="18sp"
+                android:translationZ="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/imageView2"
+                app:layout_constraintEnd_toEndOf="@+id/imageView2" />
 
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigatio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/blue"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:menu="@menu/menunav" />
     
-    
 
-</ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

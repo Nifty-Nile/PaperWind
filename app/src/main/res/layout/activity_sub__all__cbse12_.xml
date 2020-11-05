@@ -1,752 +1,775 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:id="@+id/mainfield"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".Sub_All_Activity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#22ABE0"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:logo="@drawable/ic_baseline_menu_24"
-            app:title="Menu"
-            app:titleMarginStart="40dp" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="dfneufe ufb eufefune frg b uenf urbg"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-        <LinearLayout
-            android:id="@+id/linearLayout9"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="dfneufe ufb eufefune frg b uenf urbg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <LinearLayout
+                android:id="@+id/linearLayout9"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
 
-                <TextView
-                    android:id="@+id/text1"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text2"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton1"
-                    android:layout_width="120dp"
-                    android:elevation="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton1"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout8"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout8"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
-                <TextView
-                    android:id="@+id/text3"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text4"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton2"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:elevation="30dp"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text4"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton2"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout7"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout7"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
 
-                <TextView
-                    android:id="@+id/text5"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text6"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton3"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:elevation="30dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text5"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text6"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton3"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout6"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout6"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7">
 
-                <TextView
-                    android:id="@+id/text7"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text8"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton4"
-                    android:layout_width="120dp"
-                    android:elevation="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text7"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text8"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton4"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout5"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout5"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
-                <TextView
-                    android:id="@+id/text9"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text10"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton5"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:elevation="30dp"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text9"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text10"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton5"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout4"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout4"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
-                <TextView
-                    android:id="@+id/text11"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text12"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton6"
-                    android:layout_width="120dp"
-                    android:elevation="30dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text11"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text12"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton6"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout3"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
-                <TextView
-                    android:id="@+id/text13"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text14"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton7"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:elevation="30dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text13"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text14"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton7"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-                <TextView
-                    android:id="@+id/text15"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text16"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton8"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:elevation="30dp"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text15"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text16"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton8"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-                <TextView
-                    android:id="@+id/text17"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text18"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton9"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:elevation="30dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text17"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text18"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton9"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout0"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout0"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
-                <TextView
-                    android:id="@+id/text19"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <TextView
-                    android:id="@+id/text20"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/tipButton10"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:elevation="30dp"
-                    android:fontFamily="@font/aclonica"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                    <TextView
+                        android:id="@+id/text19"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text20"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton10"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayout00"
-            android:layout_width="match_parent"
-            android:layout_height="150sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="10dp"
-            android:background="@drawable/stroke100"
-            android:orientation="horizontal"
-
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout0">
-
-            <ImageView
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="12dp"
-                android:background="@drawable/cbseicon" />
 
             <LinearLayout
+                android:id="@+id/linearLayout00"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150sp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/stroke100"
+                android:orientation="horizontal"
 
-                <TextView
-                    android:id="@+id/text21"
-                    android:layout_width="230dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Chemistry"
-                    android:textColor="#000000"
-                    android:textSize="22sp" />
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout0">
 
-                <TextView
-                    android:id="@+id/text22"
-                    android:layout_width="230dp"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="5dp"
-                    android:fontFamily="@font/acme"
-                    android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
-                    android:textColor="#000000"
-                    android:textSize="10sp" />
+                <ImageView
+                    android:layout_width="95dp"
+                    android:layout_height="95dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/cbseicon" />
 
-                <Button
-                    android:id="@+id/tipButton11"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="7dp"
-                    android:background="@drawable/roundbuttons"
-                    android:fontFamily="@font/aclonica"
-                    android:elevation="30dp"
-                    android:gravity="center"
-                    android:text="Get Papers" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text21"
+                        android:layout_width="230dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Chemistry"
+                        android:textColor="#000000"
+                        android:textSize="22sp" />
+
+                    <TextView
+                        android:id="@+id/text22"
+                        android:layout_width="230dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:textColor="#000000"
+                        android:textSize="10sp" />
+
+                    <Button
+                        android:id="@+id/tipButton11"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="7dp"
+                        android:background="@drawable/roundbuttons"
+                        android:elevation="30dp"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="center"
+                        android:text="Get Papers" />
 
 
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnavigatio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/blue"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:menu="@menu/menunav" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

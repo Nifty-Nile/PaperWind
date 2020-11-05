@@ -22,6 +22,8 @@ import java.util.List;
 public class RankPredictorActivity extends AppCompatActivity {
     List<RankMenuHolder> lstExam;
     TextView textView6;
+    androidx.appcompat.widget.Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,10 +32,17 @@ public class RankPredictorActivity extends AppCompatActivity {
         textView6=(TextView) findViewById(R.id.textView6);
 
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+        bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
         bottomNavigationView.setSelectedItemId(R.id.rankpredictor);
 
@@ -96,4 +105,21 @@ public class RankPredictorActivity extends AppCompatActivity {
         lstExam.add(new RankMenuHolder(R.drawable.back1,"Jee Mains"));
         lstExam.add(new RankMenuHolder(R.drawable.back1,"Neet"));
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            bottomNavigationView.setSelectedItemId(R.id.home);
+            finish();
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+    public void onBackPressed() {
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        RankPredictorActivity.super.onBackPressed();
+        finish();
+
+    }
+
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -216,18 +217,21 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 switch (menuItem.getItemId()){
                     case R.id.home:
                         return true;
-
                     case R.id.rankpredictor:
-                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        startActivity(new Intent(getBaseContext(),RankPredictorActivity.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.Formulas:
-                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        startActivity(new Intent(getBaseContext(),FormulaSTDActivity.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.money:
-                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        startActivity(new Intent(getBaseContext(),MoneyActivity.class));
+                        finish();
                         overridePendingTransition(0,0);
+
                         return true;
                 }
                 return false;
@@ -397,14 +401,12 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         switch (menuItem.getItemId()){
 
             case R.id.nav_logout:
-                logout.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+                fAuth = FirebaseAuth.getInstance();
+
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
                         finish();
-                    }
-                });
+
 
             case R.id.nav_tos:
                     Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
@@ -445,9 +447,14 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             drawerLayout.closeDrawer(GravityCompat.START);
         }
         else{
-            super.onBackPressed();
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.addCategory(Intent.CATEGORY_HOME);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
         }
+
     }
+
 
 
 }

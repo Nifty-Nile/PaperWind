@@ -22,6 +22,7 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
     Button linkButton,previousyearpaperbutton,sampleyearpaper,NCERTSolutions;
     int Exam,Std,Paper;
     TextView text1,text2,text3,text4,text5,text6,text7,text8;
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +39,16 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         text6=(TextView) findViewById(R.id.text6);
         text7=(TextView) findViewById(R.id.text7);
         text8=(TextView) findViewById(R.id.text8);
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Category Activity");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
 
 
         linkButton=(Button) findViewById(R.id.linkButton);
@@ -235,26 +246,15 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
 
     }
 
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu,menu);
-        return true;
-    }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id=item.getItemId();
 
-        if(id==R.id.share){
-            Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.about){
-            Toast.makeText(this, "about", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.history){
-            Toast.makeText(this, "history", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.propic){
-            Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
-        }else if(id==R.id.coins){
-            Toast.makeText(this, "Money", Toast.LENGTH_SHORT).show();
+        if(item.getItemId()==android.R.id.home){
+            finish();
         }
-        return true;
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

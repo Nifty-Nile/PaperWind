@@ -10,6 +10,7 @@ import android.app.Dialog;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -32,6 +33,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
     DatabaseReference myRef = database.getReference();
     int Exam,Std,Paper,Chapter;
     TextView text0;
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,19 +47,28 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
 
         text0=(TextView) findViewById(R.id.text0);
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Category Activity");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         if(answerA0){
-            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             text0.setTextColor(Color.parseColor("#ffffff"));
 
 
         }else{
-            LinearLayout layout =(LinearLayout) findViewById(R.id.mainfield);
+            ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.background1);
 
 
@@ -105,5 +116,15 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

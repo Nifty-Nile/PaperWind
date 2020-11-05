@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +32,7 @@ public class Formula_Pdf_Activity extends AppCompatActivity {
     DatabaseReference myRef = database.getReference();
     int subject,std,set;
     private Dialog loadingDialog;
+    androidx.appcompat.widget.Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +51,15 @@ public class Formula_Pdf_Activity extends AppCompatActivity {
         subject=getIntent().getIntExtra("Subject100",0);
         std=getIntent().getIntExtra("Std100",0);
         set=getIntent().getIntExtra("set",0);
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         loadingDialog.show();
 
@@ -100,6 +111,16 @@ public class Formula_Pdf_Activity extends AppCompatActivity {
         protected void onPostExecute(InputStream inputStream){
             pdfView.fromStream(inputStream).load();
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 
 }

@@ -21,7 +21,8 @@ public class BoardYearActivity extends AppCompatActivity {
     Button previousyearbutton,onlinetestbutton;
     String answerA1000;
     TextView text100,text200,text300,text400,Text4;
-
+    androidx.appcompat.widget.Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,14 @@ public class BoardYearActivity extends AppCompatActivity {
         text300=(TextView) findViewById(R.id.text300);
         text400=(TextView) findViewById(R.id.text400);
         Text4=(TextView) findViewById(R.id.Text4);
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
@@ -131,10 +140,12 @@ public class BoardYearActivity extends AppCompatActivity {
             }
         });
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+        bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
         bottomNavigationView.setSelectedItemId(R.id.home);
 
+
+        // **************** Bottom navigation View **********************
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -159,6 +170,24 @@ public class BoardYearActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+            bottomNavigationView.setSelectedItemId(R.id.home);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackPressed() {
+        bottomNavigationView.setSelectedItemId(R.id.home);
+        BoardYearActivity.super.onBackPressed();
+        finish();
 
     }
 

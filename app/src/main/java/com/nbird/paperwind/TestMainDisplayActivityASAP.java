@@ -14,6 +14,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.Button;
@@ -26,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -37,7 +39,7 @@ import java.util.List;
 
 public class TestMainDisplayActivityASAP extends AppCompatActivity {
 
-    TextView serialnumber,timer,question,option1,option2,option3,option4,timersec,dot;
+    TextView serialnumber,timer,question,option1,option2,option3,option4,timersec,dot,timerheading;
     Button backbutton,menubutton,saveandnextbutton,reviewbutton,submitbutton,unmarkbutton;
     RadioButton option1radio,option2radio,option3radio,option4radio;
     RadioGroup radioGroup;
@@ -69,7 +71,9 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
         timer=(TextView) findViewById(R.id.timer);
         question=(TextView) findViewById(R.id.question);
         timersec=(TextView) findViewById(R.id.sec);
-        dot=(TextView) findViewById(R.id.don);
+        timerheading=(TextView) findViewById(R.id.timerheading);
+        dot=(TextView) findViewById(R.id.dot);
+
 
 
 
@@ -109,6 +113,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
             option2radio.setTextColor(Color.parseColor("#ffffff"));
             option3radio.setTextColor(Color.parseColor("#ffffff"));
             option4radio.setTextColor(Color.parseColor("#ffffff"));
+            timerheading.setTextColor(Color.parseColor("#ffffff"));
             dot.setTextColor(Color.parseColor("#ffffff"));
 
 
@@ -125,7 +130,8 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
             option2radio.setTextColor(Color.parseColor("#000000"));
             option3radio.setTextColor(Color.parseColor("#000000"));
             option4radio.setTextColor(Color.parseColor("#000000"));
-            dot.setTextColor(Color.parseColor("#ffffff"));
+            timerheading.setTextColor(Color.parseColor("#000000"));
+            dot.setTextColor(Color.parseColor("#000000"));
 
 
         }
