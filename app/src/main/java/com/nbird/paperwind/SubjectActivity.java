@@ -37,6 +37,8 @@ public class SubjectActivity extends AppCompatActivity {
     CardView cardView;
     int Exam,Std,Paper,Labsub;
     TextView textView3;
+    androidx.appcompat.widget.Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +50,15 @@ public class SubjectActivity extends AppCompatActivity {
 
 
         lstExam=new ArrayList<>();
+
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
@@ -305,4 +316,15 @@ public class SubjectActivity extends AppCompatActivity {
         lstExam.add(new Exam("Experiment 3 (iv)",R.drawable.back2,"T.S. of a xerophytic leaf (Nerium)."));
         lstExam.add(new Exam("Experiment 3 (v)",R.drawable.back2," L.S. of monocot and dicot seed (soaked seeds of maize/wheat, pea/ bean)."));
          }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
 }

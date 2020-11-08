@@ -19,7 +19,8 @@ public class LinkSubjects extends AppCompatActivity {
     Button phybutton,chembutton,biobutton;
     int Exam,Std,Paper;
     TextView text1,t1,t2,t3;
-
+    androidx.appcompat.widget.Toolbar toolbar;
+    BottomNavigationView bottomNavigationView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,13 @@ public class LinkSubjects extends AppCompatActivity {
         t2=(TextView) findViewById(R.id.text2);
         t3=(TextView) findViewById(R.id.text3);
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Subjects");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
@@ -130,5 +138,15 @@ public class LinkSubjects extends AppCompatActivity {
                 return false;
             }
         });
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }

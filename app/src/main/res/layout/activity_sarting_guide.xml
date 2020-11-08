@@ -278,15 +278,15 @@
 
                     android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/exam_img_id1"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="6dp"
-                        android:background="#ADE1F5"
-                        android:scaleType="centerCrop" />
+                        android:background="@drawable/jeeadvanced"
+                      />
 
                     <TextView
                         android:id="@+id/exam_dis1"
@@ -296,7 +296,7 @@
                         android:layout_marginRight="2dp"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:text="Joint Entrance Examination – Advanced, which replaces IIT-JEE, is an annual examination for admissions to the prestigious IITs of India."
                         android:textColor="#000000"
                         android:textSize="7sp" />
 
@@ -307,7 +307,7 @@
                         android:background="@drawable/rounded_corners2"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam"
+                        android:text="Jee Advance"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
@@ -332,15 +332,15 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                   <ImageView
                         android:id="@+id/exam_img_id2"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="6dp"
-                        android:background="#ADE1F5"
-                        android:scaleType="centerCrop" />
+                        android:background="@drawable/jeemain"
+                       />
 
                     <TextView
                         android:id="@+id/exam_dis2"
@@ -350,7 +350,7 @@
                         android:layout_marginRight="2dp"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:text="Joint Entrance Examination – Main is a national level entrance exam conducted by NTA to offer admission to BE/BTech, BPlan, BArch courses at IIITs, NITs."
                         android:textColor="#000000"
                         android:textSize="7sp" />
 
@@ -361,7 +361,7 @@
                         android:background="@drawable/rounded_corners2"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam"
+                        android:text="Jee Mains"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
@@ -386,15 +386,15 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                   <ImageView
                         android:id="@+id/exam_img_id"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginRight="6dp"
-                        android:background="#ADE1F5"
-                        android:scaleType="centerCrop" />
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/neet"
+                         />
 
                     <TextView
                         android:id="@+id/exam_dis"
@@ -404,7 +404,7 @@
                         android:layout_marginRight="2dp"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:text="The National Eligibility cum Entrance Test (Undergraduate), formerly AIPMT, is an entrance examination for UG medical courses(MBBS) and dental courses(BDS) in India."
                         android:textColor="#000000"
                         android:textSize="7sp" />
 
@@ -415,7 +415,7 @@
                         android:background="@drawable/rounded_corners2"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam"
+                        android:text="NEET"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
@@ -448,15 +448,15 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/exam_img_id6"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="80dp"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="15dp"
                         android:layout_marginTop="5dp"
-                        android:layout_marginRight="6dp"
-                        android:background="#ADE1F5"
-                        android:scaleType="centerCrop" />
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/viteee"
+                        />
 
                     <TextView
                         android:id="@+id/exam_dis6"
@@ -466,7 +466,7 @@
                         android:layout_marginRight="2dp"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:text="VITEEE is an annual entrance examination conducted by Vellore Institute of technology, a private university in Vellore, Tamil Nadu founded in 1984."
                         android:textColor="#000000"
                         android:textSize="7sp" />
 
@@ -477,7 +477,7 @@
                         android:background="@drawable/rounded_corners2"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam"
+                        android:text="VITEEE"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
@@ -508,15 +508,15 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/exam_img_id5"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="6dp"
-                        android:background="#ADE1F5"
-                        android:scaleType="centerCrop" />
+                        android:background="@drawable/comedk"
+                         />
 
                     <TextView
                         android:id="@+id/exam_dis5"
@@ -526,7 +526,7 @@
                         android:layout_marginRight="2dp"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:text="State level entrance examination by the Consortium of Medical, Engineering and Dental colleges of Karnataka for admissions to Engineerting and Architecture courses."
                         android:textColor="#000000"
                         android:textSize="7sp" />
 
@@ -537,7 +537,7 @@
                         android:background="@drawable/rounded_corners2"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam"
+                        android:text="COMEDK"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 
@@ -562,15 +562,15 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
+                    <ImageView
                         android:id="@+id/exam_img_id4"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="6dp"
-                        android:background="#ADE1F5"
-                        android:scaleType="centerCrop" />
+                        android:background="@drawable/nda"
+                         />
 
                     <TextView
                         android:id="@+id/exam_dis4"
@@ -580,7 +580,7 @@
                         android:layout_marginRight="2dp"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"
+                        android:text="NDA exam is conducted by UPSC twice a year for admissions to Army, Navy, and Air Force wings of the prestigious National Defence Academy, Pune."
                         android:textColor="#000000"
                         android:textSize="7sp" />
 
@@ -591,7 +591,7 @@
                         android:background="@drawable/rounded_corners2"
                         android:fontFamily="@font/acme"
                         android:gravity="center"
-                        android:text="Exam"
+                        android:text="NDA"
                         android:textColor="#000000"
                         android:textSize="17sp" />
 

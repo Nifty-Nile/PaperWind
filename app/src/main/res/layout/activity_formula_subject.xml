@@ -33,7 +33,7 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomnavigatio"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:background="@color/blue"
@@ -62,7 +62,7 @@
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/cbseicon" />
+            android:background="@drawable/physicsicon" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -117,7 +117,7 @@
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/cbseicon" />
+            android:background="@drawable/chemistryicon" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -172,7 +172,7 @@
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/cbseicon" />
+            android:background="@drawable/mathsicons" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -202,7 +202,8 @@
                 android:elevation="30dp"
                 android:fontFamily="@font/aclonica"
                 android:gravity="center"
-                android:text="Biology" />
+                android:textSize="13sp"
+                android:text="Mathematics" />
 
 
         </LinearLayout>
