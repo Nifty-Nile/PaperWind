@@ -48,7 +48,7 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
        text1=(TextView) findViewById(R.id.text1);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("PDF List");
 
         setSupportActionBar(toolbar);
 

@@ -84,7 +84,7 @@ public class ScoreActivity extends AppCompatActivity {
         loadingDialog = new Dialog(this);
         loadingDialog.setContentView(R.layout.activity_loading);
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        loadingDialog.setCancelable(false);
+        loadingDialog.setCancelable(true);
 
 
         totalmarks=getIntent().getIntExtra("totalmarks",0);
@@ -142,9 +142,50 @@ public class ScoreActivity extends AppCompatActivity {
           strsetno=Integer.toString(set123);
 
 
-
-
-          ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/Pdfpic%2Fhiclipart.com.png?alt=media&token=2b48a128-f0e7-4e3d-8ac2-a5c5c40f51e5";
+          switch (SelectedEntranceExam){
+              case 1:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fjee%20advanced.png?alt=media&token=421c480e-c4a4-4fd8-83c8-2a58a125a3c2";break;
+              case 2:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fjeemain.png?alt=media&token=cb281916-b971-4bf6-9458-d07d8b8ce1bb";break;
+              case 3:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fneet.gif?alt=media&token=571610f5-37af-4f80-b6e1-634ae22fef70";break;
+              case 4:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fviteee.png?alt=media&token=ba1abe51-baff-435f-9f77-214ee8035484";break;
+              case 5:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fcomedk.png?alt=media&token=b69f5581-5a05-43d9-aba1-44b0d136f23d";break;
+              case 6:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fnda.png?alt=media&token=721317a8-216f-42f9-ae45-b782f9f7aac7";break;
+              case 7:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fbitsat.png?alt=media&token=e529cfb5-5b9b-49c5-8d7f-49daf46192c8";break;
+              case 8:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fkvpy.png?alt=media&token=26b284cf-5533-44d4-8be6-e4a00d724c0c";break;
+              case 9:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fmhtcet.png?alt=media&token=57100cf9-fa0f-4cba-a191-f7f03c942dfa";break;
+              case 10:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fsrmjee(1).png?alt=media&token=c0359296-1648-4a03-a377-4a6d9b5a148c";break;
+              case 11:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fkcet.png?alt=media&token=b61028b5-2ab7-45aa-9633-0ca893ad3c67";break;
+              case 12:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fipucet.png?alt=media&token=bc792262-2601-4926-ac19-1342223f49fd";break;
+              case 13:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fmet.png?alt=media&token=d011a6ba-b17c-4a1d-b462-6754ac41a340";break;
+              case 14:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fwbjee.png?alt=media&token=003dfdc1-407f-467e-a466-8584fc0cb793";break;
+              case 15:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fjeec.png?alt=media&token=61821e07-fd94-4a01-9d35-26602e6450d8";break;
+              case 16:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fnest.png?alt=media&token=c02a13d5-7dc2-425e-8e71-ec029e6875e6";break;
+              case 17:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2FPessat.png?alt=media&token=b422f0a6-5019-48b4-9901-4fa299d940f0";break;
+              case 18:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Famuee.png?alt=media&token=3fb9362f-b15b-4ab7-8bf4-e303cdc5b082";break;
+              case 19:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fiiser.png?alt=media&token=7a906956-2002-4196-9e33-80b3ae9ca8c0";break;
+              case 20:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fupsee.png?alt=media&token=69db0671-a67c-41c4-9f9d-2ac77649e3e4";break;
+              case 21:
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fnift.png?alt=media&token=62f708df-dcee-4732-bb1f-63666799d068";break;
+          }
 
 
           phytext.setText("Physics : "+physcore1);

@@ -51,7 +51,7 @@ public class SignUpActivity extends AppCompatActivity {
                 loadingDialog=new Dialog(SignUpActivity.this);
                 loadingDialog.setContentView(R.layout.activity_loading);
                 loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-                loadingDialog.setCancelable(false);
+                loadingDialog.setCancelable(true);
                 loadingDialog.show();
                 table_user.addValueEventListener(new ValueEventListener() {
                     @Override

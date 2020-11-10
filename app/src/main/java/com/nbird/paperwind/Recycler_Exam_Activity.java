@@ -48,7 +48,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
         text0=(TextView) findViewById(R.id.text0);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Category Activity");
+        toolbar.setTitle("Papers List");
 
         setSupportActionBar(toolbar);
 

@@ -4,10 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/linearLayout4"
     android:layout_width="wrap_content"
-    android:layout_marginLeft="5dp"
+    android:layout_marginLeft="15dp"
     android:layout_marginRight="5dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/stroke100"
+    android:background="@drawable/loadingbackground"
     android:layout_marginTop="10dp"
     android:orientation="vertical"
     >
@@ -38,7 +38,7 @@
         android:gravity="center"
         android:layout_marginBottom="5dp"
         android:text="VITEE"
-        android:textColor="#DF3636"
+        android:textColor="#ffffff"
         android:textSize="13sp" />
 
 

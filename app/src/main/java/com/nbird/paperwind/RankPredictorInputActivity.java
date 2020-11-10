@@ -77,7 +77,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         radioFemale=(RadioButton) findViewById(R.id.radioFemale);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Predictor");
 
         setSupportActionBar(toolbar);
 

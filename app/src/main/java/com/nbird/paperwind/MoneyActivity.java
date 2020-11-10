@@ -434,7 +434,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
             JSONObject options = new JSONObject();
 
             options.put("name", "Paper Wind");
-            options.put("description", "Test Mode Dost");
+            options.put("description", "Get Paper Notes");
             options.put("image", "https://drive.google.com/file/d/1WH96VlHZORi5C9CQjvnmdkAyp6CQelOt/view?usp=sharing");
             options.put("theme.color", "#3399cc");
             options.put("currency", "INR");

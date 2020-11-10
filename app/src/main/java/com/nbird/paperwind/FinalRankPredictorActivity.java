@@ -75,7 +75,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         Branch=getIntent().getIntExtra("Branch",0);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Rank Predictor");
 
         setSupportActionBar(toolbar);
 

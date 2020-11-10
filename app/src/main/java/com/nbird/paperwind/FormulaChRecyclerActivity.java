@@ -55,7 +55,7 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Chapters List");
 
         setSupportActionBar(toolbar);
 
@@ -83,7 +83,7 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
         loadingDialog=new Dialog(FormulaChRecyclerActivity.this);
         loadingDialog.setContentView(R.layout.activity_loading);
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        loadingDialog.setCancelable(false);
+        loadingDialog.setCancelable(true);
         loadingDialog.show();
         lstExam=new ArrayList<>();
         recyclerView=(RecyclerView) findViewById(R.id.recyclerview);

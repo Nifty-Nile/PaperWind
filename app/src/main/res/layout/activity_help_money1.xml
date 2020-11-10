@@ -7,31 +7,128 @@
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     tools:context=".HelpMoney1Activity">
-
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="fnefnen eif eifn eifn efi efif"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="fnefnen eif eifn eifn efi efif"/>
-
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="300dp"
         android:background="@color/blue"
-        android:layout_gravity="center"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="eifn eifne fief eifn efe feif "/>
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:text="Paper Notes By Ads"/>
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:padding="2dp"
+                android:id="@+id/text2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/adamina"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="Paper Notes are basically vertiual coins "/>
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp"
+                android:padding="2dp"
+                android:fontFamily="@font/adamina"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eifn eifne fief eifn efe feif "/>
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"/>
+            <TextView
+                android:id="@+id/text4"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:fontFamily="@font/adamina"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eifn eifne fief eifn efe feif "/>
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:fontFamily="@font/adamina"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eifn eifne fief eifn efe feif "/>
+
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue"
+                android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:padding="2dp"
+                android:fontFamily="@font/adamina"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="eifn eifne fief eifn efe feif "/>
+        </LinearLayout>
+
+    </ScrollView>
+
 
 
 </LinearLayout>

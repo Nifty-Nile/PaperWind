@@ -33,7 +33,7 @@ public class RankPredictorActivity extends AppCompatActivity {
 
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Entrance Exams List");
 
         setSupportActionBar(toolbar);
 

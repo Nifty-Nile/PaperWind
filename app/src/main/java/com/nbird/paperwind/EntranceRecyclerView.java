@@ -50,7 +50,7 @@ public class EntranceRecyclerView extends AppCompatActivity {
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Sets");
 
         setSupportActionBar(toolbar);
 
@@ -107,7 +107,7 @@ public class EntranceRecyclerView extends AppCompatActivity {
         loadingDialog=new Dialog(EntranceRecyclerView.this);
         loadingDialog.setContentView(R.layout.activity_loading);
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        loadingDialog.setCancelable(false);
+        loadingDialog.setCancelable(true);
         loadingDialog.show();
 
         recyclerView = findViewById(R.id.recyclerview);

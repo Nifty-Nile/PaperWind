@@ -60,7 +60,7 @@ public class ExamRecordActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Exam Records");
 
         setSupportActionBar(toolbar);
 

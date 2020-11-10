@@ -58,6 +58,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text0">
 
         <ImageView
+            android:id="@+id/phyimage"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"
@@ -113,6 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
         <ImageView
+            android:id="@+id/chemimage"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"
@@ -168,6 +170,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout10">
 
         <ImageView
+            android:id="@+id/mathsimage"
             android:layout_width="95dp"
             android:layout_height="95dp"
             android:layout_marginLeft="20dp"

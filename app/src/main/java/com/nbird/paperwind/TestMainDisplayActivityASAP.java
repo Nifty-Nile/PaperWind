@@ -249,7 +249,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
         loadingDialog=new Dialog(this);
         loadingDialog.setContentView(R.layout.activity_loading);
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-        loadingDialog.setCancelable(false);
+        loadingDialog.setCancelable(true);
 
         list=new ArrayList<>();
         loadingDialog.show();

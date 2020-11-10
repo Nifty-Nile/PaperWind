@@ -56,11 +56,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView4">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/english" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,7 +74,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="English"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -121,11 +121,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout9">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/hindi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -139,7 +139,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Hindi"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -187,10 +187,10 @@
 
                 <ImageView
                     android:layout_width="95dp"
-                    android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_height="105dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/history" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -204,7 +204,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="History And Civics"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -252,10 +252,10 @@
 
                 <ImageView
                     android:layout_width="95dp"
-                    android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_height="105dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/biologybro" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -269,7 +269,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Biology"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -316,11 +316,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/geography" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -334,7 +334,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Geography"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -381,11 +381,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/econoomics" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -399,7 +399,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Economics"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -446,11 +446,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/mathsicons" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -464,7 +464,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Mathematics"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -511,11 +511,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/chemistryicon" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -580,7 +580,7 @@
                     android:layout_height="95dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/computerscience" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -594,7 +594,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Computer Application"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -641,11 +641,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/evs" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -659,7 +659,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Environmental Application"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -704,11 +704,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout0">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/physicsicon" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -722,7 +722,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Physics"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -767,11 +767,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout00">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/arts" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -785,7 +785,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Arts"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -830,11 +830,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout01">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/physicaledu" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -848,7 +848,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Physical Education"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -893,11 +893,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout02">
 
                 <ImageView
-                    android:layout_width="95dp"
+                    android:layout_width="105dp"
                     android:layout_height="95dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/cbseicon" />
+                    android:background="@drawable/homescience" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -911,7 +911,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Chemistry"
+                        android:text="Home Science"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 

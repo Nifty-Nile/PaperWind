@@ -48,7 +48,7 @@ public class PaymentHistoryActivity extends AppCompatActivity {
         text2=(TextView) findViewById(R.id.text2);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Category Activity");
+        toolbar.setTitle("Payment History");
 
         setSupportActionBar(toolbar);
 

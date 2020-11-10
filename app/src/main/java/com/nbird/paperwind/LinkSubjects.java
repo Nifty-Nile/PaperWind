@@ -39,7 +39,7 @@ public class LinkSubjects extends AppCompatActivity {
         t3=(TextView) findViewById(R.id.text3);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Practical Videos");
 
         setSupportActionBar(toolbar);
 

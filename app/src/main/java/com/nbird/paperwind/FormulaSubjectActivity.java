@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -20,8 +21,9 @@ public class FormulaSubjectActivity extends AppCompatActivity {
     Button phybutton,chembutton,biobutton;
     int std;
     TextView text1,text2,text3,text0;
+    ImageView mathsimage,phyimage,chemimage;
     androidx.appcompat.widget.Toolbar toolbar;
-
+    LinearLayout linearLayout11,linearLayout10;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,15 +32,21 @@ public class FormulaSubjectActivity extends AppCompatActivity {
         chembutton=(Button) findViewById(R.id.tipButton2);
         biobutton=(Button) findViewById(R.id.tipButton3);
 
+        linearLayout11=(LinearLayout) findViewById(R.id.linearLayout11);
+        linearLayout10=(LinearLayout) findViewById(R.id.linearLayout10);
+
         text1=(TextView) findViewById(R.id.text1);
         text2=(TextView) findViewById(R.id.text2);
         text3=(TextView) findViewById(R.id.text3);
         text0=(TextView) findViewById(R.id.text0);
 
+        mathsimage=(ImageView)findViewById(R.id.mathsimage);
+        phyimage=(ImageView)findViewById(R.id.phyimage);
+        chemimage=(ImageView)findViewById(R.id.chemimage);
 
         std=getIntent().getIntExtra("Std100",0);
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Subjects Activity");
 
         setSupportActionBar(toolbar);
 
@@ -79,6 +87,20 @@ public class FormulaSubjectActivity extends AppCompatActivity {
             }
         });
 
+        if(std==1){
+            phyimage.setBackgroundResource(R.drawable.science123);
+            phybutton.setText("Science");
+            chemimage.setBackgroundResource(R.drawable.mathsicons);
+            chembutton.setText("Mathematics");
+            chembutton.setTextSize(13);
+            chembutton.setBackgroundResource(R.drawable.roundbuttonsgreen);
+            mathsimage.setBackgroundResource(R.color.transparent);
+            biobutton.setAlpha(0);
+            biobutton.setEnabled(false);
+            text3.setText("");
+            linearLayout11.setBackgroundResource(R.color.transparent);
+            linearLayout10.setBackgroundResource(R.drawable.strokegreen);
+        }
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();

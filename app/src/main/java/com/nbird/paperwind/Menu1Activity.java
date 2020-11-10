@@ -272,7 +272,15 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         int id=item.getItemId();
 
         if(id==R.id.share){
-            Toast.makeText(this, "Share me!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Share Me!", Toast.LENGTH_SHORT).show();
+            Intent shareIntent=new Intent(Intent.ACTION_SEND);
+            shareIntent.setType("text/plane");
+            String shareBody="Download Paper Wind now: https://play.google.com/store/apps/details?id=com.nbird.quizbro&hl=en";
+            String sharesub="CCC Course App";
+
+            shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
+            shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);
+            startActivity(Intent.createChooser(shareIntent,"Share Using"));
         }else if(id==R.id.about){
            
             //Light and dark mode
@@ -294,7 +302,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             }else{
                 editorlightanddark.putBoolean(String.valueOf(1), false);
                 editorlightanddark.commit();
-                Toast.makeText(this, "Ligth Mode", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Lite Mode", Toast.LENGTH_SHORT).show();
                 ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
                 layout.setBackgroundResource(R.drawable.background1);
 
@@ -406,7 +414,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                         FirebaseAuth.getInstance().signOut();
                         startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
                         finish();
-
+                        break;
 
             case R.id.nav_tos:
                     Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
@@ -429,6 +437,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 
                 Toast.makeText(this, "Payment Receipt Activity", Toast.LENGTH_SHORT).show();
+                break;
 
             default :
                         return true;

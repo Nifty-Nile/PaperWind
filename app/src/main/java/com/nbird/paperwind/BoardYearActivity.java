@@ -38,7 +38,7 @@ public class BoardYearActivity extends AppCompatActivity {
         Text4=(TextView) findViewById(R.id.Text4);
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Category");
 
         setSupportActionBar(toolbar);
 

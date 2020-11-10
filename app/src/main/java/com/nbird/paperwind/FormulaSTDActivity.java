@@ -35,7 +35,7 @@ public class FormulaSTDActivity extends AppCompatActivity {
 
 
         toolbar=findViewById(R.id.toolbar);
-        toolbar.setTitle("Subjects");
+        toolbar.setTitle("Class Activity");
 
         setSupportActionBar(toolbar);
 
