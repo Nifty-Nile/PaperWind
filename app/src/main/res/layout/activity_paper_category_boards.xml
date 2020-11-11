@@ -82,7 +82,7 @@
                             android:layout_marginRight="10dp"
                             android:textColor="#000000"
                             android:fontFamily="@font/abril_fatface"
-                            android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                            android:text="Get to know the paper pattern and practice from a wide range of paper sets."
                             android:textSize="12sp" />
 
                         <Button
@@ -144,7 +144,7 @@
                             android:textColor="#000000"
                             android:layout_marginRight="10dp"
                             android:fontFamily="@font/abril_fatface"
-                            android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                            android:text="Access a large  variety of sample papers. The harder you work for something, the greatel you'll feel when you achieve it. "
                             android:textSize="12sp" />
 
                         <Button
@@ -206,7 +206,7 @@
                             android:layout_marginRight="10dp"
                             android:textColor="#000000"
                             android:fontFamily="@font/abril_fatface"
-                            android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                            android:text="Last minute lab revisions just got easier! Live practical demonstrations, just a click away."
                             android:textSize="12sp" />
 
                         <Button
@@ -268,7 +268,7 @@
                             android:textColor="#000000"
                             android:layout_marginRight="10dp"
                             android:fontFamily="@font/abril_fatface"
-                            android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                            android:text="Get access to solved textbook problems with explanations at the convenience of your device. "
                             android:textSize="12sp" />
 
                         <Button

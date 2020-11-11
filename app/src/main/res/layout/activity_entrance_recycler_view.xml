@@ -47,7 +47,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="10dp"
-        android:text="dfn dfidfj efie feofheu feifei feifh"
+        android:text="Here we go..."
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />

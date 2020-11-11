@@ -35,7 +35,8 @@
                 android:fontFamily="@font/aclonica"
                 android:textSize="17sp"
                 android:textStyle="bold"
-                android:text="Paper Notes By Ads"/>
+                android:text="Paper Notes By Ads"
+                android:textColor="@color/black"/>
 
             <TextView
                 android:layout_marginRight="10dp"
@@ -48,7 +49,9 @@
                 android:fontFamily="@font/adamina"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:text="Paper Notes are basically vertiual coins "/>
+                android:textColor="@color/black"
+                android:textAlignment="center"
+                android:text="Paper Notes is your virtual money which will help you unlock exciting features on Paper Wind!  "/>
 
             <ImageView
                 android:id="@+id/image1"

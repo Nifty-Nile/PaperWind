@@ -44,7 +44,8 @@
                 android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"/>
+                android:text="UPDATE TIME!"
+                android:textAlignment="center"/>
 
 
         </LinearLayout>

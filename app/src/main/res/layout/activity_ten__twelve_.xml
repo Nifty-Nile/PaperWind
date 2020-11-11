@@ -80,7 +80,7 @@
                         android:textColor="#000000"
                         android:layout_marginRight="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Std. 10 Previous as well as uefn ru rtbrnjt rrtrutnurtnrutn rtnru urtn gnrtg gutng fhur rufnr rurfrufn rufnr furfn rurnfr ufnrrfrufn rfnurf ."
+                        android:text="A complete combo of Sample papers, PYQs, videos and textbook solutions for Secondary school."
                         android:textSize="10sp" />
 
                     <Button
@@ -158,7 +158,7 @@
                 android:textColor="#000000"
                 android:layout_marginRight="10dp"
                 android:fontFamily="@font/acme"
-                android:text="Std. 10 Previous as well as uefn ru rtbrnjt rrtrutnurtnrutn rtnru urtn gnrtg gutng fhur rufnr rurfrufn rufnr furfn rurnfr ufnrrfrufn rfnurf ."
+                android:text="A complete combo of Sample papers, PYQs, videos and textbook solutions for Senior Secondary school."
                 android:textSize="10sp" />
 
                 <Button

@@ -92,7 +92,7 @@ public class SignUpActivity extends AppCompatActivity {
             username.setError("Field cannot be empty");
             return false;
         }else if(name1.length()>20){
-            username.setError("Usernaem should be less than 20 characters");
+            username.setError("Username should be less than 20 characters");
             return false;
         }else if(!name1.matches(noWhihteSpaces)){
             username.setError("Usernames cannot carry such characters or spaces");

@@ -339,7 +339,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginTop="5dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="Debugger"
+                    android:text="App Developer"
                     android:textSize="13sp"
                     app:layout_constraintStart_toStartOf="@+id/textView49"
                     app:layout_constraintTop_toBottomOf="@+id/textView49" />
@@ -399,7 +399,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginRight="10dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="At present pursuing my undergraduate degree .So i just helped myself pick up UI/UX designing along with illustrator which was very helpful in making valuable vector diagrams for Eco Clever.Feel free to give more suggestions regarding the app layout on my email.Email:rahulghosh070@gmail.com"
+                    android:text="A sophomore interested enough in computers to learn coding! Here comes our first project as a team. We learnt a lot of things ranging from the technicalities to our sociability. Feel free to mail me anytime😇.Looking forward to many happy projects ahead. Thank you xx.Email:aakashtyagi232@gmail.com"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView13"
                     app:layout_constraintEnd_toEndOf="@+id/imageView13"

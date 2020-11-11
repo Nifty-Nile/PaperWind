@@ -35,7 +35,11 @@
         android:id="@+id/textView6"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="nfneu feufen fuebfn eufne fuenf eufn e"
+        android:text="Choose your exam!"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:padding="5dp"
+        android:fontFamily="@font/aladin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />

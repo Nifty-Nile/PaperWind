@@ -31,15 +31,21 @@
             android:id="@+id/text1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="enfe ifne fienfe ifne ifenf enfiefn efinefenfi efe fin" />
+            android:text="ORDER HISTORY"
+            android:textColor="@color/black"
+            android:fontFamily="@font/aladin"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:padding="8dp"/>
 
         <TextView
             android:id="@+id/text2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="enfe ifne fienfe ifne ifenf enfiefn efinefenfi efe fin" />
-
-
+            android:text="The man who moves a mountain begins by carrying away small stones."
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

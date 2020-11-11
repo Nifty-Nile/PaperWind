@@ -36,10 +36,15 @@
                 android:id="@+id/textView4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="dfneufe ufb eufefune frg b uenf urbg"
+                android:text="Choose your subject!"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:fontFamily="@font/aladin"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"/>
 
             <LinearLayout
                 android:id="@+id/linearLayout9"
@@ -85,7 +90,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -150,7 +155,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -215,7 +220,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -280,7 +285,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -345,7 +350,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -410,7 +415,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -475,7 +480,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -540,7 +545,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -605,7 +610,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -670,7 +675,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -733,7 +738,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -796,7 +801,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -859,7 +864,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 
@@ -922,7 +927,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="5dp"
                         android:fontFamily="@font/acme"
-                        android:text="Take suggestions from Eco Clever to make your Farming Business more Profitable than ever before."
+                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
                         android:textColor="#000000"
                         android:textSize="10sp" />
 

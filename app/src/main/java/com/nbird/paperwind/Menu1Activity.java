@@ -120,24 +120,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         // ************** Tool bar ***************
         setSupportActionBar(toolbar);
 
+        
 
-        // **************** Select Profile Image *********************
-
-
-
-   //    profileImage = (CircleImageView) findViewById(R.id.profile_image);
-   /*     profileImage.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-
-                Intent gallery = new Intent();
-                gallery.setType("image/*");
-                gallery.setAction(Intent.ACTION_GET_CONTENT);
-
-                startActivityForResult(Intent.createChooser(gallery,"Select Picture"), PICK_IMAGE);
-            }
-        });
-*/
 
         fAuth = FirebaseAuth.getInstance();
         reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
@@ -241,23 +225,6 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     }
 
 
-    // ********************** Profile Image Selection *********************
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode, resultCode, data);
-
-            if(requestCode == PICK_IMAGE && resultCode == RESULT_OK){
-                imageUri = data.getData();
-                try {
-                    Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), imageUri);
-                    profileImage.setImageBitmap(bitmap);
-                }catch (IOException e){
-                    e.printStackTrace();
-                }
-            }
-    }
-
 
     // **************** 3 Dots menu (Top right)*******************
 
@@ -302,7 +269,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             }else{
                 editorlightanddark.putBoolean(String.valueOf(1), false);
                 editorlightanddark.commit();
-                Toast.makeText(this, "Lite Mode", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Light Mode", Toast.LENGTH_SHORT).show();
                 ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
                 layout.setBackgroundResource(R.drawable.background1);
 
