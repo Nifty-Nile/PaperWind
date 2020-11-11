@@ -60,6 +60,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     int setter=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference1 = database.getReference("User");
+    final DatabaseReference reference2 = database.getReference();
     private Context mContext;
     FirebaseAuth fAuth;
     int value;
@@ -75,8 +76,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     Uri imageUri;
 
     TextView text1,text2,text3;
-
-
+    String linkdata;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,7 +150,17 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+        reference2.child("Link").child("linkdata").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                 linkdata = snapshot.getValue(String.class);
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         // ******************************
 
@@ -242,8 +252,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             Toast.makeText(this, "Share Me!", Toast.LENGTH_SHORT).show();
             Intent shareIntent=new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plane");
-            String shareBody="Download Paper Wind now: https://play.google.com/store/apps/details?id=com.nbird.quizbro&hl=en";
-            String sharesub="CCC Course App";
+            String shareBody="Download Paper Wind now: "+linkdata;
+            String sharesub="Paper Wind";
 
             shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
             shareIntent.putExtra(Intent.EXTRA_TEXT,shareBody);

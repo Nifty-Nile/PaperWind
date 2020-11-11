@@ -7,20 +7,29 @@
     android:background="@drawable/background1"
     android:orientation="vertical"
     tools:context=".HelpActivity">
-
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:text="fnr frufnrufn rf n"/>
+        android:background="@color/blue"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:text="firfn fin rifn rfnirf nrifn rf"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="fnr frufnrufn rf n"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:text="firfn fin rifn rfnirf nrifn rf"/>
+
 
     <ExpandableListView
         android:id="@+id/expandablelist"
@@ -31,5 +40,6 @@
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
         android:indicatorRight="?android:expandableListPreferredChildIndicatorRight"/>
+
 
 </LinearLayout>

@@ -108,12 +108,12 @@ public class CustomAdapter extends BaseExpandableListAdapter {
                      @Override
                      public void onClick(View v) {
                          if (childPosition == 0) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",2);
                              intent.putExtra("child",1);
                              context.startActivity(intent);
                          } else if (childPosition == 1) {
-                             Intent intent = new Intent(context, Pdf_Display_Activity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",2);
                              intent.putExtra("child",2);
                              context.startActivity(intent);
@@ -126,12 +126,12 @@ public class CustomAdapter extends BaseExpandableListAdapter {
                      @Override
                      public void onClick(View v) {
                          if (childPosition == 0) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",2);
                              intent.putExtra("child",1);
                              context.startActivity(intent);
                          } else if (childPosition == 1) {
-                             Intent intent = new Intent(context, Pdf_Display_Activity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",2);
                              intent.putExtra("child",2);
                              context.startActivity(intent);
@@ -144,7 +144,7 @@ public class CustomAdapter extends BaseExpandableListAdapter {
                      @Override
                      public void onClick(View v) {
                          if (childPosition == 0) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",3);
                              intent.putExtra("child",1);
                              context.startActivity(intent);
@@ -157,12 +157,12 @@ public class CustomAdapter extends BaseExpandableListAdapter {
                      @Override
                      public void onClick(View v) {
                          if (childPosition == 0) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",4);
                              intent.putExtra("child",1);
                              context.startActivity(intent);
                          } else if (childPosition == 1) {
-                             Intent intent = new Intent(context, Pdf_Display_Activity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",4);
                              intent.putExtra("child",2);
                              context.startActivity(intent);
@@ -175,22 +175,22 @@ public class CustomAdapter extends BaseExpandableListAdapter {
                      @Override
                      public void onClick(View v) {
                          if (childPosition == 0) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",5);
                              intent.putExtra("child",1);
                              context.startActivity(intent);
                          } else if (childPosition == 1) {
-                             Intent intent = new Intent(context, Pdf_Display_Activity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",5);
                              intent.putExtra("child",2);
                              context.startActivity(intent);
                          }else if (childPosition == 2) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",5);
                              intent.putExtra("child",3);
                              context.startActivity(intent);
                          } else if (childPosition == 3) {
-                             Intent intent = new Intent(context, Pdf_Display_Activity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",5);
                              intent.putExtra("child",4);
                              context.startActivity(intent);
@@ -203,12 +203,12 @@ public class CustomAdapter extends BaseExpandableListAdapter {
                      @Override
                      public void onClick(View v) {
                          if (childPosition == 0) {
-                             Intent intent = new Intent(context, PaymentHistoryActivity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",6);
                              intent.putExtra("child",1);
                              context.startActivity(intent);
                          } else if (childPosition == 1) {
-                             Intent intent = new Intent(context, Pdf_Display_Activity.class);
+                             Intent intent = new Intent(context, HelpMoney1Activity.class);
                              intent.putExtra("parent",6);
                              intent.putExtra("child",2);
                              context.startActivity(intent);
