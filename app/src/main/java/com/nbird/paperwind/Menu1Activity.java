@@ -17,6 +17,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.SpannableString;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -388,32 +389,56 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_logout:
                 fAuth = FirebaseAuth.getInstance();
 
-                        FirebaseAuth.getInstance().signOut();
-                        startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
-                        finish();
-                        break;
+                    FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                    finish();
+                    break;
 
             case R.id.nav_tos:
-                    Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
-                    startActivity(browserIntenttos);
-                    break;
+                Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
+                startActivity(browserIntenttos);
+                break;
 
             case R.id.nav_ref:
-                    Intent browserIntentref = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FREFUNDPOLICY-converted.pdf?alt=media&token=e96d23ac-b165-4261-83a2-2cd0ccc291b0"));
-                    startActivity(browserIntentref);
-                    break;
+                Intent browserIntentref = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FREFUNDPOLICY-converted.pdf?alt=media&token=e96d23ac-b165-4261-83a2-2cd0ccc291b0"));
+                startActivity(browserIntentref);
+                break;
 
             case R.id.nav_ps:
-                    Intent browserIntentps = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FPRIVACYSTATEMENT-converted.pdf?alt=media&token=174353a9-8814-4834-ba16-4db5c38fdfaf"));
-                    startActivity(browserIntentps);
-                    break;
+                Intent browserIntentps = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FPRIVACYSTATEMENT-converted.pdf?alt=media&token=174353a9-8814-4834-ba16-4db5c38fdfaf"));
+                startActivity(browserIntentps);
+                break;
 
             case R.id.nav_order:
                 Intent intent=new Intent(getBaseContext(),PaymentHistoryActivity.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                break;
 
-                Toast.makeText(this, "Payment Receipt Activity", Toast.LENGTH_SHORT).show();
+            case R.id.nav_help:
+                Intent intenthelp=new Intent(getBaseContext(),HelpActivity.class);
+                startActivity(intenthelp);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                break;
+
+            case R.id.nav_about:
+                Intent intentabout=new Intent(getBaseContext(),AboutUsActivity.class);
+                startActivity(intentabout);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                break;
+
+            case R.id.nav_rate:
+                Toast.makeText(this, "Please rate us at playstore!!!", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.nav_contact:
+                String[] TO = {"niftynile@gmail.com"};
+
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setType("*/*");
+                email.putExtra(Intent.EXTRA_EMAIL, TO);
+                if(email.resolveActivity(getPackageManager()) != null)
+                    startActivity(email);
                 break;
 
             default :
