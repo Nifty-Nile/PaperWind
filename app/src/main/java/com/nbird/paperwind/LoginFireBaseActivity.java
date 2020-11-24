@@ -50,7 +50,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=1;
     String personEmail;
-    int money=50;
+    int money=50,permission=0;
 
 
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -238,7 +238,7 @@ public void createRequest(){
                             if(account!=null) {
                                 personEmail = account.getEmail();
 
-                                User s1=new User(money);
+                                User s1=new User(money,permission);
                                 table_user.child(mAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

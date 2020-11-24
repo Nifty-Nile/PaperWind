@@ -20,7 +20,7 @@ public class Sub_All_Activity extends AppCompatActivity {
     Button button1,button2,button3,button4,button5,button6;
     int Exam,Std,Paper;
     androidx.appcompat.widget.Toolbar toolbar;
-    TextView text0,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12;
+    TextView text0,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13;
 
 
     @Override
@@ -52,6 +52,7 @@ public class Sub_All_Activity extends AppCompatActivity {
         text10=(TextView) findViewById(R.id.text10);
         text11=(TextView) findViewById(R.id.text11);
         text12=(TextView) findViewById(R.id.text12);
+        text13=(TextView) findViewById(R.id.textView4);
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Subjects");
@@ -82,6 +83,7 @@ public class Sub_All_Activity extends AppCompatActivity {
             text10.setTextColor(Color.parseColor("#ffffff"));
             text11.setTextColor(Color.parseColor("#ffffff"));
             text12.setTextColor(Color.parseColor("#ffffff"));
+            text13.setTextColor(Color.parseColor("#ffffff"));
 
         }else{
             ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
@@ -100,7 +102,7 @@ public class Sub_All_Activity extends AppCompatActivity {
             text10.setTextColor(Color.parseColor("#000000"));
             text11.setTextColor(Color.parseColor("#000000"));
             text12.setTextColor(Color.parseColor("#000000"));
-
+            text13.setTextColor(Color.parseColor("#000000"));
 
         }
 

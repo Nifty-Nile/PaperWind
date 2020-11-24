@@ -121,7 +121,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         // ************** Tool bar ***************
         setSupportActionBar(toolbar);
 
-        
+
+
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -288,12 +289,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 text1.setTextColor(Color.parseColor("#000000"));
                 text2.setTextColor(Color.parseColor("#000000"));
                 text3.setTextColor(Color.parseColor("#000000"));
-
             }
-
-            
-
-
         }else if(id==R.id.history){
             Toast.makeText(this, "History Mode", Toast.LENGTH_SHORT).show();
             Intent intent=new Intent(getBaseContext(),ExamRecordActivity.class);
@@ -327,14 +323,12 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                     alertDialog.dismiss();
                     finish();
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-
                 }
             });
             view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     alertDialog.dismiss();
-
                 }
             });
 
@@ -346,7 +340,6 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         else if(mToggle.onOptionsItemSelected(item)){
             return true;
         }
-
         return true;
     }
 
@@ -428,7 +421,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 break;
 
             case R.id.nav_rate:
-                Toast.makeText(this, "Please rate us at playstore!!!", Toast.LENGTH_SHORT).show();
+                Intent browserIntent=new Intent(Intent.ACTION_VIEW, Uri.parse(linkdata));
+                startActivity(browserIntent);
                 break;
 
             case R.id.nav_contact:
@@ -463,9 +457,5 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
-
     }
-
-
-
 }
