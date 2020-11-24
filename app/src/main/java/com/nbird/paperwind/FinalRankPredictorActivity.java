@@ -1,6 +1,7 @@
 package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -8,19 +9,25 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DataSnapshot;
@@ -119,35 +126,6 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         }
 
 
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
-
-        bottomNavigationView.setSelectedItemId(R.id.rankpredictor);
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()){
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-
-                    case R.id.rankpredictor:
-                        return true;
-                    case R.id.Formulas:
-                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                    case R.id.money:
-                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-                }
-                return false;
-            }
-        });
 
         Goldennumber();
         TextViewDisplay();
@@ -176,6 +154,39 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             public void onCancelled(DatabaseError databaseError) {
                 Toast.makeText(FinalRankPredictorActivity.this, "Error while Loading....", Toast.LENGTH_SHORT).show();
                 loadingDialog.dismiss();
+            }
+        });
+
+        scoretext.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            if(!college()) {
+                                return false;
+                            }
+                            inputrank=Integer.valueOf(scoretext.getText().toString());
+                            Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
+                            intent.putExtra("RankEE",SelectedEntranceExam);
+                            intent.putExtra("InputPredictor",2);
+                            intent.putExtra("Rank1",inputrank);
+                            intent.putExtra("Gender",Gender0);
+                            intent.putExtra("cast",Cast0);
+                            intent.putExtra("Branch",Branch);
+                            startActivity(intent);
+                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                            finish();
+
+
+
+                    }
+                }
+                return false;
             }
         });
 
@@ -611,5 +622,32 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
 
 
         return super.onOptionsItemSelected(item);
+    }
+    private boolean college(){
+        String name2=scoretext.getText().toString();
+        int len=name2.length();
+        int i,r=0;
+        if(name2.isEmpty()){
+            scoretext.setError("Field cannot be empty");
+            return false;
+        }else if(name2.length()>7||name2.length()<0){
+            scoretext.setError("Rank cannot be negative or more than 6 digits");
+            return false;
+        }
+        else if(1==1) {
+            for (i = 0; i < name2.length(); i++) {
+                Boolean flag = Character.isDigit(name2.charAt(i));
+                if (flag) {
+                    r=r+1;
+                }
+            }
+            if(r!=len){
+                scoretext.setError("Rank should be an integer");
+                return false;
+            }
+        }
+        else
+            scoretext.setError(null);
+        return true;
     }
 }

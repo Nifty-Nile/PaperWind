@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -71,7 +72,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
-                                            Toast.makeText(SignUpFireBaseActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
                                         }else{
                                             Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
                                         }
@@ -100,7 +101,215 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                 });
             }
         });
-        movelogin.setOnClickListener(new View.OnClickListener() {
+
+
+        mail.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            final String email=mail.getText().toString().trim();
+                            String password1=password.getText().toString().trim();
+
+                            if(!username()||!mail()||!password()){
+                                return false;
+                            }
+
+                            loadingDialog=new Dialog(SignUpFireBaseActivity.this);
+                            loadingDialog.setContentView(R.layout.activity_loading);
+                            loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                            loadingDialog.setCancelable(true);
+                            loadingDialog.show();
+
+                            fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        String usermail=mail.getText().toString();
+
+                                        User s1=new User(money,permission);
+                                        reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()){
+                                                    Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                }else{
+                                                    Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
+
+
+
+                                        //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                        //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                        //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                        //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        loadingDialog.dismiss();
+                                    }
+                                    else{
+                                        Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
+                                        loadingDialog.dismiss();
+                                    }
+                                }
+                            });
+
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        password.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            final String email=mail.getText().toString().trim();
+                            String password1=password.getText().toString().trim();
+
+                            if(!username()||!mail()||!password()){
+                                return false;
+                            }
+
+                            loadingDialog=new Dialog(SignUpFireBaseActivity.this);
+                            loadingDialog.setContentView(R.layout.activity_loading);
+                            loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                            loadingDialog.setCancelable(true);
+                            loadingDialog.show();
+
+                            fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        String usermail=mail.getText().toString();
+
+                                        User s1=new User(money,permission);
+                                        reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()){
+                                                    Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                }else{
+                                                    Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
+
+
+
+                                        //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                        //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                        //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                        //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        loadingDialog.dismiss();
+                                    }
+                                    else{
+                                        Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
+                                        loadingDialog.dismiss();
+                                    }
+                                }
+                            });
+
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        mail.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            final String email=mail.getText().toString().trim();
+                            String password1=password.getText().toString().trim();
+
+                            if(!username()||!mail()||!password()){
+                                return false;
+                            }
+
+                            loadingDialog=new Dialog(SignUpFireBaseActivity.this);
+                            loadingDialog.setContentView(R.layout.activity_loading);
+                            loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                            loadingDialog.setCancelable(true);
+                            loadingDialog.show();
+
+                            fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        String usermail=mail.getText().toString();
+
+                                        User s1=new User(money,permission);
+                                        reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if(task.isSuccessful()){
+                                                    Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                }else{
+                                                    Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                }
+                                            }
+                                        });
+
+
+
+                                        //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                        //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                        //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                        //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        loadingDialog.dismiss();
+                                    }
+                                    else{
+                                        Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+
+                                        loadingDialog.dismiss();
+                                    }
+                                }
+                            });
+
+                    }
+                }
+                return false;
+            }
+        });
+
+        username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),LoginFireBaseActivity.class);

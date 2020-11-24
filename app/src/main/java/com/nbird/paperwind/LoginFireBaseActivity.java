@@ -2,18 +2,25 @@ package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.loader.content.Loader;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -131,6 +138,102 @@ public class LoginFireBaseActivity extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        mail.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            String email=mail.getText().toString().trim();
+                            String password1=password.getText().toString().trim();
+
+
+                            if(!mail()||!password()){
+                                return false;
+                            }
+
+                            loadingDialog=new Dialog(LoginFireBaseActivity.this);
+                            loadingDialog.setContentView(R.layout.activity_loading);
+                            loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                            loadingDialog.setCancelable(true);
+                            loadingDialog.show();
+
+                            mAuth.signInWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        loadingDialog.dismiss();
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                                    }else{
+                                        Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        loadingDialog.dismiss();
+                                    }
+                                }
+                            });
+
+
+                    }
+                }
+                return false;
+            }
+        });
+
+        password.setOnKeyListener(new View.OnKeyListener()
+        {
+            public boolean onKey(View v, int keyCode, KeyEvent event)
+            {
+                if (event.getAction() == KeyEvent.ACTION_DOWN)
+                {
+                    switch (keyCode)
+                    {
+                        case KeyEvent.KEYCODE_DPAD_CENTER:
+                        case KeyEvent.KEYCODE_ENTER:
+                            String email=mail.getText().toString().trim();
+                            String password1=password.getText().toString().trim();
+
+
+                            if(!mail()||!password()){
+                                return false;
+                            }
+
+                            loadingDialog=new Dialog(LoginFireBaseActivity.this);
+                            loadingDialog.setContentView(R.layout.activity_loading);
+                            loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                            loadingDialog.setCancelable(true);
+                            loadingDialog.show();
+
+                            mAuth.signInWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        loadingDialog.dismiss();
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                                    }else{
+                                        Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                        loadingDialog.dismiss();
+                                    }
+                                }
+                            });
+
+
+                    }
+                }
+                return false;
             }
         });
 

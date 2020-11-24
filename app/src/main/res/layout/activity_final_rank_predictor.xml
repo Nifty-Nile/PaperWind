@@ -21,9 +21,9 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
@@ -35,9 +35,8 @@
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="32dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:fontFamily="@font/aclonica"
                 android:text="RANK PREDICTOR"
@@ -45,7 +44,7 @@
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <TextView
@@ -56,7 +55,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="15dp"
                 android:fontFamily="@font/amarante"
-                android:text="Entrance Exam : VITEEE"
+                android:text="Entrance Exam : "
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,7 +68,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/amarante"
-                android:text="Category : General"
+                android:text="Category : "
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -81,7 +80,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/amarante"
-                android:text="Gender : Male"
+                android:text="Gender : "
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/textView8"
@@ -116,7 +115,7 @@
                 android:layout_height="42dp"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/amaranth_bold"
-                android:text="200"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="25sp"
                 app:layout_constraintStart_toEndOf="@+id/rankheading"
@@ -141,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:fontFamily="@font/amaranth_bold"
-                android:text="2000000-1000000"
+                android:text=""
                 android:textColor="#000000"
                 android:textSize="25sp"
                 app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -224,7 +223,7 @@
             <TextView
                 android:id="@+id/dis2"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="44dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="20dp"
                 android:fontFamily="@font/amarante"
@@ -274,21 +273,6 @@
 
 
     </ScrollView>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomnavigatio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
-        android:background="@color/blue"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
-        app:menu="@menu/menunav" />
-    
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
