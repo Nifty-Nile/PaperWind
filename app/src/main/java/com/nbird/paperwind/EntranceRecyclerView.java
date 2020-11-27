@@ -1,6 +1,7 @@
 package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -18,6 +19,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -36,13 +38,17 @@ public class EntranceRecyclerView extends AppCompatActivity {
     DatabaseReference myRef = database.getReference();
     TextView textView3;
     androidx.appcompat.widget.Toolbar toolbar;
+    int value,safe=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrance_recycler_view);
 
+
+
         position=getIntent().getIntExtra("position",0);
         mode=getIntent().getIntExtra("mode",0);
+        value=getIntent().getIntExtra("value",0);
 
         textView3=(TextView) findViewById(R.id.textView3);
 
@@ -57,9 +63,14 @@ public class EntranceRecyclerView extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
+
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
         bottomNavigationView.setSelectedItemId(R.id.home);
+
+
 
 
         // **************** Bottom navigation View **********************
@@ -113,7 +124,7 @@ public class EntranceRecyclerView extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview);
         list = new ArrayList<>();
         recyclerView.setLayoutManager(new GridLayoutManager(this,3));
-        final TestRecyclerAdapter categoryAdapter = new TestRecyclerAdapter(list,position,mode);
+        final TestRecyclerAdapter categoryAdapter = new TestRecyclerAdapter(this,list,position,mode,value,safe);
         recyclerView.setAdapter(categoryAdapter);
 
         final SharedPreferences settings = getBaseContext().getSharedPreferences("Physics", 0);
@@ -207,7 +218,6 @@ public class EntranceRecyclerView extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
                     list.add(dataSnapshot1.getValue(TestRecyclerHolder.class));
-
                 }
                 categoryAdapter.notifyDataSetChanged();
                 loadingDialog.dismiss();

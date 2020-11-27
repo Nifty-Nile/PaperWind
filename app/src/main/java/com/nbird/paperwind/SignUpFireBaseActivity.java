@@ -44,6 +44,15 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
 
         fAuth= FirebaseAuth.getInstance();
 
+        movelogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getBaseContext(),LoginFireBaseActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                finish();
+            }
+        });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override

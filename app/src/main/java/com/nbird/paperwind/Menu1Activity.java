@@ -300,7 +300,6 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         }else if(id==R.id.propic){
             Intent intent=new Intent(this,LatestExamUpdates.class);
             startActivity(intent);
-
         }
         else if(id==R.id.coins)
         {

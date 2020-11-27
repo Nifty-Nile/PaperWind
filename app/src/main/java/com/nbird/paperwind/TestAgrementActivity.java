@@ -16,17 +16,31 @@ import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import Model.User;
 
 public class TestAgrementActivity extends AppCompatActivity {
 
     Button submitbutton;
     CheckBox checkBox;
-    int phy,chem,maths,bio,position,mode,set,score;
+    int phy,chem,maths,bio,position,mode,set,score,value,safe;
     androidx.appcompat.widget.Toolbar toolbar;
     TextView text0,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11
             ,text12,text13,text14,text15,text16,text17;
-
-
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    FirebaseAuth fAuth;
+    final DatabaseReference reference1 = database.getReference("User");
+    String posconverter,setconverter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +48,8 @@ public class TestAgrementActivity extends AppCompatActivity {
 
         submitbutton=(Button) findViewById(R.id.submitbutton);
         checkBox=(CheckBox) findViewById(R.id.checkbox);
+
+
 
         text0=(TextView) findViewById(R.id.text0);
         text1=(TextView) findViewById(R.id.text1);
@@ -127,7 +143,46 @@ public class TestAgrementActivity extends AppCompatActivity {
         mode=getIntent().getIntExtra("mode",0);
         set=getIntent().getIntExtra("set",0);
         score=getIntent().getIntExtra("score",0);
+        value=getIntent().getIntExtra("value",0);
+        safe=getIntent().getIntExtra("safe",0);
 
+        posconverter=Integer.toString(position);
+        setconverter=Integer.toString(set);
+
+        fAuth= FirebaseAuth.getInstance();
+
+        final DatabaseReference ref=database.getReference().child("User").child(fAuth.getCurrentUser().getUid()).child("ExamPaperPurchased").push();
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+                                      @Override
+          public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                 TestPaperPurshasedHolder user = new TestPaperPurshasedHolder(posconverter,setconverter);
+                 ref.setValue(user);
+
+                                      }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        if(safe==0){
+            value = value - 20;
+
+            reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(TestAgrementActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(TestAgrementActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
 
 
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

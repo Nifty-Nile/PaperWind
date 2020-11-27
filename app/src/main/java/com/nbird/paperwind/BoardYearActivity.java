@@ -14,6 +14,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class BoardYearActivity extends AppCompatActivity {
 
@@ -23,6 +29,10 @@ public class BoardYearActivity extends AppCompatActivity {
     TextView text100,text200,text300,text400,Text4;
     androidx.appcompat.widget.Toolbar toolbar;
     BottomNavigationView bottomNavigationView;
+    FirebaseAuth fAuth;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    final DatabaseReference reference1 = database.getReference("User");
+    int value;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +54,22 @@ public class BoardYearActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        fAuth = FirebaseAuth.getInstance();
+        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                value = dataSnapshot.getValue(Integer.class);
+                // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
@@ -104,6 +130,7 @@ public class BoardYearActivity extends AppCompatActivity {
                 Intent intent=new Intent(getBaseContext(),EntranceExamPreviousRecyclerActivity.class);
                 intent.putExtra("mode",1);
                 intent.putExtra("position",position);
+
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
@@ -127,6 +154,7 @@ public class BoardYearActivity extends AppCompatActivity {
                     Intent intent=new Intent(getBaseContext(),EntranceRecyclerView.class);
                     intent.putExtra("mode",1);
                     intent.putExtra("position",position);
+                    intent.putExtra("value",value);
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                     finish();
