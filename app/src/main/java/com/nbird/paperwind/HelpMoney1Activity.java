@@ -149,7 +149,7 @@ public class HelpMoney1Activity extends AppCompatActivity {
         textView3.setText("For Online Test of a particular Entrance Exam,first select the desired exam then select the 'Online Test' Button.");
         textView4.setText("A list of sets will be displayed from which you can select.");
         textView5.setText("Instructions will be displayed at the beginning of the test.Students are requested to read these instructions carefully before proceeding with the test.");
-        textView6.setText("One set of each Entrance Exam will be free (You don't have to pay Paper Notes for 1st set) where as to get access for other sets you will be required to pay the desired number of Paper Notes.After the submission of the test you will be directed to the score activity where your performance in the test will be shown with the help of Bar And Pie Charts.");
+        textView6.setText("To get access for the sets you will be required to pay the desired number of Paper Notes.After the submission of the test you will be directed to the score activity where your performance in the test will be shown with the help of Bar And Pie Charts.");
     }
     public void p5c1(){
         textView1.setText("Previous Year's Paper:-");

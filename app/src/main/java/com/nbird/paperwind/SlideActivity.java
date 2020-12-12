@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.MotionEvent;
@@ -28,6 +29,13 @@ public class SlideActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_slide);
 
+
+
+
+
+
+
+
         slideViewPager=(ViewPager) findViewById(R.id.slideViewPager);
         dotLayout=(LinearLayout) findViewById(R.id.dotLayout);
         nextbutton=(Button) findViewById(R.id.button5);
@@ -38,6 +46,20 @@ public class SlideActivity extends AppCompatActivity {
 
         sliderAdapter=new SliderAdapter(this);
         slideViewPager.setAdapter(sliderAdapter);
+
+        final SharedPreferences slidepermission = getBaseContext().getSharedPreferences("SlidePermission", 0);
+        final SharedPreferences.Editor editorslidepermission = slidepermission.edit();
+
+        Boolean slidername = slidepermission.getBoolean("sp", false);
+        if(slidername){
+            Intent intent=new Intent(getBaseContext(),LoginFireBaseActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            finish();
+        }
+
+        editorslidepermission.putBoolean("sp", true);
+        editorslidepermission.apply();
 
         addDotsIndicator(0);
         slideViewPager.addOnPageChangeListener(viewListner);
@@ -90,6 +112,7 @@ public class SlideActivity extends AppCompatActivity {
             addDotsIndicator(position);
             currentPage=position;
             if(currentPage==0){
+
                 nextbutton.setEnabled(true);
                 backbutton.setEnabled(false);
                 backbutton.setVisibility(View.INVISIBLE);

@@ -241,7 +241,7 @@ public class ScoreActivity extends AppCompatActivity {
 
         visitors.add(new BarEntry(1, totalmarks));
 
-        myRef.child("User").child(fAuth.getCurrentUser().getUid()).child("ExamRecord").orderByChild("totalmarks").addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child("User").child(fAuth.getCurrentUser().getUid()).child("ExamRecord").orderByChild("exampic").equalTo(ime).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {

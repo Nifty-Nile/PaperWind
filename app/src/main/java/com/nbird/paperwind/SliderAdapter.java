@@ -64,6 +64,8 @@ public class SliderAdapter extends PagerAdapter {
 
         container.addView(view);
 
+
+
         return view;
     }
 
