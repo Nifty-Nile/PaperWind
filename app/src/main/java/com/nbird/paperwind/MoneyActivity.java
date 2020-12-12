@@ -366,7 +366,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                    Toast.makeText(MoneyActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+
                 } else {
                     Toast.makeText(MoneyActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
                 }

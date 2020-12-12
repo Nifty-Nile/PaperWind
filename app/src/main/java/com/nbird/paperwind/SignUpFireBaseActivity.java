@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -30,8 +31,10 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
     int money=50,permission=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference = database.getReference("User");
-
+    String usermail;
     String personEmail;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +46,10 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
         mail=(TextInputEditText) findViewById(R.id.email) ;
 
         fAuth= FirebaseAuth.getInstance();
+
+        final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
+        final SharedPreferences.Editor editormailreminder = mailreminder.edit();
+
 
         movelogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,7 +81,9 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                                String usermail=mail.getText().toString();
+                                usermail=mail.getText().toString();
+                                editormailreminder.putString("123", usermail);
+                                editormailreminder.commit();
 
                                 User s1=new User(money,permission);
                                 reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -97,6 +106,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                             //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
 
                             startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+
                             finish();
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             loadingDialog.dismiss();
@@ -140,7 +150,8 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
                                         String usermail=mail.getText().toString();
-
+                                        editormailreminder.putString("123", usermail);
+                                        editormailreminder.commit();
                                         User s1=new User(money,permission);
                                         reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
@@ -209,7 +220,8 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
                                         String usermail=mail.getText().toString();
-
+                                        editormailreminder.putString("123", usermail);
+                                        editormailreminder.commit();
                                         User s1=new User(money,permission);
                                         reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
@@ -277,8 +289,9 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
-                                        String usermail=mail.getText().toString();
-
+                                        usermail=mail.getText().toString();
+                                        editormailreminder.putString("123", usermail);
+                                        editormailreminder.commit();
                                         User s1=new User(money,permission);
                                         reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override

@@ -82,6 +82,8 @@ public class LoginFireBaseActivity extends AppCompatActivity {
         forgotpassword=(Button) findViewById(R.id.forgotpassword);
         mAuth = FirebaseAuth.getInstance();
 
+        SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123",0);
+        final SharedPreferences.Editor editormailreminder = mailreminder.edit();
 
         FirebaseUser user=mAuth.getCurrentUser();
         if(user!=null){
@@ -109,7 +111,8 @@ public class LoginFireBaseActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email=mail.getText().toString().trim();
                 String password1=password.getText().toString().trim();
-
+                editormailreminder.putString("123", email);
+                editormailreminder.commit();
                 if(!mail()||!password()){
                     return;
                 }
@@ -153,7 +156,8 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                         case KeyEvent.KEYCODE_ENTER:
                             String email=mail.getText().toString().trim();
                             String password1=password.getText().toString().trim();
-
+                            editormailreminder.putString("123", email);
+                            editormailreminder.commit();
 
                             if(!mail()||!password()){
                                 return false;
@@ -201,7 +205,8 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                         case KeyEvent.KEYCODE_ENTER:
                             String email=mail.getText().toString().trim();
                             String password1=password.getText().toString().trim();
-
+                            editormailreminder.putString("123", email);
+                            editormailreminder.commit();
 
                             if(!mail()||!password()){
                                 return false;
@@ -340,7 +345,10 @@ public void createRequest(){
                             GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(getApplicationContext());
                             if(account!=null) {
                                 personEmail = account.getEmail();
-
+                                final SharedPreferences mailreminder = getBaseContext().getSharedPreferences("mailreminder123", 0);
+                                final SharedPreferences.Editor editormailreminder = mailreminder.edit();
+                                editormailreminder.putString("123", personEmail);
+                                editormailreminder.commit();
                                 User s1=new User(money,permission);
                                 table_user.child(mAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override

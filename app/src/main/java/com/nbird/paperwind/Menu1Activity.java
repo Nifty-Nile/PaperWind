@@ -7,9 +7,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Movie;
 import android.graphics.drawable.ColorDrawable;
@@ -48,7 +51,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,9 +80,9 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     CircleImageView profileImage;
     private static final int PICK_IMAGE =1;
     Uri imageUri;
-
+    CircleImageView nav_image;
     TextView text1,text2,text3;
-    String linkdata;
+    String linkdata,mailid123;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,10 +100,32 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         text2=(TextView) findViewById(R.id.cbsedis);
         text3=(TextView) findViewById(R.id.icsedis);
 
+        final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
+        final SharedPreferences.Editor editormailreminder = mailreminder.edit();
+
+
+        mailid123 = mailreminder.getString("123", "abc@gmail.com");
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View hView =  navigationView.getHeaderView(0);
+        TextView nav_user = (TextView)hView.findViewById(R.id.mailidtext);
+        nav_user.setText(mailid123);
+        nav_image = (CircleImageView) hView.findViewById(R.id.proimage);
+
+        nav_image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selectImage(Menu1Activity.this);
+            }
+        });
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+
+
+
 
         if(answerA0){
             ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
@@ -455,4 +482,64 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             startActivity(intent);
         }
     }
+
+    private void selectImage(Context context) {
+        final CharSequence[] options = { "Take Photo", "Choose from Gallery","Cancel" };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Choose your profile picture");
+
+        builder.setItems(options, new DialogInterface.OnClickListener() {
+
+            @Override
+            public void onClick(DialogInterface dialog, int item) {
+
+                if (options[item].equals("Take Photo")) {
+                    Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(takePicture, 0);
+
+                } else if (options[item].equals("Choose from Gallery")) {
+                    Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(pickPhoto , 1);
+
+                } else if (options[item].equals("Cancel")) {
+                    dialog.dismiss();
+                }
+            }
+        });
+        builder.show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_CANCELED) {
+            switch (requestCode) {
+                case 0:
+                    if (resultCode == RESULT_OK && data != null) {
+                        Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
+                        nav_image.setImageBitmap(selectedImage);
+                    }
+
+                    break;
+                case 1:
+                    if (resultCode == RESULT_OK) {
+                        try {
+                            final Uri imageUri = data.getData();
+                            final InputStream imageStream = getContentResolver().openInputStream(imageUri);
+                            final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
+                            nav_image.setImageBitmap(selectedImage);
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                            Toast.makeText(Menu1Activity.this, "Something went wrong", Toast.LENGTH_LONG).show();
+                        }
+
+                    }else {
+                        Toast.makeText(Menu1Activity.this, "You haven't picked Image",Toast.LENGTH_LONG).show();
+                    }
+                    break;
+            }
+        }
+    }
+
 }
