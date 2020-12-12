@@ -43,7 +43,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     TextInputEditText ranktext,scoretext;
     private Spinner spinner,spinner2;
     private static final String[] paths = {"General","OBC","ST","SC"};
-    private static final String[] paths123 = {"CSE","IT","ECE","EEE","ME","TE","Civil"};
+    private String[] paths123;
     private RadioGroup radioGroup;
     private RadioButton radioButton,radioMale,radioFemale;
     int bomb,totalmarks;
@@ -87,6 +87,15 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
+
+        if(SelectedEntranceExam==1){
+            paths123 = new String[]{"CSE", "IT", "ECE", "EEE", "ME", "TE", "Civil"};
+        }else if(SelectedEntranceExam==4){
+            paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
+        }
+
+
 
         scoretext.setOnKeyListener(new View.OnKeyListener()
         {
@@ -166,7 +175,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // radiobutton by returned id
 
-                                if (selectedId == 2131296641) {
+                                if (selectedId == 2131296673) {
                                     i = 1;
                                 } else {
                                     i = 2;
@@ -306,7 +315,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131296641){
+                                            if(selectedId==2131296673){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -352,7 +361,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131296641){
+                                if(selectedId==2131296673){
                                     i=1;
                                 }else{
                                     i=2;
@@ -554,7 +563,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // radiobutton by returned id
 
-                    if (selectedId == 2131296641) {
+                    if (selectedId == 2131296673) {
                         i = 1;
                     } else {
                         i = 2;
@@ -682,7 +691,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131296641){
+                                if(selectedId==2131296673){
                                     i=1;
                                 }else{
                                     i=2;
@@ -728,7 +737,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // find the radiobutton by returned id
 
-                    if(selectedId==2131296641){
+                    if(selectedId==2131296673){
                         i=1;
                     }else{
                         i=2;
@@ -777,35 +786,95 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             }
 
         }
-        if(spinner2.getId() == R.id.spinner2)
-        {
-            switch (position) {
-                case 0:
-                    branch=position+1;
-                    break;
-                case 1:
-                    branch=position+1;
-                    break;
-                case 2:
-                    branch=position+1;
-                    break;
-                case 3:
-                    branch=position+1;
-                    break;
-                case 4:
-                    branch=position+1;
-                    break;
-                case 5:
-                    branch=position+1;
-                    break;
-                case 6:
-                    branch=position+1;
-                    break;
+        if(spinner2.getId() == R.id.spinner2) {
+            if (SelectedEntranceExam == 1) {
+                switch (position) {
+                    case 0:
+                        branch = position + 1;
+                        break;
+                    case 1:
+                        branch = position + 1;
+                        break;
+                    case 2:
+                        branch = position + 1;
+                        break;
+                    case 3:
+                        branch = position + 1;
+                        break;
+                    case 4:
+                        branch = position + 1;
+                        break;
+                    case 5:
+                        branch = position + 1;
+                        break;
+                    case 6:
+                        branch = position + 1;
+                        break;
 
+                }
+            } else if(SelectedEntranceExam == 4) {
+                switch (position) {
+                    case 0:
+                        branch = position + 1;
+                        break;
+                    case 1:
+                        branch = position + 1;
+                        break;
+                    case 2:
+                        branch = position + 1;
+                        break;
+                    case 3:
+                        branch = position + 1;
+                        break;
+                    case 4:
+                        branch = position + 1;
+                        break;
+                    case 5:
+                        branch = position + 1;
+                        break;
+                    case 6:
+                        branch = position + 1;
+                        break;
+                    case 7:
+                        branch = position + 1;
+                        break;
+                    case 8:
+                        branch = position + 1;
+                        break;
+                    case 9:
+                        branch = position + 1;
+                        break;
+                    case 10:
+                        branch = position + 1;
+                        break;
+                    case 11:
+                        branch = position + 1;
+                        break;
+                    case 12:
+                        branch = position + 1;
+                        break;
+                    case 13:
+                        branch = position + 1;
+                        break;
+                    case 14:
+                        branch = position + 1;
+                        break;
+                    case 15:
+                        branch = position + 1;
+                        break;
+                    case 16:
+                        branch = position + 1;
+                        break;
+                    case 17:
+                        branch = position + 1;
+                        break;
+                }
             }
         }
 
-    }
+        }
+
+
 
 
     public void onNothingSelected(AdapterView<?> parent) {
@@ -895,6 +964,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 return 300;
             case 3:
                 return 720;
+            case 4:
+                return 125;
         }
         return 360 ;
     }

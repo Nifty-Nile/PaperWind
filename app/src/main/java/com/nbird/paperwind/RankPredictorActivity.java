@@ -104,6 +104,7 @@ public class RankPredictorActivity extends AppCompatActivity {
         lstExam.add(new RankMenuHolder(R.drawable.back1,"Jee Advance"));
         lstExam.add(new RankMenuHolder(R.drawable.back1,"Jee Mains"));
         lstExam.add(new RankMenuHolder(R.drawable.back1,"Neet"));
+        lstExam.add(new RankMenuHolder(R.drawable.back1,"Viteee"));
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

@@ -295,8 +295,6 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             Intent intent=new Intent(getBaseContext(),ExamRecordActivity.class);
             startActivity(intent);
             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-
-
         }else if(id==R.id.propic){
             Intent intent=new Intent(this,LatestExamUpdates.class);
             startActivity(intent);

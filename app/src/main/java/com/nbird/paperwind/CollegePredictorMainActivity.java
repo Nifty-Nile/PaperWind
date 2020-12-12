@@ -150,12 +150,16 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             }
         });
 
+        Platinumnumber();
         myRef.child("CollegePredictor").child(String.valueOf(SelectedEntranceExam)).child(String.valueOf(Cast)).child(String.valueOf(Gender)).child(String.valueOf(PlatinumNumber)).orderByChild("branch").equalTo(Branch).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot1 : snapshot.getChildren()) {
                     list.add(dataSnapshot1.getValue(CollegePredictorMainHolder.class));
 
+                }
+                if(list.size() == 0){
+                    Toast.makeText(CollegePredictorMainActivity.this, "For this Rank there is no Data Available!", Toast.LENGTH_LONG).show();
                 }
                 categoryAdapter.notifyDataSetChanged();
                 loadingDialog.dismiss();
@@ -169,7 +173,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             }
         });
         TextViewDisplay();
-        Platinumnumber();
+
     }
 
     public void TextViewDisplay(){
@@ -217,55 +221,123 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             case 21:
                 entranceexamtitle.setText("Entrance Exam: "+"NIFT");break;
         }
-        switch (Gender){
-            case 1:
-                gendertext.setText("Gender: "+"Male");break;
-            case 2:
-                gendertext.setText("Gender: "+"Female");break;
-        }
-        switch (Cast){
-            case 1:
 
-                    casttext.setText("Category: "+"General");ranktext.setText("Gen. Rank: "+rank123);
+        if(SelectedEntranceExam==1) {
+            switch (Gender) {
+                case 1:
+                    gendertext.setText("Gender: " + "Male");
                     break;
-
-
-            case 2:
-
-                    casttext.setText("Category: " + "Obc");ranktext.setText("OBC Rank: " + rank123);
+                case 2:
+                    gendertext.setText("Gender: " + "Female");
                     break;
-
-            case 3:
-
-                    casttext.setText("Category: " + "ST");ranktext.setText("ST Rank: " + rank123);
+            }
+        }else if(SelectedEntranceExam==4){
+            switch (Gender) {
+                case 1:
+                    gendertext.setText("Gender: " + "Not Considered");
                     break;
-
-            case 4:
-
-                    casttext.setText("Category: " + "SC");ranktext.setText("SC Rank: " + rank123);
+                case 2:
+                    gendertext.setText("Gender: " + "Not Considered");
                     break;
-
-        }
-        switch (Branch){
-            case 1:
-                branchtext.setText("Branch: "+"CSE");break;
-            case 2:
-                branchtext.setText("Branch: "+"IT");break;
-            case 3:
-                branchtext.setText("Branch: "+"ECE");break;
-            case 4:
-                branchtext.setText("Branch: "+"EEE");break;
-            case 5:
-                branchtext.setText("Branch: "+"ME");break;
-            case 6:
-                branchtext.setText("Branch: "+"TE");break;
-            case 7:
-                branchtext.setText("Branch: "+"Civil"); break;
-
+            }
         }
 
+        if(SelectedEntranceExam==1) {
+            switch (Cast) {
+                case 1:
+                    casttext.setText("Category: " + "General");
+                    ranktext.setText("Gen. Rank: " + rank123);
+                    break;
+                case 2:
+                    casttext.setText("Category: " + "Obc");
+                    ranktext.setText("OBC Rank: " + rank123);
+                    break;
+                case 3:
+                    casttext.setText("Category: " + "ST");
+                    ranktext.setText("ST Rank: " + rank123);
+                    break;
+                case 4:
+                    casttext.setText("Category: " + "SC");
+                    ranktext.setText("SC Rank: " + rank123);
+                    break;
+            }
+        }else if(SelectedEntranceExam==4){
+            switch (Cast) {
+                case 1:
+                    casttext.setText("Category: " + "Not Considered");
+                    ranktext.setText("Rank: " + rank123);
+                    break;
+                case 2:
+                    casttext.setText("Category: " + "Not Considered");
+                    ranktext.setText("Rank: " + rank123);
+                    break;
+                case 3:
+                    casttext.setText("Category: " + "Not Considered");
+                    ranktext.setText("Rank: " + rank123);
+                    break;
+                case 4:
+                    casttext.setText("Category: " + "Not Considered");
+                    ranktext.setText("Rank: " + rank123);
+                    break;
+            }
+        }
 
+        if(SelectedEntranceExam==1){
+            switch (Branch){
+                case 1:
+                    branchtext.setText("Branch: "+"CSE");break;
+                case 2:
+                    branchtext.setText("Branch: "+"IT");break;
+                case 3:
+                    branchtext.setText("Branch: "+"ECE");break;
+                case 4:
+                    branchtext.setText("Branch: "+"EEE");break;
+                case 5:
+                    branchtext.setText("Branch: "+"ME");break;
+                case 6:
+                    branchtext.setText("Branch: "+"TE");break;
+                case 7:
+                    branchtext.setText("Branch: "+"Civil"); break;
+            }
+        }else if(SelectedEntranceExam==4){
+            switch (Branch){
+                case 1:
+                    branchtext.setText("Branch: "+"Computer Science and Engineering");break;
+                case 2:
+                    branchtext.setText("Branch: "+"Information technology");break;
+                case 3:
+                    branchtext.setText("Branch: "+"Computer science and Engg. (Specialisation in Bioinformatics)");break;
+                case 4:
+                    branchtext.setText("Branch: "+"BioMedical Engineering");break;
+                case 5:
+                    branchtext.setText("Branch: "+"Biotechnology");break;
+                case 6:
+                    branchtext.setText("Branch: "+"Civil Engineering");break;
+                case 7:
+                    branchtext.setText("Branch: "+"Electronics and Communication Engineering"); break;
+                case 8:
+                    branchtext.setText("Branch: "+"Electrical and Electronics Engineering");break;
+                case 9:
+                    branchtext.setText("Branch: "+"Electronics and Instrumentation Engineering");break;
+                case 10:
+                    branchtext.setText("Branch: "+"Mechanical Engineering");break;
+                case 11:
+                    branchtext.setText("Branch: "+"Mechanical (Spec. in Automotive Engineering)");break;
+                case 12:
+                    branchtext.setText("Branch: "+"Mechanical (Spec. in Energy Engineering)");break;
+                case 13:
+                    branchtext.setText("Branch: "+"Chemical Engineering"); break;
+                case 14:
+                    branchtext.setText("Branch: "+"ECE (Spec.Internet of Things and Sensor)");break;
+                case 15:
+                    branchtext.setText("Branch: "+"Comp.Science Engg.(Spec.in Information Security)");break;
+                case 16:
+                    branchtext.setText("Branch: "+"Fashion Technology");break;
+                case 17:
+                    branchtext.setText("Branch: "+"Electronics and Computer Engineering");break;
 
+            }
+        }
     }
 
     public void Platinumnumber(){
@@ -276,8 +348,29 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 JeeMainsgold();break;
             case 3:
                 Neetgold();break;
+            case 4:
+                Viteeegold();break;
         }
     }
+    public void Viteeegold(){
+        if (Rank <= 7000) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 12000) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 18000) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 25000) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 35000) {
+            PlatinumNumber = 5;
+        } else if (Rank > 35000) {
+            PlatinumNumber = 6;
+        }
+    }
+
+
+
+
     public void JeeAdvancegold() {
 
         switch (Cast) {
