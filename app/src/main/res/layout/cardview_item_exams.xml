@@ -34,7 +34,7 @@
             android:layout_height="67dp"
             android:layout_marginLeft="2dp"
             android:layout_marginRight="2dp"
-            android:text="Exam frf nurfr fnr fur nfrffr fjrnfrfrj   fnrjfnrffr jnrrn"/>
+            android:text="Select to continue..."/>
 
         <TextView
             android:id="@+id/exam_title"
