@@ -14,8 +14,7 @@
         android:src="@drawable/defaultpropic"
         android:layout_height="100dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="10dp"
-         />
+        android:layout_marginBottom="10dp"/>
 
     <TextView
         android:id="@+id/mailidtext"
