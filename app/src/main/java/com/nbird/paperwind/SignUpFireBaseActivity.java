@@ -33,7 +33,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
     final DatabaseReference reference = database.getReference("User");
     String usermail;
     String personEmail;
-
+    String propicurl123="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/BydefalutPic%2Fdefaultpropic.png?alt=media&token=f655727d-9740-4ac9-9ba2-f53ea02dc778";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,7 +85,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 editormailreminder.putString("123", usermail);
                                 editormailreminder.commit();
 
-                                User s1=new User(money,permission);
+                                User s1=new User(money,permission,propicurl123);
                                 reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
@@ -152,7 +152,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         String usermail=mail.getText().toString();
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
-                                        User s1=new User(money,permission);
+                                        User s1=new User(money,permission,propicurl123);
                                         reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
@@ -222,7 +222,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         String usermail=mail.getText().toString();
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
-                                        User s1=new User(money,permission);
+                                        User s1=new User(money,permission,propicurl123);
                                         reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
@@ -292,7 +292,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         usermail=mail.getText().toString();
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
-                                        User s1=new User(money,permission);
+                                        User s1=new User(money,permission,propicurl123);
                                         reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {

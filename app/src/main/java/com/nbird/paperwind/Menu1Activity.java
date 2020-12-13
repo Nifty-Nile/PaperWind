@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -42,6 +43,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,13 +56,20 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
+import Model.PropicString;
+import Model.User;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Menu1Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -70,19 +83,23 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     private Context mContext;
     FirebaseAuth fAuth;
     int value;
-
+    String randomuid;
     //variables
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
     ActionBarDrawerToggle mToggle;
-
     CircleImageView profileImage;
     private static final int PICK_IMAGE =1;
     Uri imageUri;
     CircleImageView nav_image;
     TextView text1,text2,text3;
     String linkdata,mailid123;
+    FirebaseStorage storage;
+    StorageReference storageReference;
+    String imageurl,picurl;
+    StorageReference ref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,14 +120,47 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
         final SharedPreferences.Editor editormailreminder = mailreminder.edit();
 
-
+        SharedPreferences propicurl = this.getSharedPreferences("propicurl123",0);
+        final SharedPreferences.Editor editorpropicurl = mailreminder.edit();
         mailid123 = mailreminder.getString("123", "abc@gmail.com");
-
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView =  navigationView.getHeaderView(0);
         TextView nav_user = (TextView)hView.findViewById(R.id.mailidtext);
         nav_user.setText(mailid123);
         nav_image = (CircleImageView) hView.findViewById(R.id.proimage);
+
+
+
+        fAuth = FirebaseAuth.getInstance();
+
+            reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("propic").addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    // convert the data back to the model
+                    imageurl = (String) dataSnapshot.getValue();
+
+                    try{
+                        Glide.with(getBaseContext()).load(imageurl).into(nav_image);
+                        Toast.makeText(Menu1Activity.this, "Hi", Toast.LENGTH_SHORT).show();
+                    }catch (Exception e){
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+
+
+
+
+
+
 
         nav_image.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,10 +168,15 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 selectImage(Menu1Activity.this);
             }
         });
+
+
+
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
+
+
 
 
 
@@ -152,7 +207,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
 
-        fAuth = FirebaseAuth.getInstance();
+
         reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -519,16 +574,18 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                     if (resultCode == RESULT_OK && data != null) {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         nav_image.setImageBitmap(selectedImage);
+                        uploadImage();
                     }
 
                     break;
                 case 1:
                     if (resultCode == RESULT_OK) {
                         try {
-                            final Uri imageUri = data.getData();
+                            imageUri = data.getData();
                             final InputStream imageStream = getContentResolver().openInputStream(imageUri);
                             final Bitmap selectedImage = BitmapFactory.decodeStream(imageStream);
                             nav_image.setImageBitmap(selectedImage);
+                            uploadImage();
                         } catch (FileNotFoundException e) {
                             e.printStackTrace();
                             Toast.makeText(Menu1Activity.this, "Something went wrong", Toast.LENGTH_LONG).show();
@@ -539,6 +596,110 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                     }
                     break;
             }
+        }
+    }
+
+    private void uploadImage()
+    {
+        if (imageUri != null) {
+
+            // Code for showing progressDialog while uploading
+            final ProgressDialog progressDialog
+                    = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+            progressDialog.show();
+
+            // Defining the child of storageReference
+            storage = FirebaseStorage.getInstance();
+            storageReference = storage.getReference();
+
+            final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
+            final SharedPreferences.Editor editormailreminder = mailreminder.edit();
+
+
+            mailid123 = mailreminder.getString("123", "abc@gmail.com");
+            randomuid=UUID.randomUUID().toString();
+
+            ref = storageReference.child("images/" + mailid123+"/"+randomuid);
+
+
+
+            // adding listeners on upload
+            // or failure of image
+            ref.putFile(imageUri)
+                    .addOnSuccessListener(
+                            new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+                                @Override
+                                public void onSuccess(
+                                        UploadTask.TaskSnapshot taskSnapshot)
+                                {
+
+                                    // Image uploaded successfully
+                                    // Dismiss dialog
+                                    progressDialog.dismiss();
+                                    Toast.makeText(Menu1Activity.this, "Image Uploaded!!", Toast.LENGTH_SHORT).show();
+                                    try{
+                                        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+                                        StorageReference urlref = storageRef.child("images/" + mailid123+"/"+randomuid);
+                                        urlref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>()
+                                        {
+                                            @Override
+                                            public void onSuccess(Uri downloadUrl)
+                                            {
+                                                imageurl=downloadUrl.toString();
+
+                                                reference1.child(fAuth.getCurrentUser().getUid()).child("propic").setValue(imageurl).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if(task.isSuccessful()){
+                                                            Toast.makeText(Menu1Activity.this, "Uploaded", Toast.LENGTH_LONG).show();
+                                                        }else{
+                                                            Toast.makeText(Menu1Activity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                        }
+                                                    }
+                                                });
+                                            }
+                                        });
+
+                                    }catch (Exception e){
+
+                                    }
+                                }
+                            })
+
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e)
+                        {
+
+                            // Error, Image not uploaded
+                            progressDialog.dismiss();
+                            Toast
+                                    .makeText(Menu1Activity.this,
+                                            "Failed " + e.getMessage(),
+                                            Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    })
+                    .addOnProgressListener(
+                            new OnProgressListener<UploadTask.TaskSnapshot>() {
+
+                                // Progress Listener for loading
+                                // percentage on the dialog box
+                                @Override
+                                public void onProgress(
+                                        UploadTask.TaskSnapshot taskSnapshot)
+                                {
+                                    double progress
+                                            = (100.0
+                                            * taskSnapshot.getBytesTransferred()
+                                            / taskSnapshot.getTotalByteCount());
+                                    progressDialog.setMessage(
+                                            "Uploaded "
+                                                    + (int)progress + "%");
+                                }
+                            });
         }
     }
 

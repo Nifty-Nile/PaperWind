@@ -3,15 +3,25 @@ package Model;
 public class User {
     private int money;
     private int permission;
+    String propic;
 
 
-    public User() {
+    public User(String imageurl) {
     }
 
-    public User(int money,int permission) {
+    public User(int money,int permission,String propic) {
         this.money = money;
         this.permission=permission;
+        this.propic=propic;
 
+    }
+
+    public String getPropic() {
+        return propic;
+    }
+
+    public void setPropic(String propic) {
+        this.propic = propic;
     }
 
     public int getPermission() {
