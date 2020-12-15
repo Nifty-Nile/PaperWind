@@ -151,6 +151,12 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         });
 
         Platinumnumber();
+
+        if(SelectedEntranceExam==5){
+            Cast=1;
+            Gender=1;
+        }
+
         myRef.child("CollegePredictor").child(String.valueOf(SelectedEntranceExam)).child(String.valueOf(Cast)).child(String.valueOf(Gender)).child(String.valueOf(PlatinumNumber)).orderByChild("branch").equalTo(Branch).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -231,7 +237,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     gendertext.setText("Gender: " + "Female");
                     break;
             }
-        }else if(SelectedEntranceExam==4){
+        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5){
             switch (Gender) {
                 case 1:
                     gendertext.setText("Gender: " + "Not Considered");
@@ -261,7 +267,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     ranktext.setText("SC Rank: " + rank123);
                     break;
             }
-        }else if(SelectedEntranceExam==4){
+        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5){
             switch (Cast) {
                 case 1:
                     casttext.setText("Category: " + "Not Considered");
@@ -337,6 +343,25 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     branchtext.setText("Branch: "+"Electronics and Computer Engineering");break;
 
             }
+        }else if(SelectedEntranceExam==5){
+            switch (Branch){
+                case 1:
+                    branchtext.setText("Branch: "+"Computer Science and Engineering");break;
+                case 2:
+                    branchtext.setText("Branch: "+"Information Science and Engineering");break;
+                case 3:
+                    branchtext.setText("Branch: "+"Electronics and Communication Engineering");break;
+                case 4:
+                    branchtext.setText("Branch: "+"Mechanical Engineering");break;
+                case 5:
+                    branchtext.setText("Branch: "+"Electrical and Electronics Engineering");break;
+                case 6:
+                    branchtext.setText("Branch: "+"Telecommunication Engineering");break;
+                case 7:
+                    branchtext.setText("Branch: "+"Civil Engineering"); break;
+                case 8:
+                    branchtext.setText("Branch: "+"Biotechnology");break;
+            }
         }
     }
 
@@ -350,8 +375,50 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 Neetgold();break;
             case 4:
                 Viteeegold();break;
+            case 5:
+                Comedkgold();break;
         }
     }
+    public void Comedkgold() {
+        if (Rank <= 420) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 920) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 1150) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 3660) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 4100) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 5700) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 8000) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 12150) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 13150) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 16000) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 17000) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 20000) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 25000) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 29500) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 35800) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 40000) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 50000) {
+            PlatinumNumber = 18;
+        } else if (Rank > 50000) {
+            PlatinumNumber = 19;
+        }
+    }
+
     public void Viteeegold(){
         if (Rank <= 7000) {
             PlatinumNumber = 1;

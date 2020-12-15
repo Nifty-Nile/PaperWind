@@ -20,9 +20,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -111,6 +114,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 loadingDialog=new Dialog(LoginFireBaseActivity.this);
+
                 loadingDialog.setContentView(R.layout.activity_loading);
                 loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 loadingDialog.setCancelable(true);

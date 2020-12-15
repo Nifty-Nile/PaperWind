@@ -22,8 +22,9 @@
         android:text="niftynile@gmail.com"
         android:textColor="#FFFFFF"
         android:layout_marginLeft="20dp"
-        android:fontFamily="@font/acme"
+        android:fontFamily="@font/aladin"
         android:textSize="18sp"
+        android:textStyle="bold"
         android:layout_marginBottom="15dp"/>
 
 

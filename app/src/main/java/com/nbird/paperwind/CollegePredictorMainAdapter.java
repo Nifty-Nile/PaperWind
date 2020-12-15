@@ -54,7 +54,7 @@ public class CollegePredictorMainAdapter extends RecyclerView.Adapter<CollegePre
         public void setData(String imageUrl, final String title, final int branch) {
             Glide.with(itemView.getContext()).load(imageUrl).into(categoryImage);
             this.title.setText(title);
-            itemView.setOnClickListener(new View.OnClickListener() {
+            /*itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent=new Intent(itemView.getContext(),DemoActivity.class);
@@ -62,7 +62,7 @@ public class CollegePredictorMainAdapter extends RecyclerView.Adapter<CollegePre
                     intent.putExtra("branch",branch);
                     itemView.getContext().startActivity(intent);
                 }
-            });
+            });*/
 
         }
     }

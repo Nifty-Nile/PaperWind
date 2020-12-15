@@ -101,10 +101,11 @@ public class RankPredictorActivity extends AppCompatActivity {
     }
 
     public void parto(){
-        lstExam.add(new RankMenuHolder(R.drawable.back1,"Jee Advance"));
-        lstExam.add(new RankMenuHolder(R.drawable.back1,"Jee Mains"));
-        lstExam.add(new RankMenuHolder(R.drawable.back1,"Neet"));
-        lstExam.add(new RankMenuHolder(R.drawable.back1,"Viteee"));
+        lstExam.add(new RankMenuHolder(R.drawable.jeeadvanced,"Jee Advance"));
+        lstExam.add(new RankMenuHolder(R.drawable.jeemain,"Jee Mains"));
+        lstExam.add(new RankMenuHolder(R.drawable.neet,"Neet"));
+        lstExam.add(new RankMenuHolder(R.drawable.viteee,"Viteee"));
+        lstExam.add(new RankMenuHolder(R.drawable.comedk,"Comedk"));
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

@@ -163,6 +163,9 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             {
                 if (event.getAction() == KeyEvent.ACTION_DOWN)
                 {
+                    if(!college()){
+                        return false;
+                    }
                     switch (keyCode)
                     {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
