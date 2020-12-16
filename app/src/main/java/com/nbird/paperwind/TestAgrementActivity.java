@@ -172,7 +172,7 @@ public class TestAgrementActivity extends AppCompatActivity {
         if(safe==0){
             value = value - 20;
 
-            reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+            reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
                     if (task.isSuccessful()) {

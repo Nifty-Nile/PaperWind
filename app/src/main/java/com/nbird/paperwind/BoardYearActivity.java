@@ -56,7 +56,7 @@ public class BoardYearActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         fAuth = FirebaseAuth.getInstance();
-        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // convert the data back to the model

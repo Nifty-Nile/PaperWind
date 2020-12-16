@@ -39,6 +39,7 @@ public class SartingGuideActivity extends AppCompatActivity {
     TextView text1,text2,text3,text4,text5,text6,text7,text8;
     Boolean night;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class SartingGuideActivity extends AppCompatActivity {
 
         cbsebutton=(Button) findViewById(R.id.tipButton1);
         icsebutton=(Button) findViewById(R.id.tipButton);
+
         cardView=(CardView) findViewById(R.id.cardView1);
         text1=(TextView) findViewById(R.id.hometext);
         text2=(TextView) findViewById(R.id.predictortext);
@@ -61,6 +63,8 @@ public class SartingGuideActivity extends AppCompatActivity {
 
 
         night = guide.getBoolean("locked", false);
+
+
 
         if(night){
             Intent intent=new Intent(getBaseContext(),Menu1Activity.class);
@@ -80,7 +84,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                     .setIdempotent(false)
                     .setFocusGravity(FocusGravity.CENTER)
                     .setFocusType(Focus.MINIMUM)
-                    .setDelayMillis(500)
+                    .setDelayMillis(200)
                     .enableFadeAnimation(true)
                     .performClick(true)
                     .setInfoText("Get access to a wide range of content exclusively for CBSE.")
@@ -96,7 +100,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                     .enableIcon(false)
                                     .setFocusGravity(FocusGravity.CENTER)
                                     .setFocusType(Focus.MINIMUM)
-                                    .setDelayMillis(500)
+                                    .setDelayMillis(200)
                                     .setIdempotent(false)
                                     .enableFadeAnimation(true)
                                     .performClick(true)
@@ -115,7 +119,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                     .setIdempotent(false)
                                                     .setFocusGravity(FocusGravity.CENTER)
                                                     .setFocusType(Focus.MINIMUM)
-                                                    .setDelayMillis(500)
+                                                    .setDelayMillis(200)
                                                     .enableFadeAnimation(true)
                                                     .performClick(true)
                                                     .setInfoText("Exclusive content for India's top examinations to boost your path to success! Contains custom made Test Papers and Previous Year's Papers.")
@@ -131,7 +135,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                     .enableIcon(false)
                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                     .setFocusType(Focus.MINIMUM)
-                                                                    .setDelayMillis(500)
+                                                                    .setDelayMillis(200)
                                                                     .setIdempotent(false)
                                                                     .enableFadeAnimation(true)
                                                                     .performClick(true)
@@ -150,7 +154,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                     .setIdempotent(false)
                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                    .setDelayMillis(500)
+                                                                                    .setDelayMillis(200)
                                                                                     .enableFadeAnimation(true)
                                                                                     .performClick(true)
                                                                                     .setInfoText("Predict your Rank and Colleges based on your score. Your Post-Exam anxiety, just got covered!")
@@ -166,7 +170,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                                     .enableIcon(false)
                                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                                    .setDelayMillis(500)
+                                                                                                    .setDelayMillis(200)
                                                                                                     .setIdempotent(false)
                                                                                                     .enableFadeAnimation(true)
                                                                                                     .performClick(true)
@@ -185,7 +189,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                                                     .setIdempotent(false)
                                                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                                                    .setDelayMillis(500)
+                                                                                                                    .setDelayMillis(200)
                                                                                                                     .enableFadeAnimation(true)
                                                                                                                     .performClick(true)
                                                                                                                     .setInfoText("Unlock Exclusive Features of PAPER WIND at 'Throw-Away' Prices!")
@@ -201,7 +205,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                                                                     .enableIcon(false)
                                                                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                                                                    .setDelayMillis(500)
+                                                                                                                                    .setDelayMillis(200)
                                                                                                                                     .setIdempotent(false)
                                                                                                                                     .enableFadeAnimation(true)
                                                                                                                                     .performClick(true)
@@ -218,7 +222,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                                                                                     .enableIcon(false)
                                                                                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                                                                                    .setDelayMillis(500)
+                                                                                                                                                    .setDelayMillis(200)
                                                                                                                                                     .setIdempotent(false)
                                                                                                                                                     .enableFadeAnimation(true)
                                                                                                                                                     .performClick(true)
@@ -237,7 +241,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                                                                                                     .setIdempotent(false)
                                                                                                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                                                                                                    .setDelayMillis(500)
+                                                                                                                                                                    .setDelayMillis(200)
                                                                                                                                                                     .enableFadeAnimation(true)
                                                                                                                                                                     .performClick(true)
                                                                                                                                                                     .setInfoText("Know your Paper Notes balance right up your alley!")
@@ -253,7 +257,7 @@ public class SartingGuideActivity extends AppCompatActivity {
                                                                                                                                                                                     .enableIcon(false)
                                                                                                                                                                                     .setFocusGravity(FocusGravity.CENTER)
                                                                                                                                                                                     .setFocusType(Focus.MINIMUM)
-                                                                                                                                                                                    .setDelayMillis(500)
+                                                                                                                                                                                    .setDelayMillis(200)
                                                                                                                                                                                     .setIdempotent(false)
                                                                                                                                                                                     .enableFadeAnimation(true)
                                                                                                                                                                                     .performClick(true)

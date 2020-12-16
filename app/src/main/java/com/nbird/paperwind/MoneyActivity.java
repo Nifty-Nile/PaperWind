@@ -220,7 +220,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         loadRewardedVideoAd();
 
 
-        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // convert the data back to the model
@@ -362,7 +362,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
     public void onRewarded(RewardItem rewardItem) {
         value = value + 1;
         papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-        reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+        reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
@@ -525,7 +525,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 20;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -539,7 +539,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 50;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -553,7 +553,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 80;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -567,7 +567,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 150;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -581,7 +581,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 320;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -595,7 +595,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 800;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
@@ -609,7 +609,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 2400;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
-                reference.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {

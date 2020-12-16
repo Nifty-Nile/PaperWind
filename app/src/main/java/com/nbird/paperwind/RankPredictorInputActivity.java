@@ -160,7 +160,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 value = value - 1;
 
-                                reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
@@ -284,7 +284,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                                         public void onClick(View view) {
                                             value = value - 40;
 
-                                            reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
@@ -297,8 +297,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
 
 
-
-                                            reference.child(fAuth.getCurrentUser().getUid()).child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            permission=1;
+                                            reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
@@ -468,7 +468,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
         fAuth = FirebaseAuth.getInstance();
-        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // convert the data back to the model
@@ -482,7 +482,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
             }
         });
-        reference1.child(fAuth.getCurrentUser().getUid()).child("permission").addValueEventListener(new ValueEventListener() {
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 post = dataSnapshot.getValue(Integer.class);
@@ -548,7 +548,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     value = value - 1;
 
-                    reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
@@ -666,7 +666,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                                         public void onClick(View view) {
                                             value = value - 40;
 
-                                            reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if (task.isSuccessful()) {
@@ -680,7 +680,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
 
 
-                                            reference.child(fAuth.getCurrentUser().getUid()).child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
                                                     if(task.isSuccessful()){
@@ -846,7 +846,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                             public void onClick(View view) {
                                 value = value - 40;
 
-                                reference1.child(fAuth.getCurrentUser().getUid()).child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
@@ -859,8 +859,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
 
 
-
-                                reference.child(fAuth.getCurrentUser().getUid()).child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                 permission=1;
+                                reference.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){

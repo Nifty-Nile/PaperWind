@@ -122,10 +122,10 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
         SharedPreferences propicurl = this.getSharedPreferences("propicurl123",0);
         final SharedPreferences.Editor editorpropicurl = mailreminder.edit();
-        mailid123 = mailreminder.getString("123", "abc@gmail.com");
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         View hView =  navigationView.getHeaderView(0);
         TextView nav_user = (TextView)hView.findViewById(R.id.mailidtext);
+        mailid123 = mailreminder.getString("123", "abc@gmail.com");
         nav_user.setText(mailid123);
         nav_image = (CircleImageView) hView.findViewById(R.id.proimage);
 
@@ -133,15 +133,15 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
         fAuth = FirebaseAuth.getInstance();
 
-            reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("propic").addValueEventListener(new ValueEventListener() {
+            reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("personal").child("propic").addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     // convert the data back to the model
                     imageurl = (String) dataSnapshot.getValue();
-
+                    editorpropicurl.putString("12345", imageurl);
+                    editorpropicurl.commit();
                     try{
                         Glide.with(getBaseContext()).load(imageurl).into(nav_image);
-                        Toast.makeText(Menu1Activity.this, "Hi", Toast.LENGTH_SHORT).show();
                     }catch (Exception e){
 
                     }
@@ -208,7 +208,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
 
-        reference1.child(fAuth.getCurrentUser().getUid()).child("money").addValueEventListener(new ValueEventListener() {
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // convert the data back to the model
@@ -649,7 +649,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                                             {
                                                 imageurl=downloadUrl.toString();
 
-                                                reference1.child(fAuth.getCurrentUser().getUid()).child("propic").setValue(imageurl).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("propic").setValue(imageurl).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if(task.isSuccessful()){

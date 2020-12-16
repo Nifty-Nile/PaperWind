@@ -24,6 +24,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.github.ybq.android.spinkit.sprite.Sprite;
 import com.github.ybq.android.spinkit.style.DoubleBounce;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -47,6 +48,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import Model.User;
 
 public class LoginFireBaseActivity extends AppCompatActivity {
@@ -67,6 +71,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     final DatabaseReference table_user = database.getReference("User");
     final DatabaseReference reference1 = database.getReference("User");
     final DatabaseReference reference2 = database.getReference();
+    int skipint=0;
     @Override
     protected void onStart() {
         super.onStart();
@@ -119,6 +124,9 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                 loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 loadingDialog.setCancelable(true);
                 loadingDialog.show();
+
+
+
                 signIn();
             }
         });
@@ -147,7 +155,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                             startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
                             loadingDialog.dismiss();
                             finish();
-                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
 
                         }else{
                             Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -356,27 +364,140 @@ public void createRequest(){
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
+
+
+
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
+
+
+
+
+
                             // Sign in success, update UI with the signed-in user's information
                             GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(getApplicationContext());
+
+                           /* */
+
+
+
+
+
                             if(account!=null) {
+
+                                /*table_user.child(mAuth.getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        User userbro = dataSnapshot.getValue(User.class);
+                                        money=userbro.getMoney();
+                                        permission=userbro.getPermission();
+                                        propicurl123=userbro.getPropic();
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                        System.out.println("The read failed: " + databaseError.getCode());
+                                    }
+                                });*/
+
+
+
+
+
                                 personEmail = account.getEmail();
                                 final SharedPreferences mailreminder = getBaseContext().getSharedPreferences("mailreminder123", 0);
                                 final SharedPreferences.Editor editormailreminder = mailreminder.edit();
                                 editormailreminder.putString("123", personEmail);
                                 editormailreminder.commit();
-                                User s1=new User(money,permission,propicurl123);
-                                table_user.child(mAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if(task.isSuccessful()){
-                                            Toast.makeText(LoginFireBaseActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
-                                        }else{
-                                            Toast.makeText(LoginFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+
+
+                                    reference1.child(mAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            // convert the data back to the model
+                                         try{
+                                            money = dataSnapshot.getValue(Integer.class);
+                                            User s1 = new User(money, permission, propicurl123);
+                                            skipint = 1;
+
+
+                                            reference1.child(mAuth.getCurrentUser().getUid()).child("personal").child("permission").addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    // convert the data back to the model
+                                                    try {
+                                                        permission = dataSnapshot.getValue(Integer.class);
+
+
+                                                    } catch (Exception e) {
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+                                                }
+                                            });
+
+                                            reference1.child(mAuth.getCurrentUser().getUid()).child("personal").child("propic").addValueEventListener(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                                    // convert the data back to the model
+                                                    try {
+                                                        propicurl123 = (String) dataSnapshot.getValue();
+                                                        User s1 = new User(money, permission, propicurl123);
+                                                        table_user.child(mAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                            @Override
+                                                            public void onComplete(@NonNull Task<Void> task) {
+                                                                if (task.isSuccessful()) {
+
+                                                                } else {
+                                                                    Toast.makeText(LoginFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                                }
+                                                            }
+                                                        });
+                                                    } catch (Exception e) {
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+                                                }
+                                            });
+
+                                        }catch(Exception e){
+                                             User s1 = new User(money, permission, propicurl123);
+                                             table_user.child(mAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                 @Override
+                                                 public void onComplete(@NonNull Task<Void> task) {
+                                                     if (task.isSuccessful()) {
+
+                                                     } else {
+                                                         Toast.makeText(LoginFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                     }
+                                                 }
+                                             });
+                                            }
+
+
+
                                         }
-                                    }
-                                });
+                                        // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                        }
+                                    });
+
+
+
+
+
+
+
+
+
                          //       final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
                          //       final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
 

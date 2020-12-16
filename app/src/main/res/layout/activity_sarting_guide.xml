@@ -7,42 +7,42 @@
     android:background="@drawable/background1"
     tools:context=".SartingGuideActivity">
 
+
+
     <LinearLayout
+        android:id="@+id/linearLayout20"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"
+        android:weightSum="4"
         app:layout_constraintBottom_toBottomOf="@+id/bottomnavigatio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomnavigatio"
-        android:weightSum="4">
+        app:layout_constraintTop_toTopOf="@+id/bottomnavigatio">
 
         <TextView
             android:id="@+id/hometext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-           />
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/predictortext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/formulatext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"/>
+            android:layout_weight="1" />
 
         <TextView
             android:id="@+id/moneytext"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            />
+            android:layout_weight="1" />
 
 
     </LinearLayout>
@@ -246,9 +246,10 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
     <LinearLayout
+        android:id="@+id/linearLayout19"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
 
+        android:layout_height="0dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
         app:layout_constraintEnd_toEndOf="parent"
@@ -258,19 +259,18 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView xmlns:cardview="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/cardView1"
                 android:layout_width="110dp"
-                android:layout_height="185dp"
 
-                xmlns:cardview="http://schemas.android.com/apk/res-auto"
-                cardview:cardCornerRadius="20dp"
+                android:layout_height="185dp"
                 android:layout_margin="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                cardview:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -281,13 +281,12 @@
 
                     <ImageView
                         android:id="@+id/exam_img_id1"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
-                        android:background="@drawable/jeeadvanced"
-                      />
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/jeeadvanced" />
 
                     <TextView
                         android:id="@+id/exam_dis1"
@@ -316,16 +315,15 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView xmlns:cardview="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/cardView2"
                 android:layout_width="110dp"
                 android:layout_height="185dp"
-                android:layout_marginLeft="10dp"
-                xmlns:cardview="http://schemas.android.com/apk/res-auto"
-                cardview:cardCornerRadius="20dp"
                 android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                cardview:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -333,15 +331,14 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                   <ImageView
+                    <ImageView
                         android:id="@+id/exam_img_id2"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="6dp"
-                        android:background="@drawable/jeemain"
-                       />
+                        android:background="@drawable/jeemain" />
 
                     <TextView
                         android:id="@+id/exam_dis2"
@@ -370,16 +367,15 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView xmlns:cardview="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/cardView"
                 android:layout_width="110dp"
-                xmlns:cardview="http://schemas.android.com/apk/res-auto"
-                cardview:cardCornerRadius="20dp"
-                android:layout_margin="5dp"
                 android:layout_height="185dp"
+                android:layout_margin="5dp"
                 android:layout_marginLeft="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                cardview:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -387,15 +383,14 @@
                     android:background="#ADE1F5"
                     android:orientation="vertical">
 
-                   <ImageView
+                    <ImageView
                         android:id="@+id/exam_img_id"
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="15dp"
-                        android:background="@drawable/neet"
-                         />
+                        android:background="@drawable/neet" />
 
                     <TextView
                         android:id="@+id/exam_dis"
@@ -429,17 +424,17 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:layout_gravity="center">
+            android:orientation="horizontal">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView6"
                 android:layout_width="110dp"
                 android:layout_height="185dp"
-                app:cardCornerRadius="20dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5">
 
@@ -456,8 +451,7 @@
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="15dp"
-                        android:background="@drawable/viteee"
-                        />
+                        android:background="@drawable/viteee" />
 
                     <TextView
                         android:id="@+id/exam_dis6"
@@ -492,16 +486,15 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView xmlns:cardview="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/cardView5"
                 android:layout_width="110dp"
-                xmlns:cardview="http://schemas.android.com/apk/res-auto"
-                cardview:cardCornerRadius="20dp"
+                android:layout_height="185dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:layout_height="185dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                cardview:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -516,8 +509,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="6dp"
-                        android:background="@drawable/comedk"
-                         />
+                        android:background="@drawable/comedk" />
 
                     <TextView
                         android:id="@+id/exam_dis5"
@@ -546,16 +538,15 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView xmlns:cardview="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/cardView4"
                 android:layout_width="110dp"
-                xmlns:cardview="http://schemas.android.com/apk/res-auto"
-                cardview:cardCornerRadius="20dp"
-                android:layout_marginRight="5dp"
                 android:layout_height="185dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5">
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                cardview:cardCornerRadius="20dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -570,8 +561,7 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="5dp"
                         android:layout_marginRight="6dp"
-                        android:background="@drawable/nda"
-                         />
+                        android:background="@drawable/nda" />
 
                     <TextView
                         android:id="@+id/exam_dis4"

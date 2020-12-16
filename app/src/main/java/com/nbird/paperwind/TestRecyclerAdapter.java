@@ -125,7 +125,7 @@ public class TestRecyclerAdapter extends RecyclerView.Adapter<TestRecyclerAdapte
                                    View view1= LayoutInflater.from(context).inflate(R.layout.alert_dialog,(ConstraintLayout) view.findViewById(R.id.layoutDialogContainer));
                                    builder.setView(view1);
                                    ((TextView) view1.findViewById(R.id.textTitle)).setText("Use 20 Paper Notes");
-                                   ((TextView) view1.findViewById(R.id.textMessage)).setText("Pay 20 Paper Notes To Get Life Time Full Access To College Predictor");
+                                   ((TextView) view1.findViewById(R.id.textMessage)).setText("Pay 20 Paper Notes To Get Life Time Full Access To This Set");
                                    ((Button) view1.findViewById(R.id.buttonNo)).setText("Cancel");
                                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Pay 20 Paper Notes!");
                                    ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);

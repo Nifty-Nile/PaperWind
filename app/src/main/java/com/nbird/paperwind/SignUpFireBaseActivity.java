@@ -86,7 +86,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 editormailreminder.commit();
 
                                 User s1=new User(money,permission,propicurl123);
-                                reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if(task.isSuccessful()){
@@ -153,7 +153,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
                                         User s1=new User(money,permission,propicurl123);
-                                        reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){
@@ -223,7 +223,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
                                         User s1=new User(money,permission,propicurl123);
-                                        reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){
@@ -293,7 +293,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
                                         User s1=new User(money,permission,propicurl123);
-                                        reference.child(fAuth.getCurrentUser().getUid()).setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){
