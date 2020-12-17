@@ -7,6 +7,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Activity;
 import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -62,7 +63,7 @@ import java.util.Calendar;
 
 
 
-public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdListener, PaymentResultWithDataListener {
+public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdListener, PaymentResultWithDataListener  {
     RewardedVideoAd rewardedVideoAd;
     AlertDialog dialog;
     TextView moneytext, papernotestotal,invisibletimer,textView13,textView14,text1;
@@ -113,8 +114,6 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         buttonrs30 = (Button) findViewById(R.id.tipButton4);
         buttonrs50 = (Button) findViewById(R.id.tipButton5);
         buttonrs100 = (Button) findViewById(R.id.tipButton6);
-        buttonrs200 = (Button) findViewById(R.id.tipButton7);
-        buttonrs500 = (Button) findViewById(R.id.tipButton8);
         yesbutton = (Button) findViewById(R.id.buttonYes);
         nobutton = (Button) findViewById(R.id.buttonNo);
 
@@ -162,22 +161,18 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
         Adbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               if(numberoftimesvideoplayedin15min<2){
+
 
                     if (rewardedVideoAd.isLoaded()) {
-                        numberoftimesvideoplayedin15min++;
+
                         rewardedVideoAd.show();
+                    }else{
+                        Toast.makeText(MoneyActivity.this, "Ad Is Getting Loaded!", Toast.LENGTH_SHORT).show();
                     }
-                }
-                else{ //      triggerinteger = triggermanual.getInt(String.valueOf(1), 0);
-                    if(triggerinteger==0){
-                        timer();
-                    }
-                    triggerinteger=1;
 
-                    String lion = invisibletimer.getText().toString();
 
-                    AlertDialog.Builder builder=new AlertDialog.Builder(MoneyActivity.this,R.style.AlertDialogTheme);
+
+                /*    AlertDialog.Builder builder=new AlertDialog.Builder(MoneyActivity.this,R.style.AlertDialogTheme);
                     View view1= LayoutInflater.from(MoneyActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                     builder.setView(view1);
                    ((TextView) view1.findViewById(R.id.textTitle)).setText("Come After "+lion+" min");
@@ -208,8 +203,8 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                    }
                    alertDialog.show();
 
+                  */
 
-                }
 
             }
         });
@@ -276,7 +271,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 startPayment();
             }
         });
-        buttonrs200.setOnClickListener(new View.OnClickListener() {
+       /* buttonrs200.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 indicator = 6;
@@ -289,7 +284,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 indicator = 7;
                 startPayment();
             }
-        });
+        });*/
 
 
 
@@ -453,10 +448,10 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                     options.put("amount", "5000");break;
                 case 5:
                     options.put("amount", "10000");break;
-                case 6:
+             /*   case 6:
                     options.put("amount", "20000");break;
                 case 7:
-                    options.put("amount", "50000");break;
+                    options.put("amount", "50000");break;*/
 
             }
 
@@ -492,10 +487,10 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                 moneyamount="50";break;
             case 5:
                 moneyamount="100";break;
-            case 6:
+           /* case 6:
                 moneyamount="200";break;
             case 7:
-                moneyamount="500";break;
+                moneyamount="500";break;*/
         }
         fAuth = FirebaseAuth.getInstance();
         final DatabaseReference myref = database.getReference().child("User").child(fAuth.getCurrentUser().getUid()).child("PaymentReceipt").push();
@@ -591,7 +586,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                         }
                     }
                 });break;
-            case 6:
+        /*    case 6:
                 Toast.makeText(this, "Payment successful", Toast.LENGTH_SHORT).show();
                 value = value + 800;
                 papernotestotal.setText("Paper Notes: " + String.valueOf(value));
@@ -618,7 +613,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
                             Toast.makeText(MoneyActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
                         }
                     }
-                });break;
+                });break;*/
         }
 
     }

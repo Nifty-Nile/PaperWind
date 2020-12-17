@@ -37,10 +37,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:fontFamily="@font/aclonica"
-        android:text="Hello there,Welcome"
-        android:textColor="#000000"
         android:textSize="25sp"
+        android:fontFamily="@font/bangers"
+        android:text="Select Your Choice!"
+        android:textColor="#000000"
+        android:layout_marginTop="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 

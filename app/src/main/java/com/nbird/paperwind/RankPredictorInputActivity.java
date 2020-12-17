@@ -1265,7 +1265,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             View view1= LayoutInflater.from(RankPredictorInputActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
             builder.setView(view1);
             ((TextView) view1.findViewById(R.id.textTitle)).setText("You have "+value+" Paper Notes");
-            ((TextView) view1.findViewById(R.id.textMessage)).setText("fnef e fuefn eufn euf eeufn ");
+            ((TextView) view1.findViewById(R.id.textMessage)).setText("Success is never owned, its rented and the rent is due everyday!");
             ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
             ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Paper Notes!");
             ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);

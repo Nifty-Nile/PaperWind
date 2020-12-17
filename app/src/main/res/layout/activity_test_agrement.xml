@@ -56,7 +56,7 @@
                 android:id="@+id/text2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="2. The clock will be set at the App.The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself.You will not be required to end or submit your examination."
+                android:text="2. The clock will be set at the App.The countdown timer in the top right corner of screen will display the remaining time available for you to complete the examination. When the timer reaches zero, the examination will end by itself.You will be allowed to end or submit your examination in the middle."
                 android:fontFamily="@font/acme"
                 android:textColor="#000000"
                 android:textSize="12sp"

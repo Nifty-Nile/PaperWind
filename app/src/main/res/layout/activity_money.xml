@@ -40,12 +40,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
-        android:layout_marginBottom="10dp"
-        android:fontFamily="@font/amaranth_bold"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/bangers"
         android:text="Welcome to the Money Section!"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <LinearLayout
         android:id="@+id/linearLayout9"
@@ -65,7 +65,7 @@
             android:layout_height="80dp"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="12dp"
-            android:background="@drawable/mainicon" />
+            android:background="@drawable/money1" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -78,7 +78,7 @@
                 android:layout_height="30dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="@font/acme"
+                android:fontFamily="@font/aladin"
                 android:text="Paper Notes: "
                 android:textColor="#000000"
                 android:textSize="22sp" />
@@ -90,7 +90,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
-                android:fontFamily="@font/acme"
+                android:fontFamily="@font/amaranth_bold"
                 android:text="Ka-Ching! Here's your Balance. Feels Low ? Go through our packages right below..... "
                 android:textColor="#000000"
                 android:textSize="12sp" />
@@ -124,10 +124,11 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="150dp"
+        android:scaleY="0.9"
+        android:scaleX="0.9"
         android:background="@drawable/blueroundmoney"
         android:layout_height="200dp"
         android:elevation="8dp"
-        android:layout_marginTop="10dp"
         android:layout_marginRight="30dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/exam_img_id"
@@ -136,7 +137,7 @@
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:background="@drawable/admoney"
-            android:layout_width="120dp"
+            android:layout_width="95dp"
             android:layout_height="80dp"
             android:scaleType="centerCrop"
             />
@@ -146,7 +147,7 @@
             android:textSize="20sp"
             android:textColor="#ffffff"
             android:gravity="center"
-            android:fontFamily="@font/amaranth_bold"
+            android:fontFamily="@font/aladin"
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:layout_marginLeft="5dp"
@@ -155,16 +156,15 @@
 
         <Button
             android:id="@+id/tipButton1"
-            android:textSize="17sp"
-            android:textColor="#000000"
-            android:gravity="center"
-            android:fontFamily="@font/acme"
-            android:background="#8CF083"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Free"/>
-
-
+            android:background="#8CF083"
+            android:fontFamily="@font/bangers"
+            android:gravity="center"
+            android:text="Free"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
 
     </LinearLayout>
@@ -175,14 +175,16 @@
         android:layout_width="150dp"
         android:background="@drawable/blueroundmoney"
         android:elevation="8dp"
+        android:scaleY="0.9"
+        android:scaleX="0.9"
         android:layout_height="200dp"
-        android:layout_marginTop="10dp">
+        >
         <ImageView
             android:id="@+id/exam_img_id2"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="6dp"
             android:layout_marginTop="5dp"
-            android:background="@drawable/rs20"
+            android:background="@drawable/money2"
             android:layout_width="90dp"
             android:layout_gravity="center"
             android:layout_height="80dp"
@@ -193,20 +195,21 @@
             android:id="@+id/exam_dis2"
             android:textSize="20sp"
             android:textColor="#ffffff"
-            android:fontFamily="@font/amaranth_bold"
+            android:fontFamily="@font/aladin"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="67dp"
-            android:layout_marginLeft="2dp"
-            android:layout_marginRight="2dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:text="Earn 20 Paper Notes"/>
 
         <Button
             android:id="@+id/tipButton2"
-            android:textSize="17sp"
+            android:textSize="24sp"
             android:textColor="#000000"
             android:gravity="center"
-            android:fontFamily="@font/acme"
+            android:textStyle="bold"
+            android:fontFamily="@font/bangers"
             android:background="#8CF083"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -231,14 +234,15 @@
                     android:background="@drawable/blueroundmoney"
                     android:layout_height="200dp"
                     android:elevation="8dp"
-                    android:layout_marginTop="10dp"
+                    android:scaleY="0.9"
+                    android:scaleX="0.9"
                     android:layout_marginRight="30dp">
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/exam_img_id3"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="6dp"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rs20"
+                        android:background="@drawable/money3"
                         android:layout_width="90dp"
                         android:layout_gravity="center"
                         android:layout_height="80dp"
@@ -249,21 +253,22 @@
                         android:id="@+id/exam_dis3"
                         android:textSize="20sp"
                         android:textColor="#ffffff"
-                        android:fontFamily="@font/amaranth_bold"
+                        android:fontFamily="@font/aladin"
 
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="67dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
                         android:text="Earn 50 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton3"
-                        android:textSize="17sp"
+                        android:textSize="24sp"
                         android:textColor="#000000"
                         android:gravity="center"
-                        android:fontFamily="@font/acme"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/bangers"
                         android:background="#8CF083"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -281,13 +286,15 @@
                     android:background="@drawable/blueroundmoney"
                     android:layout_height="200dp"
                     android:elevation="8dp"
-                    android:layout_marginTop="10dp">
+                    android:scaleY="0.9"
+                    android:scaleX="0.9"
+                    >
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/exam_img_id4"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="6dp"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rs30"
+                        android:background="@drawable/money4"
                         android:layout_width="90dp"
                         android:layout_gravity="center"
                         android:layout_height="80dp"
@@ -298,23 +305,24 @@
                         android:id="@+id/exam_dis4"
                         android:textSize="20sp"
                         android:textColor="#ffffff"
-                        android:fontFamily="@font/amaranth_bold"
+                        android:fontFamily="@font/aladin"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="67dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
                         android:text="Earn 80 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton4"
-                        android:textSize="17sp"
+                        android:textSize="24sp"
                         android:textColor="#000000"
                         android:gravity="center"
-                        android:fontFamily="@font/acme"
+                        android:fontFamily="@font/bangers"
                         android:background="#8CF083"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textStyle="bold"
                         android:text="Rs 30"/>
 
 
@@ -337,15 +345,17 @@
                     android:layout_width="150dp"
                     android:background="@drawable/blueroundmoney"
                     android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
+
                     android:elevation="8dp"
+                    android:scaleY="0.9"
+                    android:scaleX="0.9"
                     android:layout_marginRight="30dp">
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/exam_img_id5"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="6dp"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rs50"
+                        android:background="@drawable/money5"
                         android:layout_width="90dp"
                         android:layout_gravity="center"
                         android:layout_height="80dp"
@@ -355,20 +365,21 @@
                         android:id="@+id/exam_dis5"
                         android:textSize="20sp"
                         android:textColor="#ffffff"
-                        android:fontFamily="@font/amaranth_bold"
+                        android:fontFamily="@font/aladin"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="67dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
                         android:text="Earn 150 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton5"
-                        android:textSize="17sp"
+                        android:textSize="24sp"
                         android:textColor="#000000"
                         android:gravity="center"
-                        android:fontFamily="@font/acme"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/bangers"
                         android:background="#8CF083"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -386,13 +397,15 @@
                     android:background="@drawable/blueroundmoney"
                     android:layout_height="200dp"
                     android:elevation="8dp"
-                    android:layout_marginTop="10dp">
+                    android:scaleY="0.9"
+                    android:scaleX="0.9"
+                    >
                     <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/exam_img_id6"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="6dp"
                         android:layout_marginTop="5dp"
-                        android:background="@drawable/rs100"
+                        android:background="@drawable/money6"
                         android:layout_width="90dp"
                         android:layout_gravity="center"
                         android:layout_height="80dp"
@@ -403,20 +416,21 @@
                         android:id="@+id/exam_dis6"
                         android:textSize="20sp"
                         android:textColor="#ffffff"
-                        android:fontFamily="@font/amaranth_bold"
+                        android:fontFamily="@font/aladin"
                         android:gravity="center"
                         android:layout_width="match_parent"
                         android:layout_height="67dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
                         android:text="Earn 320 Paper Notes"/>
 
                     <Button
                         android:id="@+id/tipButton6"
-                        android:textSize="17sp"
+                        android:textSize="24sp"
                         android:textColor="#000000"
                         android:gravity="center"
-                        android:fontFamily="@font/acme"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/bangers"
                         android:background="#8CF083"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -429,109 +443,7 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:gravity="center">
 
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="150dp"
-                    android:background="@drawable/blueroundmoney"
-                    android:layout_height="200dp"
-                    android:layout_marginTop="10dp"
-                    android:elevation="8dp"
-                    android:layout_marginRight="30dp">
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/exam_img_id7"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="6dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/rs200"
-                        android:layout_width="90dp"
-                        android:layout_gravity="center"
-                        android:layout_height="80dp"
-                        android:scaleType="centerCrop"
-                        />
-
-                    <TextView
-                        android:id="@+id/exam_dis7"
-                        android:textSize="20sp"
-                        android:textColor="#ffffff"
-                        android:fontFamily="@font/amaranth_bold"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="67dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
-                        android:text="Earn 800 Paper Notes"/>
-
-                    <Button
-                        android:id="@+id/tipButton7"
-                        android:textSize="17sp"
-                        android:textColor="#000000"
-                        android:gravity="center"
-                        android:fontFamily="@font/acme"
-                        android:background="#8CF083"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Rs 200"/>
-
-
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:layout_width="150dp"
-                    android:background="@drawable/blueroundmoney"
-                    android:layout_height="200dp"
-                    android:elevation="8dp"
-                    android:layout_marginTop="10dp">
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/exam_img_id8"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="6dp"
-                        android:layout_marginTop="5dp"
-                        android:background="@drawable/rs200"
-                        android:layout_width="90dp"
-                        android:layout_gravity="center"
-                        android:layout_height="80dp"
-                        android:scaleType="centerCrop"
-                        />
-
-                    <TextView
-                        android:id="@+id/exam_dis8"
-                        android:textSize="20sp"
-                        android:textColor="#ffffff"
-                        android:fontFamily="@font/amaranth_bold"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="67dp"
-                        android:layout_marginLeft="2dp"
-                        android:layout_marginRight="2dp"
-                        android:text="Earn 2400 Paper Notes"/>
-
-                    <Button
-                        android:id="@+id/tipButton8"
-                        android:textSize="17sp"
-                        android:textColor="#000000"
-                        android:gravity="center"
-                        android:fontFamily="@font/acme"
-                        android:background="#8CF083"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:text="Rs 500"/>
-
-
-
-
-                </LinearLayout>
-
-            </LinearLayout>
 
         </LinearLayout>
 

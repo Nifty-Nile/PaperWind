@@ -69,11 +69,11 @@ public class PaymentHistoryAdapter extends RecyclerView.Adapter<PaymentHistoryAd
         }
 
         public void setData(String paymentid121,String amount121,String mail121,String number121,String dateandtime121) {
-            this.paymentid.setText("Payment ID : "+paymentid121);
-            this.amount.setText(amount121);
-            this.mail.setText("E-Mail : "+mail121);
-            this.number.setText("Number : "+number121);
-            this.dateandtime.setText("Date And Time : "+dateandtime121);
+            this.paymentid.setText(paymentid121);
+            this.amount.setText("Rs  "+amount121);
+            this.mail.setText(mail121);
+            this.number.setText(number121);
+            this.dateandtime.setText(dateandtime121);
 
 
 
