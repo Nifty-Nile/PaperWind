@@ -414,7 +414,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginTop="5dp"
                     android:layout_marginEnd="5dp"
                     android:fontFamily="@font/aladin"
-                    android:text="Welcome to the Team Page.This app is for farmers or for those people who are some how related to agriculture industry.'Eco Clever' provides information about the latest agriculture advice and various farming tips. It also provides live weather forecast information."
+                    android:text="Paper Wind is the All-In-One package for the students through out the country. We at Nifty Nile work together to design, create and produce ideas we all are proud of and this would not have been possible without your lovely support!"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
