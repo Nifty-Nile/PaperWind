@@ -37,7 +37,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class FinalRankPredictorActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber,Branch,inputrank;
+    int SelectedEntranceExam,inputdata,score,Gender0,Cast0,Goldennumber,branch,inputrank;
     TextView exam123,category123,gender123,rank,rankhead,Scoreint,textView7,Text3,dis2,Text200,rankheading;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
@@ -47,7 +47,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
     String value;
     androidx.appcompat.widget.Toolbar toolbar;
     private Spinner spinner2;
-    private static final String[] paths123 = {"CSE","IT","ECE","EEE","ME","TE","Civil"};
+    private static String[] paths123;
 
 
     @Override
@@ -55,7 +55,6 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_rank_predictor);
         spinner2 = (Spinner)findViewById(R.id.spinner2);
-        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(FinalRankPredictorActivity.this, android.R.layout.simple_spinner_item,paths123);
 
 
         exam123=(TextView) findViewById(R.id.textView8);
@@ -79,7 +78,19 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         score=getIntent().getIntExtra("Score1",0);
         Gender0=getIntent().getIntExtra("Gender",0);
         Cast0=getIntent().getIntExtra("cast",0);
-        Branch=getIntent().getIntExtra("Branch",0);
+        branch=getIntent().getIntExtra("Branch",0);
+
+
+        if(SelectedEntranceExam==1){
+            paths123 = new String[]{"CSE", "IT", "ECE", "EEE", "ME", "TE", "Civil"};
+        }else if(SelectedEntranceExam==4){
+            paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
+        }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
+            paths123 = new String[]{"Computer Science and Engineering", "Information Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering", "Electrical and Electronics Engineering", "Telecommunication Engineering", "Civil Engineering","Biotechnology"};
+        }else if(SelectedEntranceExam==7){
+            paths123 = new String[]{"Computer Science and Engineering", "Electronics and Instrumentation Engineering", "Chemical Engineering", "Civil Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Manufacturing engineering","Electronics and Communication Engineering"};
+        }
+        ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(FinalRankPredictorActivity.this, android.R.layout.simple_spinner_item,paths123);
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Rank Predictor");
@@ -180,7 +191,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                             intent.putExtra("Rank1",inputrank);
                             intent.putExtra("Gender",Gender0);
                             intent.putExtra("cast",Cast0);
-                            intent.putExtra("Branch",Branch);
+                            intent.putExtra("Branch",branch);
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             finish();
@@ -204,7 +215,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                 intent.putExtra("Rank1",inputrank);
                 intent.putExtra("Gender",Gender0);
                 intent.putExtra("cast",Cast0);
-                intent.putExtra("Branch",Branch);
+                intent.putExtra("Branch",branch);
                 startActivity(intent);
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 finish();
@@ -228,30 +239,142 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
 
 
 
+        if (SelectedEntranceExam == 1) {
             switch (position) {
                 case 0:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
                 case 1:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
                 case 2:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
                 case 3:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
                 case 4:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
                 case 5:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
                 case 6:
-                    Branch=position+1;
+                    branch = position + 1;
                     break;
 
-
+            }
+        } else if(SelectedEntranceExam == 4) {
+            switch (position) {
+                case 0:
+                    branch = position + 1;
+                    break;
+                case 1:
+                    branch = position + 1;
+                    break;
+                case 2:
+                    branch = position + 1;
+                    break;
+                case 3:
+                    branch = position + 1;
+                    break;
+                case 4:
+                    branch = position + 1;
+                    break;
+                case 5:
+                    branch = position + 1;
+                    break;
+                case 6:
+                    branch = position + 1;
+                    break;
+                case 7:
+                    branch = position + 1;
+                    break;
+                case 8:
+                    branch = position + 1;
+                    break;
+                case 9:
+                    branch = position + 1;
+                    break;
+                case 10:
+                    branch = position + 1;
+                    break;
+                case 11:
+                    branch = position + 1;
+                    break;
+                case 12:
+                    branch = position + 1;
+                    break;
+                case 13:
+                    branch = position + 1;
+                    break;
+                case 14:
+                    branch = position + 1;
+                    break;
+                case 15:
+                    branch = position + 1;
+                    break;
+                case 16:
+                    branch = position + 1;
+                    break;
+                case 17:
+                    branch = position + 1;
+                    break;
+            }
+        }else if(SelectedEntranceExam == 5||SelectedEntranceExam==11){
+            switch (position) {
+                case 0:
+                    branch = position + 1;
+                    break;
+                case 1:
+                    branch = position + 1;
+                    break;
+                case 2:
+                    branch = position + 1;
+                    break;
+                case 3:
+                    branch = position + 1;
+                    break;
+                case 4:
+                    branch = position + 1;
+                    break;
+                case 5:
+                    branch = position + 1;
+                    break;
+                case 6:
+                    branch = position + 1;
+                    break;
+                case 7:
+                    branch = position + 1;
+                    break;
+            }
+        }else if(SelectedEntranceExam == 7){
+            switch (position) {
+                case 0:
+                    branch = position + 1;
+                    break;
+                case 1:
+                    branch = position + 1;
+                    break;
+                case 2:
+                    branch = position + 1;
+                    break;
+                case 3:
+                    branch = position + 1;
+                    break;
+                case 4:
+                    branch = position + 1;
+                    break;
+                case 5:
+                    branch = position + 1;
+                    break;
+                case 6:
+                    branch = position + 1;
+                    break;
+                case 7:
+                    branch = position + 1;
+                    break;
+            }
         }
 
     }

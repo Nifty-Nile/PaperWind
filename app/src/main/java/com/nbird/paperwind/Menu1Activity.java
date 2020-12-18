@@ -363,7 +363,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             }else{
                 editorlightanddark.putBoolean(String.valueOf(1), false);
                 editorlightanddark.commit();
-                Toast.makeText(this, "Light Mode", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Lite Mode", Toast.LENGTH_SHORT).show();
                 ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
                 layout.setBackgroundResource(R.drawable.background1);
 

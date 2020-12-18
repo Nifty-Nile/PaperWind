@@ -64,7 +64,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=1;
     String personEmail;
-    int money=50,permission=0;
+    int money=30,permission=0;
     String propicurl123="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/BydefalutPic%2Fdefaultpropic.png?alt=media&token=f655727d-9740-4ac9-9ba2-f53ea02dc778";
     String imageurl;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();

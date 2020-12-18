@@ -176,9 +176,8 @@
             <Spinner
                 android:id="@+id/spinner2"
                 style="@style/Widget.AppCompat.Light.DropDownItem.Spinner"
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="match_parent"
-                android:layout_marginStart="10dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:backgroundTint="#50C2FF"
                 android:elevation="100dp"
@@ -187,7 +186,8 @@
                 android:popupBackground="@color/blue"
                 android:spinnerMode="dropdown"
                 app:layout_constraintCircleRadius="45dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/Text200"
+                app:layout_constraintStart_toStartOf="@+id/Text200"
                 app:layout_constraintTop_toBottomOf="@+id/Text200" />
 
             <LinearLayout

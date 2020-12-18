@@ -96,8 +96,10 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             paths123 = new String[]{"CSE", "IT", "ECE", "EEE", "ME", "TE", "Civil"};
         }else if(SelectedEntranceExam==4){
             paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
-        }else if(SelectedEntranceExam==5){
+        }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
             paths123 = new String[]{"Computer Science and Engineering", "Information Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering", "Electrical and Electronics Engineering", "Telecommunication Engineering", "Civil Engineering","Biotechnology"};
+        }else if(SelectedEntranceExam==7){
+            paths123 = new String[]{"Computer Science and Engineering", "Electronics and Instrumentation Engineering", "Chemical Engineering", "Civil Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Manufacturing engineering","Electronics and Communication Engineering"};
         }
 
 
@@ -1062,7 +1064,34 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                         branch = position + 1;
                         break;
                 }
-            }else if(SelectedEntranceExam == 5){
+            }else if(SelectedEntranceExam == 5||SelectedEntranceExam==11){
+                switch (position) {
+                    case 0:
+                        branch = position + 1;
+                        break;
+                    case 1:
+                        branch = position + 1;
+                        break;
+                    case 2:
+                        branch = position + 1;
+                        break;
+                    case 3:
+                        branch = position + 1;
+                        break;
+                    case 4:
+                        branch = position + 1;
+                        break;
+                    case 5:
+                        branch = position + 1;
+                        break;
+                    case 6:
+                        branch = position + 1;
+                        break;
+                    case 7:
+                        branch = position + 1;
+                        break;
+                }
+            }else if(SelectedEntranceExam == 7){
                 switch (position) {
                     case 0:
                         branch = position + 1;
@@ -1236,7 +1265,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             }else {
                 editorlightanddark.putBoolean(String.valueOf(1), false);
                 editorlightanddark.commit();
-                Toast.makeText(this, "Light Mode", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Lite Mode", Toast.LENGTH_SHORT).show();
                 ConstraintLayout layout = (ConstraintLayout) findViewById(R.id.mainfield);
                 layout.setBackgroundResource(R.drawable.background1);
 

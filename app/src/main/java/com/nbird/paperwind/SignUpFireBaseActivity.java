@@ -28,7 +28,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
     private Dialog loadingDialog;
     TextInputEditText username,mail,password;
     FirebaseAuth fAuth;
-    int money=50,permission=0;
+    int money=30,permission=0;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference = database.getReference("User");
     String usermail;

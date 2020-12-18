@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="150dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#ffffff"
+    android:background="@drawable/loadingwhitescrren"
     android:layout_height="wrap_content">
 
 
@@ -30,9 +30,9 @@
             android:layout_height="wrap_content"
             android:text="Loading...."
             android:gravity="center_horizontal"
-            android:fontFamily="@font/aclonica"
+            android:fontFamily="@font/bangers"
             android:textColor="#000000"
-            android:textSize="17sp"
+            android:textSize="19sp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_gravity="center"

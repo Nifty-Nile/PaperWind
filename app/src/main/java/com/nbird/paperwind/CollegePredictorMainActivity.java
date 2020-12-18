@@ -152,7 +152,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
 
         Platinumnumber();
 
-        if(SelectedEntranceExam==5){
+        if(SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7){
             Cast=1;
             Gender=1;
         }
@@ -237,7 +237,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     gendertext.setText("Gender: " + "Female");
                     break;
             }
-        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5){
+        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7){
             switch (Gender) {
                 case 1:
                     gendertext.setText("Gender: " + "Not Considered");
@@ -267,7 +267,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     ranktext.setText("SC Rank: " + rank123);
                     break;
             }
-        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5){
+        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7){
             switch (Cast) {
                 case 1:
                     casttext.setText("Category: " + "Not Considered");
@@ -343,7 +343,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     branchtext.setText("Branch: "+"Electronics and Computer Engineering");break;
 
             }
-        }else if(SelectedEntranceExam==5){
+        }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
             switch (Branch){
                 case 1:
                     branchtext.setText("Branch: "+"Computer Science and Engineering");break;
@@ -362,6 +362,25 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 case 8:
                     branchtext.setText("Branch: "+"Biotechnology");break;
             }
+        }else if(SelectedEntranceExam==7){
+            switch (Branch){
+                case 1:
+                    branchtext.setText("Branch: "+"Computer Science and Engineering");break;
+                case 2:
+                    branchtext.setText("Branch: "+"Electronics and Instrumentation Engineering");break;
+                case 3:
+                    branchtext.setText("Branch: "+"Chemical Engineering");break;
+                case 4:
+                    branchtext.setText("Branch: "+"Civil Engineering");break;
+                case 5:
+                    branchtext.setText("Branch: "+"Electrical and Electronics Engineering");break;
+                case 6:
+                    branchtext.setText("Branch: "+"Mechanical Engineering");break;
+                case 7:
+                    branchtext.setText("Branch: "+"Manufacturing Engineering"); break;
+                case 8:
+                    branchtext.setText("Branch: "+"Electronics and Communication Engineering");break;
+            }
         }
     }
 
@@ -377,6 +396,10 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 Viteeegold();break;
             case 5:
                 Comedkgold();break;
+            case 7:
+                Bitsatgold();break;
+            case 11:
+                Kcetgold();break;
         }
     }
     public void Comedkgold() {
@@ -416,6 +439,63 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         } else if (Rank > 50000) {
             PlatinumNumber = 19;
+        }
+    }
+
+    public void Kcetgold() {
+        if (Rank <= 920) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 3600) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 5700) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 8000) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 12150) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 16000) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 18000) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 25000) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 30000) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 38000) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 43000) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 45000) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 48000) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 50000) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 53000) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 58000) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 60000) {
+            PlatinumNumber = 18;
+        } else if (Rank > 60000) {
+            PlatinumNumber = 19;
+        }
+    }
+
+
+    public void Bitsatgold() {
+        if (Rank <= 304) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 2319) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 8789) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 15000) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 22441) {
+            PlatinumNumber = 5;
+        } else if (Rank > 22441) {
+            PlatinumNumber = 6;
         }
     }
 
