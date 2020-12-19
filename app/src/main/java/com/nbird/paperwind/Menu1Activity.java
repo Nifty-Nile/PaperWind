@@ -439,14 +439,14 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         lstExam.add(new Exam("KCET",R.drawable.kcet,"Karnataka Common Entrance Test is a state-level entrance exam conducted by Karnataka Examination Authority (KEA) organised to provide admission to different UG courses in Karnataka."));
         lstExam.add(new Exam("IPU-CET",R.drawable.ipucet,"Indraprastha University Common Entrance Test offers admission to the various UG and PG courses. The admission is done through Common Entrance Test (CET) or on the merit of the qualifying degrees."));
         lstExam.add(new Exam("MET",R.drawable.met,"The Manipal Entrance Test (MET) for BTech admissions is a common entrance test for admission to Manipal Institute of Technology."));
-        lstExam.add(new Exam("WBJEE",R.drawable.wbjee,"West Bengal Joint Entrance Examination is a state-government controlled centralised test for admission to many private and governmental engineering institutions in West Bengal."));
-        lstExam.add(new Exam("JEECUP",R.drawable.jeec,"Joint Entrance Examination Council Uttar Pradesh is a State-level Entrance Exam for admission into Diploma, PG Diploma and Post Diploma courses in Engineering & Technology, Pharmacy and Management."));
-        lstExam.add(new Exam("NEST",R.drawable.nest,"The National Entrance Screening Test is an annual college entrance examination in India, conducted for admission into NISER, Bhubaneswar and UM-DAE CEBS, Mumbai."));
-        lstExam.add(new Exam("PESSAT",R.drawable.pessat,"PESSAT (Peoples Education Society Scholastic Aptitude Test) is conducted by PES University, Bangalore every year."));
-        lstExam.add(new Exam("AMUEEE",R.drawable.amuee,"Aligarh Muslim University Engineering Entrance Examination  is conducted once every year by Aligarh Muslim University for admissions into undergraduate engineering (B.E, B.Tech and B.Arch) courses."));
-        lstExam.add(new Exam("IISER",R.drawable.iiser,"IISER exam is conducted for admission to BS-MS degree program at one of the seven IISERs. Candidates can get admission through JEE Main, KVPY and SCB channel"));
-        lstExam.add(new Exam("UPSEE",R.drawable.upsee,"Uttar Pradesh State Entrance Exam is a state-level entrance examination organized for admission to colleges affiliated to Dr. APJ Abdul Kalam Technical University, Lucknow."));
-        lstExam.add(new Exam("NIFT",R.drawable.nift,"National Institute of Fashion Technology conducts the NIFT entrance exam to shortlist aspirants for admission in design programmes offered by it."));
+      //  lstExam.add(new Exam("WBJEE",R.drawable.wbjee,"West Bengal Joint Entrance Examination is a state-government controlled centralised test for admission to many private and governmental engineering institutions in West Bengal."));
+      //  lstExam.add(new Exam("JEECUP",R.drawable.jeec,"Joint Entrance Examination Council Uttar Pradesh is a State-level Entrance Exam for admission into Diploma, PG Diploma and Post Diploma courses in Engineering & Technology, Pharmacy and Management."));
+      //  lstExam.add(new Exam("NEST",R.drawable.nest,"The National Entrance Screening Test is an annual college entrance examination in India, conducted for admission into NISER, Bhubaneswar and UM-DAE CEBS, Mumbai."));
+      //  lstExam.add(new Exam("PESSAT",R.drawable.pessat,"PESSAT (Peoples Education Society Scholastic Aptitude Test) is conducted by PES University, Bangalore every year."));
+      //  lstExam.add(new Exam("AMUEEE",R.drawable.amuee,"Aligarh Muslim University Engineering Entrance Examination  is conducted once every year by Aligarh Muslim University for admissions into undergraduate engineering (B.E, B.Tech and B.Arch) courses."));
+      //  lstExam.add(new Exam("IISER",R.drawable.iiser,"IISER exam is conducted for admission to BS-MS degree program at one of the seven IISERs. Candidates can get admission through JEE Main, KVPY and SCB channel"));
+      //  lstExam.add(new Exam("UPSEE",R.drawable.upsee,"Uttar Pradesh State Entrance Exam is a state-level entrance examination organized for admission to colleges affiliated to Dr. APJ Abdul Kalam Technical University, Lucknow."));
+      //  lstExam.add(new Exam("NIFT",R.drawable.nift,"National Institute of Fashion Technology conducts the NIFT entrance exam to shortlist aspirants for admission in design programmes offered by it."));
 
     }
 

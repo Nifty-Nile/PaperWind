@@ -64,6 +64,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     private GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=1;
     String personEmail;
+    Boolean night;
     int money=30,permission=0;
     String propicurl123="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/BydefalutPic%2Fdefaultpropic.png?alt=media&token=f655727d-9740-4ac9-9ba2-f53ea02dc778";
     String imageurl;
@@ -505,16 +506,66 @@ public void createRequest(){
                           //      Toast.makeText(getBaseContext(), personEmail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
                             }
 
-                            startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-
-                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             loadingDialog.dismiss();
+
+                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                            final SharedPreferences.Editor editorguide = guide.edit();
+
+
+                            night = guide.getBoolean("locked", false);
+
+
+                            if(!night){
+                                AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseActivity.this,R.style.AlertDialogTheme);
+                                View view1= LayoutInflater.from(LoginFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                builder.setView(view1);
+                                ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                                ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+
+                                final AlertDialog alertDialog=builder.create();
+
+                                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                        final SharedPreferences.Editor editorguide = guide.edit();
+                                        editorguide.putBoolean("locked", false);
+                                        editorguide.commit();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        finish();
+
+                                    }
+                                });
+                                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        finish();
+                                    }
+                                });
+
+                                if(alertDialog.getWindow()!=null){
+                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                }
+                                alertDialog.show();
+
+                            }else{
+                                startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                finish();
+                            }
+
 
                             //Database data input and output
 
 
 
-                            finish();
+
 
                         } else {
                             // If sign in fails, display a message to the user.

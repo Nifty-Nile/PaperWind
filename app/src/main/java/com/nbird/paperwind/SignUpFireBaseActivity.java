@@ -1,16 +1,22 @@
 package com.nbird.paperwind;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -33,6 +39,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
     final DatabaseReference reference = database.getReference("User");
     String usermail;
     String personEmail;
+    Boolean night;
     String propicurl123="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/BydefalutPic%2Fdefaultpropic.png?alt=media&token=f655727d-9740-4ac9-9ba2-f53ea02dc778";
 
     @Override
@@ -104,12 +111,60 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
 
                             //    int moneyuser = moneybalance.getInt(usermail, 100);
                             //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
-
-                            startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-
-                            finish();
-                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             loadingDialog.dismiss();
+
+                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                            final SharedPreferences.Editor editorguide = guide.edit();
+
+
+                            night = guide.getBoolean("locked", false);
+
+
+                            if(!night){
+                                AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
+                                View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                builder.setView(view1);
+                                ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                                ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+
+                                final AlertDialog alertDialog=builder.create();
+
+                                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                        final SharedPreferences.Editor editorguide = guide.edit();
+                                        editorguide.putBoolean("locked", false);
+                                        editorguide.commit();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        finish();
+
+                                    }
+                                });
+                                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        finish();
+                                    }
+                                });
+
+                                if(alertDialog.getWindow()!=null){
+                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                }
+                                alertDialog.show();
+
+                            }else{
+                                startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                finish();
+                            }
+
                         }
                         else{
                             Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -172,10 +227,59 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         //    int moneyuser = moneybalance.getInt(usermail, 100);
                                         //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
 
-                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                        finish();
-                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                                         loadingDialog.dismiss();
+
+                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                        final SharedPreferences.Editor editorguide = guide.edit();
+
+
+                                        night = guide.getBoolean("locked", false);
+
+
+                                        if(!night){
+                                            AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
+                                            View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                            builder.setView(view1);
+                                            ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                                            ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                                            ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                                            ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+
+                                            final AlertDialog alertDialog=builder.create();
+
+                                            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                                    final SharedPreferences.Editor editorguide = guide.edit();
+                                                    editorguide.putBoolean("locked", false);
+                                                    editorguide.commit();
+                                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+
+                                                }
+                                            });
+                                            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+                                                }
+                                            });
+
+                                            if(alertDialog.getWindow()!=null){
+                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                            }
+                                            alertDialog.show();
+
+                                        }else{
+                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                            finish();
+                                        }
                                     }
                                     else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -242,10 +346,59 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         //    int moneyuser = moneybalance.getInt(usermail, 100);
                                         //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
 
-                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                        finish();
-                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                                         loadingDialog.dismiss();
+
+                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                        final SharedPreferences.Editor editorguide = guide.edit();
+
+
+                                        night = guide.getBoolean("locked", false);
+
+
+                                        if(!night){
+                                            AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
+                                            View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                            builder.setView(view1);
+                                            ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                                            ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                                            ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                                            ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+
+                                            final AlertDialog alertDialog=builder.create();
+
+                                            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                                    final SharedPreferences.Editor editorguide = guide.edit();
+                                                    editorguide.putBoolean("locked", false);
+                                                    editorguide.commit();
+                                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+
+                                                }
+                                            });
+                                            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+                                                }
+                                            });
+
+                                            if(alertDialog.getWindow()!=null){
+                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                            }
+                                            alertDialog.show();
+
+                                        }else{
+                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                            finish();
+                                        }
                                     }
                                     else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -312,10 +465,59 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         //    int moneyuser = moneybalance.getInt(usermail, 100);
                                         //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
 
-                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                        finish();
-                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                                         loadingDialog.dismiss();
+
+                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                        final SharedPreferences.Editor editorguide = guide.edit();
+
+
+                                        night = guide.getBoolean("locked", false);
+
+
+                                        if(!night){
+                                            AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
+                                            View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                            builder.setView(view1);
+                                            ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                                            ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                                            ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                                            ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+
+                                            final AlertDialog alertDialog=builder.create();
+
+                                            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                                    final SharedPreferences.Editor editorguide = guide.edit();
+                                                    editorguide.putBoolean("locked", false);
+                                                    editorguide.commit();
+                                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+
+                                                }
+                                            });
+                                            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+                                                }
+                                            });
+
+                                            if(alertDialog.getWindow()!=null){
+                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                            }
+                                            alertDialog.show();
+
+                                        }else{
+                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                            finish();
+                                        }
                                     }
                                     else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();

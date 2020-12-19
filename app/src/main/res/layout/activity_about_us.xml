@@ -104,7 +104,7 @@
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="15dp"
                     android:elevation="1dp"
-                    android:background="@drawable/kunalpic"
+                    android:background="@drawable/ankitpic"
                     app:layout_constraintStart_toStartOf="@+id/imageView110"
                     app:layout_constraintTop_toTopOf="@+id/imageView110" />
 
@@ -190,7 +190,7 @@
                     android:layout_marginEnd="10dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="I worked as a data analyst in this wonderful app. This field taught me a lot of lessons which will stay with me forever. I will be looking forward for such opportunities. If you have any ideas or suggestions. Contact me at kunalgoyal1971@gmail.com"
+                    android:text="I worked as a data analyst in this wonderful app. This field taught me a lot of lessons which will stay with me forever. I will be looking forward for such opportunities. If you have any ideas or suggestions. Contact me at ankitsinha111200@gmail.com"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView110"
                     app:layout_constraintEnd_toEndOf="@+id/imageView110"
@@ -474,7 +474,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginTop="5dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="Kunal Goyal"
+                    android:text="Ankit Kumar Sinha"
                     android:textSize="19sp"
                     app:layout_constraintStart_toEndOf="@+id/imageView51"
                     app:layout_constraintTop_toTopOf="@+id/imageView110" />
