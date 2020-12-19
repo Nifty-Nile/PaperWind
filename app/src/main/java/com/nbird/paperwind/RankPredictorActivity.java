@@ -112,6 +112,8 @@ public class RankPredictorActivity extends AppCompatActivity {
         lstExam.add(new RankMenuHolder(R.drawable.mhtcet,"MH-CET"));
         lstExam.add(new RankMenuHolder(R.drawable.srmjee1,"SRMJEE"));
         lstExam.add(new RankMenuHolder(R.drawable.kcet,"K-CET"));
+        lstExam.add(new RankMenuHolder(R.drawable.ipucet,"IPU CET"));
+        lstExam.add(new RankMenuHolder(R.drawable.met,"MET"));
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

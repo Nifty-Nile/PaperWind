@@ -461,10 +461,39 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             case R.id.nav_logout:
                 fAuth = FirebaseAuth.getInstance();
 
-                    FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
-                    finish();
-                    break;
+                AlertDialog.Builder builder=new AlertDialog.Builder(Menu1Activity.this,R.style.AlertDialogTheme);
+                View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                builder.setView(view1);
+                ((TextView) view1.findViewById(R.id.textTitle)).setText("You really want to Logout?");
+                ((TextView) view1.findViewById(R.id.textMessage)).setText("Your all data is Saved and are Safe!");
+                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,Logout");
+                ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                final AlertDialog alertDialog=builder.create();
+
+                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        FirebaseAuth.getInstance().signOut();
+                        startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                        finish();
+
+                    }
+                });
+                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        alertDialog.dismiss();
+                    }
+                });
+
+                if(alertDialog.getWindow()!=null){
+                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                }
+                alertDialog.show();
+                break;
+
 
             case R.id.nav_tos:
                 Intent browserIntenttos = new Intent(Intent.ACTION_VIEW, Uri.parse("https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/PAPERWINDpolicyfiles%2FTERMSOFSERVICE-converted.pdf?alt=media&token=f4c2526d-285a-4594-9e43-bb1cf33b3916"));
@@ -653,9 +682,9 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                                                     @Override
                                                     public void onComplete(@NonNull Task<Void> task) {
                                                         if(task.isSuccessful()){
-                                                            Toast.makeText(Menu1Activity.this, "Uploaded", Toast.LENGTH_LONG).show();
+
                                                         }else{
-                                                            Toast.makeText(Menu1Activity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+
                                                         }
                                                     }
                                                 });

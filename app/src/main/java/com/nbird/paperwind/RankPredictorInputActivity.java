@@ -61,6 +61,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     int post;
     final DatabaseReference reference2 = database.getReference();
     String linkdata;
+    int i;
+    int selectedId;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +75,10 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
         Text1=(TextView) findViewById(R.id.Text1);
         Text100=(TextView) findViewById(R.id.Text100);
+
+
+
+
 
         Text2=(TextView) findViewById(R.id.Text2);
         dis1=(TextView) findViewById(R.id.dis1);
@@ -88,6 +94,8 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
         setSupportActionBar(toolbar);
 
+
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
@@ -98,7 +106,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
         }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
             paths123 = new String[]{"Computer Science and Engineering", "Information Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering", "Electrical and Electronics Engineering", "Telecommunication Engineering", "Civil Engineering","Biotechnology"};
-        }else if(SelectedEntranceExam==7){
+        }else if(SelectedEntranceExam==7||SelectedEntranceExam==2||SelectedEntranceExam==3||SelectedEntranceExam==6||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==12||SelectedEntranceExam==13){
             paths123 = new String[]{"Computer Science and Engineering", "Electronics and Instrumentation Engineering", "Chemical Engineering", "Civil Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Manufacturing engineering","Electronics and Communication Engineering"};
         }
 
@@ -118,6 +126,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                             if(!rank()){
                                 return false;
                             }
+
 
                             if(value<=0){
                                 AlertDialog.Builder builder=new AlertDialog.Builder(RankPredictorInputActivity.this,R.style.AlertDialogTheme);
@@ -177,17 +186,21 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                                 score = Integer.valueOf(scoretext.getText().toString());
 
 
-                                int i = 0;
+                                i = 0;
                                 // get selected radio button from radioGroup
-                                int selectedId = radioGroup.getCheckedRadioButtonId();
+                                selectedId = radioGroup.getCheckedRadioButtonId();
 
                                 // radiobutton by returned id
 
-                                if (selectedId == 2131296673) {
+                               if (selectedId == 2131362227) {
                                     i = 1;
                                 } else {
                                     i = 2;
-                                }
+                               }
+
+
+
+
 
 
                                 Intent intent = new Intent(getBaseContext(), FinalRankPredictorActivity.class);
@@ -324,11 +337,14 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131296673){
+                                            if(selectedId==2131362227){
                                                 i=1;
                                             }else{
                                                 i=2;
                                             }
+
+
+
                                             alertDialog.dismiss();
                                             Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
                                             intent.putExtra("RankEE",SelectedEntranceExam);
@@ -370,7 +386,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131296673){
+                                if(selectedId==2131362227){
                                     i=1;
                                 }else{
                                     i=2;
@@ -554,9 +570,9 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(RankPredictorInputActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+
                             } else {
-                                Toast.makeText(RankPredictorInputActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+
                             }
                         }
                     });
@@ -571,11 +587,13 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // radiobutton by returned id
 
-                    if (selectedId == 2131296673) {
+                    if (selectedId == 2131362227) {
                         i = 1;
                     } else {
                         i = 2;
                     }
+
+
 
 
                     Intent intent = new Intent(getBaseContext(), FinalRankPredictorActivity.class);
@@ -706,7 +724,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131296673){
+                                            if(selectedId==2131362227){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -752,7 +770,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131296673){
+                                if(selectedId==2131362227){
                                     i=1;
                                 }else{
                                     i=2;
@@ -886,7 +904,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131296673){
+                                if(selectedId==2131362227){
                                     i=1;
                                 }else{
                                     i=2;
@@ -932,7 +950,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // find the radiobutton by returned id
 
-                    if(selectedId==2131296673){
+                    if(selectedId==2131362227){
                         i=1;
                     }else{
                         i=2;
@@ -1215,6 +1233,24 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 return 720;
             case 4:
                 return 125;
+            case 5:
+                return 180;
+            case 6:
+                return 1800;
+            case 7:
+                return 450;
+            case 8:
+                return 100;
+            case 9:
+                return 200;
+            case 10:
+                return 315;
+            case 11:
+                return 180;
+            case 12:
+                return 600;
+            case 13:
+                return 800;
         }
         return 360 ;
     }

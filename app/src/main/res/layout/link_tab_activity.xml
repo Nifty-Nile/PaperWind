@@ -4,6 +4,8 @@
     android:id="@+id/cardview_id"
     android:layout_height="175dp"
     android:clickable="true"
+    android:scaleX="0.9"
+    android:scaleY="0.9"
     android:foreground="?selectableItemBackground"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     cardview:cardCornerRadius="15dp"
@@ -39,7 +41,7 @@
 
         <TextView
             android:id="@+id/exam_title"
-            android:textSize="17sp"
+            android:textSize="12sp"
             android:elevation="3dp"
             android:textColor="#000000"
             android:gravity="center"

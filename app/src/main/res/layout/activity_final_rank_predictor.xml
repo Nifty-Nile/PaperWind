@@ -105,7 +105,7 @@
                 android:fontFamily="@font/amaranth_bold"
                 android:text="Your Score :"
                 android:textColor="#000000"
-                android:textSize="25sp"
+                android:textSize="35sp"
                 app:layout_constraintStart_toStartOf="@+id/imageView2"
                 app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
@@ -117,7 +117,8 @@
                 android:fontFamily="@font/amaranth_bold"
                 android:text=""
                 android:textColor="#000000"
-                android:textSize="25sp"
+                android:textSize="27sp"
+                app:layout_constraintBottom_toBottomOf="@+id/rankheading"
                 app:layout_constraintStart_toEndOf="@+id/rankheading"
                 app:layout_constraintTop_toTopOf="@+id/rankheading" />
 
@@ -253,20 +254,21 @@
 
             <Button
                 android:id="@+id/done"
-                android:layout_width="130dp"
+                android:layout_width="90dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/roundbuttons"
+                android:background="@drawable/loadingbackground"
                 android:elevation="10dp"
                 android:fontFamily="@font/aclonica"
                 android:text="Done"
                 android:textColor="#ffffff"
                 android:textSize="18sp"
                 android:translationZ="10dp"
-                app:layout_constraintBottom_toTopOf="@+id/imageView2"
-                app:layout_constraintEnd_toEndOf="@+id/imageView2" />
+                app:layout_constraintEnd_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -25,6 +25,7 @@
             android:background="@drawable/alertdialogupperpart"
             android:padding="10dp"
             android:textColor="#ffffff"
+            android:fontFamily="@font/amarante"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textMessage"
@@ -37,12 +38,12 @@
             android:layout_width="28dp"
             android:layout_height="24dp"
             android:layout_marginEnd="10dp"
-            android:contentDescription="Custom Dialogs"
-            android:elevation="2dp"
+            android:elevation="-2dp"
+            android:background="@drawable/logo"
             app:layout_constraintBottom_toBottomOf="@id/textTitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/textTitle"
-            app:tint="@color/colorAccent" />
+            app:tint="#50C2FF" />
 
         <TextView
             android:id="@+id/textMessage"
@@ -54,6 +55,10 @@
             android:layout_marginRight="5dp"
             android:textColor="#ffffff"
             android:textSize="16sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/amarante"
+            android:gravity="center"
+            android:text="I am smart and happy today"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +80,7 @@
         android:background="@drawable/roundbuttonsorange"
         android:textColor="#ffffff"
         android:textSize="14sp"
+        android:fontFamily="@font/amarante"
         app:layout_constraintBottom_toBottomOf="@id/layoutDialog"
         app:layout_constraintStart_toStartOf="@+id/layoutDialog"
         app:layout_constraintTop_toBottomOf="@id/layoutDialog" />
@@ -89,6 +95,7 @@
         android:background="@drawable/roundbuttonsgreen"
         android:textColor="#ffffff"
         android:textSize="14sp"
+        android:fontFamily="@font/amarante"
         app:layout_constraintBottom_toBottomOf="@id/layoutDialog"
         app:layout_constraintEnd_toEndOf="@+id/layoutDialog"
         app:layout_constraintStart_toEndOf="@id/buttonNo"

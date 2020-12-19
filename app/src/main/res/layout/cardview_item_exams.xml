@@ -4,6 +4,8 @@
     android:id="@+id/cardview_id"
     android:layout_height="185dp"
     android:clickable="true"
+    android:scaleY="0.95"
+    android:scaleX="0.95"
     android:foreground="?selectableItemBackground"
     android:background="@drawable/lockpic"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
