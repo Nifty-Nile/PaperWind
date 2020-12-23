@@ -87,8 +87,12 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
         }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
             paths123 = new String[]{"Computer Science and Engineering", "Information Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering", "Electrical and Electronics Engineering", "Telecommunication Engineering", "Civil Engineering","Biotechnology"};
-        }else if(SelectedEntranceExam==7||SelectedEntranceExam==2||SelectedEntranceExam==3||SelectedEntranceExam==6||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==12||SelectedEntranceExam==13){
+        }else if(SelectedEntranceExam==7||SelectedEntranceExam==2||SelectedEntranceExam==3||SelectedEntranceExam==6||SelectedEntranceExam==9||SelectedEntranceExam==12){
             paths123 = new String[]{"Computer Science and Engineering", "Electronics and Instrumentation Engineering", "Chemical Engineering", "Civil Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Manufacturing engineering","Electronics and Communication Engineering"};
+        }else if(SelectedEntranceExam==8){
+            paths123 = new String[]{"Computer Science and Engineering", "Information Technology", "Communication and Computer Engineering", "Data Science And Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechatronics","Mechanical Engineering","Aerospace Engineering","Electronics and Instrumentation Engineering","Automobile Engineering","Biotechnology","Bio Medical Engineering","Chemical Engineering","Civil Engineering","Industrial and Production Engineering","Media Technology"};
+        }else if(SelectedEntranceExam==10){
+            paths123 = new String[]{"Computer Science and Engineering", "Information Technology","Electronics and Communication Engineering","Mechanical Engineering","Electrical and Electronics Engineering","Computer Science and Engineering(Software Engineering)","Mechatronics","Biotechnology","Aerospace Engineering","Bio Medical Engineering","Automobile Engineering","Electronics and Instrumentation Engineering","Biotechnology Engineering(Genetics Engineering)","Chemical Engineering","Nanotechnology Engineer","Civil Engineering"};
         }
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(FinalRankPredictorActivity.this, android.R.layout.simple_spinner_item,paths123);
 
@@ -375,6 +379,108 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                     branch = position + 1;
                     break;
             }
+        }else if(SelectedEntranceExam == 8) {
+            switch (position) {
+                case 0:
+                    branch = position + 1;
+                    break;
+                case 1:
+                    branch = position + 1;
+                    break;
+                case 2:
+                    branch = position + 1;
+                    break;
+                case 3:
+                    branch = position + 1;
+                    break;
+                case 4:
+                    branch = position + 1;
+                    break;
+                case 5:
+                    branch = position + 1;
+                    break;
+                case 6:
+                    branch = position + 1;
+                    break;
+                case 7:
+                    branch = position + 1;
+                    break;
+                case 8:
+                    branch = position + 1;
+                    break;
+                case 9:
+                    branch = position + 1;
+                    break;
+                case 10:
+                    branch = position + 1;
+                    break;
+                case 11:
+                    branch = position + 1;
+                    break;
+                case 12:
+                    branch = position + 1;
+                    break;
+                case 13:
+                    branch = position + 1;
+                    break;
+                case 14:
+                    branch = position + 1;
+                    break;
+                case 15:
+                    branch = position + 1;
+                    break;
+                case 16:
+                    branch = position + 1;
+                    break;
+            }
+        }else if(SelectedEntranceExam == 10) {
+            switch (position) {
+                case 0:
+                    branch = position + 1;
+                    break;
+                case 1:
+                    branch = position + 1;
+                    break;
+                case 2:
+                    branch = position + 1;
+                    break;
+                case 3:
+                    branch = position + 1;
+                    break;
+                case 4:
+                    branch = position + 1;
+                    break;
+                case 5:
+                    branch = position + 1;
+                    break;
+                case 6:
+                    branch = position + 1;
+                    break;
+                case 7:
+                    branch = position + 1;
+                    break;
+                case 8:
+                    branch = position + 1;
+                    break;
+                case 9:
+                    branch = position + 1;
+                    break;
+                case 10:
+                    branch = position + 1;
+                    break;
+                case 11:
+                    branch = position + 1;
+                    break;
+                case 12:
+                    branch = position + 1;
+                    break;
+                case 13:
+                    branch = position + 1;
+                    break;
+                case 14:
+                    branch = position + 1;
+                    break;
+            }
         }
 
     }
@@ -402,7 +508,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             case 7:
                 exam123.setText("Entrance Exam: "+"BITSAT");break;
             case 8:
-                exam123.setText("Entrance Exam: "+"KVPY");break;
+                exam123.setText("Entrance Exam: "+"MET");break;
             case 9:
                 exam123.setText("Entrance Exam: "+"MHCET");break;
             case 10:
@@ -411,8 +517,6 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                 exam123.setText("Entrance Exam: "+"KCET");break;
             case 12:
                 exam123.setText("Entrance Exam: "+"IPU-CET");break;
-            case 13:
-                exam123.setText("Entrance Exam: "+"MET");break;
           /*  case 14:
                 exam123.setText("Entrance Exam: "+"WBJEE");break;
             case 15:
@@ -448,7 +552,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             case 1:
                 if(SelectedEntranceExam==2){
                 category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
-            }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12||SelectedEntranceExam==13){
+            }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Rank: ");
                 } else{
                 category123.setText("Category: " + "General");rankhead.setText("Gen. Rank:");
@@ -457,7 +561,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             case 2:
                 if(SelectedEntranceExam==2){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
-                }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12||SelectedEntranceExam==13){
+                }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Rank: ");
                 }else {
                     category123.setText("Category: " + "Obc");rankhead.setText("OBC Rank:");
@@ -466,7 +570,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             case 3:
                 if(SelectedEntranceExam==2){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
-                }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12||SelectedEntranceExam==13){
+                }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Rank: ");
                 }else {
                     category123.setText("Category: " + "ST");rankhead.setText("ST Rank:");
@@ -475,7 +579,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             case 4:
                 if(SelectedEntranceExam==2){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Percentile: ");
-                }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12||SelectedEntranceExam==13){
+                }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==6||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==11||SelectedEntranceExam==12){
                     category123.setText("Category: "+"All Catergory");rankhead.setText("Rank: ");
                 }else {
                     category123.setText("Category: " + "SC");rankhead.setText("SC Rank:");
@@ -503,7 +607,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             case 7:
                 Bitsat();break;
             case 8:
-                Kvpygold();break;
+                Metgold();break;
             case 9:
                 Mhcetgold();break;
             case 10:
@@ -512,8 +616,6 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                 Kcetgold();break;
             case 12:
                 Ipucetgold();break;
-            case 13:
-                Metgold();break;
         }
     }
 
@@ -754,17 +856,6 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
             Goldennumber = 5;
         }
     }
-
-    public void Kvpygold(){
-        if (score >= 45) {
-            Goldennumber = 1;
-        }else  {
-            Goldennumber = 2;
-        }
-    }
-
-
-
     public void Comedkgold(){
         if (score >= 170) {
             Goldennumber = 1;

@@ -183,6 +183,8 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/username"
+                        android:singleLine="true"
+                        android:nextFocusDown="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="#000000" />
@@ -245,6 +247,8 @@
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/username1"
+                        android:singleLine="true"
+                        android:nextFocusDown="@+id/textView2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textColor="#000000" />

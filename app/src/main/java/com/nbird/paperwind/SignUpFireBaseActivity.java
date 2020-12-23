@@ -27,6 +27,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Random;
+
 import Model.User;
 
 public class SignUpFireBaseActivity extends AppCompatActivity {
@@ -40,6 +42,8 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
     String usermail;
     String personEmail;
     Boolean night;
+    int firstrefcode=0;
+    String mailshare;
     String propicurl123="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/BydefalutPic%2Fdefaultpropic.png?alt=media&token=f655727d-9740-4ac9-9ba2-f53ea02dc778";
 
     @Override
@@ -56,6 +60,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
 
         final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
         final SharedPreferences.Editor editormailreminder = mailreminder.edit();
+
 
 
         movelogin.setOnClickListener(new View.OnClickListener() {
@@ -91,8 +96,19 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 usermail=mail.getText().toString();
                                 editormailreminder.putString("123", usermail);
                                 editormailreminder.commit();
+                            String strMain =usermail;
+                            String[] arrSplit_3 = strMain.split("@");
+                            for (int i=0; i < 1; i++) {
+                                Random rand = new Random();
 
-                                User s1=new User(money,permission,propicurl123);
+                                // Generate random integers in range 0 to 999
+                                int rand_int1 = rand.nextInt(1000);
+
+                                // Print random integers
+
+                                mailshare = arrSplit_3[i] + "@" + rand_int1;
+                            }
+                                User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
                                 reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
@@ -124,6 +140,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                 AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
                                 View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                                 builder.setView(view1);
+                                builder.setCancelable(false);
                                 ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
                                 ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
                                 ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
@@ -207,7 +224,20 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         String usermail=mail.getText().toString();
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
-                                        User s1=new User(money,permission,propicurl123);
+
+                                        String strMain =usermail;
+                                        String[] arrSplit_3 = strMain.split("@");
+                                        for (int i=0; i < 1; i++) {
+                                            Random rand = new Random();
+
+                                            // Generate random integers in range 0 to 999
+                                            int rand_int1 = rand.nextInt(1000);
+
+                                            // Print random integers
+
+                                            mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                        }
+                                        User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
                                         reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
@@ -240,6 +270,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                             AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
                                             View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                                             builder.setView(view1);
+                                            builder.setCancelable(false);
                                             ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
                                             ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
                                             ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
@@ -326,7 +357,21 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         String usermail=mail.getText().toString();
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
-                                        User s1=new User(money,permission,propicurl123);
+
+                                        String strMain =usermail;
+                                        String[] arrSplit_3 = strMain.split("@");
+                                        for (int i=0; i < 1; i++) {
+                                            Random rand = new Random();
+
+                                            // Generate random integers in range 0 to 999
+                                            int rand_int1 = rand.nextInt(1000);
+
+                                            // Print random integers
+
+                                            mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                        }
+
+                                        User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
                                         reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
@@ -359,6 +404,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                             AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
                                             View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                                             builder.setView(view1);
+                                            builder.setCancelable(false);
                                             ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
                                             ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
                                             ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
@@ -445,7 +491,21 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                         usermail=mail.getText().toString();
                                         editormailreminder.putString("123", usermail);
                                         editormailreminder.commit();
-                                        User s1=new User(money,permission,propicurl123);
+
+                                        String strMain =usermail;
+                                        String[] arrSplit_3 = strMain.split("@");
+                                        for (int i=0; i < 1; i++) {
+                                            Random rand = new Random();
+
+                                            // Generate random integers in range 0 to 999
+                                            int rand_int1 = rand.nextInt(1000);
+
+                                            // Print random integers
+
+                                            mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                        }
+
+                                        User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
                                         reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
@@ -478,6 +538,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                                             AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
                                             View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                                             builder.setView(view1);
+                                            builder.setCancelable(false);
                                             ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
                                             ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
                                             ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
@@ -533,7 +594,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
             }
         });
 
-        username.setOnClickListener(new View.OnClickListener() {
+       /* username.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),LoginFireBaseActivity.class);
@@ -541,7 +602,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                 overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                 finish();
             }
-        });
+        });*/
 
     }
     private boolean mail(){

@@ -50,6 +50,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -66,6 +67,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+import java.util.Random;
 import java.util.UUID;
 
 import Model.PropicString;
@@ -83,8 +86,9 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     private Context mContext;
     FirebaseAuth fAuth;
     int value;
-    String randomuid;
+    String randomuid,mailshare;
     //variables
+    String parent;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     androidx.appcompat.widget.Toolbar toolbar;
@@ -99,7 +103,12 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     StorageReference storageReference;
     String imageurl,picurl;
     StorageReference ref;
-
+    int check;
+    long vertualmoney;
+    String refcode;
+    String name;
+    int i=0;
+    boolean retval1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +119,6 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
         mToggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.open,R.string.close);
-
         button1=(Button) findViewById(R.id.tipButton1);
         button2=(Button) findViewById(R.id.tipButton);
         text1=(TextView) findViewById(R.id.textView5);
@@ -132,6 +140,198 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
         fAuth = FirebaseAuth.getInstance();
+
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                value = dataSnapshot.getValue(Integer.class);
+                // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+        reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("personal").child("firstrefcode").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+
+                    check = dataSnapshot.getValue(Integer.class);
+                    if(check==0){
+                        AlertDialog.Builder builder=new AlertDialog.Builder(Menu1Activity.this,R.style.AlertDialogTheme);
+                        final View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.refferalcodeasking,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                        builder.setView(view1);
+                        builder.setCancelable(false);
+                        ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                        ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                        ((Button) view1.findViewById(R.id.buttonNo)).setText("Not Interested");
+                        ((Button) view1.findViewById(R.id.buttonYes)).setText("Check The Code");
+
+
+                        final AlertDialog alertDialog=builder.create();
+
+
+                        view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+
+                            @Override
+                            public void onClick(View view) {
+                                refcode=((TextInputEditText) view1.findViewById(R.id.username)).getText().toString().trim();
+
+                                reference2.child("User").addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        // convert the data back to the model
+
+                                              for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                                            name = ds.child("personal").child("sharecode").getValue(String.class);
+
+                                            if(Objects.equals(name, new String(refcode))){
+
+                                                vertualmoney= (long) ds.child("personal").child("money").getValue();
+                                                vertualmoney=vertualmoney+30;
+                                                //String id = ds.getValue(String.class);
+                                                parent = ds.getKey();
+                                                DatabaseReference c1v= FirebaseDatabase.getInstance().getReference().child("User").child(parent).child("personal").child("money");
+                                                c1v.setValue(vertualmoney);
+
+                                                i++;
+                                                value=value+10;
+                                                DatabaseReference c1v2= FirebaseDatabase.getInstance().getReference().child("User").child(fAuth.getCurrentUser().getUid()).child("personal").child("money");
+                                                c1v2.setValue(value);
+
+
+                                                Toast.makeText(Menu1Activity.this, "You Earned 10 Paper Notes Extra!", Toast.LENGTH_SHORT).show();
+                                                alertDialog.dismiss();
+
+
+                                                    AlertDialog.Builder builder=new AlertDialog.Builder(Menu1Activity.this,R.style.AlertDialogTheme);
+                                                    View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.congoalertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                                    builder.setView(view1);
+                                                    builder.setCancelable(false);
+                                                    ((TextView) view1.findViewById(R.id.textTitle)).setText("You Just Received 10 Paper Notes!");
+                                                    ((TextView) view1.findViewById(R.id.textMessage)).setText("Congratulations!");
+                                                    ((Button) view1.findViewById(R.id.buttonYes)).setText("OKay!");
+
+                                                    final DatabaseReference myref = database.getReference().child("User").child(parent).child("yourrefcodeuser").push();
+
+
+                                                    myref.addValueEventListener(new ValueEventListener() {
+                                                    @Override
+                                                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                                        RefHolder user= new RefHolder(imageurl,mailid123);
+                                                        myref.setValue(user);
+
+                                                    }
+
+                                                    @Override
+                                                    public void onCancelled(@NonNull DatabaseError error) {
+
+                                                    }
+                                                });
+
+                                                    final AlertDialog alertDialog=builder.create();
+
+                                                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(View view) {
+                                                            alertDialog.dismiss();
+
+                                                        }
+                                                    });
+
+
+                                                    if(alertDialog.getWindow()!=null){
+                                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                                    }
+                                                    alertDialog.show();
+
+                                                  break;
+                                            }
+
+                                        }
+
+                                        if(i==0){
+                                            ((TextInputEditText) view1.findViewById(R.id.username)).setError("Wrong Referral Code!Try Again.");
+                                        }
+
+
+                                    }
+
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                    }
+                                });
+                            }
+                        });
+                        view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                alertDialog.dismiss();
+                            }
+                        });
+
+
+
+                        if(alertDialog.getWindow()!=null){
+                            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                        }
+                        alertDialog.show();
+
+
+                        check=1;
+                        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("firstrefcode").setValue(check).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+
+                                } else {
+
+                                }
+                            }
+                        });
+                    }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+
+
+
+
+
+        reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("personal").child("sharecode").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                try {
+                    mailshare = (String) dataSnapshot.getValue();
+
+                } catch (Exception e) {
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+
+
+
 
             reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("personal").child("propic").addValueEventListener(new ValueEventListener() {
                 @Override
@@ -208,20 +408,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
 
 
-        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // convert the data back to the model
-                value = dataSnapshot.getValue(Integer.class);
-                // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
 
 
         //************ Navigation Drawer Menu **************
@@ -336,7 +523,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             Toast.makeText(this, "Share Me!", Toast.LENGTH_SHORT).show();
             Intent shareIntent=new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plane");
-            String shareBody="Download Paper Wind now: "+linkdata;
+            String shareBody="Download Paper Wind now: "+linkdata+"\n"+"Here's my referral code "+mailshare+" ( Use this to earn 10 Paper notes instantly ).";
             String sharesub="Paper Wind";
 
             shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);
@@ -433,12 +620,11 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         lstExam.add(new Exam("COMED-K",R.drawable.comedk,"State level entrance examination by the Consortium of Medical, Engineering and Dental colleges of Karnataka for admissions to Engineerting and Architecture courses."));
         lstExam.add(new Exam("NDA",R.drawable.nda,"NDA exam is conducted by UPSC twice a year for admissions to Army, Navy, and Air Force wings of the prestigious National Defence Academy, Pune."));
         lstExam.add(new Exam("BITSAT",R.drawable.bitsat,"BITS Admission test is an online entrance examination for admissions to integrated first degree programmes of BITS Pilani, Goa and Hyderabad."));
-        lstExam.add(new Exam("KVPY",R.drawable.kvpy,"Kishore Vaigyanik Protsahan Yojana is a scholarship program aimed at encouraging students to take up research careers in the areas of basic sciences by the Indian government."));
+        lstExam.add(new Exam("MET",R.drawable.met,"The Manipal Entrance Test (MET) for BTech admissions is a common entrance test for admission to Manipal Institute of Technology."));
         lstExam.add(new Exam("MHCET",R.drawable.mhtcet,"MHT CET (MH CET) or Maharashtra Common Entrance Test is conducted by the State Common Entrance Test Cell for admissions to BE/BTech and Pharmacy programmes (BPharma/PharmaD)."));
         lstExam.add(new Exam("SRMJEE",R.drawable.srmjee1,"The SRM University conducts SRM Joint Engineering Entrance Examination (SRMJEEE) for granting admissions in undergraduate engineering courses. "));
         lstExam.add(new Exam("KCET",R.drawable.kcet,"Karnataka Common Entrance Test is a state-level entrance exam conducted by Karnataka Examination Authority (KEA) organised to provide admission to different UG courses in Karnataka."));
         lstExam.add(new Exam("IPU-CET",R.drawable.ipucet,"Indraprastha University Common Entrance Test offers admission to the various UG and PG courses. The admission is done through Common Entrance Test (CET) or on the merit of the qualifying degrees."));
-        lstExam.add(new Exam("MET",R.drawable.met,"The Manipal Entrance Test (MET) for BTech admissions is a common entrance test for admission to Manipal Institute of Technology."));
       //  lstExam.add(new Exam("WBJEE",R.drawable.wbjee,"West Bengal Joint Entrance Examination is a state-government controlled centralised test for admission to many private and governmental engineering institutions in West Bengal."));
       //  lstExam.add(new Exam("JEECUP",R.drawable.jeec,"Joint Entrance Examination Council Uttar Pradesh is a State-level Entrance Exam for admission into Diploma, PG Diploma and Post Diploma courses in Engineering & Technology, Pharmacy and Management."));
       //  lstExam.add(new Exam("NEST",R.drawable.nest,"The National Entrance Screening Test is an annual college entrance examination in India, conducted for admission into NISER, Bhubaneswar and UM-DAE CEBS, Mumbai."));
@@ -457,6 +643,12 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         switch (menuItem.getItemId()){
+
+            case R.id.referral_code:
+                Intent intent1=new Intent(Menu1Activity.this,Referral_Code_Activity.class);
+                startActivity(intent1);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                break;
 
             case R.id.nav_logout:
                 fAuth = FirebaseAuth.getInstance();
@@ -568,7 +760,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     }
 
     private void selectImage(Context context) {
-        final CharSequence[] options = { "Take Photo", "Choose from Gallery","Cancel" };
+        final CharSequence[] options = {"Choose from Gallery","Cancel" };
 
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         builder.setTitle("Choose your profile picture");
@@ -578,11 +770,11 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             @Override
             public void onClick(DialogInterface dialog, int item) {
 
-                if (options[item].equals("Take Photo")) {
+               /* if (options[item].equals("Take Photo")) {
                     Intent takePicture = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(takePicture, 0);
 
-                } else if (options[item].equals("Choose from Gallery")) {
+                } */if (options[item].equals("Choose from Gallery")) {
                     Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                     startActivityForResult(pickPhoto , 1);
 
@@ -599,14 +791,16 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode != RESULT_CANCELED) {
             switch (requestCode) {
-                case 0:
+              /*  case 0:
                     if (resultCode == RESULT_OK && data != null) {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         nav_image.setImageBitmap(selectedImage);
+
+
                         uploadImage();
                     }
 
-                    break;
+                    break;*/
                 case 1:
                     if (resultCode == RESULT_OK) {
                         try {

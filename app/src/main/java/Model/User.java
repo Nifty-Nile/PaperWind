@@ -4,16 +4,36 @@ public class User {
     private int money;
     private int permission;
     String propic;
+    String sharecode;
+    int firstrefcode;
 
 
     public User(String imageurl) {
     }
 
-    public User(int money,int permission,String propic) {
+    public User(int money,int permission,String propic,String sharecode,int firstrefcode) {
         this.money = money;
         this.permission=permission;
         this.propic=propic;
+        this.sharecode=sharecode;
+        this.firstrefcode=firstrefcode;
 
+    }
+
+    public int getFirstrefcode() {
+        return firstrefcode;
+    }
+
+    public void setFirstrefcode(int firstrefcode) {
+        this.firstrefcode = firstrefcode;
+    }
+
+    public String getSharecode() {
+        return sharecode;
+    }
+
+    public void setSharecode(String sharecode) {
+        this.sharecode = sharecode;
     }
 
     public String getPropic() {

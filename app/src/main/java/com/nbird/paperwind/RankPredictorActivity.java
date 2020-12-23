@@ -108,12 +108,12 @@ public class RankPredictorActivity extends AppCompatActivity {
         lstExam.add(new RankMenuHolder(R.drawable.comedk,"Comed-K"));
         lstExam.add(new RankMenuHolder(R.drawable.nda,"NDA"));
         lstExam.add(new RankMenuHolder(R.drawable.bitsat,"Bitsat"));
-        lstExam.add(new RankMenuHolder(R.drawable.kvpy,"KVPY"));
+        lstExam.add(new RankMenuHolder(R.drawable.met,"MET"));
         lstExam.add(new RankMenuHolder(R.drawable.mhtcet,"MH-CET"));
         lstExam.add(new RankMenuHolder(R.drawable.srmjee1,"SRMJEE"));
         lstExam.add(new RankMenuHolder(R.drawable.kcet,"K-CET"));
         lstExam.add(new RankMenuHolder(R.drawable.ipucet,"IPU CET"));
-        lstExam.add(new RankMenuHolder(R.drawable.met,"MET"));
+
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

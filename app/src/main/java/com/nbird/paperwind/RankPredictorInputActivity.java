@@ -59,6 +59,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     final DatabaseReference reference = database.getReference("User");
     int permission=1;
     int post;
+    String mailshare;
     final DatabaseReference reference2 = database.getReference();
     String linkdata;
     int i;
@@ -94,6 +95,22 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
         setSupportActionBar(toolbar);
 
+        fAuth = FirebaseAuth.getInstance();
+        reference2.child("User").child(fAuth.getCurrentUser().getUid()).child("personal").child("sharecode").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                try {
+                    mailshare = (String) dataSnapshot.getValue();
+
+                } catch (Exception e) {
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
 
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -103,11 +120,15 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         if(SelectedEntranceExam==1){
             paths123 = new String[]{"CSE", "IT", "ECE", "EEE", "ME", "TE", "Civil"};
         }else if(SelectedEntranceExam==4){
-            paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
+            paths123 = new String[]{"Computer Science and Engineering", "Information Technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
         }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
             paths123 = new String[]{"Computer Science and Engineering", "Information Science and Engineering", "Electronics and Communication Engineering", "Mechanical Engineering", "Electrical and Electronics Engineering", "Telecommunication Engineering", "Civil Engineering","Biotechnology"};
-        }else if(SelectedEntranceExam==7||SelectedEntranceExam==2||SelectedEntranceExam==3||SelectedEntranceExam==6||SelectedEntranceExam==8||SelectedEntranceExam==9||SelectedEntranceExam==10||SelectedEntranceExam==12||SelectedEntranceExam==13){
+        }else if(SelectedEntranceExam==7||SelectedEntranceExam==2||SelectedEntranceExam==3||SelectedEntranceExam==6||SelectedEntranceExam==9||SelectedEntranceExam==12){
             paths123 = new String[]{"Computer Science and Engineering", "Electronics and Instrumentation Engineering", "Chemical Engineering", "Civil Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Manufacturing engineering","Electronics and Communication Engineering"};
+        }else if(SelectedEntranceExam==8){
+            paths123 = new String[]{"Computer Science and Engineering", "Information Technology", "Communication and Computer Engineering", "Data Science And Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechatronics","Mechanical Engineering","Aerospace Engineering","Electronics and Instrumentation Engineering","Automobile Engineering","Biotechnology","Bio Medical Engineering","Chemical Engineering","Civil Engineering","Industrial and Production Engineering","Media Technology"};
+        }else if(SelectedEntranceExam==10){
+            paths123 = new String[]{"Computer Science and Engineering", "Information Technology","Electronics and Communication Engineering","Mechanical Engineering","Electrical and Electronics Engineering","Computer Science and Engineering(Software Engineering)","Mechatronics","Biotechnology","Aerospace Engineering","Bio Medical Engineering","Automobile Engineering","Electronics and Instrumentation Engineering","Biotechnology Engineering(Genetics Engineering)","Chemical Engineering","Nanotechnology Engineer","Civil Engineering"};
         }
 
 
@@ -192,7 +213,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // radiobutton by returned id
 
-                               if (selectedId == 2131362227) {
+                               if (selectedId == 2131362231) {
                                     i = 1;
                                 } else {
                                     i = 2;
@@ -337,7 +358,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131362227){
+                                            if(selectedId==2131362231){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -386,7 +407,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362227){
+                                if(selectedId==2131362231){
                                     i=1;
                                 }else{
                                     i=2;
@@ -587,7 +608,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // radiobutton by returned id
 
-                    if (selectedId == 2131362227) {
+                    if (selectedId == 2131362231) {
                         i = 1;
                     } else {
                         i = 2;
@@ -724,7 +745,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131362227){
+                                            if(selectedId==2131362231){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -770,7 +791,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362227){
+                                if(selectedId==2131362231){
                                     i=1;
                                 }else{
                                     i=2;
@@ -904,7 +925,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362227){
+                                if(selectedId==2131362231){
                                     i=1;
                                 }else{
                                     i=2;
@@ -950,7 +971,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // find the radiobutton by returned id
 
-                    if(selectedId==2131362227){
+                    if(selectedId==2131362231){
                         i=1;
                     }else{
                         i=2;
@@ -1136,6 +1157,108 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                         branch = position + 1;
                         break;
                 }
+            }else if(SelectedEntranceExam == 8) {
+                switch (position) {
+                    case 0:
+                        branch = position + 1;
+                        break;
+                    case 1:
+                        branch = position + 1;
+                        break;
+                    case 2:
+                        branch = position + 1;
+                        break;
+                    case 3:
+                        branch = position + 1;
+                        break;
+                    case 4:
+                        branch = position + 1;
+                        break;
+                    case 5:
+                        branch = position + 1;
+                        break;
+                    case 6:
+                        branch = position + 1;
+                        break;
+                    case 7:
+                        branch = position + 1;
+                        break;
+                    case 8:
+                        branch = position + 1;
+                        break;
+                    case 9:
+                        branch = position + 1;
+                        break;
+                    case 10:
+                        branch = position + 1;
+                        break;
+                    case 11:
+                        branch = position + 1;
+                        break;
+                    case 12:
+                        branch = position + 1;
+                        break;
+                    case 13:
+                        branch = position + 1;
+                        break;
+                    case 14:
+                        branch = position + 1;
+                        break;
+                    case 15:
+                        branch = position + 1;
+                        break;
+                    case 16:
+                        branch = position + 1;
+                        break;
+                }
+            }else if(SelectedEntranceExam == 10) {
+                switch (position) {
+                    case 0:
+                        branch = position + 1;
+                        break;
+                    case 1:
+                        branch = position + 1;
+                        break;
+                    case 2:
+                        branch = position + 1;
+                        break;
+                    case 3:
+                        branch = position + 1;
+                        break;
+                    case 4:
+                        branch = position + 1;
+                        break;
+                    case 5:
+                        branch = position + 1;
+                        break;
+                    case 6:
+                        branch = position + 1;
+                        break;
+                    case 7:
+                        branch = position + 1;
+                        break;
+                    case 8:
+                        branch = position + 1;
+                        break;
+                    case 9:
+                        branch = position + 1;
+                        break;
+                    case 10:
+                        branch = position + 1;
+                        break;
+                    case 11:
+                        branch = position + 1;
+                        break;
+                    case 12:
+                        branch = position + 1;
+                        break;
+                    case 13:
+                        branch = position + 1;
+                        break;
+                    case 14:
+                        branch = position + 1;
+                        break;
+                }
             }
         }
 
@@ -1240,7 +1363,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             case 7:
                 return 450;
             case 8:
-                return 100;
+                return 800;
             case 9:
                 return 200;
             case 10:
@@ -1249,8 +1372,6 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 return 180;
             case 12:
                 return 600;
-            case 13:
-                return 800;
         }
         return 360 ;
     }
@@ -1269,7 +1390,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
             Toast.makeText(this, "Share Me!", Toast.LENGTH_SHORT).show();
             Intent shareIntent=new Intent(Intent.ACTION_SEND);
             shareIntent.setType("text/plane");
-            String shareBody="Download Paper Wind now: "+linkdata;
+            String shareBody="Download Paper Wind now: "+linkdata+"\n"+"Here's my referral code "+mailshare+" ( Use this to earn 10 Paper notes instantly ).";
             String sharesub="Paper Wind";
 
             shareIntent.putExtra(Intent.EXTRA_SUBJECT,sharesub);

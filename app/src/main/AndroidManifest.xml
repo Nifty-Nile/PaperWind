@@ -12,99 +12,147 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutUsActivity"
+        <activity android:name=".Referral_Code_Activity"></activity>
+        <activity
+            android:name=".AboutUsActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".HelpMoney1Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".HelpActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TestAgrementActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PaymentHistoryActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LatestExamUpdates"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SartingGuideActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ExamRecordActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ActivityMoneyShift"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SignUpFireBaseActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LoginFireBaseActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ForgotPasswordActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".EntranceExamPreviousPDFDisplayActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Menu100Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ScoreActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".TestMainDisplayActivityASAP"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".OnlineExamGridShow"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".EntranceFormActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".EntranceExamPreviousRecyclerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".EntranceRecyclerView"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Formula_Pdf_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FormulaChRecyclerActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FormulaSubjectActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FormulaSTDActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".DemoActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".CollegePredictorMainActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".FinalRankPredictorActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RankPredictorInputActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LinkSubjects"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Pdf_Display_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Recycler_Exam_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".All_sub_cisce12_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".All_sub_Cisce10_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Sub_All_Cbse12_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Sub_All_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PreviousYearActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SubjectActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".BoardYearActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Menu1Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Ten_Twelve_Activity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".RankPredictorActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MoneyActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".PaperCategoryBoardsActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SignUpActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".SlideActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".LoginActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".HelpMoney1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HelpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TestAgrementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PaymentHistoryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LatestExamUpdates"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SartingGuideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ExamRecordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityMoneyShift"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpFireBaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginFireBaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EntranceExamPreviousPDFDisplayActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Menu100Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ScoreActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TestMainDisplayActivityASAP"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OnlineExamGridShow"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EntranceFormActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EntranceExamPreviousRecyclerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EntranceRecyclerView"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Formula_Pdf_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FormulaChRecyclerActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FormulaSubjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FormulaSTDActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DemoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CollegePredictorMainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FinalRankPredictorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RankPredictorInputActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LinkSubjects"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Pdf_Display_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Recycler_Exam_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".All_sub_cisce12_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".All_sub_Cisce10_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Sub_All_Cbse12_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Sub_All_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PreviousYearActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SubjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BoardYearActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Menu1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Ten_Twelve_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RankPredictorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MoneyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PaperCategoryBoardsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SlideActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

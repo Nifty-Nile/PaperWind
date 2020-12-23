@@ -152,7 +152,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
 
         Platinumnumber();
 
-        if(SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7){
+        if(SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==10){
             Cast=1;
             Gender=1;
         }
@@ -199,7 +199,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             case 7:
                 entranceexamtitle.setText("Entrance Exam: "+"BITSAT");break;
             case 8:
-                entranceexamtitle.setText("Entrance Exam: "+"KVPY");break;
+                entranceexamtitle.setText("Entrance Exam: "+"MET");break;
             case 9:
                 entranceexamtitle.setText("Entrance Exam: "+"MHCET");break;
             case 10:
@@ -208,24 +208,6 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 entranceexamtitle.setText("Entrance Exam: "+"KCET");break;
             case 12:
                 entranceexamtitle.setText("Entrance Exam: "+"IPU-CET");break;
-            case 13:
-                entranceexamtitle.setText("Entrance Exam: "+"MET");break;
-            case 14:
-                entranceexamtitle.setText("Entrance Exam: "+"WBJEE");break;
-            case 15:
-                entranceexamtitle.setText("Entrance Exam: "+"JEECUP");break;
-            case 16:
-                entranceexamtitle.setText("Entrance Exam: "+"NEST");break;
-            case 17:
-                entranceexamtitle.setText("Entrance Exam: "+"PESSAT");break;
-            case 18:
-                entranceexamtitle.setText("Entrance Exam: "+"AMUEEE");break;
-            case 19:
-                entranceexamtitle.setText("Entrance Exam: "+"IISER");break;
-            case 20:
-                entranceexamtitle.setText("Entrance Exam: "+"UPSEE");break;
-            case 21:
-                entranceexamtitle.setText("Entrance Exam: "+"NIFT");break;
         }
 
         if(SelectedEntranceExam==1) {
@@ -237,7 +219,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     gendertext.setText("Gender: " + "Female");
                     break;
             }
-        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7){
+        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==10){
             switch (Gender) {
                 case 1:
                     gendertext.setText("Gender: " + "Not Considered");
@@ -267,7 +249,7 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                     ranktext.setText("SC Rank: " + rank123);
                     break;
             }
-        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7){
+        }else if(SelectedEntranceExam==4||SelectedEntranceExam==5||SelectedEntranceExam==11||SelectedEntranceExam==7||SelectedEntranceExam==8||SelectedEntranceExam==10){
             switch (Cast) {
                 case 1:
                     casttext.setText("Category: " + "Not Considered");
@@ -381,6 +363,79 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 case 8:
                     branchtext.setText("Branch: "+"Electronics and Communication Engineering");break;
             }
+        }else if(SelectedEntranceExam==8){
+            switch (Branch){
+                case 1:
+                    branchtext.setText("Branch: "+"Computer Science and Engineering");break;
+                case 2:
+                    branchtext.setText("Branch: "+"Information technology");break;
+                case 3:
+                    branchtext.setText("Branch: "+"Communication and Computer Engineering");break;
+                case 4:
+                    branchtext.setText("Branch: "+"Data Science And Engineering");break;
+                case 5:
+                    branchtext.setText("Branch: "+"Electronics and Communication Engineering");break;
+                case 6:
+                    branchtext.setText("Branch: "+"Electrical and Electronics Engineering");break;
+                case 7:
+                    branchtext.setText("Branch: "+"Mechatronics"); break;
+                case 8:
+                    branchtext.setText("Branch: "+"Mechanical Engineering");break;
+                case 9:
+                    branchtext.setText("Branch: "+"Aerospace Engineering");break;
+                case 10:
+                    branchtext.setText("Branch: "+"Electronics and Instrumentation Engineering");break;
+                case 11:
+                    branchtext.setText("Branch: "+"Automobile Engineering");break;
+                case 12:
+                    branchtext.setText("Branch: "+"Biotechnology");break;
+                case 13:
+                    branchtext.setText("Branch: "+"Bio Medical Engineering"); break;
+                case 14:
+                    branchtext.setText("Branch: "+"Chemical Engineering");break;
+                case 15:
+                    branchtext.setText("Branch: "+"Civil Engineering");break;
+                case 16:
+                    branchtext.setText("Branch: "+"Industrial and Production Engineering");break;
+                case 17:
+                    branchtext.setText("Branch: "+"Media Technology");break;
+
+            }
+        }else if(SelectedEntranceExam==10){
+            switch (Branch){
+                case 1:
+                    branchtext.setText("Branch: "+"Computer Science and Engineering");break;
+                case 2:
+                    branchtext.setText("Branch: "+"Information technology");break;
+                case 3:
+                    branchtext.setText("Branch: "+"Electronics and Communication Engineering");break;
+                case 4:
+                    branchtext.setText("Branch: "+"Mechanical Engineering");break;
+                case 5:
+                    branchtext.setText("Branch: "+"Electrical and Electronics Engineering");break;
+                case 6:
+                    branchtext.setText("Branch: "+"Computer Science and Engineering(Software Engineering)");break;
+                case 7:
+                    branchtext.setText("Branch: "+"Mechatronics"); break;
+                case 8:
+                    branchtext.setText("Branch: "+"Biotechnology");break;
+                case 9:
+                    branchtext.setText("Branch: "+"Aerospace Engineering");break;
+                case 10:
+                    branchtext.setText("Branch: "+"Bio Medical Engineering");break;
+                case 11:
+                    branchtext.setText("Branch: "+"Automobile Engineering");break;
+                case 12:
+                    branchtext.setText("Branch: "+"Electronics and Instrumentation Engineering");break;
+                case 13:
+                    branchtext.setText("Branch: "+"Biotechnology Engineering(Genetics Engineering)"); break;
+                case 14:
+                    branchtext.setText("Branch: "+"Chemical Engineering");break;
+                case 15:
+                    branchtext.setText("Branch: "+"Nanotechnology Engineer");break;
+                case 16:
+                    branchtext.setText("Branch: "+"Civil Engineering");break;
+            }
         }
     }
 
@@ -398,10 +453,75 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
                 Comedkgold();break;
             case 7:
                 Bitsatgold();break;
+            case 8:
+                Metgold();break;
+            case 10:
+                Srmjeegold();break;
             case 11:
                 Kcetgold();break;
         }
     }
+
+    public void Srmjeegold(){
+        if (Rank <= 10000) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 23000) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 27000) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 31000) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 42000) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 48000) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 52000) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 55000) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 61000) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 70000) {
+            PlatinumNumber = 10;
+        }
+    }
+
+    public void Metgold(){
+        if (Rank <= 1150) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 2240) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 3050) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 3700) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 5700) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 11000) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 17400) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 18600) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 19300) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 19700) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 26310) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 33900) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 38110) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 39310) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 40400) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 40800) {
+            PlatinumNumber = 16;
+        }
+    }
+
     public void Comedkgold() {
         if (Rank <= 420) {
             PlatinumNumber = 1;

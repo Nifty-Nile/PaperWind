@@ -50,6 +50,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import Model.User;
 
@@ -73,6 +74,8 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     final DatabaseReference reference1 = database.getReference("User");
     final DatabaseReference reference2 = database.getReference();
     int skipint=0;
+    String mailshare;
+    int firstrefdis=0;
     @Override
     protected void onStart() {
         super.onStart();
@@ -418,7 +421,9 @@ public void createRequest(){
                                             // convert the data back to the model
                                          try{
                                             money = dataSnapshot.getValue(Integer.class);
-                                            User s1 = new User(money, permission, propicurl123);
+
+
+                                             User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
                                             skipint = 1;
 
 
@@ -445,7 +450,7 @@ public void createRequest(){
                                                     // convert the data back to the model
                                                     try {
                                                         propicurl123 = (String) dataSnapshot.getValue();
-                                                        User s1 = new User(money, permission, propicurl123);
+                                                        User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
                                                         table_user.child(mAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                             @Override
                                                             public void onComplete(@NonNull Task<Void> task) {
@@ -466,7 +471,22 @@ public void createRequest(){
                                             });
 
                                         }catch(Exception e){
-                                             User s1 = new User(money, permission, propicurl123);
+
+                                             String strMain =personEmail;
+                                             String[] arrSplit_3 = strMain.split("@");
+                                             for (int i=0; i < 1; i++) {
+                                                 Random rand = new Random();
+
+                                                 // Generate random integers in range 0 to 999
+                                                 int rand_int1 = rand.nextInt(1000);
+
+                                                 // Print random integers
+
+                                                 mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                             }
+                                             User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
+
+
                                              table_user.child(mAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
                                                  @Override
                                                  public void onComplete(@NonNull Task<Void> task) {
@@ -519,6 +539,7 @@ public void createRequest(){
                                 AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseActivity.this,R.style.AlertDialogTheme);
                                 View view1= LayoutInflater.from(LoginFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                                 builder.setView(view1);
+                                builder.setCancelable(false);
                                 ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
                                 ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
                                 ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
