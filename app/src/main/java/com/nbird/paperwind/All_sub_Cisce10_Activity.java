@@ -18,12 +18,12 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class All_sub_Cisce10_Activity extends AppCompatActivity {
 
-    Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12,button13,button14;
+    Button button1,button2,button3,button4,button5,button6,button7,button8,button10,button11,button12,button13;
     int Exam,Std,Paper;
     androidx.appcompat.widget.Toolbar toolbar;
     TextView textView4,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11
-            ,text12,text13,text14,text15,text16,text17,text18,text19,text20,text21,text22
-            ,text23,text24,text25,text26,text27,text28;
+            ,text12,text13,text14,text15,text16,text17,text18,text21,text22
+            ,text23,text24,text25,text26;
 
 
     @Override
@@ -44,12 +44,11 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
         button6=(Button) findViewById(R.id.tipButton6);
         button7=(Button) findViewById(R.id.tipButton7);
         button8=(Button) findViewById(R.id.tipButton8);
-        button9=(Button) findViewById(R.id.tipButton9);
         button10=(Button) findViewById(R.id.tipButton10);
         button11=(Button) findViewById(R.id.tipButton11);
         button12=(Button) findViewById(R.id.tipButton12);
         button13=(Button) findViewById(R.id.tipButton13);
-        button14=(Button) findViewById(R.id.tipButton14);
+
 
         textView4=(TextView) findViewById(R.id.textView4);
         text1=(TextView) findViewById(R.id.text1);
@@ -70,16 +69,13 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
         text16=(TextView) findViewById(R.id.text16);
         text17=(TextView) findViewById(R.id.text17);
         text18=(TextView) findViewById(R.id.text18);
-        text19=(TextView) findViewById(R.id.text19);
-        text20=(TextView) findViewById(R.id.text20);
         text21=(TextView) findViewById(R.id.text21);
         text22=(TextView) findViewById(R.id.text22);
         text23=(TextView) findViewById(R.id.text23);
         text24=(TextView) findViewById(R.id.text24);
         text25=(TextView) findViewById(R.id.text25);
         text26=(TextView) findViewById(R.id.text26);
-        text27=(TextView) findViewById(R.id.text27);
-        text28=(TextView) findViewById(R.id.text28);
+
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Subjects");
@@ -119,16 +115,12 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             text16.setTextColor(Color.parseColor("#ffffff"));
             text17.setTextColor(Color.parseColor("#ffffff"));
             text18.setTextColor(Color.parseColor("#ffffff"));
-            text19.setTextColor(Color.parseColor("#ffffff"));
-            text20.setTextColor(Color.parseColor("#ffffff"));
             text21.setTextColor(Color.parseColor("#ffffff"));
             text22.setTextColor(Color.parseColor("#ffffff"));
             text23.setTextColor(Color.parseColor("#ffffff"));
             text24.setTextColor(Color.parseColor("#ffffff"));
             text25.setTextColor(Color.parseColor("#ffffff"));
             text26.setTextColor(Color.parseColor("#ffffff"));
-            text27.setTextColor(Color.parseColor("#ffffff"));
-            text28.setTextColor(Color.parseColor("#ffffff"));
 
 
         }else{
@@ -154,16 +146,12 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             text16.setTextColor(Color.parseColor("#000000"));
             text17.setTextColor(Color.parseColor("#000000"));
             text18.setTextColor(Color.parseColor("#000000"));
-            text19.setTextColor(Color.parseColor("#000000"));
-            text20.setTextColor(Color.parseColor("#000000"));
             text21.setTextColor(Color.parseColor("#000000"));
             text22.setTextColor(Color.parseColor("#000000"));
             text23.setTextColor(Color.parseColor("#000000"));
             text24.setTextColor(Color.parseColor("#000000"));
             text25.setTextColor(Color.parseColor("#000000"));
             text26.setTextColor(Color.parseColor("#000000"));
-            text27.setTextColor(Color.parseColor("#000000"));
-            text28.setTextColor(Color.parseColor("#000000"));
 
 
         }
@@ -310,7 +298,7 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             }
         });
 
-        button9.setOnClickListener(new View.OnClickListener() {
+        button10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
@@ -323,7 +311,7 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             }
         });
 
-        button10.setOnClickListener(new View.OnClickListener() {
+        button11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
@@ -336,7 +324,7 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             }
         });
 
-        button11.setOnClickListener(new View.OnClickListener() {
+        button12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
@@ -349,7 +337,7 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             }
         });
 
-        button12.setOnClickListener(new View.OnClickListener() {
+        button13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
@@ -362,31 +350,7 @@ public class All_sub_Cisce10_Activity extends AppCompatActivity {
             }
         });
 
-        button13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
-                intent.putExtra("Chapter",13);
-                intent.putExtra("Exam",Exam);
-                intent.putExtra("Std",Std);
-                intent.putExtra("Paper",Paper);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-            }
-        });
 
-        button14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getBaseContext(),Recycler_Exam_Activity.class);
-                intent.putExtra("Chapter",14);
-                intent.putExtra("Exam",Exam);
-                intent.putExtra("Std",Std);
-                intent.putExtra("Paper",Paper);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-            }
-        });
 
     }
 

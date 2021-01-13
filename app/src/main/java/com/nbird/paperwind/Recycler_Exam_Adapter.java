@@ -70,7 +70,7 @@ public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Ad
                     intent.putExtra("Std",Std);
                     intent.putExtra("Paper",Paper);
                     intent.putExtra("Chapter",Chapter);
-                    intent.putExtra("set",set+1);
+                    intent.putExtra("set",set);
                     itemView.getContext().startActivity(intent);
                 }
             });

@@ -35,7 +35,7 @@ public class FormulaAdapter extends RecyclerView.Adapter<FormulaAdapter.viewhold
     @NonNull
     @Override
     public viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.formularecyclerviewdesign,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.formula_custom_ui,parent,false);
         return new viewholder(view);
     }
 
@@ -51,12 +51,11 @@ public class FormulaAdapter extends RecyclerView.Adapter<FormulaAdapter.viewhold
 
     public class viewholder extends RecyclerView.ViewHolder {
         private TextView title1;
-        private CircleImageView categoryImage;
+        private ImageView categoryImage;
         public viewholder(@NonNull View itemView) {
             super(itemView);
             title1=itemView.findViewById(R.id.title);
             categoryImage=itemView.findViewById(R.id.imageicon);
-
         }
 
         public void setData(String imageUrl, final String title, final int set) {

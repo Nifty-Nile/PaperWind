@@ -902,7 +902,7 @@
                     android:layout_height="95dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/geography" />
+                    android:background="@drawable/otherbooks" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -916,7 +916,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Geography"
+                        android:text="All Other Subjects"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 

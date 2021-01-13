@@ -93,16 +93,16 @@ public class HelpMoney1Activity extends AppCompatActivity {
     }
     public void p1c1(){
       textView1.setText("Paper Notes By Ads:-");
-      textView2.setText("Paper Notes refer to virtual money.This virtual money will give you the access to various facilities present in the App.The User could check its Paper nOtes balance on toolBar section .");
-      textView3.setText("Every new user will be provided with 50 Paper Notes at the beginning by default.");
-      textView4.setText("These paper notes will be required for using the facility of Rank Predictor,College Predictor as well as for tests.You can collect paper notes by watching ads.One Paper note will be rewarded to you for watching an add that is number of Paper Note is directly propotional to the number of ads you have watched.");
+      textView2.setText("Paper Notes refer to virtual money.This virtual money will give you the access to various facilities present in the App.The User could check its Paper notes balance on toolBar section .");
+      textView3.setText("Every new user will be provided with 30 Paper Notes at the beginning by default.");
+      textView4.setText("These paper notes will be required for using the facility of Rank Predictor,College Predictor as well as for tests.You can collect paper notes by watching ads.One Paper note will be rewarded to you for watching an ad.");
       textView5.setText("There are many students who cannot afford to buy paper notes.Therefore we have come up with the ad facility so that everybody can get easy access to Paper Wind's facility.");
     }
     public void p1c2(){
         textView1.setText("Paper Notes By Transaction:-");
         textView2.setText("Paper Notes refer to virtual money.This virtual money will give you the access to various facilities present in the App.The User could check its Paper notes balance on ToolBar section.");
-        textView3.setText("Every new user will be provided with 50 Paper Notes at the beginning by default.");
-        textView4.setText("These paper notes will be required for using the facility of Rank Predictor,College Predictor as well as for tests.Paper Notes can also be obtained though direct monry transfer that is through online payment.");
+        textView3.setText("Every new user will be provided with 30 Paper Notes at the beginning by default.");
+        textView4.setText("These paper notes will be required for using the facility of Rank Predictor,College Predictor as well as for Tests.Paper Notes can also be obtained though direct money transfer that is through online payment.");
         textView5.setText("Payment Gateway is integrated with Razorpay.");
         textView6.setText("The payment facilities include : Credit Card,Debit Card,Net Banking,UPI And Wallet.");
 

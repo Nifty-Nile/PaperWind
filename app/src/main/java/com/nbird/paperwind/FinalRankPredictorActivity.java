@@ -82,7 +82,7 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
 
 
         if(SelectedEntranceExam==1){
-            paths123 = new String[]{"CSE", "IT", "ECE", "EEE", "ME", "TE", "Civil"};
+            paths123 = new String[]{"Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering", "Mathematics", "Physics","Chemistry"};
         }else if(SelectedEntranceExam==4){
             paths123 = new String[]{"Computer Science and Engineering", "Information technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
         }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
@@ -264,6 +264,9 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                     branch = position + 1;
                     break;
                 case 6:
+                    branch = position + 1;
+                    break;
+                case 7:
                     branch = position + 1;
                     break;
 

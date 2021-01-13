@@ -273,19 +273,21 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
         if(SelectedEntranceExam==1){
             switch (Branch){
                 case 1:
-                    branchtext.setText("Branch: "+"CSE");break;
+                    branchtext.setText("Branch: "+"Computer Science and Engineering");break;
                 case 2:
-                    branchtext.setText("Branch: "+"IT");break;
+                    branchtext.setText("Branch: "+"Electronics and Communication Engineering");break;
                 case 3:
-                    branchtext.setText("Branch: "+"ECE");break;
+                    branchtext.setText("Branch: "+"Electrical and Electronics Engineering");break;
                 case 4:
-                    branchtext.setText("Branch: "+"EEE");break;
+                    branchtext.setText("Branch: "+"Mechanical Engineering");break;
                 case 5:
-                    branchtext.setText("Branch: "+"ME");break;
+                    branchtext.setText("Branch: "+"Civil Engineering");break;
                 case 6:
-                    branchtext.setText("Branch: "+"TE");break;
+                    branchtext.setText("Branch: "+"Mathematics");break;
                 case 7:
-                    branchtext.setText("Branch: "+"Civil"); break;
+                    branchtext.setText("Branch: "+"Physics"); break;
+                case 8:
+                    branchtext.setText("Branch: "+"Chemistry"); break;
             }
         }else if(SelectedEntranceExam==4){
             switch (Branch){
@@ -667,88 +669,382 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
     }
 
     public void JeeAdvancegold_general() {
-        if (Rank >= 330) {
-            PlatinumNumber = 1;
-        } else if (Rank >= 300) {
-            PlatinumNumber = 2;
-        } else if (Rank >= 250) {
-            PlatinumNumber = 3;
-        } else if (Rank >= 200) {
-            PlatinumNumber = 4;
-        } else if (Rank >= 150) {
-            PlatinumNumber = 5;
-        } else if (Rank >= 100) {
-            PlatinumNumber = 6;
-        } else if (Rank >= 50) {
-            PlatinumNumber = 7;
-        } else {
-            PlatinumNumber = 8;
+        switch (Gender){
+            case 1:
+                jeeadvancegold_general_male();break;
+            case 2:
+                jeeadvancegold_general_female();break;
         }
 
     }
 
+
+
     public void JeeAdvancegold_obc() {
-        if (Rank >= 330) {
-            PlatinumNumber = 1;
-        } else if (Rank >= 300) {
-            PlatinumNumber = 2;
-        } else if (Rank >= 250) {
-            PlatinumNumber = 3;
-        } else if (Rank >= 200) {
-            PlatinumNumber = 4;
-        } else if (Rank >= 150) {
-            PlatinumNumber = 5;
-        } else if (Rank >= 100) {
-            PlatinumNumber = 6;
-        } else if (Rank >= 50) {
-            PlatinumNumber = 7;
-        } else {
-            PlatinumNumber = 8;
+        switch (Gender){
+            case 1:
+                jeeadvancegold_obc_male();break;
+            case 2:
+                jeeadvancegold_obc_female();break;
         }
 
     }
 
     public void JeeAdvancegold_st() {
-        if (Rank >= 330) {
-            PlatinumNumber = 1;
-        } else if (Rank >= 300) {
-            PlatinumNumber = 2;
-        } else if (Rank >= 250) {
-            PlatinumNumber = 3;
-        } else if (Rank >= 200) {
-            PlatinumNumber = 4;
-        } else if (Rank >= 150) {
-            PlatinumNumber = 5;
-        } else if (Rank >= 100) {
-            PlatinumNumber = 6;
-        } else if (Rank >= 50) {
-            PlatinumNumber = 7;
-        } else {
-            PlatinumNumber = 8;
+        switch (Gender){
+            case 1:
+                jeeadvancegold_st_male();break;
+            case 2:
+                jeeadvancegold_st_female();break;
         }
 
     }
 
     public void JeeAdvancegold_sc() {
-        if (Rank >= 330) {
-            PlatinumNumber = 1;
-        } else if (Rank >= 300) {
-            PlatinumNumber = 2;
-        } else if (Rank >= 250) {
-            PlatinumNumber = 3;
-        } else if (Rank >= 200) {
-            PlatinumNumber = 4;
-        } else if (Rank >= 150) {
-            PlatinumNumber = 5;
-        } else if (Rank >= 100) {
-            PlatinumNumber = 6;
-        } else if (Rank >= 50) {
-            PlatinumNumber = 7;
-        } else {
-            PlatinumNumber = 8;
+        switch (Gender){
+            case 1:
+                jeeadvancegold_sc_male();break;
+            case 2:
+                jeeadvancegold_sc_female();break;
         }
-
     }
+
+    public void jeeadvancegold_general_male(){
+        if (Rank <= 90) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 250) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 350) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 450) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 550) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 700) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 900) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 1100) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 1500) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 2000) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 4000) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 5000) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 6000) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 7000) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 8000) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 9000) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 10000) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 11000) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 13000) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_general_female(){
+        if (Rank <= 300) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 600) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 1000) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 1500) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 2000) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 2800) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 3500) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 4500) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 5700) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 6500) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 7500) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 8500) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 11400) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 11900) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 13600) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 14800) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 15100) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 17100) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 19000) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_obc_male(){
+        if (Rank <= 100) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 200) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 300) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 400) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 500) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 600) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 700) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 800) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 900) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 1000) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 1100) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 1500) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 1700) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 1900) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 2300) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 2800) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 3500) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 4500) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 6000) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_obc_female(){
+        if (Rank <= 130) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 300) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 550) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 730) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 1100) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 1600) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 2500) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 3000) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 3500) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 3800) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 4200) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 4500) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 4800) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 5200) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 5400) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 5600) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 6200) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 6800) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 7300) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_st_male(){
+        if (Rank <= 50) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 100) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 150) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 200) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 250) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 300) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 350) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 400) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 450) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 500) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 550) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 600) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 650) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 700) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 750) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 800) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 900) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 950) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 1100) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_st_female(){
+        if (Rank <= 50) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 100) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 150) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 200) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 250) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 300) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 350) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 400) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 450) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 500) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 550) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 600) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 650) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 700) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 750) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 800) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 900) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 1100) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 1500) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_sc_male(){
+        if (Rank <= 100) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 250) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 350) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 450) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 550) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 650) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 750) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 850) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 950) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 1200) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 1300) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 1400) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 1500) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 1600) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 1700) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 1800) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 1900) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 2200) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 2500) {
+            PlatinumNumber = 19;
+        }
+    }
+
+    public void jeeadvancegold_sc_female(){
+        if (Rank <= 110) {
+            PlatinumNumber = 1;
+        } else if (Rank <= 200) {
+            PlatinumNumber = 2;
+        } else if (Rank <= 300) {
+            PlatinumNumber = 3;
+        } else if (Rank <= 400) {
+            PlatinumNumber = 4;
+        } else if (Rank <= 500) {
+            PlatinumNumber = 5;
+        } else if (Rank <= 600) {
+            PlatinumNumber = 6;
+        } else if (Rank <= 800) {
+            PlatinumNumber = 7;
+        } else if (Rank <= 1000) {
+            PlatinumNumber = 8;
+        } else if (Rank <= 1100) {
+            PlatinumNumber = 9;
+        } else if (Rank <= 1300) {
+            PlatinumNumber = 10;
+        } else if (Rank <= 1400) {
+            PlatinumNumber = 11;
+        } else if (Rank <= 1600) {
+            PlatinumNumber = 12;
+        } else if (Rank <= 2000) {
+            PlatinumNumber = 13;
+        } else if (Rank <= 2300) {
+            PlatinumNumber = 14;
+        } else if (Rank <= 2500) {
+            PlatinumNumber = 15;
+        } else if (Rank <= 2600) {
+            PlatinumNumber = 16;
+        } else if (Rank <= 2800) {
+            PlatinumNumber = 17;
+        } else if (Rank <= 3000) {
+            PlatinumNumber = 18;
+        }else if (Rank <= 3300) {
+            PlatinumNumber = 19;
+        }
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

@@ -13,7 +13,7 @@
                     <item
                         android:id="@+id/referral_code"
                         android:title="Referral Code"
-                        android:icon="@drawable/referralcode"/>
+                        android:icon="@drawable/reficon21"/>
                     <item
                         android:id="@+id/nav_help"
                         android:title="Help Guide"

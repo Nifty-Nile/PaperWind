@@ -7,7 +7,7 @@
     android:padding="3dp"
     android:elevation="5dp"
     android:layout_marginTop="10dp"
-    android:background="@drawable/stroke100">
+    android:background="@drawable/blueroundmoney">
     <ImageView
         android:id="@+id/categoryImage"
         android:layout_width="90dp"
@@ -25,7 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:fontFamily="@font/acme"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/bangers"
         android:text="Capitals And Currencies"
         android:textColor="#ffffff"
         android:textSize="27sp" />

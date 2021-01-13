@@ -13,6 +13,7 @@ import android.content.ClipboardManager;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -41,15 +42,23 @@ public class Referral_Code_Activity extends AppCompatActivity {
     private Dialog loadingDialog;
     RecyclerView recyclerView;
     List<RefHolder> reflist;
+    androidx.appcompat.widget.Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_referral__code_);
 
+        toolbar=findViewById(R.id.toolbar);
+        toolbar.setTitle("Referral Code Activity");
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         recyclerView=(RecyclerView) findViewById(R.id.recyclerview);
         refcopybutton=(Button) findViewById(R.id.clipcopybutton);
         reftext= (TextView) findViewById(R.id.reftext);
-
         heading= (TextView) findViewById(R.id.heading);
         discription= (TextView) findViewById(R.id.discription);
         textview20= (TextView) findViewById(R.id.textView20);
@@ -151,6 +160,21 @@ public class Referral_Code_Activity extends AppCompatActivity {
 
             }
         });
+
+    }
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if(item.getItemId()==android.R.id.home){
+            finish();
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void onBackPressed() {
+        Referral_Code_Activity.super.onBackPressed();
+        finish();
 
     }
 }

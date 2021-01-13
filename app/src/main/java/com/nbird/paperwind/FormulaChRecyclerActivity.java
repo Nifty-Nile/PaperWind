@@ -90,6 +90,7 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
         final FormulaAdapter myAdapter=new FormulaAdapter(lstExam,std,subject);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(myAdapter);
+
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
         bottomNavigationView.setSelectedItemId(R.id.Formulas);

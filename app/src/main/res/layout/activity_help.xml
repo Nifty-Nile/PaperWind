@@ -33,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
-                android:text="Choose you interest and we will guide you to your destination! Ready to fly pilot ?"
+                android:text="Choose your interest and we will guide you to your destination! Ready to fly pilot ?"
                 android:textColor="@color/black"
                 android:fontFamily="@font/aclonica"
                 android:textSize="12sp"/>

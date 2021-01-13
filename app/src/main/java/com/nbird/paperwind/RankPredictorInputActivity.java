@@ -118,7 +118,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         SelectedEntranceExam=getIntent().getIntExtra("RankEE",0);
 
         if(SelectedEntranceExam==1){
-            paths123 = new String[]{"CSE", "IT", "ECE", "EEE", "ME", "TE", "Civil"};
+            paths123 = new String[]{"Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering", "Mathematics", "Physics","Chemistry"};
         }else if(SelectedEntranceExam==4){
             paths123 = new String[]{"Computer Science and Engineering", "Information Technology", "Computer science and Engg. (Specialisation in Bioinformatics)", "BioMedical Engineering", "Biotechnology", "Civil Engineering", "Electronics and Communication Engineering","Electrical and Electronics Engineering","Electronics and Instrumentation Engineering","Mechanical Engineering","Mechanical (Spec. in Automotive Engineering)","Mechanical (Spec. in Energy Engineering)","Chemical Engineering","ECE (Spec.Internet of Things and Sensor)","Comp.Science Engg.(Spec.in Information Security)","Fashion Technology","Electronics and Computer Engineering"};
         }else if(SelectedEntranceExam==5||SelectedEntranceExam==11){
@@ -1044,6 +1044,9 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                     case 6:
                         branch = position + 1;
                         break;
+                    case 7:
+                        branch = position + 1;
+                        break;
 
                 }
             } else if(SelectedEntranceExam == 4) {
@@ -1349,7 +1352,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
     public int exammarkslimit(){
         switch (SelectedEntranceExam){
             case 1:
-                return 360;
+                return 380;
             case 2:
                 return 300;
             case 3:

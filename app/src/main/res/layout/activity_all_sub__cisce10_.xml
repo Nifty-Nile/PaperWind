@@ -615,71 +615,6 @@
                         android:textSize="10sp" />
 
                     <Button
-                        android:id="@+id/tipButton9"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="7dp"
-                        android:background="@drawable/roundbuttons"
-                        android:elevation="30dp"
-                        android:fontFamily="@font/aclonica"
-                        android:gravity="center"
-                        android:text="Get Papers" />
-
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayout0"
-                android:layout_width="match_parent"
-                android:layout_height="150sp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/stroke100"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
-
-                <ImageView
-                    android:layout_width="105dp"
-                    android:layout_height="95dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/evs" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/text19"
-                        android:layout_width="230dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/acme"
-                        android:text="Environmental Application"
-                        android:textColor="#000000"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:id="@+id/text20"
-                        android:layout_width="230dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/acme"
-                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
-                        android:textColor="#000000"
-                        android:textSize="10sp" />
-
-                    <Button
                         android:id="@+id/tipButton10"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
@@ -696,6 +631,8 @@
                 </LinearLayout>
             </LinearLayout>
 
+
+
             <LinearLayout
                 android:id="@+id/linearLayout00"
                 android:layout_width="match_parent"
@@ -706,7 +643,7 @@
                 android:background="@drawable/stroke100"
                 android:orientation="horizontal"
 
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout0">
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
 
                 <ImageView
                     android:layout_width="105dp"
@@ -839,7 +776,7 @@
                     android:layout_height="95dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/physicaledu" />
+                    android:background="@drawable/otherbooks" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -853,7 +790,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Physical Education"
+                        android:text="Rest ALL Subjects"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -885,68 +822,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayout03"
-                android:layout_width="match_parent"
-                android:layout_height="150sp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="10dp"
-                android:background="@drawable/stroke100"
-                android:orientation="horizontal"
 
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout02">
-
-                <ImageView
-                    android:layout_width="105dp"
-                    android:layout_height="95dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/homescience" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/text27"
-                        android:layout_width="230dp"
-                        android:layout_height="30dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="10dp"
-                        android:fontFamily="@font/acme"
-                        android:text="Home Science"
-                        android:textColor="#000000"
-                        android:textSize="22sp" />
-
-                    <TextView
-                        android:id="@+id/text28"
-                        android:layout_width="230dp"
-                        android:layout_height="40dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/acme"
-                        android:text="A wide library of papers coming to you in just one click! Remember: There is no glory in practice, but without practice there is no glory..."
-                        android:textColor="#000000"
-                        android:textSize="10sp" />
-
-                    <Button
-                        android:id="@+id/tipButton14"
-                        android:layout_width="120dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="20dp"
-                        android:layout_marginBottom="7dp"
-                        android:background="@drawable/roundbuttons"
-                        android:elevation="30dp"
-                        android:fontFamily="@font/aclonica"
-                        android:gravity="center"
-                        android:text="Get Papers" />
-
-
-                </LinearLayout>
-            </LinearLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
