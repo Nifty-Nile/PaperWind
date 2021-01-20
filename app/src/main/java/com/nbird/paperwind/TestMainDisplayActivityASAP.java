@@ -504,23 +504,13 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                         else if(subject==2){
                             editorreviewchem.putBoolean(String.valueOf(subnum), false);
                             editorreviewchem.commit();
-
                         }
-
-
                         else if (subject==3){
                             editorreviewmaths.putBoolean(String.valueOf(subnum), false);
                             editorreviewmaths.commit();
-
                         }
                     }
                 });
-
-
-
-
-
-
 
                 saveandnextbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -591,12 +581,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
 
                         }
 
-
-
-
-
                         subnum++;
-
 
                         if(subnum==list.size()+1){
                             Intent intent=new Intent(getBaseContext(),OnlineExamGridShow.class);
@@ -638,8 +623,6 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                                 editorred.commit();
 
                             }
-
-
 
 
                             serialnumber.setText("Question No.: "+String.valueOf(subnum)+"/"+list.size());

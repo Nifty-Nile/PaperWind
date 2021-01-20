@@ -188,9 +188,9 @@ public class ScoreActivity extends AppCompatActivity {
           }
 
 
-          phytext.setText("Physics : "+physcore1);
-          chemtext.setText("Chemistry : "+chemscore1);
-          mathstext.setText("Mathematics : "+mathsscore1);
+          phytext.setText("Physics : "+strphy);
+          chemtext.setText("Chemistry : "+strchem);
+          mathstext.setText("Mathematics : "+strmaths);
 
 
 
@@ -356,11 +356,17 @@ public class ScoreActivity extends AppCompatActivity {
                 fullmarks="Jee Mains Full Marks : 300";
                 title.setText("Entrance Exam : Jee Mains");
                 marks.setText("Marks : "+String.valueOf(totalmarks)+"/360");break;
-
+            case 3:
+                strexamname="NEET";
+                fullmarks="NEET Full Marks : 720";
+                title.setText("Entrance Exam : NEET");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/720");break;
         }
 
         switch (mode123){
             case 1:
+                strmode="Entrance Text";break;
+            case 3:
                 strmode="Entrance Text";break;
         }
     }

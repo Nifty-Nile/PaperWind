@@ -34,15 +34,16 @@
 
         <TextView
             android:id="@+id/textTitle"
-            android:layout_width="321dp"
+            android:layout_width="0dp"
             android:layout_height="95dp"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/amarante"
             android:padding="10dp"
             android:textColor="#000000"
-            android:textSize="18sp"
+            android:textSize="15sp"
             android:textStyle="bold"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

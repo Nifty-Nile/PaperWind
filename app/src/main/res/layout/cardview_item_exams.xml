@@ -10,7 +10,7 @@
     android:background="@drawable/lockpic"
     xmlns:cardview="http://schemas.android.com/apk/res-auto"
     cardview:cardCornerRadius="20dp"
-    android:layout_margin="5dp">
+    >
 
     <LinearLayout
         android:orientation="vertical"

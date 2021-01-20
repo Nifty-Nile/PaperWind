@@ -168,7 +168,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                         final View view1= LayoutInflater.from(Menu1Activity.this).inflate(R.layout.refferalcodeasking,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                         builder.setView(view1);
                         builder.setCancelable(false);
-                        ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                        ((TextView) view1.findViewById(R.id.textTitle)).setText("Earn 10 Paper Notes By Entering Your Friends Referral Code!");
                         ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
                         ((Button) view1.findViewById(R.id.buttonNo)).setText("Not Interested");
                         ((Button) view1.findViewById(R.id.buttonYes)).setText("Check The Code");

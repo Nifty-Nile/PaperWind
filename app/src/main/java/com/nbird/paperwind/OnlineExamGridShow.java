@@ -208,48 +208,50 @@ public class OnlineExamGridShow extends AppCompatActivity {
                     final SharedPreferences.Editor editor2 = settings2.edit();
 
 
-                    for(int i=1;i<=2;i++) {
-                        String answerA0 = settings.getString(String.valueOf(i), "poty");
-                        switch (position){
-                            case 1:
-                                if(answerA0.equals(list1.get(i-1).getCorrectoption())){
-                                    physore=physore+4;
-                                }
-                                else if(answerA0.equals("poty")){
+                    if(position==3){
+                        for(int i=1;i<=40;i++) {
+                            String answerA0 = settings.getString(String.valueOf(i), "poty");
 
-                                }else{
-                                    physore--;
-                                }break;
+                            if(answerA0.equals(list1.get(i-1).getCorrectoption())){
+                                physore=physore+4;
+                            }
+                            else if(answerA0.equals("poty")){
+
+                            }else{
+                                physore--;
+                            }
+
+                        }
+                        for(int i=1;i<=40;i++) {
+                            String answerA1 = settings2.getString(String.valueOf(i), "poty");
+
+                            if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
+                                chemscore = chemscore + 4;
+                            } else if (answerA1.equals("poty")) {
+
+                            } else {
+                                chemscore--;
+
+                            }
+                        }
+                        for(int i=1;i<=90;i++) {
+                            String answerA2 = settings1.getString(String.valueOf(i), "poty");
+
+                            if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
+                                mathsscore = mathsscore + 4;
+                            } else if (answerA2.equals("poty")) {
+
+                            } else {
+                                mathsscore--;
+
+                            }break;
                         }
                     }
-                    for(int i=1;i<=1;i++) {
-                        String answerA1 = settings2.getString(String.valueOf(i), "poty");
-                        switch (position) {
-                            case 1:
-                                if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
-                                    chemscore = chemscore + 4;
-                                } else if (answerA1.equals("poty")) {
 
-                                } else {
-                                    chemscore--;
-                                }
-                                break;
-                        }
-                    }
-                    for(int i=1;i<=1;i++) {
-                        String answerA2 = settings1.getString(String.valueOf(i), "poty");
-                        switch (position) {
-                            case 1:
-                                if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
-                                    mathsscore = mathsscore + 4;
-                                } else if (answerA2.equals("poty")) {
 
-                                } else {
-                                    mathsscore--;
-                                }
-                                break;
-                        }
-                    }
+
+
+
 
 
 
@@ -409,49 +411,48 @@ public class OnlineExamGridShow extends AppCompatActivity {
                     final SharedPreferences settings2 = getBaseContext().getSharedPreferences("Chemistry", 0);
                     final SharedPreferences.Editor editor2 = settings2.edit();
 
+                    if(position==3){
+                        for(int i=1;i<=40;i++) {
+                            String answerA0 = settings.getString(String.valueOf(i), "poty");
 
-                    for(int i=1;i<=2;i++) {
-                        String answerA0 = settings.getString(String.valueOf(i), "poty");
-                        switch (position){
-                            case 1:
-                                if(answerA0.equals(list1.get(i-1).getCorrectoption())){
-                                    physore=physore+4;
-                                }
-                                else if(answerA0.equals("poty")){
+                            if(answerA0.equals(list1.get(i-1).getCorrectoption())){
+                                physore=physore+4;
+                            }
+                            else if(answerA0.equals("poty")){
 
-                                }else{
-                                    physore--;
-                                }break;
+                            }else{
+                                physore--;
+                            }
+
+                        }
+                        for(int i=1;i<=40;i++) {
+                            String answerA1 = settings2.getString(String.valueOf(i), "poty");
+
+                            if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
+                                chemscore = chemscore + 4;
+                            } else if (answerA1.equals("poty")) {
+
+                            } else {
+                                chemscore--;
+
+                            }
+                        }
+                        for(int i=1;i<=90;i++) {
+                            String answerA2 = settings1.getString(String.valueOf(i), "poty");
+
+                            if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
+                                mathsscore = mathsscore + 4;
+                            } else if (answerA2.equals("poty")) {
+
+                            } else {
+                                mathsscore--;
+
+                            }break;
                         }
                     }
-                    for(int i=1;i<=1;i++) {
-                        String answerA1 = settings2.getString(String.valueOf(i), "poty");
-                        switch (position) {
-                            case 1:
-                                if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
-                                    chemscore = chemscore + 4;
-                                } else if (answerA1.equals("poty")) {
 
-                                } else {
-                                    chemscore--;
-                                }
-                                break;
-                        }
-                    }
-                    for(int i=1;i<=1;i++) {
-                        String answerA2 = settings1.getString(String.valueOf(i), "poty");
-                        switch (position) {
-                            case 1:
-                                if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
-                                    mathsscore = mathsscore + 4;
-                                } else if (answerA2.equals("poty")) {
 
-                                } else {
-                                    mathsscore--;
-                                }
-                                break;
-                        }
-                    }
+
 
 
 
@@ -677,62 +678,51 @@ public class OnlineExamGridShow extends AppCompatActivity {
             public void onClick(View view) {
 
 
+             if(position==3){
+                 for(int i=1;i<=40;i++) {
+                     String answerA0 = settings.getString(String.valueOf(i), "poty");
 
+                     if(answerA0.equals(list1.get(i-1).getCorrectoption())){
+                         physore=physore+4;
+                     }
+                     else if(answerA0.equals("poty")){
 
-                for(int i=1;i<=2;i++) {
-                    String answerA0 = settings.getString(String.valueOf(i), "poty");
-                    switch (position){
-                        case 1:
-                            if(answerA0.equals(list1.get(i-1).getCorrectoption())){
-                                physore=physore+4;
-                            }
-                            else if(answerA0.equals("poty")){
+                     }else{
+                         physore--;
+                     }
 
-                            }else{
-                                physore--;
-                            }break;
-                    }
-                }
-                for(int i=1;i<=1;i++) {
-                    String answerA1 = settings2.getString(String.valueOf(i), "poty");
-                    switch (position) {
-                        case 1:
-                        if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
-                            chemscore = chemscore + 4;
-                        } else if (answerA1.equals("poty")) {
+                 }
+                 for(int i=1;i<=40;i++) {
+                     String answerA1 = settings2.getString(String.valueOf(i), "poty");
 
-                        } else {
-                            chemscore--;
-                        }
-                        break;
-                    }
-                }
-                for(int i=1;i<=1;i++) {
-                    String answerA2 = settings1.getString(String.valueOf(i), "poty");
-                    switch (position) {
-                        case 1:
-                        if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
-                            mathsscore = mathsscore + 4;
-                        } else if (answerA2.equals("poty")) {
+                     if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
+                         chemscore = chemscore + 4;
+                     } else if (answerA1.equals("poty")) {
 
-                        } else {
-                            mathsscore--;
-                        }
-                        break;
-                    }
-                }
+                     } else {
+                         chemscore--;
 
+                     }
+                 }
+                 for(int i=1;i<=90;i++) {
+                     String answerA2 = settings1.getString(String.valueOf(i), "poty");
 
+                     if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
+                         mathsscore = mathsscore + 4;
+                     } else if (answerA2.equals("poty")) {
+
+                     } else {
+                         mathsscore--;
+
+                     }break;
+                 }
+             }
 
 
 
                 totalmarks=physore+chemscore+mathsscore;
 
-
-
-
-                 onButtonPressd();
-
+                onButtonPressd();
 
                 editor.clear().apply();
                 editor1.clear().apply();

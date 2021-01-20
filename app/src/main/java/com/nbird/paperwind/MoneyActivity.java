@@ -380,6 +380,7 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
     @Override
     public void onRewardedVideoCompleted() {
+
     }
 
     @Override

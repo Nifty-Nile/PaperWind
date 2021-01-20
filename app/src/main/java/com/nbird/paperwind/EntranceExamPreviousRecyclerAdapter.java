@@ -54,7 +54,7 @@ public class EntranceExamPreviousRecyclerAdapter extends RecyclerView.Adapter<En
             categoryImage=itemView.findViewById(R.id.categoryImage);
         }
 
-        public void setData(String imageurl, String name, final int set) {
+        public void setData(String imageurl, String name,final int set) {
             Glide.with(itemView.getContext()).load(imageurl).into(categoryImage);
             this.title.setText(name);
 
