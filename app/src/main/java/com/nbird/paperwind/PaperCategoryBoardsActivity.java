@@ -13,6 +13,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,8 +25,9 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
     int Exam,Std,Paper;
     TextView text1,text2,text3,text4,text5,text6,text7,text8;
     androidx.appcompat.widget.Toolbar toolbar;
-
-    @Override
+    LinearLayout linearLayout;
+    ImageView ncertimage;
+@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paper_category_boards);
@@ -39,10 +42,10 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         text6=(TextView) findViewById(R.id.text6);
         text7=(TextView) findViewById(R.id.text7);
         text8=(TextView) findViewById(R.id.text8);
-
+        linearLayout=(LinearLayout) findViewById(R.id.fourlinearlayout);
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Category Activity");
-
+        ncertimage=(ImageView) findViewById(R.id.ncertimage);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -91,11 +94,18 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
             text6.setTextColor(Color.parseColor("#000000"));
             text7.setTextColor(Color.parseColor("#000000"));
             text8.setTextColor(Color.parseColor("#000000"));
-
-
         }
 
-
+        if(Exam==2){
+            text7.setAlpha(0);
+            text8.setAlpha(0);
+            linearLayout.setBackground(null);
+            ncertimage.setBackground(null);
+            NCERTSolutions.setClickable(false);
+            NCERTSolutions.setEnabled(false);
+            NCERTSolutions.setBackground(null);
+            NCERTSolutions.setText("");
+        }
 
         previousyearpaperbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,6 +201,11 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
+
+
         NCERTSolutions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

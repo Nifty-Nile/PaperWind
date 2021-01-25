@@ -76,12 +76,13 @@
                 android:id="@+id/text1"
                 android:layout_width="230dp"
                 android:layout_height="50dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/acme"
                 android:text="Quick Formulae for the subject right here! Afterall, You dont want to look back and know you could've done better."
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <Button
                 android:id="@+id/tipButton1"
@@ -133,11 +134,12 @@
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/acme"
                 android:text="Quick Formulae for the subject right here! Afterall, You dont want to look back and know you could've done better."
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <Button
                 android:id="@+id/tipButton2"
@@ -189,11 +191,12 @@
                 android:layout_width="230dp"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/acme"
                 android:text="Quick Formulae for the subject right here! Afterall, You dont want to look back and know you could've done better."
                 android:textColor="#000000"
-                android:textSize="12sp" />
+                android:textSize="10sp" />
 
             <Button
                 android:id="@+id/tipButton3"

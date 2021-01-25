@@ -9,11 +9,14 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -41,7 +44,7 @@ public class OnlineExamGridShow extends AppCompatActivity {
     long time,times;
     String value;
     int minutes,sec;
-
+    Button infobutton;
 
 
 
@@ -68,6 +71,7 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
         submitbutton=(Button) findViewById(R.id.submitbutton);
         pausebutton=(Button) findViewById(R.id.PauseTestButton);
+        infobutton=(Button) findViewById(R.id.infobutton);
         timer=(TextView) findViewById(R.id.timer);
         timersec=(TextView) findViewById(R.id.sec);
 
@@ -80,6 +84,35 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
         SharedPreferences.Editor editorlightanddark = lightanddark.edit();
+
+        infobutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(OnlineExamGridShow.this,R.style.AlertDialogTheme);
+                View view1= LayoutInflater.from(OnlineExamGridShow.this).inflate(R.layout.infobuttonlayout,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                builder.setView(view1);
+
+
+                final AlertDialog alertDialog=builder.create();
+
+                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        alertDialog.dismiss();
+
+                    }
+                });
+
+
+                if(alertDialog.getWindow()!=null){
+                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                }
+                alertDialog.show();
+            }
+        });
+
+
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
@@ -714,7 +747,45 @@ public class OnlineExamGridShow extends AppCompatActivity {
                      } else {
                          mathsscore--;
 
-                     }break;
+                     }
+                 }
+             }else if(position==7) {
+                 for (int i = 1; i <= 40; i++) {
+                     String answerA0 = settings.getString(String.valueOf(i), "poty");
+
+                     if (answerA0.equals(list1.get(i - 1).getCorrectoption())) {
+                         physore = physore + 4;
+                     } else if (answerA0.equals("poty")) {
+
+                     } else {
+                         physore--;
+                     }
+
+                 }
+                 for (int i = 1; i <= 40; i++) {
+                     String answerA1 = settings2.getString(String.valueOf(i), "poty");
+
+                     if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
+                         chemscore = chemscore + 4;
+                     } else if (answerA1.equals("poty")) {
+
+                     } else {
+                         chemscore--;
+
+                     }
+                 }
+                 for (int i = 1; i <= 65; i++) {
+                     String answerA2 = settings1.getString(String.valueOf(i), "poty");
+
+                     if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
+                         mathsscore = mathsscore + 4;
+                     } else if (answerA2.equals("poty")) {
+
+                     } else {
+                         mathsscore--;
+
+                     }
+
                  }
              }
 

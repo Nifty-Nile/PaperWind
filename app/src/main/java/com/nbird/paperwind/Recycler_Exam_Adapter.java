@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.List;
 
@@ -18,14 +21,14 @@ public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Ad
 
     private List<Recycler_Exam_Holder> listItem;
     int Exam,Std,Paper,Chapter;
-
-    public Recycler_Exam_Adapter(List<Recycler_Exam_Holder> listItem,int Exam,int Std,int Paper,int Chapter){
+    private InterstitialAd interstitialAd;
+    public Recycler_Exam_Adapter(List<Recycler_Exam_Holder> listItem,int Exam,int Std,int Paper,int Chapter,InterstitialAd interstitialAd){
         this.listItem=listItem;
         this.Exam=Exam;
         this.Std=Std;
         this.Paper=Paper;
         this.Chapter=Chapter;
-
+        this.interstitialAd=interstitialAd;
     }
 
 
@@ -65,15 +68,46 @@ public class Recycler_Exam_Adapter extends RecyclerView.Adapter<Recycler_Exam_Ad
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent=new Intent(itemView.getContext(),Pdf_Display_Activity.class);
-                    intent.putExtra("Exam",Exam);
-                    intent.putExtra("Std",Std);
-                    intent.putExtra("Paper",Paper);
-                    intent.putExtra("Chapter",Chapter);
-                    intent.putExtra("set",set);
-                    itemView.getContext().startActivity(intent);
+
+                    interstitialAd.setAdListener(new AdListener(){
+                        public void onAdClosed(){
+                            super.onAdClosed();
+                            interstitialAd.loadAd(new AdRequest.Builder().build());
+                            Intent intent=new Intent(itemView.getContext(),Pdf_Display_Activity.class);
+                            intent.putExtra("Exam",Exam);
+                            intent.putExtra("Std",Std);
+                            intent.putExtra("Paper",Paper);
+                            intent.putExtra("Chapter",Chapter);
+                            intent.putExtra("set",set);
+                            itemView.getContext().startActivity(intent);
+                        }
+
+                    });
+
+                    if(interstitialAd.isLoaded()){
+                        interstitialAd.show();
+                        return;
+                    }
+
+
+                    itemView.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent=new Intent(itemView.getContext(),Pdf_Display_Activity.class);
+                            intent.putExtra("Exam",Exam);
+                            intent.putExtra("Std",Std);
+                            intent.putExtra("Paper",Paper);
+                            intent.putExtra("Chapter",Chapter);
+                            intent.putExtra("set",set);
+                            itemView.getContext().startActivity(intent);
+                        }
+                    });
                 }
             });
+
+
+
+
         }
     }
 }

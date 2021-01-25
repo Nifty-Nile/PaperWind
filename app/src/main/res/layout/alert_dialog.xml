@@ -13,7 +13,7 @@
         android:id="@+id/layoutDialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/dialog_background"
+        android:background="@drawable/whitebackmoney"
         app:layout_constraintTop_toTopOf="parent"
         >
 
@@ -53,7 +53,7 @@
             android:layout_marginBottom="40dp"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="16sp"
             android:textStyle="bold"
             android:fontFamily="@font/amarante"

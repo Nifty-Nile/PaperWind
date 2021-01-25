@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,12 +39,12 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
     int position1;
     TextView text1;
     androidx.appcompat.widget.Toolbar toolbar;
-
+    private InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entrance_exam_previous_recycler);
-
+        loadAds();
        position1=getIntent().getIntExtra("position",0);
 
        text1=(TextView) findViewById(R.id.text1);
@@ -116,7 +118,7 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
         list = new ArrayList<>();
         loadingDialog.show();
 
-        final EntranceExamPreviousRecyclerAdapter categoryAdapter = new EntranceExamPreviousRecyclerAdapter(list,position1);
+        final EntranceExamPreviousRecyclerAdapter categoryAdapter = new EntranceExamPreviousRecyclerAdapter(list,position1,mInterstitialAd);
         recyclerView.setAdapter(categoryAdapter);
 
 
@@ -131,7 +133,6 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
                 loadingDialog.dismiss();
 
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
                 Toast.makeText(EntranceExamPreviousRecyclerActivity.this,"Data Can't be Loaded", Toast.LENGTH_SHORT).show();
@@ -140,6 +141,13 @@ public class EntranceExamPreviousRecyclerActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void loadAds(){
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitialAd_id));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
+    }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 

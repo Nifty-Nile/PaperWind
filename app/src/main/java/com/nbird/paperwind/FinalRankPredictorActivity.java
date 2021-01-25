@@ -30,6 +30,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,7 +49,10 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
     androidx.appcompat.widget.Toolbar toolbar;
     private Spinner spinner2;
     private static String[] paths123;
-
+    int post,value1;
+    FirebaseAuth fAuth;
+    int permission;
+    final DatabaseReference reference1 = database.getReference("User");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +83,32 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         Gender0=getIntent().getIntExtra("Gender",0);
         Cast0=getIntent().getIntExtra("cast",0);
         branch=getIntent().getIntExtra("Branch",0);
+        fAuth = FirebaseAuth.getInstance();
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                post = dataSnapshot.getValue(Integer.class);
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // convert the data back to the model
+                value1 = dataSnapshot.getValue(Integer.class);
+                // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         if(SelectedEntranceExam==1){
             paths123 = new String[]{"Computer Science and Engineering", "Electronics and Communication Engineering", "Electrical and Electronics Engineering", "Mechanical Engineering", "Civil Engineering", "Mathematics", "Physics","Chemistry"};
@@ -188,20 +217,147 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
                             if(!college()) {
                                 return false;
                             }
-                            inputrank=Integer.valueOf(scoretext.getText().toString());
-                            Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
-                            intent.putExtra("RankEE",SelectedEntranceExam);
-                            intent.putExtra("InputPredictor",2);
-                            intent.putExtra("Rank1",inputrank);
-                            intent.putExtra("Gender",Gender0);
-                            intent.putExtra("cast",Cast0);
-                            intent.putExtra("Branch",branch);
-                            startActivity(intent);
-                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                            finish();
+
+                            if(post==0){
+                                if(value1<=40){
+                                    AlertDialog.Builder builder=new AlertDialog.Builder(FinalRankPredictorActivity.this,R.style.AlertDialogTheme);
+                                    View view1= LayoutInflater.from(FinalRankPredictorActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                    builder.setView(view1);
+                                    ((TextView) view1.findViewById(R.id.textTitle)).setText("You need 40 Paper Notes!");
+                                    ((TextView) view1.findViewById(R.id.textMessage)).setText("To use College Predictor you must have 40 Paper Notes!");
+                                    ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
+                                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Some Paper Notes!");
+                                    ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                                    final AlertDialog alertDialog=builder.create();
+
+                                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+
+
+                                            Intent intent=new Intent(getBaseContext(),MoneyActivity.class);
+                                            startActivity(intent);
+                                            alertDialog.dismiss();
+                                            finish();
+                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                                        }
+                                    });
+                                    view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            alertDialog.dismiss();
+
+                                        }
+                                    });
+
+                                    if(alertDialog.getWindow()!=null){
+                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                    }
+                                    alertDialog.show();
+                                }else{
+
+                                    AlertDialog.Builder builder=new AlertDialog.Builder(FinalRankPredictorActivity.this,R.style.AlertDialogTheme);
+                                    View view1= LayoutInflater.from(FinalRankPredictorActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                    builder.setView(view1);
+                                    ((TextView) view1.findViewById(R.id.textTitle)).setText("Use 40 Paper Notes");
+                                    ((TextView) view1.findViewById(R.id.textMessage)).setText("Pay 40 Paper Notes To Get Life Time Full Access To College Predictor");
+                                    ((Button) view1.findViewById(R.id.buttonNo)).setText("Cancel");
+                                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Pay 40 Paper Notes!");
+                                    ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                                    final AlertDialog alertDialog=builder.create();
+
+                                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            value1 = value1 - 40;
+
+                                            reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Toast.makeText(FinalRankPredictorActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                                                    } else {
+                                                        Toast.makeText(FinalRankPredictorActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
 
 
 
+                                            permission=1;
+                                            reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if(task.isSuccessful()){
+                                                        Toast.makeText(FinalRankPredictorActivity.this, "College Predictor Is All Yours Now! Use It For Unlimited Time.", Toast.LENGTH_LONG).show();
+                                                    }else{
+                                                        Toast.makeText(FinalRankPredictorActivity.this, "An Error Occured!", Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
+
+
+
+
+
+
+
+
+
+
+                                            alertDialog.dismiss();
+                                            inputrank=Integer.valueOf(scoretext.getText().toString());
+                                            Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
+                                            intent.putExtra("RankEE",SelectedEntranceExam);
+                                            intent.putExtra("InputPredictor",2);
+                                            intent.putExtra("Rank1",inputrank);
+                                            intent.putExtra("Gender",Gender0);
+                                            intent.putExtra("cast",Cast0);
+                                            intent.putExtra("Branch",branch);
+                                            startActivity(intent);
+                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                            finish();
+
+
+
+                                        }
+                                    });
+                                    view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View view) {
+                                            alertDialog.dismiss();
+
+                                        }
+                                    });
+
+                                    if(alertDialog.getWindow()!=null){
+                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                                    }
+                                    alertDialog.show();
+
+
+                                }
+                            }else{
+
+                                inputrank=Integer.valueOf(scoretext.getText().toString());
+                                Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
+                                intent.putExtra("RankEE",SelectedEntranceExam);
+                                intent.putExtra("InputPredictor",2);
+                                intent.putExtra("Rank1",inputrank);
+                                intent.putExtra("Gender",Gender0);
+                                intent.putExtra("cast",Cast0);
+                                intent.putExtra("Branch",branch);
+                                startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                finish();
+                            }
+                            return true;
+
+                        default:
+                            break;
                     }
                 }
                 return false;
@@ -212,17 +368,154 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         getCollege.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                inputrank=Integer.valueOf(scoretext.getText().toString());
-                Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
-                intent.putExtra("RankEE",SelectedEntranceExam);
-                intent.putExtra("InputPredictor",2);
-                intent.putExtra("Rank1",inputrank);
-                intent.putExtra("Gender",Gender0);
-                intent.putExtra("cast",Cast0);
-                intent.putExtra("Branch",branch);
-                startActivity(intent);
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                finish();
+
+                if(!college()){
+                    return;
+                }
+
+
+
+                if(post==0){
+                    if(value1==40){
+                        AlertDialog.Builder builder=new AlertDialog.Builder(FinalRankPredictorActivity.this,R.style.AlertDialogTheme);
+                        View view1= LayoutInflater.from(FinalRankPredictorActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                        builder.setView(view1);
+                        ((TextView) view1.findViewById(R.id.textTitle)).setText("You need 40 Paper Notes!");
+                        ((TextView) view1.findViewById(R.id.textMessage)).setText("To use Rank Predictor you must have 40 Paper Notes!");
+                        ((Button) view1.findViewById(R.id.buttonNo)).setText("OK");
+                        ((Button) view1.findViewById(R.id.buttonYes)).setText("Get Some Paper Notes!");
+                        ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                        final AlertDialog alertDialog=builder.create();
+
+                        view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+
+
+                                Intent intent=new Intent(getBaseContext(),MoneyActivity.class);
+                                startActivity(intent);
+                                alertDialog.dismiss();
+                                finish();
+                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+
+                            }
+                        });
+                        view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                alertDialog.dismiss();
+
+                            }
+                        });
+
+                        if(alertDialog.getWindow()!=null){
+                            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                        }
+                        alertDialog.show();
+                    }else{
+
+                        AlertDialog.Builder builder=new AlertDialog.Builder(FinalRankPredictorActivity.this,R.style.AlertDialogTheme);
+                        View view1= LayoutInflater.from(FinalRankPredictorActivity.this).inflate(R.layout.alert_dialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                        builder.setView(view1);
+                        ((TextView) view1.findViewById(R.id.textTitle)).setText("Use 40 Paper Notes");
+                        ((TextView) view1.findViewById(R.id.textMessage)).setText("Pay 40 Paper Notes To Get Life Time Full Access To College Predictor");
+                        ((Button) view1.findViewById(R.id.buttonNo)).setText("Cancel");
+                        ((Button) view1.findViewById(R.id.buttonYes)).setText("Pay 40 Paper Notes!");
+                        ((ImageView) view1.findViewById(R.id.imageIcon)).setImageResource(R.drawable.ic_baseline_timer_24);
+
+                        final AlertDialog alertDialog=builder.create();
+
+                        view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                value1 = value1 - 40;
+
+                                reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("money").setValue(value1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(FinalRankPredictorActivity.this, "Record Saved!", Toast.LENGTH_LONG).show();
+                                        } else {
+                                            Toast.makeText(FinalRankPredictorActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+
+
+
+                                permission=1;
+                                reference1.child(fAuth.getCurrentUser().getUid()).child("personal").child("permission").setValue(permission).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if(task.isSuccessful()){
+                                            Toast.makeText(FinalRankPredictorActivity.this, "College Predictor Is All Yours Now! Use It For Unlimited Time.", Toast.LENGTH_LONG).show();
+                                        }else{
+                                            Toast.makeText(FinalRankPredictorActivity.this, "An Error Occured!", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+
+
+
+
+
+
+
+
+
+                                alertDialog.dismiss();
+
+                                inputrank=Integer.valueOf(scoretext.getText().toString());
+                                Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
+                                intent.putExtra("RankEE",SelectedEntranceExam);
+                                intent.putExtra("InputPredictor",2);
+                                intent.putExtra("Rank1",inputrank);
+                                intent.putExtra("Gender",Gender0);
+                                intent.putExtra("cast",Cast0);
+                                intent.putExtra("Branch",branch);
+                                startActivity(intent);
+                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                finish();
+
+
+
+                            }
+                        });
+                        view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                alertDialog.dismiss();
+
+                            }
+                        });
+
+                        if(alertDialog.getWindow()!=null){
+                            alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
+                        }
+                        alertDialog.show();
+
+
+                    }
+                }else{
+
+
+                    inputrank=Integer.valueOf(scoretext.getText().toString());
+                    Intent intent=new Intent(getBaseContext(),CollegePredictorMainActivity.class);
+                    intent.putExtra("RankEE",SelectedEntranceExam);
+                    intent.putExtra("InputPredictor",2);
+                    intent.putExtra("Rank1",inputrank);
+                    intent.putExtra("Gender",Gender0);
+                    intent.putExtra("cast",Cast0);
+                    intent.putExtra("Branch",branch);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                    finish();
+                }
+
+
+
+
             }
         });
 

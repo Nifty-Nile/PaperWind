@@ -90,9 +90,6 @@ public class EntranceExamRecordAdapter extends RecyclerView.Adapter<EntranceExam
             this.mode.setText("Mode : "+mode);
             this.setno.setText("Paper Set No. : "+setno);
             this.fullmarksexam1.setText(fullmarksexam5);
-
-
-
         }
     }
 }

@@ -17,6 +17,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,11 +41,12 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView textView3;
     androidx.appcompat.widget.Toolbar toolbar;
+    private InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formula_ch_recycler);
-
+       loadAds();
         textView3=(TextView) findViewById(R.id.textView3);
 
         std=getIntent().getIntExtra("Std100",0);
@@ -87,7 +90,7 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
         loadingDialog.show();
         lstExam=new ArrayList<>();
         recyclerView=(RecyclerView) findViewById(R.id.recyclerview);
-        final FormulaAdapter myAdapter=new FormulaAdapter(lstExam,std,subject);
+        final FormulaAdapter myAdapter=new FormulaAdapter(lstExam,std,subject,mInterstitialAd);
         recyclerView.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView.setAdapter(myAdapter);
 
@@ -146,6 +149,11 @@ public class FormulaChRecyclerActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+    private void loadAds(){
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitialAd_id));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

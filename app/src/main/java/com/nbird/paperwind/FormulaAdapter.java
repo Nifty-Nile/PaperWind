@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 
 import java.util.List;
 
@@ -22,12 +25,13 @@ public class FormulaAdapter extends RecyclerView.Adapter<FormulaAdapter.viewhold
 
 
     int std,subject;
+    private InterstitialAd interstitialAd;
 
-
-    public FormulaAdapter(List<FormulaHolder> listItem, int std, int subject) {
+    public FormulaAdapter(List<FormulaHolder> listItem, int std, int subject,InterstitialAd interstitialAd) {
         this.listItem = listItem;
         this.std=std;
         this.subject=subject;
+        this.interstitialAd=interstitialAd;
     }
 
 
@@ -64,6 +68,25 @@ public class FormulaAdapter extends RecyclerView.Adapter<FormulaAdapter.viewhold
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    interstitialAd.setAdListener(new AdListener(){
+                        public void onAdClosed(){
+                            super.onAdClosed();
+                            interstitialAd.loadAd(new AdRequest.Builder().build());
+                            Intent intent=new Intent(itemView.getContext(),Formula_Pdf_Activity.class);
+                            intent.putExtra("Subject100",subject);
+                            intent.putExtra("Std100",std);
+                            intent.putExtra("set",set);
+                            itemView.getContext().startActivity(intent);
+                        }
+
+                    });
+
+                    if(interstitialAd.isLoaded()){
+                        interstitialAd.show();
+                        return;
+                    }
+
                     Intent intent=new Intent(itemView.getContext(),Formula_Pdf_Activity.class);
                     intent.putExtra("Subject100",subject);
                     intent.putExtra("Std100",std);

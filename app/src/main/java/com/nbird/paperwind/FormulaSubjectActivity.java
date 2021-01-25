@@ -57,10 +57,7 @@ public class FormulaSubjectActivity extends AppCompatActivity {
 
         bottomNavigationView.setSelectedItemId(R.id.Formulas);
 
-
         // **************** Bottom navigation View **********************
-
-
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override

@@ -213,17 +213,11 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // radiobutton by returned id
 
-                               if (selectedId == 2131362231) {
+                               if (selectedId == 2131362239) {
                                     i = 1;
                                 } else {
                                     i = 2;
                                }
-
-
-
-
-
-
                                 Intent intent = new Intent(getBaseContext(), FinalRankPredictorActivity.class);
                                 intent.putExtra("RankEE", SelectedEntranceExam);
                                 intent.putExtra("InputPredictor", 1);
@@ -358,7 +352,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131362231){
+                                            if(selectedId==2131362239){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -407,7 +401,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362231){
+                                if(selectedId==2131362239){
                                     i=1;
                                 }else{
                                     i=2;
@@ -608,7 +602,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // radiobutton by returned id
 
-                    if (selectedId == 2131362231) {
+                    if (selectedId == 2131362239) {
                         i = 1;
                     } else {
                         i = 2;
@@ -745,7 +739,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131362231){
+                                            if(selectedId==2131362239){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -791,7 +785,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362231){
+                                if(selectedId==2131362239){
                                     i=1;
                                 }else{
                                     i=2;
@@ -912,11 +906,6 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                                     }
                                 });
 
-
-
-
-
-
                                 rank = Integer.valueOf(ranktext.getText().toString());
 
                                 int i=0;
@@ -925,7 +914,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362231){
+                                if(selectedId==2131362239){
                                     i=1;
                                 }else{
                                     i=2;
@@ -971,7 +960,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // find the radiobutton by returned id
 
-                    if(selectedId==2131362231){
+                    if(selectedId==2131362239){
                         i=1;
                     }else{
                         i=2;
@@ -1335,7 +1324,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
                 }
             }
             if(r!=len){
-                ranktext.setError("Rank should be an integer");
+                ranktext.setError("Rank should be an integer or please check your input Again.");
                 return false;
             }
         }

@@ -12,6 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +35,7 @@ public class EntranceExamPreviousPDFDisplayActivity extends AppCompatActivity {
     int position,set;
     private Dialog loadingDialog;
     androidx.appcompat.widget.Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,6 +91,8 @@ public class EntranceExamPreviousPDFDisplayActivity extends AppCompatActivity {
                 finish();
             }
         });}
+
+
 
     class RetrivePdfStream extends AsyncTask<String,Void, InputStream> {
 

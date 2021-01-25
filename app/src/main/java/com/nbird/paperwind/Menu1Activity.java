@@ -795,11 +795,8 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                     if (resultCode == RESULT_OK && data != null) {
                         Bitmap selectedImage = (Bitmap) data.getExtras().get("data");
                         nav_image.setImageBitmap(selectedImage);
-
-
                         uploadImage();
                     }
-
                     break;*/
                 case 1:
                     if (resultCode == RESULT_OK) {

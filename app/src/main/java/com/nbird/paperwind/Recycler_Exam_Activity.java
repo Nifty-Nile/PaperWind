@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,12 +36,12 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
     int Exam,Std,Paper,Chapter;
     TextView text0;
     androidx.appcompat.widget.Toolbar toolbar;
-
+    private InterstitialAd mInterstitialAd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler__exam_);
-
+        loadAds();
         Exam=getIntent().getIntExtra("Exam",0);
         Std=getIntent().getIntExtra("Std",0);
         Paper=getIntent().getIntExtra("Paper",0);
@@ -92,7 +94,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
         list = new ArrayList<>();
         loadingDialog.show();
 
-        final Recycler_Exam_Adapter categoryAdapter = new Recycler_Exam_Adapter(list,Exam,Std,Paper,Chapter);
+        final Recycler_Exam_Adapter categoryAdapter = new Recycler_Exam_Adapter(list,Exam,Std,Paper,Chapter,mInterstitialAd);
         recyclerView.setAdapter(categoryAdapter);
 
 
@@ -116,6 +118,11 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
             }
         });
 
+    }
+    private void loadAds(){
+        mInterstitialAd = new InterstitialAd(this);
+        mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitialAd_id));
+        mInterstitialAd.loadAd(new AdRequest.Builder().build());
     }
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

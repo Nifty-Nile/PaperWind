@@ -452,6 +452,205 @@ This app is made keeping in mind the likes and needs of every student out there,
                     app:layout_constraintTop_toBottomOf="@+id/imageView1112" />
 
                 <ImageView
+                    android:id="@+id/imageView111"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:alpha="0.7"
+                    android:background="@drawable/loadingbackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView110"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView60"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    android:background="@drawable/snehapic1"
+                    app:layout_constraintStart_toStartOf="@+id/imageView111"
+                    app:layout_constraintTop_toTopOf="@+id/imageView111" />
+
+
+                <TextView
+                    android:id="@+id/textView001"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="Sneha Pandit"
+                    android:textSize="19sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView60"
+                    app:layout_constraintTop_toTopOf="@+id/imageView111" />
+
+                <TextView
+                    android:id="@+id/textViews1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="Data Analyst"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView001"
+                    app:layout_constraintTop_toBottomOf="@+id/textView001" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="I'm an Undergraduate Student and have been associate with this app as a data analyst.Its my first app in the playstore. Made this in the curiosity of exploring a new arena. Hope you guys find it helpful. Your reviews are much treasured, do feel free to contact us, and help us in improving it further. imohkoylada47@gmail.com"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView111"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView111"
+                    app:layout_constraintStart_toEndOf="@+id/imageView60"
+                    app:layout_constraintTop_toBottomOf="@+id/textViews1" />
+
+                <ImageView
+                    android:id="@+id/imageView001"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:alpha="0.7"
+                    android:background="@drawable/loadingbackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView111"/>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView61"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    android:background="@drawable/zimmypic1"
+                    app:layout_constraintStart_toStartOf="@+id/imageView001"
+                    app:layout_constraintTop_toTopOf="@+id/imageView001" />
+                <TextView
+                    android:id="@+id/textView002"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="Zimmy Changela"
+                    android:textSize="19sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView61"
+                    app:layout_constraintTop_toTopOf="@+id/imageView001" />
+
+                <TextView
+                    android:id="@+id/textViews2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="Data Analyst"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView002"
+                    app:layout_constraintTop_toBottomOf="@+id/textView002" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="I'm an Undergraduate Student and have been associate with this app as a data analyst.Its my first app in the playstore. Made this in the curiosity of exploring a new arena. Hope you guys find it helpful. Your reviews are much treasured, do feel free to contact us, and help us in improving it further. imohkoylada47@gmail.com"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView001"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView001"
+                    app:layout_constraintStart_toEndOf="@+id/imageView61"
+                    app:layout_constraintTop_toBottomOf="@+id/textViews2" />
+
+                <ImageView
+                    android:id="@+id/imageView002"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:alpha="0.7"
+                    android:background="@drawable/loadingbackground"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView001"/>
+
+
+
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imageView62"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="15dp"
+                    android:elevation="1dp"
+                    android:background="@drawable/gitikapic1"
+                    app:layout_constraintStart_toStartOf="@+id/imageView002"
+                    app:layout_constraintTop_toTopOf="@+id/imageView002" />
+
+                <TextView
+                    android:id="@+id/textView003"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="Gittika Agarwal"
+                    android:textSize="19sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView62"
+                    app:layout_constraintTop_toTopOf="@+id/imageView002" />
+
+                <TextView
+                    android:id="@+id/textViews3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="Data Analyst"
+                    android:textSize="13sp"
+                    app:layout_constraintStart_toStartOf="@+id/textView003"
+                    app:layout_constraintTop_toBottomOf="@+id/textView003" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="15dp"
+                    android:elevation="1dp"
+                    android:fontFamily="@font/aladin"
+                    android:text="I'm an Undergraduate Student and have been associate with this app as a data analyst.Its my first app in the playstore. Made this in the curiosity of exploring a new arena. Hope you guys find it helpful. Your reviews are much treasured, do feel free to contact us, and help us in improving it further. imohkoylada47@gmail.com"
+                    android:textSize="11sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView002"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView002"
+                    app:layout_constraintStart_toEndOf="@+id/imageView62"
+                    app:layout_constraintTop_toBottomOf="@+id/textViews3" />
+
+                <ImageView
                     android:id="@+id/imageView120"
                     android:layout_width="0dp"
                     android:layout_height="170dp"

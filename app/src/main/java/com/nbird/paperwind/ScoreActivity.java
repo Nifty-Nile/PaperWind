@@ -309,8 +309,6 @@ public class ScoreActivity extends AppCompatActivity {
             visitors1.add(new PieEntry(mathsscore1,"Mathematics"));
         }
 
-
-
         PieDataSet pieDataSet=new PieDataSet(visitors1,"Subjects Marks Distribution");
         pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         pieDataSet.setValueTextColor(Color.BLACK);
@@ -318,17 +316,10 @@ public class ScoreActivity extends AppCompatActivity {
 
         PieData pieData=new PieData(pieDataSet);
 
-
         pieChart.setData(pieData);
         pieChart.getDescription().setEnabled(false);
         pieChart.setCenterText("Subjects");
         pieChart.animate();
-
-
-
-
-
-
 
     }
 
@@ -351,7 +342,7 @@ public class ScoreActivity extends AppCompatActivity {
 
     public void manupulator(){
         switch (SelectedEntranceExam){
-            case 1:
+            case 2:
                 strexamname="Jee Mains";
                 fullmarks="Jee Mains Full Marks : 300";
                 title.setText("Entrance Exam : Jee Mains");
@@ -361,12 +352,68 @@ public class ScoreActivity extends AppCompatActivity {
                 fullmarks="NEET Full Marks : 720";
                 title.setText("Entrance Exam : NEET");
                 marks.setText("Marks : "+String.valueOf(totalmarks)+"/720");break;
+            case 4:
+                strexamname="Viteee";
+                fullmarks="Jee Mains Full Marks : 300";
+                title.setText("Entrance Exam : Viteee");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/360");break;
+            case 5:
+                strexamname="Comedk";
+                fullmarks="Comedk Full Marks : 720";
+                title.setText("Entrance Exam : Comedk");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/720");break;
+            case 7:
+                strexamname="Bitsat";
+                fullmarks="Bitsat Full Marks : 450";
+                title.setText("Entrance Exam : Bitsat");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/450");break;
+            case 8:
+                strexamname="MET";
+                fullmarks="MET Full Marks : 300";
+                title.setText("Entrance Exam : MET");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/360");break;
+            case 9:
+                strexamname="MHCET";
+                fullmarks="MHCET Full Marks : 720";
+                title.setText("Entrance Exam : MHCET");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/720");break;
+            case 10:
+                strexamname="Srmjee";
+                fullmarks="Srmjee Full Marks : 300";
+                title.setText("Entrance Exam : Srmjee");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/360");break;
+            case 11:
+                strexamname="Kcet";
+                fullmarks="Kcet Full Marks : 720";
+                title.setText("Entrance Exam : Kcet");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/720");break;
+            case 12:
+                strexamname="IPU-CET";
+                fullmarks="IPU-CET Full Marks : 450";
+                title.setText("Entrance Exam : IPU-CET");
+                marks.setText("Marks : "+String.valueOf(totalmarks)+"/450");break;
         }
 
         switch (mode123){
-            case 1:
+            case 2:
                 strmode="Entrance Text";break;
             case 3:
+                strmode="Entrance Text";break;
+            case 4:
+                strmode="Entrance Text";break;
+            case 5:
+                strmode="Entrance Text";break;
+            case 7:
+                strmode="Entrance Text";break;
+            case 8:
+                strmode="Entrance Text";break;
+            case 9:
+                strmode="Entrance Text";break;
+            case 10:
+                strmode="Entrance Text";break;
+            case 11:
+                strmode="Entrance Text";break;
+            case 12:
                 strmode="Entrance Text";break;
         }
     }
