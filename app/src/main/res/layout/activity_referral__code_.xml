@@ -108,6 +108,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clipcopybutton" />
 
+    <TextView
+        android:id="@+id/emptytext"
+        android:layout_width="0dp"
+        android:layout_height="37dp"
+        android:fontFamily="@font/aladin"
+        android:padding="5dp"
+        android:text="No Referrals Till Now"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         layout_constraintBottom_toTopOf="@+id/bottomnavigatio"

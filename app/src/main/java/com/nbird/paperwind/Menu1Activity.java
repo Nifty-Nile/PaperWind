@@ -109,6 +109,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
     String name;
     int i=0;
     boolean retval1;
+    StorageReference storageRef = FirebaseStorage.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -821,6 +822,13 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
 
     private void uploadImage()
     {
+        final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
+        final SharedPreferences.Editor editormailreminder = mailreminder.edit();
+        mailid123 = mailreminder.getString("123", "abc@gmail.com");
+
+
+
+
         if (imageUri != null) {
 
             // Code for showing progressDialog while uploading
@@ -833,11 +841,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
             storage = FirebaseStorage.getInstance();
             storageReference = storage.getReference();
 
-            final SharedPreferences mailreminder = this.getSharedPreferences("mailreminder123", 0);
-            final SharedPreferences.Editor editormailreminder = mailreminder.edit();
 
-
-            mailid123 = mailreminder.getString("123", "abc@gmail.com");
             randomuid=UUID.randomUUID().toString();
 
             ref = storageReference.child("images/" + mailid123+"/"+randomuid);
@@ -860,7 +864,7 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                                     progressDialog.dismiss();
                                     Toast.makeText(Menu1Activity.this, "Image Uploaded!!", Toast.LENGTH_SHORT).show();
                                     try{
-                                        StorageReference storageRef = FirebaseStorage.getInstance().getReference();
+
                                         StorageReference urlref = storageRef.child("images/" + mailid123+"/"+randomuid);
                                         urlref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>()
                                         {

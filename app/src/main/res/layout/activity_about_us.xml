@@ -263,7 +263,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginTop="5dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="Alok Jha"
+                    android:text="Adarsha S.V"
                     android:textSize="19sp"
                     app:layout_constraintStart_toEndOf="@+id/imageView500"
                     app:layout_constraintTop_toTopOf="@+id/imageView17" />
@@ -288,7 +288,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginEnd="10dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="An undergrad Data analyst. Presenting you all our very first project. Hope you guys like it. Working with the team and building this app was a wonderful Experience in a whole new field. You can mail me your thoughts or any suggestions 😇.Email:alokjha1910@gmail.com"
+                    android:text="To be removed"
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView17"
                     app:layout_constraintEnd_toEndOf="@+id/imageView17"
@@ -297,7 +297,7 @@ This app is made keeping in mind the likes and needs of every student out there,
 
                 <TextView
                     android:id="@+id/textView11"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="20dp"
@@ -308,6 +308,16 @@ This app is made keeping in mind the likes and needs of every student out there,
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <Button
+                    android:id="@+id/helpbutton"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="55dp"
+                    android:background="@drawable/acknowlegement"
+                    app:layout_constraintStart_toEndOf="@+id/textView11"
+                    app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/imageView500"
                     android:layout_width="100dp"
@@ -315,7 +325,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginLeft="15dp"
                     android:layout_marginTop="15dp"
                     android:elevation="1dp"
-                    android:background="@drawable/alokpic"
+                    android:background="@drawable/adarshpic"
                     app:layout_constraintStart_toStartOf="@+id/imageView17"
                     app:layout_constraintTop_toTopOf="@+id/imageView17" />
 
@@ -510,7 +520,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginEnd="15dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="I'm an Undergraduate Student and have been associate with this app as a data analyst.Its my first app in the playstore. Made this in the curiosity of exploring a new arena. Hope you guys find it helpful. Your reviews are much treasured, do feel free to contact us, and help us in improving it further. imohkoylada47@gmail.com"
+                    android:text="An undergrad Data Analyst. Presenting you all our very first project. Working with team and building this app was a wonderful experience in a whole new field. Hope you all like it! You can mail me your thoughts or any suggestions. Email-snehagul2309@gmail.com"
                     android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView111"
                     app:layout_constraintEnd_toEndOf="@+id/imageView111"
@@ -574,7 +584,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginEnd="15dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="I'm an Undergraduate Student and have been associate with this app as a data analyst.Its my first app in the playstore. Made this in the curiosity of exploring a new arena. Hope you guys find it helpful. Your reviews are much treasured, do feel free to contact us, and help us in improving it further. imohkoylada47@gmail.com"
+                    android:text="Being a Paper wind data analyst helped me to grow and learn a lot of things. The experience with the team was great. For any suggestions feel free to contact me at -Zimmy.9724@yahoo.com "
                     android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView001"
                     app:layout_constraintEnd_toEndOf="@+id/imageView001"
@@ -643,7 +653,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginEnd="15dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="I'm an Undergraduate Student and have been associate with this app as a data analyst.Its my first app in the playstore. Made this in the curiosity of exploring a new arena. Hope you guys find it helpful. Your reviews are much treasured, do feel free to contact us, and help us in improving it further. imohkoylada47@gmail.com"
+                    android:text="The journey was one of the most memorable one. The app helped us to develop our overall skills and I'd love to grab such opportunities in future. For any ideas, mail me at - "
                     android:textSize="11sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView002"
                     app:layout_constraintEnd_toEndOf="@+id/imageView002"
@@ -655,14 +665,13 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_width="0dp"
                     android:layout_height="170dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:alpha="0.7"
                     android:background="@drawable/loadingbackground"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView17" />
+                    app:layout_constraintTop_toBottomOf="@+id/imageView13" />
 
 
                 <TextView
@@ -777,14 +786,15 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_width="0dp"
                     android:layout_height="170dp"
                     android:layout_marginStart="10dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
                     android:alpha="0.7"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/loadingbackground"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@id/imageView002"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+                    tools:layout_editor_absoluteY="705dp" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="20dp"
+    android:padding="20dp"
+    android:id="@+id/layoutDialogContainer">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/loadingwhitescrren"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/aladin"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Assets Credits"
+            android:textColor="#000000"
+            android:textSize="25dp"
+            app:layout_constraintEnd_toEndOf="@+id/textMessage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/acme"
+                    android:textColor="#000000"
+                    android:textSize="14dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:text="toppng.com"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="pngegg.com"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="pinclipart.com"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="pngfind.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="vectorstock.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="pngwing.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="pngtree.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="freepik.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="dreamstime.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="hiclipart.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="hiclipt.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="imgbin.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="clipartmax.com"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
+                android:textColor="#000000"
+                android:textSize="14dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:text="klipartz.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="cleanpng.com"/><TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/acme"
+            android:textColor="#000000"
+            android:textSize="14dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp"
+            android:text="clipartmax.com"
+            android:layout_marginBottom="20dp"/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:fontFamily="@font/amarante"
+            android:gravity="center"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageIcon" />
+
+
+        <TextView
+            android:id="@+id/textMessage"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/amarante"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <Button
+        android:id="@+id/buttonYes"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/blueroundmoney"
+        android:fontFamily="@font/amarante"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:text="OK"
+        app:layout_constraintBottom_toBottomOf="@id/layoutDialog"
+        app:layout_constraintEnd_toEndOf="@+id/layoutDialog"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/layoutDialog"
+        app:layout_constraintTop_toBottomOf="@id/layoutDialog"
+        app:layout_constraintVertical_bias="0.375" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

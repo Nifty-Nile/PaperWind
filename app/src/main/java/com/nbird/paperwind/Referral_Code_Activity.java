@@ -33,7 +33,7 @@ import java.util.List;
 public class Referral_Code_Activity extends AppCompatActivity {
 
     Button refcopybutton;
-    TextView reftext,heading,discription,textview20,list;
+    TextView reftext,heading,discription,textview20,list,emptytext;
     ClipboardManager myClipboard;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference2 = database.getReference();
@@ -63,6 +63,7 @@ public class Referral_Code_Activity extends AppCompatActivity {
         discription= (TextView) findViewById(R.id.discription);
         textview20= (TextView) findViewById(R.id.textView20);
         list= (TextView) findViewById(R.id.list);
+        emptytext= (TextView) findViewById(R.id.emptytext);
 
 
         SharedPreferences lightanddark = getBaseContext().getSharedPreferences("LightanddDarkMode", 0);
@@ -131,6 +132,13 @@ public class Referral_Code_Activity extends AppCompatActivity {
                     reflist.add(dataSnapshot1.getValue(RefHolder.class));
 
                 }
+                if(reflist.isEmpty()){
+                    emptytext.setAlpha(0.8f);
+                }else{
+                    emptytext.setAlpha(0);
+                }
+
+
                 categoryAdapter.notifyDataSetChanged();
                 loadingDialog.dismiss();
 

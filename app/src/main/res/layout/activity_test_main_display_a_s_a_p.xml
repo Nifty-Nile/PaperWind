@@ -81,36 +81,39 @@
 
         </LinearLayout>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/linearLayout15"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintTop_toBottomOf="@+id/serialnumber">
 
         <TextView
             android:id="@+id/question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
             android:fontFamily="@font/fanwood"
-            android:textStyle="bold"
             android:gravity="center"
             android:text=""
             android:textColor="#000000"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/questionimage"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/linearLayout16"
