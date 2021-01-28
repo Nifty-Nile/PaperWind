@@ -44,7 +44,7 @@ public class ExpandableListData {
         expandableListDetail.put("Board Exams",BoardExams);
         expandableListDetail.put("Entrance Exam",EntranceExam);
         expandableListDetail.put("Predictor",Predictor);
-        expandableListDetail.put("Formual",Formual);
+        expandableListDetail.put("Formulae",Formual);
         expandableListDetail.put("Money",Money);
         expandableListDetail.put("News",News);
 

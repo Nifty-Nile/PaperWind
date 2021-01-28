@@ -22,8 +22,10 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.ActionCodeSettings;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -77,7 +79,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 final String email=mail.getText().toString().trim();
-                String password1=password.getText().toString().trim();
+                final String password1=password.getText().toString().trim();
 
                 if(!username()||!mail()||!password()){
                     return;
@@ -89,98 +91,73 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                 loadingDialog.setCancelable(true);
                 loadingDialog.show();
 
+
+
+
+
                 fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                                usermail=mail.getText().toString();
-                                editormailreminder.putString("123", usermail);
-                                editormailreminder.commit();
-                            String strMain =usermail;
-                            String[] arrSplit_3 = strMain.split("@");
-                            for (int i=0; i < 1; i++) {
-                                Random rand = new Random();
 
-                                // Generate random integers in range 0 to 999
-                                int rand_int1 = rand.nextInt(1000);
+                            FirebaseAuth auth = FirebaseAuth.getInstance();
+                            FirebaseUser user = auth.getCurrentUser();
 
-                                // Print random integers
+                            user.sendEmailVerification()
+                                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            if (task.isSuccessful()) {
+                                                Toast.makeText(SignUpFireBaseActivity.this, "A Verification Link Has been Send To Your Mail. Please Check!", Toast.LENGTH_LONG).show();
+                                                usermail=mail.getText().toString();
+                                                editormailreminder.putString("123", usermail);
+                                                editormailreminder.commit();
+                                                String strMain =usermail;
+                                                String[] arrSplit_3 = strMain.split("@");
+                                                for (int i=0; i < 1; i++) {
+                                                    Random rand = new Random();
 
-                                mailshare = arrSplit_3[i] + "@" + rand_int1;
-                            }
-                                User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
-                                reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if(task.isSuccessful()){
-                                            Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
-                                        }else{
-                                            Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                    // Generate random integers in range 0 to 999
+                                                    int rand_int1 = rand.nextInt(1000);
+
+                                                    // Print random integers
+
+                                                    mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                                }
+                                                User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
+                                                reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if(task.isSuccessful()){
+                                                            Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                        }else{
+                                                            Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                        }
+                                                    }
+                                                });
+
+
+
+                                                //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                                //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                                //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                                //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                                                loadingDialog.dismiss();
+
+                                                FirebaseAuth.getInstance().signOut();
+                                                    startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                    finish();
+
+
+
+                                            }
                                         }
-                                    }
-                                });
+                                    });
 
 
 
-                             //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                             //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
-
-                            //    int moneyuser = moneybalance.getInt(usermail, 100);
-                            //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
-                            loadingDialog.dismiss();
-
-                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                            final SharedPreferences.Editor editorguide = guide.edit();
-
-
-                            night = guide.getBoolean("locked", false);
-
-
-                            if(!night){
-                                AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
-                                View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                builder.setView(view1);
-                                builder.setCancelable(false);
-                                ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
-
-
-                                final AlertDialog alertDialog=builder.create();
-
-                                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                        final SharedPreferences.Editor editorguide = guide.edit();
-                                        editorguide.putBoolean("locked", false);
-                                        editorguide.commit();
-                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                        finish();
-
-                                    }
-                                });
-                                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View view) {
-                                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                        finish();
-                                    }
-                                });
-
-                                if(alertDialog.getWindow()!=null){
-                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                                }
-                                alertDialog.show();
-
-                            }else{
-                                startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                finish();
-                            }
 
                         }
                         else{
@@ -205,7 +182,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
                             final String email=mail.getText().toString().trim();
-                            String password1=password.getText().toString().trim();
+                            final String password1=password.getText().toString().trim();
 
                             if(!username()||!mail()||!password()){
                                 return false;
@@ -217,100 +194,74 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                             loadingDialog.setCancelable(true);
                             loadingDialog.show();
 
+
+
+
+
                             fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
-                                        String usermail=mail.getText().toString();
-                                        editormailreminder.putString("123", usermail);
-                                        editormailreminder.commit();
 
-                                        String strMain =usermail;
-                                        String[] arrSplit_3 = strMain.split("@");
-                                        for (int i=0; i < 1; i++) {
-                                            Random rand = new Random();
+                                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                                        FirebaseUser user = auth.getCurrentUser();
 
-                                            // Generate random integers in range 0 to 999
-                                            int rand_int1 = rand.nextInt(1000);
+                                        user.sendEmailVerification()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Toast.makeText(SignUpFireBaseActivity.this, "A Verification Link Has been Send To Your Mail. Please Check!", Toast.LENGTH_LONG).show();
+                                                            usermail=mail.getText().toString();
+                                                            editormailreminder.putString("123", usermail);
+                                                            editormailreminder.commit();
+                                                            String strMain =usermail;
+                                                            String[] arrSplit_3 = strMain.split("@");
+                                                            for (int i=0; i < 1; i++) {
+                                                                Random rand = new Random();
 
-                                            // Print random integers
+                                                                // Generate random integers in range 0 to 999
+                                                                int rand_int1 = rand.nextInt(1000);
 
-                                            mailshare = arrSplit_3[i] + "@" + rand_int1;
-                                        }
-                                        User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
-                                        reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if(task.isSuccessful()){
-                                                    Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
-                                                }else{
-                                                    Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
-                                                }
-                                            }
-                                        });
+                                                                // Print random integers
 
-
-
-                                        //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                                        //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
-
-                                        //    int moneyuser = moneybalance.getInt(usermail, 100);
-                                        //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
-
-                                        loadingDialog.dismiss();
-
-                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                        final SharedPreferences.Editor editorguide = guide.edit();
+                                                                mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                                            }
+                                                            User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
+                                                            reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    if(task.isSuccessful()){
+                                                                        Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                                    }else{
+                                                                        Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                                    }
+                                                                }
+                                                            });
 
 
-                                        night = guide.getBoolean("locked", false);
+
+                                                            //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                                            //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                                            //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                                            //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                                                            loadingDialog.dismiss();
+
+                                                            FirebaseAuth.getInstance().signOut();
+                                                            startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                            finish();
 
 
-                                        if(!night){
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
-                                            View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                            builder.setView(view1);
-                                            builder.setCancelable(false);
-                                            ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                            ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                            ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                            ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+                                                        }
+                                                    }
+                                                });
 
 
-                                            final AlertDialog alertDialog=builder.create();
 
-                                            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                                    final SharedPreferences.Editor editorguide = guide.edit();
-                                                    editorguide.putBoolean("locked", false);
-                                                    editorguide.commit();
-                                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                    finish();
 
-                                                }
-                                            });
-                                            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                    finish();
-                                                }
-                                            });
-
-                                            if(alertDialog.getWindow()!=null){
-                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                                            }
-                                            alertDialog.show();
-
-                                        }else{
-                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                            finish();
-                                        }
                                     }
                                     else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -338,7 +289,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
                             final String email=mail.getText().toString().trim();
-                            String password1=password.getText().toString().trim();
+                            final String password1=password.getText().toString().trim();
 
                             if(!username()||!mail()||!password()){
                                 return false;
@@ -350,101 +301,74 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                             loadingDialog.setCancelable(true);
                             loadingDialog.show();
 
+
+
+
+
                             fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
-                                        String usermail=mail.getText().toString();
-                                        editormailreminder.putString("123", usermail);
-                                        editormailreminder.commit();
 
-                                        String strMain =usermail;
-                                        String[] arrSplit_3 = strMain.split("@");
-                                        for (int i=0; i < 1; i++) {
-                                            Random rand = new Random();
+                                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                                        FirebaseUser user = auth.getCurrentUser();
 
-                                            // Generate random integers in range 0 to 999
-                                            int rand_int1 = rand.nextInt(1000);
+                                        user.sendEmailVerification()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Toast.makeText(SignUpFireBaseActivity.this, "A Verification Link Has been Send To Your Mail. Please Check!", Toast.LENGTH_LONG).show();
+                                                            usermail=mail.getText().toString();
+                                                            editormailreminder.putString("123", usermail);
+                                                            editormailreminder.commit();
+                                                            String strMain =usermail;
+                                                            String[] arrSplit_3 = strMain.split("@");
+                                                            for (int i=0; i < 1; i++) {
+                                                                Random rand = new Random();
 
-                                            // Print random integers
+                                                                // Generate random integers in range 0 to 999
+                                                                int rand_int1 = rand.nextInt(1000);
 
-                                            mailshare = arrSplit_3[i] + "@" + rand_int1;
-                                        }
+                                                                // Print random integers
 
-                                        User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
-                                        reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if(task.isSuccessful()){
-                                                    Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
-                                                }else{
-                                                    Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
-                                                }
-                                            }
-                                        });
-
-
-
-                                        //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                                        //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
-
-                                        //    int moneyuser = moneybalance.getInt(usermail, 100);
-                                        //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
-
-                                        loadingDialog.dismiss();
-
-                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                        final SharedPreferences.Editor editorguide = guide.edit();
+                                                                mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                                            }
+                                                            User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
+                                                            reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    if(task.isSuccessful()){
+                                                                        Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                                    }else{
+                                                                        Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                                    }
+                                                                }
+                                                            });
 
 
-                                        night = guide.getBoolean("locked", false);
+
+                                                            //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                                            //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                                            //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                                            //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                                                            loadingDialog.dismiss();
+
+                                                            FirebaseAuth.getInstance().signOut();
+                                                            startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                            finish();
 
 
-                                        if(!night){
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
-                                            View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                            builder.setView(view1);
-                                            builder.setCancelable(false);
-                                            ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                            ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                            ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                            ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+                                                        }
+                                                    }
+                                                });
 
 
-                                            final AlertDialog alertDialog=builder.create();
 
-                                            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                                    final SharedPreferences.Editor editorguide = guide.edit();
-                                                    editorguide.putBoolean("locked", false);
-                                                    editorguide.commit();
-                                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                    finish();
 
-                                                }
-                                            });
-                                            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                    finish();
-                                                }
-                                            });
-
-                                            if(alertDialog.getWindow()!=null){
-                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                                            }
-                                            alertDialog.show();
-
-                                        }else{
-                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                            finish();
-                                        }
                                     }
                                     else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -472,7 +396,7 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                         case KeyEvent.KEYCODE_DPAD_CENTER:
                         case KeyEvent.KEYCODE_ENTER:
                             final String email=mail.getText().toString().trim();
-                            String password1=password.getText().toString().trim();
+                            final String password1=password.getText().toString().trim();
 
                             if(!username()||!mail()||!password()){
                                 return false;
@@ -484,101 +408,74 @@ public class SignUpFireBaseActivity extends AppCompatActivity {
                             loadingDialog.setCancelable(true);
                             loadingDialog.show();
 
+
+
+
+
                             fAuth.createUserWithEmailAndPassword(email,password1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
-                                        usermail=mail.getText().toString();
-                                        editormailreminder.putString("123", usermail);
-                                        editormailreminder.commit();
 
-                                        String strMain =usermail;
-                                        String[] arrSplit_3 = strMain.split("@");
-                                        for (int i=0; i < 1; i++) {
-                                            Random rand = new Random();
+                                        FirebaseAuth auth = FirebaseAuth.getInstance();
+                                        FirebaseUser user = auth.getCurrentUser();
 
-                                            // Generate random integers in range 0 to 999
-                                            int rand_int1 = rand.nextInt(1000);
+                                        user.sendEmailVerification()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        if (task.isSuccessful()) {
+                                                            Toast.makeText(SignUpFireBaseActivity.this, "A Verification Link Has been Send To Your Mail. Please Check!", Toast.LENGTH_LONG).show();
+                                                            usermail=mail.getText().toString();
+                                                            editormailreminder.putString("123", usermail);
+                                                            editormailreminder.commit();
+                                                            String strMain =usermail;
+                                                            String[] arrSplit_3 = strMain.split("@");
+                                                            for (int i=0; i < 1; i++) {
+                                                                Random rand = new Random();
 
-                                            // Print random integers
+                                                                // Generate random integers in range 0 to 999
+                                                                int rand_int1 = rand.nextInt(1000);
 
-                                            mailshare = arrSplit_3[i] + "@" + rand_int1;
-                                        }
+                                                                // Print random integers
 
-                                        User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
-                                        reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                            @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
-                                                if(task.isSuccessful()){
-                                                    Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
-                                                }else{
-                                                    Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
-                                                }
-                                            }
-                                        });
-
-
-
-                                        //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                                        //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
-
-                                        //    int moneyuser = moneybalance.getInt(usermail, 100);
-                                        //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
-
-                                        loadingDialog.dismiss();
-
-                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                        final SharedPreferences.Editor editorguide = guide.edit();
+                                                                mailshare = arrSplit_3[i] + "@" + rand_int1;
+                                                            }
+                                                            User s1=new User(money,permission,propicurl123,mailshare,firstrefcode);
+                                                            reference.child(fAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                @Override
+                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                    if(task.isSuccessful()){
+                                                                        Toast.makeText(SignUpFireBaseActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
+                                                                    }else{
+                                                                        Toast.makeText(SignUpFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                                    }
+                                                                }
+                                                            });
 
 
-                                        night = guide.getBoolean("locked", false);
+
+                                                            //   final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                                            //   final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+
+                                                            //    int moneyuser = moneybalance.getInt(usermail, 100);
+                                                            //    Toast.makeText(getBaseContext(), usermail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                                                            loadingDialog.dismiss();
+
+                                                            FirebaseAuth.getInstance().signOut();
+                                                            startActivity(new Intent(getApplicationContext(),LoginFireBaseActivity.class));
+                                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                                            finish();
 
 
-                                        if(!night){
-                                            AlertDialog.Builder builder=new AlertDialog.Builder(SignUpFireBaseActivity.this,R.style.AlertDialogTheme);
-                                            View view1= LayoutInflater.from(SignUpFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                            builder.setView(view1);
-                                            builder.setCancelable(false);
-                                            ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                            ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                            ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                            ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+
+                                                        }
+                                                    }
+                                                });
 
 
-                                            final AlertDialog alertDialog=builder.create();
 
-                                            view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                                    final SharedPreferences.Editor editorguide = guide.edit();
-                                                    editorguide.putBoolean("locked", false);
-                                                    editorguide.commit();
-                                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                    finish();
 
-                                                }
-                                            });
-                                            view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                    finish();
-                                                }
-                                            });
-
-                                            if(alertDialog.getWindow()!=null){
-                                                alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                                            }
-                                            alertDialog.show();
-
-                                        }else{
-                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                            finish();
-                                        }
                                     }
                                     else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();

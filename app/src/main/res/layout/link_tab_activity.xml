@@ -16,16 +16,16 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <de.hdodenhof.circleimageview.CircleImageView
+        <ImageView
             android:id="@+id/exam_img_id"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="6dp"
             android:layout_marginTop="5dp"
             android:layout_gravity="center"
             android:layout_width="70dp"
+            android:elevation="5dp"
             android:layout_height="70dp"
-            android:scaleType="centerCrop"
-            android:background="#00000000"/>
+            />
 
         <TextView
             android:id="@+id/exam_dis"

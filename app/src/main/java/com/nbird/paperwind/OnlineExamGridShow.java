@@ -165,6 +165,65 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
 
 
+
+
+
+
+        final SharedPreferences settings = getBaseContext().getSharedPreferences("Physics", 0);
+        final SharedPreferences.Editor editor = settings.edit();
+
+        final SharedPreferences settings1 = getBaseContext().getSharedPreferences("Maths", 0);
+        final SharedPreferences.Editor editor1 = settings1.edit();
+
+        final SharedPreferences settings2 = getBaseContext().getSharedPreferences("Chemistry", 0);
+        final SharedPreferences.Editor editor2 = settings2.edit();
+
+        final SharedPreferences colorblue = getBaseContext().getSharedPreferences("PhysicsColour", 0);
+        final SharedPreferences.Editor editorblue = colorblue.edit();
+
+        final SharedPreferences colorred = getBaseContext().getSharedPreferences("MathsColour", 0);
+        final SharedPreferences.Editor editorred = colorred.edit();
+
+        final SharedPreferences coloryellow = getBaseContext().getSharedPreferences("ChemistryColour", 0);
+        final SharedPreferences.Editor editoryellow = coloryellow.edit();
+
+        final SharedPreferences reviewphy = getBaseContext().getSharedPreferences("ReviewPurplePhy", 0);
+        final SharedPreferences.Editor editorreviewphy = reviewphy.edit();
+
+        final SharedPreferences reviewchem = getBaseContext().getSharedPreferences("ReviewPurpleChem", 0);
+        final SharedPreferences.Editor editorreviewchem = reviewchem.edit();
+
+        final SharedPreferences reviewmaths = getBaseContext().getSharedPreferences("ReviewPurpleMaths", 0);
+        final SharedPreferences.Editor editorreviewmaths = reviewmaths.edit();
+
+        final SharedPreferences notanswered1 = getBaseContext().getSharedPreferences("notanswered1", 0);
+        final SharedPreferences.Editor editornotanswered1 = notanswered1.edit();
+
+        final SharedPreferences notanswered2 = getBaseContext().getSharedPreferences("notanswered2", 0);
+        final SharedPreferences.Editor editornotanswered2 = notanswered2.edit();
+
+        final SharedPreferences notanswered3 = getBaseContext().getSharedPreferences("notanswered3", 0);
+        final SharedPreferences.Editor editornotanswered3 = notanswered3.edit();
+
+        final SharedPreferences set1 = getBaseContext().getSharedPreferences("set", 0);
+        final SharedPreferences.Editor editorset = set1.edit();
+
+        final SharedPreferences timesaver = getBaseContext().getSharedPreferences("timesaver123", 0);
+        final SharedPreferences.Editor editortimesaver = timesaver.edit();
+
+        final SharedPreferences pausephy = getBaseContext().getSharedPreferences("pausephy123", 0);
+        final SharedPreferences.Editor editorpausephy = pausephy.edit();
+
+        final SharedPreferences pausechem = getBaseContext().getSharedPreferences("pausechem123", 0);
+        final SharedPreferences.Editor editorpausechem = pausechem.edit();
+
+        final SharedPreferences pausemaths = getBaseContext().getSharedPreferences("pausemaths123", 0);
+        final SharedPreferences.Editor editorpausemaths = pausemaths.edit();
+
+
+
+
+
         if(!answerA100) {        //Setting timer for the first time
             editorconditioin.putBoolean(String.valueOf(1), true);
             editorconditioin.commit();
@@ -277,9 +336,54 @@ public class OnlineExamGridShow extends AppCompatActivity {
                             } else {
                                 mathsscore--;
 
-                            }break;
+                            }
+                        }
+                    }else if(position==7) {
+                        for (int i = 1; i <= 40; i++) {
+                            String answerA0 = settings.getString(String.valueOf(i), "poty");
+
+                            if (answerA0.equals(list1.get(i - 1).getCorrectoption())) {
+                                physore = physore + 4;
+                            } else if (answerA0.equals("poty")) {
+
+                            } else {
+                                physore--;
+                            }
+
+                        }
+                        for (int i = 1; i <= 40; i++) {
+                            String answerA1 = settings2.getString(String.valueOf(i), "poty");
+
+                            if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
+                                chemscore = chemscore + 4;
+                            } else if (answerA1.equals("poty")) {
+
+                            } else {
+                                chemscore--;
+
+                            }
+                        }
+                        for (int i = 1; i <= 65; i++) {
+                            String answerA2 = settings1.getString(String.valueOf(i), "poty");
+
+                            if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
+                                mathsscore = mathsscore + 4;
+                            } else if (answerA2.equals("poty")) {
+
+                            } else {
+                                mathsscore--;
+
+                            }
+
                         }
                     }
+
+
+
+
+
+
+
 
 
 
@@ -335,7 +439,8 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
                     totalmarks=physore+chemscore+mathsscore;
 
-
+                    if(countDownTimer!=null){
+                        countDownTimer.cancel();}
 
                     if(!answerA100){
                         Intent intent=new Intent(getBaseContext(),ScoreActivity.class);
@@ -349,26 +454,27 @@ public class OnlineExamGridShow extends AppCompatActivity {
                         intent.putExtra("set",set);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                        editor.clear().apply();
+                        editor1.clear().apply();
+                        editor2.clear().apply();
+                        editorblue.clear().apply();
+                        editorred.clear().apply();
+                        editoryellow.clear().apply();
+                        editorreviewphy.clear().apply();
+                        editorreviewchem.clear().apply();
+                        editorreviewmaths.clear().apply();
+                        editorconditioin.clear().apply();
+                        editornotanswered1.clear().apply();
+                        editornotanswered2.clear().apply();
+                        editornotanswered3.clear().apply();
+                        editorset.clear().apply();
+                        editortimesaver.clear().apply();
+                        editorpausephy.clear().apply();
+                        editorpausechem.clear().apply();
+                        editorpausemaths.clear().apply();
                         finish();
                     }
-                    editor.clear().apply();
-                    editor1.clear().apply();
-                    editor2.clear().apply();
-                    editorblue.clear().apply();
-                    editorred.clear().apply();
-                    editoryellow.clear().apply();
-                    editorreviewphy.clear().apply();
-                    editorreviewchem.clear().apply();
-                    editorreviewmaths.clear().apply();
-                    editorconditioin.clear().apply();
-                    editornotanswered1.clear().apply();
-                    editornotanswered2.clear().apply();
-                    editornotanswered3.clear().apply();
-                    editorset.clear().apply();
-                    editortimesaver.clear().apply();
-                    editorpausephy.clear().apply();
-                    editorpausechem.clear().apply();
-                    editorpausemaths.clear().apply();
+
 
 
 
@@ -387,6 +493,8 @@ public class OnlineExamGridShow extends AppCompatActivity {
             countDownTimer=new CountDownTimer((minutes)*60*1000,1000) {
                 @Override
                 public void onTick(long l) {
+
+
 
 
                     sec=sec-1;
@@ -436,13 +544,6 @@ public class OnlineExamGridShow extends AppCompatActivity {
                 @Override
                 public void onFinish() {
 
-                    final SharedPreferences settings = getBaseContext().getSharedPreferences("Physics", 0);
-                    final SharedPreferences.Editor editor = settings.edit();
-                    final SharedPreferences settings1 = getBaseContext().getSharedPreferences("Maths", 0);
-                    final SharedPreferences.Editor editor1 = settings1.edit();
-
-                    final SharedPreferences settings2 = getBaseContext().getSharedPreferences("Chemistry", 0);
-                    final SharedPreferences.Editor editor2 = settings2.edit();
 
                     if(position==3){
                         for(int i=1;i<=40;i++) {
@@ -480,7 +581,45 @@ public class OnlineExamGridShow extends AppCompatActivity {
                             } else {
                                 mathsscore--;
 
-                            }break;
+                            }
+                        }
+                    }else if(position==7) {
+                        for (int i = 1; i <= 40; i++) {
+                            String answerA0 = settings.getString(String.valueOf(i), "poty");
+
+                            if (answerA0.equals(list1.get(i - 1).getCorrectoption())) {
+                                physore = physore + 4;
+                            } else if (answerA0.equals("poty")) {
+
+                            } else {
+                                physore--;
+                            }
+
+                        }
+                        for (int i = 1; i <= 40; i++) {
+                            String answerA1 = settings2.getString(String.valueOf(i), "poty");
+
+                            if (answerA1.equals(list2.get(i - 1).getCorrectoption())) {
+                                chemscore = chemscore + 4;
+                            } else if (answerA1.equals("poty")) {
+
+                            } else {
+                                chemscore--;
+
+                            }
+                        }
+                        for (int i = 1; i <= 65; i++) {
+                            String answerA2 = settings1.getString(String.valueOf(i), "poty");
+
+                            if (answerA2.equals(list3.get(i - 1).getCorrectoption())) {
+                                mathsscore = mathsscore + 4;
+                            } else if (answerA2.equals("poty")) {
+
+                            } else {
+                                mathsscore--;
+
+                            }
+
                         }
                     }
 
@@ -490,57 +629,16 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
 
 
-                    final SharedPreferences colorblue = getBaseContext().getSharedPreferences("PhysicsColour", 0);
-                    final SharedPreferences.Editor editorblue = colorblue.edit();
-
-                    final SharedPreferences colorred = getBaseContext().getSharedPreferences("MathsColour", 0);
-                    final SharedPreferences.Editor editorred = colorred.edit();
-
-                    final SharedPreferences coloryellow = getBaseContext().getSharedPreferences("ChemistryColour", 0);
-                    final SharedPreferences.Editor editoryellow = coloryellow.edit();
-
-                    final SharedPreferences reviewphy = getBaseContext().getSharedPreferences("ReviewPurplePhy", 0);
-                    final SharedPreferences.Editor editorreviewphy = reviewphy.edit();
-
-                    final SharedPreferences reviewchem = getBaseContext().getSharedPreferences("ReviewPurpleChem", 0);
-                    final SharedPreferences.Editor editorreviewchem = reviewchem.edit();
-
-                    final SharedPreferences reviewmaths = getBaseContext().getSharedPreferences("ReviewPurpleMaths", 0);
-                    final SharedPreferences.Editor editorreviewmaths = reviewmaths.edit();
-
-                    final SharedPreferences notanswered1 = getBaseContext().getSharedPreferences("notanswered1", 0);
-                    final SharedPreferences.Editor editornotanswered1 = notanswered1.edit();
-
-                    final SharedPreferences notanswered2 = getBaseContext().getSharedPreferences("notanswered2", 0);
-                    final SharedPreferences.Editor editornotanswered2 = notanswered2.edit();
-
-                    final SharedPreferences notanswered3 = getBaseContext().getSharedPreferences("notanswered3", 0);
-                    final SharedPreferences.Editor editornotanswered3 = notanswered3.edit();
-
-                    final SharedPreferences set1 = getBaseContext().getSharedPreferences("set", 0);
-                    final SharedPreferences.Editor editorset = set1.edit();
-
-                    final SharedPreferences timesaver = getBaseContext().getSharedPreferences("timesaver123", 0);
-                    final SharedPreferences.Editor editortimesaver = timesaver.edit();
-
-                    final SharedPreferences pausephy = getBaseContext().getSharedPreferences("pausephy123", 0);
-                    final SharedPreferences.Editor editorpausephy = pausephy.edit();
-
-                    final SharedPreferences pausechem = getBaseContext().getSharedPreferences("pausechem123", 0);
-                    final SharedPreferences.Editor editorpausechem = pausechem.edit();
-
-                    final SharedPreferences pausemaths = getBaseContext().getSharedPreferences("pausemaths123", 0);
-                    final SharedPreferences.Editor editorpausemaths = pausemaths.edit();
 
 
 
                     totalmarks=physore+chemscore+mathsscore;
-
+                    if(countDownTimer!=null){
+                        countDownTimer.cancel();}
 
 
                     if(!answerA100){
-                        Intent intent=new Intent(getBaseContext(),ScoreActivity.class);
-                        intent.putExtra("marks",totalmarks);
+                        Intent intent=new Intent(OnlineExamGridShow.this,ScoreActivity.class);
                         intent.putExtra("totalmarks",totalmarks);
                         intent.putExtra("RankEE",position);
                         intent.putExtra("phymarks",physore);
@@ -550,26 +648,27 @@ public class OnlineExamGridShow extends AppCompatActivity {
                         intent.putExtra("set",set);
                         startActivity(intent);
                         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                        editor.clear().apply();
+                        editor1.clear().apply();
+                        editor2.clear().apply();
+                        editorblue.clear().apply();
+                        editorred.clear().apply();
+                        editoryellow.clear().apply();
+                        editorreviewphy.clear().apply();
+                        editorreviewchem.clear().apply();
+                        editorreviewmaths.clear().apply();
+                        editorconditioin.clear().apply();
+                        editornotanswered1.clear().apply();
+                        editornotanswered2.clear().apply();
+                        editornotanswered3.clear().apply();
+                        editorset.clear().apply();
+                        editortimesaver.clear().apply();
+                        editorpausephy.clear().apply();
+                        editorpausechem.clear().apply();
+                        editorpausemaths.clear().apply();
                         finish();
                     }
-                    editor.clear().apply();
-                    editor1.clear().apply();
-                    editor2.clear().apply();
-                    editorblue.clear().apply();
-                    editorred.clear().apply();
-                    editoryellow.clear().apply();
-                    editorreviewphy.clear().apply();
-                    editorreviewchem.clear().apply();
-                    editorreviewmaths.clear().apply();
-                    editorconditioin.clear().apply();
-                    editornotanswered1.clear().apply();
-                    editornotanswered2.clear().apply();
-                    editornotanswered3.clear().apply();
-                    editorset.clear().apply();
-                    editortimesaver.clear().apply();
-                    editorpausephy.clear().apply();
-                    editorpausechem.clear().apply();
-                    editorpausemaths.clear().apply();
+
                 }
             };
         }
@@ -594,58 +693,6 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
 
         countDownTimer.start();
-
-
-        final SharedPreferences settings = getBaseContext().getSharedPreferences("Physics", 0);
-        final SharedPreferences.Editor editor = settings.edit();
-
-        final SharedPreferences settings1 = getBaseContext().getSharedPreferences("Maths", 0);
-        final SharedPreferences.Editor editor1 = settings1.edit();
-
-        final SharedPreferences settings2 = getBaseContext().getSharedPreferences("Chemistry", 0);
-        final SharedPreferences.Editor editor2 = settings2.edit();
-
-        final SharedPreferences colorblue = getBaseContext().getSharedPreferences("PhysicsColour", 0);
-        final SharedPreferences.Editor editorblue = colorblue.edit();
-
-        final SharedPreferences colorred = getBaseContext().getSharedPreferences("MathsColour", 0);
-        final SharedPreferences.Editor editorred = colorred.edit();
-
-        final SharedPreferences coloryellow = getBaseContext().getSharedPreferences("ChemistryColour", 0);
-        final SharedPreferences.Editor editoryellow = coloryellow.edit();
-
-        final SharedPreferences reviewphy = getBaseContext().getSharedPreferences("ReviewPurplePhy", 0);
-        final SharedPreferences.Editor editorreviewphy = reviewphy.edit();
-
-        final SharedPreferences reviewchem = getBaseContext().getSharedPreferences("ReviewPurpleChem", 0);
-        final SharedPreferences.Editor editorreviewchem = reviewchem.edit();
-
-        final SharedPreferences reviewmaths = getBaseContext().getSharedPreferences("ReviewPurpleMaths", 0);
-        final SharedPreferences.Editor editorreviewmaths = reviewmaths.edit();
-
-        final SharedPreferences notanswered1 = getBaseContext().getSharedPreferences("notanswered1", 0);
-        final SharedPreferences.Editor editornotanswered1 = notanswered1.edit();
-
-        final SharedPreferences notanswered2 = getBaseContext().getSharedPreferences("notanswered2", 0);
-        final SharedPreferences.Editor editornotanswered2 = notanswered2.edit();
-
-        final SharedPreferences notanswered3 = getBaseContext().getSharedPreferences("notanswered3", 0);
-        final SharedPreferences.Editor editornotanswered3 = notanswered3.edit();
-
-        final SharedPreferences set1 = getBaseContext().getSharedPreferences("set", 0);
-        final SharedPreferences.Editor editorset = set1.edit();
-
-        final SharedPreferences timesaver = getBaseContext().getSharedPreferences("timesaver123", 0);
-        final SharedPreferences.Editor editortimesaver = timesaver.edit();
-
-        final SharedPreferences pausephy = getBaseContext().getSharedPreferences("pausephy123", 0);
-        final SharedPreferences.Editor editorpausephy = pausephy.edit();
-
-        final SharedPreferences pausechem = getBaseContext().getSharedPreferences("pausechem123", 0);
-        final SharedPreferences.Editor editorpausechem = pausechem.edit();
-
-        final SharedPreferences pausemaths = getBaseContext().getSharedPreferences("pausemaths123", 0);
-        final SharedPreferences.Editor editorpausemaths = pausemaths.edit();
 
 
 
@@ -792,6 +839,8 @@ public class OnlineExamGridShow extends AppCompatActivity {
 
 
                 totalmarks=physore+chemscore+mathsscore;
+
+
 
                 onButtonPressd();
 

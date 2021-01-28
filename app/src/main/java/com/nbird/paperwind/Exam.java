@@ -1,6 +1,6 @@
 package com.nbird.paperwind;
 
-import androidx.cardview.widget.CardView;
+import android.graphics.drawable.Drawable;
 
 public class Exam {
 

@@ -195,7 +195,7 @@
                     android:layout_height="95dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/computerscience" />
+                    android:background="@drawable/english" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -209,7 +209,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Computer Application"
+                        android:text="English"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -321,11 +321,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
 
                 <ImageView
+                    android:id="@+id/comap"
                     android:layout_width="105dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/english" />
+                    android:background="@drawable/computerscience" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -339,7 +340,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="English"
+                        android:text="Computer Application"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 
@@ -386,11 +387,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
                 <ImageView
+                    android:id="@+id/phyedu"
                     android:layout_width="105dp"
                     android:layout_height="95dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/physicaledu" />
+                    android:background="@drawable/hindi" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -404,7 +406,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/acme"
-                        android:text="Physical Education"
+                        android:text="Hindi"
                         android:textColor="#000000"
                         android:textSize="22sp" />
 

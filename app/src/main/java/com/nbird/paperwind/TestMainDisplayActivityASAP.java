@@ -233,7 +233,7 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
             @Override
             public void onFinish() {
 
-
+             finish();
 
 
             }
@@ -599,10 +599,11 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                             intent.putExtra("mode",mode);
 
 
-
                             startActivity(intent);
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             finish();
+                            if(countDownTimer!=null){
+                                countDownTimer.cancel();}
                             return;
                         }else{
 
@@ -763,6 +764,8 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                             intent.putExtra("sec",sec);
                             intent.putExtra("mode",mode);
                             startActivity(intent);
+                            if(countDownTimer!=null){
+                                countDownTimer.cancel();}
                             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                             serialnumber.setText("Question No.: "+String.valueOf(subnum)+"/"+list.size());
 
@@ -952,6 +955,8 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
                         intent.putExtra("score",score);
                         intent.putExtra("mode",mode);
                         startActivity(intent);
+                        if(countDownTimer!=null){
+                            countDownTimer.cancel();}
                         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                         finish();
 
@@ -991,6 +996,8 @@ public class TestMainDisplayActivityASAP extends AppCompatActivity {
         intent.putExtra("maths", maths);
         intent.putExtra("score",score);
         intent.putExtra("mode",mode);
+        if(countDownTimer!=null){
+            countDownTimer.cancel();}
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 

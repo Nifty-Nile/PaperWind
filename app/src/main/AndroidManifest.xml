@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Referral_Code_Activity"></activity>
+        <activity android:name=".LoginFireBaseSecondary"></activity>
+        <activity android:name=".Referral_Code_Activity" />
         <activity
             android:name=".AboutUsActivity"
             android:screenOrientation="portrait" />

@@ -21,12 +21,12 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PaperCategoryBoardsActivity extends AppCompatActivity {
-    Button linkButton,previousyearpaperbutton,sampleyearpaper,NCERTSolutions;
+    Button linkButton,previousyearpaperbutton,sampleyearpaper,NCERTSolutions,NCERTSolutions1;
     int Exam,Std,Paper;
-    TextView text1,text2,text3,text4,text5,text6,text7,text8;
+    TextView text1,text2,text3,text4,text5,text6,text7,text8,text71,text81;
     androidx.appcompat.widget.Toolbar toolbar;
-    LinearLayout linearLayout;
-    ImageView ncertimage;
+    LinearLayout linearLayout,linearLayout1;
+    ImageView ncertimage,ncertimage1;
 @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,10 +42,14 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         text6=(TextView) findViewById(R.id.text6);
         text7=(TextView) findViewById(R.id.text7);
         text8=(TextView) findViewById(R.id.text8);
+        text71=(TextView) findViewById(R.id.text71);
+        text81=(TextView) findViewById(R.id.text81);
         linearLayout=(LinearLayout) findViewById(R.id.fourlinearlayout);
+         linearLayout1=(LinearLayout) findViewById(R.id.fourlinearlayout1);
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Category Activity");
         ncertimage=(ImageView) findViewById(R.id.ncertimage);
+        ncertimage1=(ImageView) findViewById(R.id.ncertimage1);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -58,6 +62,7 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
         previousyearpaperbutton=(Button) findViewById(R.id.previousyearpaper);
         sampleyearpaper=(Button) findViewById(R.id.samplepaperbutton);
         NCERTSolutions=(Button) findViewById(R.id.ncertSolutions);
+    NCERTSolutions1=(Button) findViewById(R.id.ncertSolutions1);
 
         Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -80,6 +85,8 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
             text6.setTextColor(Color.parseColor("#ffffff"));
             text7.setTextColor(Color.parseColor("#ffffff"));
             text8.setTextColor(Color.parseColor("#ffffff"));
+            text71.setTextColor(Color.parseColor("#ffffff"));
+            text81.setTextColor(Color.parseColor("#ffffff"));
 
         }else{
             ConstraintLayout layout =(ConstraintLayout)findViewById(R.id.mainfield);
@@ -94,6 +101,8 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
             text6.setTextColor(Color.parseColor("#000000"));
             text7.setTextColor(Color.parseColor("#000000"));
             text8.setTextColor(Color.parseColor("#000000"));
+            text71.setTextColor(Color.parseColor("#000000"));
+            text81.setTextColor(Color.parseColor("#000000"));
         }
 
         if(Exam==2){
@@ -105,6 +114,14 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
             NCERTSolutions.setEnabled(false);
             NCERTSolutions.setBackground(null);
             NCERTSolutions.setText("");
+            text71.setText("");
+            text81.setText("");
+            linearLayout1.setBackground(null);
+            ncertimage1.setBackground(null);
+            NCERTSolutions1.setClickable(false);
+            NCERTSolutions1.setEnabled(false);
+            NCERTSolutions1.setBackground(null);
+            NCERTSolutions1.setText("");
         }
 
         previousyearpaperbutton.setOnClickListener(new View.OnClickListener() {
@@ -214,14 +231,14 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
                         Intent intent = new Intent(getBaseContext(), Sub_All_Activity.class);
                         intent.putExtra("Exam", Exam);
                         intent.putExtra("Std", Std);
-                        intent.putExtra("Paper", 4);
+                        intent.putExtra("Paper", 5);
                         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         startActivity(intent);
                     } else {
                         Intent intent = new Intent(getBaseContext(), Sub_All_Cbse12_Activity.class);
                         intent.putExtra("Exam", Exam);
                         intent.putExtra("Std", Std);
-                        intent.putExtra("Paper", 4);
+                        intent.putExtra("Paper", 5);
                         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
                         startActivity(intent);
                     }
@@ -229,6 +246,31 @@ public class PaperCategoryBoardsActivity extends AppCompatActivity {
                 }
             }
         });
+
+
+    NCERTSolutions1.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (Exam == 1) {
+                if (Std == 1) {
+                    Intent intent = new Intent(getBaseContext(), Sub_All_Activity.class);
+                    intent.putExtra("Exam", Exam);
+                    intent.putExtra("Std", Std);
+                    intent.putExtra("Paper", 4);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                    startActivity(intent);
+                } else {
+                    Intent intent = new Intent(getBaseContext(), Sub_All_Cbse12_Activity.class);
+                    intent.putExtra("Exam", Exam);
+                    intent.putExtra("Std", Std);
+                    intent.putExtra("Paper", 4);
+                    overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+                    startActivity(intent);
+                }
+
+            }
+        }
+    });
 
 
 

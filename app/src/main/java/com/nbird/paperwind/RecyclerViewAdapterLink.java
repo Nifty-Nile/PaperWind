@@ -62,6 +62,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
 
         holder.tv_exam_title.setText(mData.get(position).getTitle());
         holder.exam_dis.setText(mData.get(position).getDis());
+        holder.exam_img_id.setImageResource(mData.get(position).getThumbnail());
 
 
 
@@ -599,7 +600,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
         TextView tv_exam_title;
-        ImageView img_exam_thumbnail;
+        ImageView exam_img_id;
         TextView exam_dis;
         CardView cardView;
 
@@ -610,7 +611,7 @@ public class RecyclerViewAdapterLink extends RecyclerView.Adapter<RecyclerViewAd
             super(itemView);
 
             tv_exam_title=(TextView) itemView.findViewById(R.id.exam_title);
-            img_exam_thumbnail=(ImageView) itemView.findViewById(R.id.exam_img_id);
+            exam_img_id=(ImageView) itemView.findViewById(R.id.exam_img_id);
             exam_dis=(TextView) itemView.findViewById(R.id.exam_dis);
             cardView=(CardView) itemView.findViewById(R.id.cardview_id);
 

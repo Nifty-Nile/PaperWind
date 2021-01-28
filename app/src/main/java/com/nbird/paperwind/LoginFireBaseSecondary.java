@@ -54,7 +54,7 @@ import java.util.Random;
 
 import Model.User;
 
-public class LoginFireBaseActivity extends AppCompatActivity {
+public class LoginFireBaseSecondary extends AppCompatActivity {
 
     Button movesignup,login,forgotpassword;
     SignInButton googsignin;
@@ -85,7 +85,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_fire_base);
+        setContentView(R.layout.activity_login_fire_base_secondary);
 
         movesignup=(Button) findViewById(R.id.movesignup);
         login=(Button) findViewById(R.id.login);
@@ -108,11 +108,11 @@ public class LoginFireBaseActivity extends AppCompatActivity {
 
 
 
-        if(user!=null){
+     /*   if(user!=null){
             startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
             overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             finish();
-        }
+        }*/
 
 
 
@@ -122,7 +122,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
         googsignin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loadingDialog=new Dialog(LoginFireBaseActivity.this);
+                loadingDialog=new Dialog(LoginFireBaseSecondary.this);
 
                 loadingDialog.setContentView(R.layout.activity_loading);
                 loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
@@ -145,7 +145,7 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                 if(!mail()||!password()){
                     return;
                 }
-                loadingDialog=new Dialog(LoginFireBaseActivity.this);
+                loadingDialog=new Dialog(LoginFireBaseSecondary.this);
                 loadingDialog.setContentView(R.layout.activity_loading);
                 loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 loadingDialog.setCancelable(true);
@@ -156,68 +156,55 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
 
-                            if(mAuth.getCurrentUser().isEmailVerified()){
-                                final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                final SharedPreferences.Editor editorguide = guide.edit();
+                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                            final SharedPreferences.Editor editorguide = guide.edit();
 
 
-                                night = guide.getBoolean("locked", false);
+                            night = guide.getBoolean("locked", false);
 
 
-                                if(!night){
-                                    AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseActivity.this,R.style.AlertDialogTheme);
-                                    View view1= LayoutInflater.from(LoginFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                    builder.setView(view1);
-                                    builder.setCancelable(false);
-                                    ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                    ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                    ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                    ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
+                            if(!night){
+                                AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseSecondary.this,R.style.AlertDialogTheme);
+                                View view1= LayoutInflater.from(LoginFireBaseSecondary.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                builder.setView(view1);
+                                builder.setCancelable(false);
+                                ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
+                                ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
+                                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
+                                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
 
 
-                                    final AlertDialog alertDialog=builder.create();
+                                final AlertDialog alertDialog=builder.create();
 
-                                    view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                            final SharedPreferences.Editor editorguide = guide.edit();
-                                            editorguide.putBoolean("locked", false);
-                                            editorguide.commit();
-                                            Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                            loadingDialog.dismiss();
-                                            finish();
+                                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
+                                        final SharedPreferences.Editor editorguide = guide.edit();
+                                        editorguide.putBoolean("locked", false);
+                                        editorguide.commit();
+                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        loadingDialog.dismiss();
+                                        finish();
 
-                                        }
-                                    });
-                                    view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                        @Override
-                                        public void onClick(View view) {
-                                            startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                            overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                            finish();
-                                        }
-                                    });
-
-                                    if(alertDialog.getWindow()!=null){
-                                        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
                                     }
-                                    alertDialog.show();
+                                });
+                                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View view) {
+                                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                        finish();
+                                    }
+                                });
 
-                                }else{
-                                    Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                                    startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                    loadingDialog.dismiss();
-                                    finish();
-                                    overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                                if(alertDialog.getWindow()!=null){
+                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
                                 }
-                            }else{
-                                Toast.makeText(LoginFireBaseActivity.this, "Email Not Verified.Please Check Your Mail!", Toast.LENGTH_SHORT).show();
-                                loadingDialog.dismiss();
+                                alertDialog.show();
+
                             }
-
-
 
 
 
@@ -250,10 +237,12 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                             String password1=password.getText().toString().trim();
                             editormailreminder.putString("123", email);
                             editormailreminder.commit();
+
                             if(!mail()||!password()){
                                 return false;
                             }
-                            loadingDialog=new Dialog(LoginFireBaseActivity.this);
+
+                            loadingDialog=new Dialog(LoginFireBaseSecondary.this);
                             loadingDialog.setContentView(R.layout.activity_loading);
                             loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                             loadingDialog.setCancelable(true);
@@ -263,74 +252,11 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
-
-                                        if(mAuth.getCurrentUser().isEmailVerified()){
-                                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                            final SharedPreferences.Editor editorguide = guide.edit();
-
-
-                                            night = guide.getBoolean("locked", false);
-
-
-                                            if(!night){
-                                                AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseActivity.this,R.style.AlertDialogTheme);
-                                                View view1= LayoutInflater.from(LoginFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                                builder.setView(view1);
-                                                builder.setCancelable(false);
-                                                ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                                ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
-
-
-                                                final AlertDialog alertDialog=builder.create();
-
-                                                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-                                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                                        final SharedPreferences.Editor editorguide = guide.edit();
-                                                        editorguide.putBoolean("locked", false);
-                                                        editorguide.commit();
-                                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                        loadingDialog.dismiss();
-                                                        finish();
-
-                                                    }
-                                                });
-                                                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-                                                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                        finish();
-                                                    }
-                                                });
-
-                                                if(alertDialog.getWindow()!=null){
-                                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                                                }
-                                                alertDialog.show();
-
-                                            }else{
-                                                Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                                                startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                loadingDialog.dismiss();
-                                                finish();
-                                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                            }
-                                        }else{
-                                            Toast.makeText(LoginFireBaseActivity.this, "Email Not Verified.Please Check Your Mail!", Toast.LENGTH_SHORT).show();
-                                            loadingDialog.dismiss();
-                                        }
-
-
-
-
-
-
-
+                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        loadingDialog.dismiss();
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 
                                     }else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -360,10 +286,12 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                             String password1=password.getText().toString().trim();
                             editormailreminder.putString("123", email);
                             editormailreminder.commit();
+
                             if(!mail()||!password()){
                                 return false;
                             }
-                            loadingDialog=new Dialog(LoginFireBaseActivity.this);
+
+                            loadingDialog=new Dialog(LoginFireBaseSecondary.this);
                             loadingDialog.setContentView(R.layout.activity_loading);
                             loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                             loadingDialog.setCancelable(true);
@@ -373,74 +301,11 @@ public class LoginFireBaseActivity extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<AuthResult> task) {
                                     if(task.isSuccessful()){
-
-                                        if(mAuth.getCurrentUser().isEmailVerified()){
-                                            final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                            final SharedPreferences.Editor editorguide = guide.edit();
-
-
-                                            night = guide.getBoolean("locked", false);
-
-
-                                            if(!night){
-                                                AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseActivity.this,R.style.AlertDialogTheme);
-                                                View view1= LayoutInflater.from(LoginFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
-                                                builder.setView(view1);
-                                                builder.setCancelable(false);
-                                                ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
-                                                ((TextView) view1.findViewById(R.id.textMessage)).setText("Welcome to Paper Wind!");
-                                                ((Button) view1.findViewById(R.id.buttonNo)).setText("No");
-                                                ((Button) view1.findViewById(R.id.buttonYes)).setText("Yes,I Want A Guide");
-
-
-                                                final AlertDialog alertDialog=builder.create();
-
-                                                view1.findViewById(R.id.buttonYes).setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-                                                        final SharedPreferences guide = getBaseContext().getSharedPreferences("guidepre", 0);
-                                                        final SharedPreferences.Editor editorguide = guide.edit();
-                                                        editorguide.putBoolean("locked", false);
-                                                        editorguide.commit();
-                                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                        loadingDialog.dismiss();
-                                                        finish();
-
-                                                    }
-                                                });
-                                                view1.findViewById(R.id.buttonNo).setOnClickListener(new View.OnClickListener() {
-                                                    @Override
-                                                    public void onClick(View view) {
-                                                        startActivity(new Intent(getApplicationContext(),Menu1Activity.class));
-                                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                                        finish();
-                                                    }
-                                                });
-
-                                                if(alertDialog.getWindow()!=null){
-                                                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(0));
-                                                }
-                                                alertDialog.show();
-
-                                            }else{
-                                                Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
-                                                startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
-                                                loadingDialog.dismiss();
-                                                finish();
-                                                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-                                            }
-                                        }else{
-                                            Toast.makeText(LoginFireBaseActivity.this, "Email Not Verified.Please Check Your Mail!", Toast.LENGTH_SHORT).show();
-                                            loadingDialog.dismiss();
-                                        }
-
-
-
-
-
-
-
+                                        Toast.makeText(getBaseContext(), "Logged In Successfully!", Toast.LENGTH_LONG).show();
+                                        startActivity(new Intent(getApplicationContext(),SartingGuideActivity.class));
+                                        loadingDialog.dismiss();
+                                        finish();
+                                        overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 
                                     }else{
                                         Toast.makeText(getBaseContext(), "Error!"+task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -512,16 +377,16 @@ public class LoginFireBaseActivity extends AppCompatActivity {
         return true;
     }
 
-public void createRequest(){
-    // Configure Google Sign In
-    GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken(getString(R.string.default_web_client_id))
-            .requestEmail()
-            .build();
+    public void createRequest(){
+        // Configure Google Sign In
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestEmail()
+                .build();
 
-    // Build a GoogleSignInClient with the options specified by gso.
-    mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
-}
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+    }
 
     private void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -566,7 +431,7 @@ public void createRequest(){
                             // Sign in success, update UI with the signed-in user's information
                             GoogleSignInAccount account=GoogleSignIn.getLastSignedInAccount(getApplicationContext());
 
-                           /* */
+                            /* */
 
 
 
@@ -600,15 +465,15 @@ public void createRequest(){
                                 editormailreminder.commit();
 
 
-                                    reference1.child(mAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            // convert the data back to the model
-                                         try{
+                                reference1.child(mAuth.getCurrentUser().getUid()).child("personal").child("money").addValueEventListener(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        // convert the data back to the model
+                                        try{
                                             money = dataSnapshot.getValue(Integer.class);
 
 
-                                             User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
+                                            User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
                                             skipint = 1;
 
 
@@ -642,7 +507,7 @@ public void createRequest(){
                                                                 if (task.isSuccessful()) {
 
                                                                 } else {
-                                                                    Toast.makeText(LoginFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                                    Toast.makeText(LoginFireBaseSecondary.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
                                                                 }
                                                             }
                                                         });
@@ -657,44 +522,44 @@ public void createRequest(){
 
                                         }catch(Exception e){
 
-                                             String strMain =personEmail;
-                                             String[] arrSplit_3 = strMain.split("@");
-                                             for (int i=0; i < 1; i++) {
-                                                 Random rand = new Random();
+                                            String strMain =personEmail;
+                                            String[] arrSplit_3 = strMain.split("@");
+                                            for (int i=0; i < 1; i++) {
+                                                Random rand = new Random();
 
-                                                 // Generate random integers in range 0 to 999
-                                                 int rand_int1 = rand.nextInt(1000);
+                                                // Generate random integers in range 0 to 999
+                                                int rand_int1 = rand.nextInt(1000);
 
-                                                 // Print random integers
+                                                // Print random integers
 
-                                                 mailshare = arrSplit_3[i] + "@" + rand_int1;
-                                             }
-                                             User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
-
-
-                                             table_user.child(mAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                 @Override
-                                                 public void onComplete(@NonNull Task<Void> task) {
-                                                     if (task.isSuccessful()) {
-
-                                                     } else {
-                                                         Toast.makeText(LoginFireBaseActivity.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
-                                                     }
-                                                 }
-                                             });
+                                                mailshare = arrSplit_3[i] + "@" + rand_int1;
                                             }
+                                            User s1 = new User(money, permission, propicurl123,mailshare,firstrefdis);
 
 
+                                            table_user.child(mAuth.getCurrentUser().getUid()).child("personal").setValue(s1).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
 
+                                                    } else {
+                                                        Toast.makeText(LoginFireBaseSecondary.this, "Record Not Saved!", Toast.LENGTH_LONG).show();
+                                                    }
+                                                }
+                                            });
                                         }
-                                        // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
 
 
 
-                                        @Override
-                                        public void onCancelled(@NonNull DatabaseError error) {
-                                        }
-                                    });
+                                    }
+                                    // papernotestotal.setText("Paper Notes: " + String.valueOf(value));
+
+
+
+                                    @Override
+                                    public void onCancelled(@NonNull DatabaseError error) {
+                                    }
+                                });
 
 
 
@@ -704,11 +569,11 @@ public void createRequest(){
 
 
 
-                         //       final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
-                         //       final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
+                                //       final SharedPreferences moneybalance= getBaseContext().getSharedPreferences("moneyuser", 0);
+                                //       final SharedPreferences.Editor editormoneybalance = moneybalance.edit();
 
-                          //      int moneyuser = moneybalance.getInt(personEmail, 100);
-                          //      Toast.makeText(getBaseContext(), personEmail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
+                                //      int moneyuser = moneybalance.getInt(personEmail, 100);
+                                //      Toast.makeText(getBaseContext(), personEmail+  "And" +String.valueOf(moneyuser), Toast.LENGTH_LONG).show();
                             }
 
                             loadingDialog.dismiss();
@@ -721,8 +586,8 @@ public void createRequest(){
 
 
                             if(!night){
-                                AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseActivity.this,R.style.AlertDialogTheme);
-                                View view1= LayoutInflater.from(LoginFireBaseActivity.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
+                                AlertDialog.Builder builder=new AlertDialog.Builder(LoginFireBaseSecondary.this,R.style.AlertDialogTheme);
+                                View view1= LayoutInflater.from(LoginFireBaseSecondary.this).inflate(R.layout.guide_alertdialog,(ConstraintLayout) findViewById(R.id.layoutDialogContainer));
                                 builder.setView(view1);
                                 builder.setCancelable(false);
                                 ((TextView) view1.findViewById(R.id.textTitle)).setText("Want a Breezy Tour Guide for the upcoming Excitement?");
@@ -783,6 +648,6 @@ public void createRequest(){
                         // ...
                     }
                 });
-    }
 
+    }
 }

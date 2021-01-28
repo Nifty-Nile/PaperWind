@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -21,7 +23,8 @@ public class Sub_All_Activity extends AppCompatActivity {
     int Exam,Std,Paper;
     androidx.appcompat.widget.Toolbar toolbar;
     TextView text0,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13;
-
+    LinearLayout linearLayout5,linearLayout4;
+    ImageView comap,phyedu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,11 @@ public class Sub_All_Activity extends AppCompatActivity {
         text11=(TextView) findViewById(R.id.text11);
         text12=(TextView) findViewById(R.id.text12);
         text13=(TextView) findViewById(R.id.textView4);
+
+        comap=(ImageView) findViewById(R.id.comap);
+        phyedu=(ImageView) findViewById(R.id.phyedu);
+        linearLayout5=(LinearLayout) findViewById(R.id.linearLayout5);
+        linearLayout4=(LinearLayout) findViewById(R.id.linearLayout4);
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Subjects");
@@ -107,6 +115,24 @@ public class Sub_All_Activity extends AppCompatActivity {
         }
 
 
+        if(Paper==2){
+            linearLayout4.setBackground(null);
+            linearLayout5.setBackground(null);
+            comap.setBackground(null);
+            phyedu.setBackground(null);
+            button5.setClickable(false);
+            button5.setEnabled(false);
+            button5.setBackground(null);
+            button5.setText("");
+            button6.setClickable(false);
+            button6.setEnabled(false);
+            button6.setBackground(null);
+            button6.setText("");
+            text9.setText("");
+            text10.setText("");
+            text11.setText("");
+            text12.setText("");
+        }
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 
