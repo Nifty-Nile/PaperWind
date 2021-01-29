@@ -288,7 +288,7 @@ This app is made keeping in mind the likes and needs of every student out there,
                     android:layout_marginEnd="10dp"
                     android:elevation="1dp"
                     android:fontFamily="@font/aladin"
-                    android:text="To be removed"
+                    android:text="First Experience in App development! From tech to team, everything taught us a new lesson everyday. Looking forward for such projects. Keep learning, keep growing! For any messages mail at: adarshsv2468@gmail.com."
                     android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView17"
                     app:layout_constraintEnd_toEndOf="@+id/imageView17"
