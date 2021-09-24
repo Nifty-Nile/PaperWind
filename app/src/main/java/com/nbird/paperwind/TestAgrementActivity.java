@@ -127,6 +127,8 @@ public class TestAgrementActivity extends AppCompatActivity {
 
         }
 
+
+
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Test Instructions");
         setSupportActionBar(toolbar);
@@ -145,6 +147,64 @@ public class TestAgrementActivity extends AppCompatActivity {
         score=getIntent().getIntExtra("score",0);
         value=getIntent().getIntExtra("value",0);
         safe=getIntent().getIntExtra("safe",0);
+
+
+        switch (position){
+            case 2:
+                text1.setText("1.  Total duration of examination is 180 minutes.");break;
+            case 3:
+                text1.setText("1.  Total duration of examination is 180 minutes.");break;
+            case 4:
+                text1.setText("1.  Total duration of examination is 150 minutes.");break;
+            case 5:
+                text1.setText("1.  Total duration of examination is 180 minutes.");break;
+            case 7:
+                text1.setText("1.  Total duration of examination is 180 minutes.");break;
+            case 8:
+                text1.setText("1.  Total duration of examination is 150 minutes.");break;
+            case 9:
+                text1.setText("1.  Total duration of examination is 180 minutes.");break;
+            case 10:
+                text1.setText("1.  Total duration of examination is 150 minutes.");break;
+            case 11:
+                text1.setText("1.  Total duration of examination is 240 minutes.");break;
+            case 12:
+                text1.setText("1.  Total duration of examination is 180 minutes.");break;
+        }
+
+        switch (position){
+            case 2:
+                text14.setText("5. Total of 90 questions will be provided to you, with 30 questions per section.");
+                text15.setText("6. Correct Answer will carry 4 marks while -1 on wrong Answer.");break;
+            case 3:
+                text14.setText("5. Total of 180 questions will be provided to you, with 45 questions on Physics And Chemistry. And 90 questions on Maths ,Zoology And Botany.");
+                text15.setText("6. Correct Answer will carry 4 marks while -1 on wrong Answer.");break;
+            case 4:
+                text14.setText("5. Total of 125 questions will be provided to you, with 35 questions on Physics ,35 questions on Chemistry And 55 questions on Mathematics And Logical Resoning.");
+                text15.setText("6. Correct Answer will carry 1 marks with no negative marking.");break;
+            case 5:
+                text14.setText("5. Total of 180 questions will be provided to you,with 60 questions per section.");
+                text15.setText("6. Correct Answer will carry 1 marks with no negative marking.");break;
+            case 7:
+                text14.setText("5. Total of 145 questions will be provided to you,with 40 questions on Physics ,40 questions on Chemistry And 65 questions on Mathematics And Logical Resoning.");
+                text15.setText("6. Correct Answer will carry 3 marks while -1 on wrong Answer.");break;
+            case 8:
+                text14.setText("5. Total of 200 questions will be provided to you,with 50 questions on Physics ,50 questions on Chemistry And 100 questions on Mathematics , English And General Aptitude.");
+                text15.setText("6. Correct Answer will carry 4 marks while -1 on wrong Answer.");break;
+            case 9:
+                text14.setText("5. Total of 150 questions will be provided to you,with 50 questions per section.");
+                text15.setText("6. Correct Answer will carry 1 marks with no negative marking.");break;
+            case 10:
+                text14.setText("5. Total of 125 questions will be provided to you,with 35 questions on Physics ,35 questions on Chemistry And 55 questions on Mathematics , English And Aptitude.");
+                text15.setText("6. Correct Answer will carry 1 marks with no negative marking");break;
+            case 11:
+                text14.setText("5. Total of 180 questions will be provided to you,with 60 questions per section.");
+                text15.setText("6. Correct Answer will carry 1 marks with no negative marking");break;
+            case 12:
+                text14.setText("5. Total of 150 questions will be provided to you,with 50 questions per section.");
+                text15.setText("6. Correct Answer will carry 4 marks with no negative marking");break;
+
+        }
 
         posconverter=Integer.toString(position);
         setconverter=Integer.toString(set);

@@ -376,12 +376,15 @@ public class MoneyActivity extends AppCompatActivity implements RewardedVideoAdL
 
     @Override
     public void onRewardedVideoAdFailedToLoad(int i) {
+     //Log.i("Value:",String.valueOf(i));
     }
 
     @Override
     public void onRewardedVideoCompleted() {
 
     }
+
+
 
     @Override
     protected void onResume() {

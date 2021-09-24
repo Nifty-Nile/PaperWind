@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,6 +35,10 @@ public class BoardYearActivity extends AppCompatActivity {
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
     final DatabaseReference reference1 = database.getReference("User");
     int value;
+    LinearLayout linearLayout;
+    ImageView testpic;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +52,9 @@ public class BoardYearActivity extends AppCompatActivity {
         text300=(TextView) findViewById(R.id.text300);
         text400=(TextView) findViewById(R.id.text400);
         Text4=(TextView) findViewById(R.id.Text4);
+
+        linearLayout=(LinearLayout) findViewById(R.id.linearLayout);
+        testpic=(ImageView) findViewById(R.id.testpic);
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Category");
@@ -123,6 +132,29 @@ public class BoardYearActivity extends AppCompatActivity {
 
         position=intent.getExtras().getInt("position",0);
 
+        switch (position){
+            case 1:
+                text300.setText("");
+                text400.setText("");
+                linearLayout.setBackground(null);
+                testpic.setBackground(null);
+                onlinetestbutton.setClickable(false);
+                onlinetestbutton.setEnabled(false);
+                onlinetestbutton.setBackground(null);
+                onlinetestbutton.setText("");break;
+            case 6:
+                text300.setText("");
+                text400.setText("");
+                linearLayout.setBackground(null);
+                testpic.setBackground(null);
+                onlinetestbutton.setClickable(false);
+                onlinetestbutton.setEnabled(false);
+                onlinetestbutton.setBackground(null);
+                onlinetestbutton.setText("");break;
+        }
+
+
+
 
         previousyearbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -158,13 +190,6 @@ public class BoardYearActivity extends AppCompatActivity {
                     startActivity(intent);
                     overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
                     finish();
-
-
-
-
-
-
-
             }
         });
 

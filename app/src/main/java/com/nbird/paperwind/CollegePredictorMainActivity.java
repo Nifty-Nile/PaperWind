@@ -748,6 +748,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 13000) {
             PlatinumNumber = 19;
+        }else if (Rank > 13000) {
+            PlatinumNumber = 20;
         }
     }
 
@@ -790,6 +792,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 19000) {
             PlatinumNumber = 19;
+        }else if (Rank > 19000) {
+            PlatinumNumber = 20;
         }
     }
 
@@ -832,6 +836,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 6000) {
             PlatinumNumber = 19;
+        }else if (Rank > 6000) {
+            PlatinumNumber = 20;
         }
     }
 
@@ -874,6 +880,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 7300) {
             PlatinumNumber = 19;
+        }else  {
+            PlatinumNumber = 20;
         }
     }
 
@@ -916,6 +924,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 1100) {
             PlatinumNumber = 19;
+        }else  {
+            PlatinumNumber = 20;
         }
     }
 
@@ -958,6 +968,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 1500) {
             PlatinumNumber = 19;
+        }else  {
+            PlatinumNumber = 20;
         }
     }
 
@@ -1000,6 +1012,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 2500) {
             PlatinumNumber = 19;
+        }else  {
+            PlatinumNumber = 20;
         }
     }
 
@@ -1042,6 +1056,8 @@ public class CollegePredictorMainActivity extends AppCompatActivity {
             PlatinumNumber = 18;
         }else if (Rank <= 3300) {
             PlatinumNumber = 19;
+        }else {
+            PlatinumNumber = 20;
         }
     }
 

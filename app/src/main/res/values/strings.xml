@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">Paper Wind</string>
-    <string name="APP_ID">ca-app-pub-3940256099942544~3347511713</string>
-    <string name="ADMOB_UNIT_ID">ca-app-pub-3940256099942544/5224354917</string>
-    <string name="interstitialAd_id">ca-app-pub-3940256099942544/1033173712</string>
+    <string name="APP_ID">ca-app-pub-2384938955607297~6539102397</string>
+    <string name="ADMOB_UNIT_ID">ca-app-pub-2384938955607297/6582693796</string>
+    <string name="interstitialAd_id">ca-app-pub-2384938955607297/6383383245</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
 </resources>

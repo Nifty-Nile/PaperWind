@@ -24,7 +24,7 @@ public class Sub_All_Activity extends AppCompatActivity {
     androidx.appcompat.widget.Toolbar toolbar;
     TextView text0,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13;
     LinearLayout linearLayout5,linearLayout4;
-    ImageView comap,phyedu;
+    ImageView comap,phyedu,historyimg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +59,7 @@ public class Sub_All_Activity extends AppCompatActivity {
 
         comap=(ImageView) findViewById(R.id.comap);
         phyedu=(ImageView) findViewById(R.id.phyedu);
+        historyimg=(ImageView) findViewById(R.id.historyimg);
         linearLayout5=(LinearLayout) findViewById(R.id.linearLayout5);
         linearLayout4=(LinearLayout) findViewById(R.id.linearLayout4);
 
@@ -112,6 +113,15 @@ public class Sub_All_Activity extends AppCompatActivity {
             text12.setTextColor(Color.parseColor("#000000"));
             text13.setTextColor(Color.parseColor("#000000"));
 
+        }
+
+        if(Paper==5){
+            comap.setBackground(null);
+            historyimg.setBackground(null);
+            text3.setText("History And Civics");
+            text9.setText("Geography");
+            comap.setImageResource(R.drawable.geography);
+            historyimg.setImageResource(R.drawable.history);
         }
 
 

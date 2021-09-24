@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class Sub_All_Cbse12_Activity extends AppCompatActivity {
     Button button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11;
     int Exam,Std,Paper;
+    ImageView psyimg;
     androidx.appcompat.widget.Toolbar toolbar;
     TextView textView4,text1,text2,text3,text4,text5,text6,text7,text8,text9,text10,text11,text12,text13,text14,text15,text16,text17,text18,text19,text20,text21,text22;
     @Override
@@ -43,6 +45,7 @@ public class Sub_All_Cbse12_Activity extends AppCompatActivity {
         button10=(Button) findViewById(R.id.tipButton10);
         button11=(Button) findViewById(R.id.tipButton11);
 
+        psyimg=(ImageView) findViewById(R.id.psyimg);
 
         textView4=(TextView) findViewById(R.id.textView4);
         text1=(TextView) findViewById(R.id.text1);
@@ -141,7 +144,11 @@ public class Sub_All_Cbse12_Activity extends AppCompatActivity {
 
         }
 
-
+       if(Paper==4){
+           text21.setText("Psychology");
+           psyimg.setBackground(null);
+           psyimg.setImageResource(R.drawable.psyology);
+       }
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
 

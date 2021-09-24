@@ -62,7 +62,7 @@ public class PaymentHistoryActivity extends AppCompatActivity {
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
-        if(answerA0){
+       /* if(answerA0){
             ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             text1.setTextColor(Color.parseColor("#ffffff"));
@@ -75,7 +75,7 @@ public class PaymentHistoryActivity extends AppCompatActivity {
             text1.setTextColor(Color.parseColor("#000000"));
             text2.setTextColor(Color.parseColor("#000000"));
 
-        }
+        }*/
 
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);

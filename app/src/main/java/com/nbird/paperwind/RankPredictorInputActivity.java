@@ -10,8 +10,10 @@ import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.method.DialerKeyListener;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -39,6 +41,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class RankPredictorInputActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     Button rankbutton,collegebutton;
@@ -132,6 +136,18 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
         }
 
 
+        switch (SelectedEntranceExam){
+            case 2:
+                hider();break;
+            case 3:
+                hider();break;
+            case 6:
+                hider();break;
+            case 9:
+                hider();break;
+            case 12:
+                hider();break;
+        }
 
 
         scoretext.setOnKeyListener(new View.OnKeyListener()
@@ -213,7 +229,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // radiobutton by returned id
 
-                               if (selectedId == 2131362239) {
+                               if (selectedId == 2131362254) {
                                     i = 1;
                                 } else {
                                     i = 2;
@@ -352,7 +368,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131362239){
+                                            if(selectedId==2131362254){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -401,7 +417,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362239){
+                                if(selectedId==2131362254){
                                     i=1;
                                 }else{
                                     i=2;
@@ -602,7 +618,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // radiobutton by returned id
 
-                    if (selectedId == 2131362239) {
+                    if (selectedId == 2131362254) {
                         i = 1;
                     } else {
                         i = 2;
@@ -739,7 +755,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                             // find the radiobutton by returned id
 
-                                            if(selectedId==2131362239){
+                                            if(selectedId==2131362254){
                                                 i=1;
                                             }else{
                                                 i=2;
@@ -785,7 +801,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362239){
+                                if(selectedId==2131362254){
                                     i=1;
                                 }else{
                                     i=2;
@@ -914,7 +930,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                                 // find the radiobutton by returned id
 
-                                if(selectedId==2131362239){
+                                if(selectedId==2131362254){
                                     i=1;
                                 }else{
                                     i=2;
@@ -960,7 +976,7 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
                     // find the radiobutton by returned id
 
-                    if(selectedId==2131362239){
+                    if(selectedId==2131362254){
                         i=1;
                     }else{
                         i=2;
@@ -1338,12 +1354,27 @@ public class RankPredictorInputActivity extends AppCompatActivity implements Ada
 
     }
 
+
+    public void hider(){
+        Text3.setText("College Predictor For This Entrance Exam Is Coming In The Next Update!");
+        dis2.setText("");
+     //   Text3.setTextSize();
+        ranktext.setVisibility(View.INVISIBLE);
+        ranktext.setVisibility(View.GONE);
+        collegebutton.setClickable(false);
+        collegebutton.setEnabled(false);
+        collegebutton.setBackground(null);
+        collegebutton.setText("");
+
+
+    }
+
     public int exammarkslimit(){
         switch (SelectedEntranceExam){
             case 1:
                 return 380;
             case 2:
-                return 300;
+                return 360;
             case 3:
                 return 720;
             case 4:

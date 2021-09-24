@@ -30,18 +30,10 @@ public class SlideActivity extends AppCompatActivity {
         setContentView(R.layout.activity_slide);
 
 
-
-
-
-
-
-
         slideViewPager=(ViewPager) findViewById(R.id.slideViewPager);
         dotLayout=(LinearLayout) findViewById(R.id.dotLayout);
         nextbutton=(Button) findViewById(R.id.button5);
         backbutton=(Button) findViewById(R.id.button4);
-
-
 
 
         sliderAdapter=new SliderAdapter(this);

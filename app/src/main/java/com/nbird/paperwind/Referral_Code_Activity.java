@@ -71,7 +71,7 @@ public class Referral_Code_Activity extends AppCompatActivity {
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
-        if(answerA0){
+       /* if(answerA0){
             ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             heading.setTextColor(Color.parseColor("#ffffff"));
@@ -91,7 +91,7 @@ public class Referral_Code_Activity extends AppCompatActivity {
             list.setTextColor(Color.parseColor("#000000"));
 
 
-        }
+        }*/
 
         fAuth = FirebaseAuth.getInstance();
         loadingDialog=new Dialog(Referral_Code_Activity.this);

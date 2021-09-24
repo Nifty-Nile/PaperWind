@@ -170,6 +170,22 @@ public class FinalRankPredictorActivity extends AppCompatActivity implements Ada
         }
 
 
+        if(SelectedEntranceExam==2||SelectedEntranceExam==3||SelectedEntranceExam==6||SelectedEntranceExam==9||SelectedEntranceExam==12){
+            Text3.setText("");
+            dis2.setText("");
+            Text200.setText("");
+            scoretext.setVisibility(View.INVISIBLE);
+            scoretext.setVisibility(View.GONE);
+            getCollege.setClickable(false);
+            getCollege.setEnabled(false);
+            getCollege.setBackground(null);
+            getCollege.setText("");
+            spinner2.setAlpha(0.0f);
+            spinner2.setClickable(false);
+            spinner2.setEnabled(false);
+        }
+
+
 
         Goldennumber();
         TextViewDisplay();

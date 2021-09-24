@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,7 +36,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference();
     int Exam,Std,Paper,Chapter;
-    TextView text0;
+    TextView text0,nodatatext;
     androidx.appcompat.widget.Toolbar toolbar;
     private InterstitialAd mInterstitialAd;
     @Override
@@ -48,6 +50,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
         Chapter=getIntent().getIntExtra("Chapter",0);
 
         text0=(TextView) findViewById(R.id.text0);
+        nodatatext=(TextView) findViewById(R.id.nodatatext);
 
         toolbar=findViewById(R.id.toolbar);
         toolbar.setTitle("Papers List");
@@ -63,10 +66,44 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
 
         Boolean answerA0 = lightanddark.getBoolean(String.valueOf(1), false);
 
+
+        BottomNavigationView bottomNavigationView=findViewById(R.id.bottomnavigatio);
+
+        bottomNavigationView.setSelectedItemId(R.id.home);
+
+
+        // **************** Bottom navigation View **********************
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.home:
+                        return true;
+
+                    case R.id.rankpredictor:
+                        startActivity(new Intent(getApplicationContext(),RankPredictorActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.Formulas:
+                        startActivity(new Intent(getApplicationContext(),FormulaSTDActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                    case R.id.money:
+                        startActivity(new Intent(getApplicationContext(),MoneyActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
+                }
+                return false;
+            }
+        });
+
         if(answerA0){
             ConstraintLayout layout =(ConstraintLayout) findViewById(R.id.mainfield);
             layout.setBackgroundResource(R.drawable.backdarkmode);
             text0.setTextColor(Color.parseColor("#ffffff"));
+            nodatatext.setTextColor(Color.parseColor("#ffffff"));
+
 
 
         }else{
@@ -75,6 +112,7 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
 
 
             text0.setTextColor(Color.parseColor("#000000"));
+            nodatatext.setTextColor(Color.parseColor("#000000"));
 
 
 
@@ -105,8 +143,14 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
                     list.add(dataSnapshot1.getValue(Recycler_Exam_Holder.class));
 
                 }
+
+
                 categoryAdapter.notifyDataSetChanged();
                 loadingDialog.dismiss();
+
+                if(list.isEmpty()){
+                    nodatatext.setAlpha(1.0f);
+                }
 
             }
 
@@ -119,6 +163,10 @@ public class Recycler_Exam_Activity extends AppCompatActivity {
         });
 
     }
+
+
+
+
     private void loadAds(){
         mInterstitialAd = new InterstitialAd(this);
         mInterstitialAd.setAdUnitId(getResources().getString(R.string.interstitialAd_id));

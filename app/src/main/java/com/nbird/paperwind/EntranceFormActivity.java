@@ -12,5 +12,7 @@ public class EntranceFormActivity extends AppCompatActivity {
         setContentView(R.layout.activity_entrance_form);
 
 
+
+
     }
 }

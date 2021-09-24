@@ -166,7 +166,7 @@ public class ScoreActivity extends AppCompatActivity {
               case 11:
                   ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fkcet.png?alt=media&token=b61028b5-2ab7-45aa-9633-0ca893ad3c67";break;
               case 12:
-                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fipucet.png?alt=media&token=bc792262-2601-4926-ac19-1342223f49fd";break;
+                  ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fupsee.png?alt=media&token=69db0671-a67c-41c4-9f9d-2ac77649e3e4";break;
               case 13:
                   ime="https://firebasestorage.googleapis.com/v0/b/paper-wind.appspot.com/o/EntranceExamIcon%2Fmet.png?alt=media&token=d011a6ba-b17c-4a1d-b462-6754ac41a340";break;
               case 14:
@@ -388,13 +388,13 @@ public class ScoreActivity extends AppCompatActivity {
                 title.setText("Entrance Exam : Kcet");
                 marks.setText("Marks : "+String.valueOf(totalmarks)+"/720");break;
             case 12:
-                strexamname="IPU-CET";
-                fullmarks="IPU-CET Full Marks : 450";
-                title.setText("Entrance Exam : IPU-CET");
+                strexamname="UPTU";
+                fullmarks="UPTU Full Marks : 600";
+                title.setText("Entrance Exam : UPTU");
                 marks.setText("Marks : "+String.valueOf(totalmarks)+"/450");break;
         }
 
-        switch (mode123){
+        switch (SelectedEntranceExam){
             case 2:
                 strmode="Entrance Text";break;
             case 3:

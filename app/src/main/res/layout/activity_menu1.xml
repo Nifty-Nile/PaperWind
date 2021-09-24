@@ -55,8 +55,8 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/linearLayout"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menunav" />
 
 
@@ -89,9 +89,10 @@
 
             <TextView
                 android:id="@+id/icsedis"
-                android:layout_width="220dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/acme"
                 android:text="Go through a wide range of PREVIOUS YEAR PAPERS, SAMPLE PAPERS, LAB VIDEOS and TEXTBOOK SOLUTIONS for ICSE (X) and ISC (XII) Classes! "
@@ -145,10 +146,11 @@
 
                 <TextView
                     android:id="@+id/cbsedis"
-                    android:layout_width="220dp"
+                    android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
                     android:fontFamily="@font/acme"
                     android:text="Complete package of PREVIOUS YEAR PAPERS, SAMPLE PAPERS, LAB VIDEOS and NCERT SOLUTIONS for Classes X and XII is just one click away!"
                     android:textColor="#000000"
@@ -185,21 +187,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerview"
-        layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
-        layout_constraintEnd_toEndOf="@+id/linearLayout3"
-        layout_constraintStart_toStartOf="@+id/linearLayout3"
-        layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        layout_editor_absoluteY="286dp"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:scrollbars="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerview"
+            layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+            layout_constraintEnd_toEndOf="@+id/linearLayout3"
+            layout_constraintStart_toStartOf="@+id/linearLayout3"
+            layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            layout_editor_absoluteY="286dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/bottomnavigatio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
