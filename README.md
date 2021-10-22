@@ -10,7 +10,7 @@ Welcome! ❤
 NIFTY NILE presents the ultimate All-In-One student package.
 
 Education is one of the most important aspects of a student's life and the bridge to this immense castle is the ultimate need of the hour. 🌍
-The Project aims to help students across the country to access a wide range of features. 📰📊
+The Project aims to help students across the country by providing them easy access to a wide range of features. 📰📊
 
 <img src="https://play-lh.googleusercontent.com/8AiFtQ2fIkIMQKVTZ1BfbI8xy1XMKNIPpIyB3DQ-JPX9Nm1NiVirnwTgL79qYuNNlA=w1536-h722-rw" width="150px">   <img src="https://play-lh.googleusercontent.com/zQWadqQuYtrqEAwM77_GgkclcBRtjxzLLQ2y3jqM4aEHDD8cmsHQ_DcL1deAzKFiI3w=w1536-h722-rw" width="150px">   <img src="https://play-lh.googleusercontent.com/5keIvFJeQLGShgyjjkY9qJfE29sOmWkwgnTTBsMq19tYNGTmITm1WHdPHODfc_iRW08=w1536-h722-rw" width="150px">   <img src="https://play-lh.googleusercontent.com/hZMb7d6pAwL5GzK4I4zNStzQyik6zYOIkr_nwZ2IVbt43U0-sz8b8djrkbGkU1ryOQ=w1536-h722-rw" width="150px">
 
@@ -45,7 +45,7 @@ Worried about the post-exam anxiety? Relax...We got you covered! Know you rank a
 - Paper Wind uses ![](https://img.shields.io/badge/FIREBASE-informational?style=flat&logo=firebase&logoColor=white&color=2bbc8a) as the database.
 - Uses an enhanced filter to predict ranks and colleges. User-friendly interface for real-time online tests. Uses open-source libraries and graphs for keen representation of statistics.
 - Smooth optimized data scanning for to-the-point results for the end-user.
-- Highly scalabale, strong robustness and easy maintainence.
+- Highly scalable, strong robustness and easy maintenance.
 
 
 ### ***PUBLISHED SAMPLE***
