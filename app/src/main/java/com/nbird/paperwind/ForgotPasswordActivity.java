@@ -56,7 +56,7 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                           @Override
                           public void onComplete(@NonNull Task<Void> task) {
                               if(task.isSuccessful()){
-                                  Toast.makeText(getBaseContext(), "Please Check Your Emial Account.", Toast.LENGTH_LONG).show();
+                                  Toast.makeText(getBaseContext(), "Please Check Your Email and Spam folder", Toast.LENGTH_LONG).show();
                                   startActivity(new Intent(getBaseContext(),LoginFireBaseActivity.class));
                                   finish();
                               }

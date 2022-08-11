@@ -384,7 +384,7 @@ public class LoginFireBase2 extends AppCompatActivity {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                Toast.makeText(getBaseContext(), e.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Error:"+e.getMessage(), Toast.LENGTH_LONG).show();
                 // ...
             }
         }

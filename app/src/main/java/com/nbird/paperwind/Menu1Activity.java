@@ -726,15 +726,15 @@ public class Menu1Activity extends AppCompatActivity implements NavigationView.O
                 startActivity(browserIntent);
                 break;
 
-            case R.id.nav_contact:
-                String[] TO = {"niftynile@gmail.com"};
-
-                Intent email = new Intent(Intent.ACTION_SEND);
-                email.setType("*/*");
-                email.putExtra(Intent.EXTRA_EMAIL, TO);
-                if(email.resolveActivity(getPackageManager()) != null)
-                    startActivity(email);
-                break;
+//            case R.id.nav_contact:
+//                String[] TO = {"niftynile@gmail.com"};
+//
+//                Intent email = new Intent(Intent.ACTION_SEND);
+//                email.setType("*/*");
+//                email.putExtra(Intent.EXTRA_EMAIL, TO);
+//                if(email.resolveActivity(getPackageManager()) != null)
+//                    startActivity(email);
+//                break;
 
             default :
                         return true;

@@ -21,6 +21,7 @@
         android:title="News Updates"
         android:id="@+id/propic"
         android:icon="@drawable/dailyupdates"
+        android:visible="false"
         app:showAsAction="always"/>
 
 
